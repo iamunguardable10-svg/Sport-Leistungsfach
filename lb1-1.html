@@ -1,0 +1,1955 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sport Abitur — Lernportal</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0d1117;
+  --surface: #161c2d;
+  --card: #1c2340;
+  --border: #243050;
+  --text: #e2e8f0;
+  --muted: #7a8599;
+  --gold: #f5c842;
+  --lb1: #4d9de0;
+  --lb1-dim: rgba(77,157,224,0.12);
+  --lb1-border: rgba(77,157,224,0.28);
+  --green: #52b788;
+  --orange: #e07b4d;
+  --purple: #9b72cf;
+  --red: #e05555;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.75;
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ─── SIDEBAR ─────────────────────────────── */
+.sidebar {
+  width: 272px;
+  min-width: 272px;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar::-webkit-scrollbar { width: 4px; }
+.sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+.sidebar-brand {
+  padding: 22px 22px 18px;
+  border-bottom: 1px solid var(--border);
+}
+.sidebar-brand .name {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  color: var(--gold);
+  line-height: 1.2;
+}
+.sidebar-brand .sub {
+  font-size: 11.5px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+.nav-group-label {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 16px 22px 5px;
+}
+
+.nav-link {
+  display: block;
+  padding: 6px 22px;
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  transition: all 0.13s;
+  cursor: pointer;
+}
+.nav-link:hover { color: var(--text); background: var(--lb1-dim); }
+.nav-link.active { color: var(--lb1); border-left-color: var(--lb1); background: var(--lb1-dim); }
+.nav-link.sub { padding-left: 34px; font-size: 12px; }
+.nav-link.sub2 { padding-left: 46px; font-size: 11.5px; }
+
+/* ─── MAIN ─────────────────────────────────── */
+.main {
+  flex: 1;
+  padding: 44px 52px 100px;
+  max-width: 920px;
+  min-width: 0;
+}
+
+/* PAGE HEADER */
+.page-header { margin-bottom: 48px; }
+.lb-badge {
+  display: inline-block;
+  background: var(--lb1-dim);
+  color: var(--lb1);
+  border: 1px solid var(--lb1-border);
+  border-radius: 20px;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  padding: 3px 14px;
+  margin-bottom: 12px;
+}
+.page-title {
+  font-family: 'Fraunces', serif;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.12;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.page-desc {
+  color: var(--muted);
+  font-size: 15px;
+  max-width: 620px;
+  line-height: 1.6;
+}
+
+/* SECTION WRAPPER */
+.section {
+  margin-bottom: 40px;
+  scroll-margin-top: 28px;
+}
+.section-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.section-num {
+  width: 32px; height: 32px;
+  background: var(--lb1);
+  color: #0d1117;
+  font-weight: 700;
+  font-size: 13px;
+  border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.section-title {
+  font-family: 'Fraunces', serif;
+  font-size: 26px;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* CARD */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px 26px;
+  margin-bottom: 14px;
+}
+.card-label {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--lb1);
+  margin-bottom: 14px;
+}
+
+/* DEFINITION BOX */
+.def-box {
+  background: rgba(245,200,66,0.07);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 10px 10px 0;
+  padding: 14px 20px;
+  margin: 14px 0;
+}
+.def-box .def-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+.def-box p { font-size: 14.5px; color: var(--text); }
+
+/* MERKE BOX */
+.merke {
+  background: rgba(82,183,136,0.08);
+  border: 1px solid rgba(82,183,136,0.25);
+  border-radius: 10px;
+  padding: 12px 18px;
+  margin: 14px 0;
+  font-size: 14px;
+}
+.merke .merke-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 5px;
+}
+
+/* CONTENT LIST */
+ul.clist {
+  list-style: none;
+  padding: 0;
+}
+ul.clist li {
+  padding: 5px 0 5px 20px;
+  position: relative;
+  font-size: 14.5px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+ul.clist li:last-child { border-bottom: none; }
+ul.clist li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--lb1);
+  font-size: 12px;
+  top: 6px;
+}
+
+/* GRID 2 */
+.g2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 12px 0;
+}
+.g3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  margin: 12px 0;
+}
+
+/* MINI CARD */
+.mini-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+.mini-card h4 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--lb1);
+  margin-bottom: 7px;
+}
+.mini-card p, .mini-card ul li {
+  font-size: 13px;
+  color: #b0bec5;
+  line-height: 1.55;
+}
+.mini-card ul { list-style: none; padding: 0; }
+.mini-card ul li { padding: 2px 0 2px 14px; position: relative; }
+.mini-card ul li::before { content: "·"; position: absolute; left: 0; color: var(--lb1); font-size: 18px; line-height: 1; top: 2px; }
+
+/* STEP LIST */
+.steps { margin: 12px 0; }
+.step-item {
+  display: flex;
+  gap: 14px;
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  align-items: flex-start;
+}
+.step-item:last-child { border-bottom: none; }
+.step-n {
+  width: 26px; height: 26px; min-width: 26px;
+  background: var(--lb1);
+  color: #0d1117;
+  font-weight: 700;
+  font-size: 12px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.step-body h4 { font-size: 14px; font-weight: 600; color: #fff; margin-bottom: 2px; }
+.step-body p { font-size: 13.5px; color: #b0bec5; }
+
+/* TABLE */
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  margin: 14px 0;
+}
+.styled-table th {
+  background: var(--surface);
+  padding: 9px 16px;
+  text-align: left;
+  font-size: 11px;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 1px solid var(--border);
+}
+.styled-table td {
+  padding: 9px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  color: var(--text);
+  vertical-align: top;
+}
+.styled-table tr:last-child td { border-bottom: none; }
+.styled-table .td-key { color: var(--lb1); font-weight: 600; white-space: nowrap; }
+
+/* PERIOD CARDS */
+.period-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  margin: 14px 0;
+}
+.period-card {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 16px;
+  border-top: 3px solid;
+}
+.period-card.vp { border-color: #4d9de0; }
+.period-card.wp { border-color: #52b788; }
+.period-card.up { border-color: #9b72cf; }
+.period-card h4 { font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+.period-card.vp h4 { color: #4d9de0; }
+.period-card.wp h4 { color: #52b788; }
+.period-card.up h4 { color: #9b72cf; }
+.period-card p { font-size: 12.5px; color: #b0bec5; line-height: 1.5; }
+
+/* COMPARE GRID */
+.compare-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 14px 0;
+}
+.cmp-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+}
+.cmp-card h4 {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.cmp-card ul { list-style: none; padding: 0; }
+.cmp-card ul li {
+  font-size: 13px;
+  padding: 3px 0 3px 14px;
+  position: relative;
+  color: #b0bec5;
+}
+.cmp-card ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--lb1);
+}
+.cmp-card.periph h4 { color: var(--orange); }
+.cmp-card.zentral h4 { color: var(--purple); }
+.cmp-card.symp h4 { color: var(--orange); }
+.cmp-card.parasymp h4 { color: var(--purple); }
+
+/* TRAININGSEINHEIT VISUAL */
+.te-visual {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 0;
+  margin: 16px 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.te-part {
+  padding: 16px;
+  text-align: center;
+}
+.te-part.vor { background: rgba(77,157,224,0.1); border-right: 1px solid var(--border); }
+.te-part.haupt { background: rgba(82,183,136,0.08); border-right: 1px solid var(--border); }
+.te-part.abschl { background: rgba(155,114,207,0.1); }
+.te-part h4 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px; }
+.te-part.vor h4 { color: var(--lb1); }
+.te-part.haupt h4 { color: var(--green); }
+.te-part.abschl h4 { color: var(--purple); }
+.te-part .time { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 700; color: #fff; }
+.te-part .time-label { font-size: 10.5px; color: var(--muted); margin-top: 2px; }
+.te-part .intensity { font-size: 11.5px; margin-top: 8px; padding: 3px 10px; border-radius: 20px; display: inline-block; }
+.te-part.vor .intensity { background: rgba(77,157,224,0.15); color: var(--lb1); }
+.te-part.haupt .intensity { background: rgba(82,183,136,0.15); color: var(--green); }
+.te-part.abschl .intensity { background: rgba(155,114,207,0.15); color: var(--purple); }
+.te-part p { font-size: 12.5px; color: #b0bec5; margin-top: 8px; line-height: 1.45; }
+
+/* SUPERKOMPENSATION VISUAL */
+.super-steps {
+  display: flex;
+  gap: 0;
+  margin: 16px 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.super-step {
+  flex: 1;
+  padding: 14px 12px;
+  border-right: 1px solid var(--border);
+  text-align: center;
+}
+.super-step:last-child { border-right: none; }
+.super-step .ss-num {
+  width: 22px; height: 22px;
+  background: var(--lb1);
+  color: #0d1117;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  margin-bottom: 6px;
+}
+.super-step p { font-size: 11.5px; color: #b0bec5; line-height: 1.45; }
+
+/* BELASTUNGSKOMPONENTEN TABLE */
+.bk-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 14px 0;
+}
+.bk-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  border-left: 3px solid var(--lb1);
+}
+.bk-item h4 { font-size: 13px; font-weight: 700; color: var(--lb1); margin-bottom: 4px; }
+.bk-item p { font-size: 13px; color: #b0bec5; }
+.bk-item .unit { font-size: 11px; color: var(--muted); margin-top: 4px; }
+
+/* PRINCIPLE CARD */
+.prinzip-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 9px;
+}
+.prinzip-card h4 { font-size: 14px; font-weight: 600; color: #fff; margin-bottom: 5px; }
+.prinzip-card p { font-size: 13.5px; color: #b0bec5; line-height: 1.55; }
+
+/* DIVIDER */
+hr.div { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
+
+/* HIGHLIGHT / KEYWORD */
+.kw { color: var(--gold); font-weight: 600; }
+.kw-blue { color: var(--lb1); font-weight: 600; }
+
+/* SUB HEADING */
+h3.sh { font-size: 17px; font-weight: 600; color: #fff; margin: 20px 0 10px; }
+
+/* NOT RELEVANT TAG */
+.not-relevant-banner {
+  background: rgba(224,85,85,0.08);
+  border: 1px solid rgba(224,85,85,0.2);
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 12.5px;
+  color: #e07070;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* TRAININGSPLAN TYPES */
+.plantyp-list { margin: 14px 0; }
+.plantyp-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.plantyp-item:last-child { border-bottom: none; }
+.plantyp-label {
+  min-width: 130px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--lb1);
+}
+.plantyp-desc { font-size: 13.5px; color: #b0bec5; }
+
+/* ZYKLUS ROW */
+.zyklus-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  margin: 14px 0;
+}
+.zyklus-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  text-align: center;
+}
+.zyklus-card .z-name { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.zyklus-card .z-dauer { font-family: 'Fraunces', serif; font-size: 20px; color: var(--lb1); }
+.zyklus-card .z-hint { font-size: 11.5px; color: var(--muted); margin-top: 4px; }
+
+/* LANGFRISTIGER AUFBAU */
+.aufbau-list { margin: 14px 0; }
+.aufbau-item {
+  display: flex;
+  gap: 0;
+  align-items: stretch;
+  margin-bottom: 8px;
+}
+.aufbau-dot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 14px;
+}
+.aufbau-dot .dot {
+  width: 12px; height: 12px;
+  background: var(--lb1);
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+.aufbau-dot .line {
+  width: 2px;
+  background: var(--border);
+  flex: 1;
+  margin-top: 4px;
+}
+.aufbau-item:last-child .line { display: none; }
+.aufbau-body h4 { font-size: 13.5px; font-weight: 600; color: #fff; }
+.aufbau-body p { font-size: 13px; color: #b0bec5; padding-bottom: 10px; }
+
+/* GÜTEKRITERIEN */
+.guete-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 14px 0;
+}
+.guete-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+.guete-item h4 { font-size: 13px; font-weight: 700; color: var(--gold); margin-bottom: 4px; }
+.guete-item p { font-size: 13px; color: #b0bec5; }
+
+/* RESPONSIVE */
+@media (max-width: 860px) {
+  .sidebar { display: none; }
+  .main { padding: 24px 20px; }
+  .g2, .g3, .compare-2, .period-row, .zyklus-row, .bk-grid, .guete-grid { grid-template-columns: 1fr; }
+  .te-visual { grid-template-columns: 1fr; }
+  .super-steps { flex-direction: column; }
+  .page-title { font-size: 30px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════ SIDEBAR ══ -->
+<nav class="sidebar">
+  <div class="sidebar-brand">
+    <div class="name">Sport Abitur</div>
+    <div class="sub">Gymnasium Bayern · Sporttheorie 12/13</div>
+  </div>
+
+  <div class="nav-group-label">Lernbereich 1</div>
+  <a class="nav-link active" href="#lb1-top">Trainingslehre</a>
+
+  <div class="nav-group-label">1.1 Ziele & Merkmale</div>
+  <a class="nav-link sub" href="#s-begriffe">Begriff des Trainings</a>
+  <a class="nav-link sub" href="#s-ziele">Trainingsziele, -inhalte, -mittel, -methoden</a>
+  <a class="nav-link sub" href="#s-belastung">Belastungskomponenten</a>
+  <a class="nav-link sub" href="#s-adaptation">Adaptation & Superkompensation</a>
+  <a class="nav-link sub" href="#s-reiz">Reizstufenregel & Funktionszustandsregel</a>
+  <a class="nav-link sub" href="#s-prinzipien">Trainingsprinzipien</a>
+  <a class="nav-link sub" href="#s-periodisierung">Periodisierung & Zyklen</a>
+  <a class="nav-link sub" href="#s-langfristig">Langfristiger Trainingsprozess</a>
+  <a class="nav-link sub" href="#s-planung">Trainingsplanung & Steuerung</a>
+  <a class="nav-link sub" href="#s-diagnostik">Leistungsdiagnostik</a>
+  <a class="nav-link sub" href="#s-te">Aufbau einer Trainingseinheit</a>
+  <a class="nav-link sub" href="#s-aufwaermen">Aufwärmen</a>
+  <a class="nav-link sub" href="#s-abwaermen">Abwärmen</a>
+  <a class="nav-link sub" href="#s-ermuedung">Ermüdung & Übertraining</a>
+  <a class="nav-link sub" href="#s-erholung">Erholung & Regeneration</a>
+  <div class="nav-group-label">Abfrage</div>
+  <a class="nav-link sub" href="#s-quiz">🎯 Wissenscheck</a>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════ MAIN ══════ -->
+<main class="main" id="lb1-top">
+
+  <div class="page-header">
+    <div class="lb-badge">Lernbereich 1</div>
+    <h1 class="page-title">Trainingslehre</h1>
+    <p class="page-desc">
+      Ziele und Merkmale sportlichen Trainings · Adaptation · Trainingsprinzipien ·
+      Periodisierung · Trainingsplanung · Auf- und Abwärmen · Ermüdung & Erholung
+    </p>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       1 · BEGRIFF DES TRAININGS
+  ══════════════════════════════════════════════════════ -->
+  <section class="section" id="s-begriffe">
+    <div class="section-head">
+      <div class="section-num">1</div>
+      <h2 class="section-title">Begriff des sportlichen Trainings</h2>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Definition</div>
+      <div class="def-box">
+        <div class="def-label">Sportliches Training</div>
+        <p>
+          Sportliches Training ist ein <span class="kw">komplexer Prozess</span>, der die
+          <span class="kw">planmäßige und zielgerichtete Entwicklung</span> der sportlichen Leistungsfähigkeit
+          bzw. die bestmögliche Leistungspräsentation im Wettkampf beinhaltet.
+        </p>
+      </div>
+      <ul class="clist" style="margin-top:12px;">
+        <li><strong>Komplex</strong> = darauf ausgerichtet, alle leistungsrelevanten Eigenschaften zu verbessern</li>
+        <li><strong>Planmäßig</strong> = Trainingsaufbau und -organisation werden vorab unter Beachtung trainingswissenschaftlicher Erkenntnisse festgelegt</li>
+        <li>Beinhaltet außerdem: Kontrolle der Durchführung, Überprüfung der Wirkung und Steuerung des Prozesses</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Unterscheidungen im Training</div>
+      <div class="g2" style="margin-top:8px;">
+        <div class="mini-card">
+          <h4>Nach Zielsetzung (Leistungszustand)</h4>
+          <ul>
+            <li>Leistungstraining → Leistung erhöhen</li>
+            <li>Erhaltungstraining → Leistung halten</li>
+            <li>Abtraining → Leistung gezielt vermindern</li>
+          </ul>
+        </div>
+        <div class="mini-card">
+          <h4>Nach Entwicklungsstufe / Altersstufe</h4>
+          <ul>
+            <li>Hochleistungstraining</li>
+            <li>Fitnesstraining</li>
+            <li>Gesundheitstraining</li>
+            <li>Nachwuchs- / Kindertraining</li>
+            <li>Seniorentraining</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="div">
+
+  <!-- ══════════════════════════════════════════════════════
+       2 · TRAININGSZIELE / -INHALTE / -MITTEL / -METHODEN
+  ══════════════════════════════════════════════════════ -->
+  <section class="section" id="s-ziele">
+    <div class="section-head">
+      <div class="section-num">2</div>
+      <h2 class="section-title">Trainingsziele, -inhalte, -mittel, -methoden</h2>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Kategorien der Trainingsziele</div>
+      <table class="styled-table">
+        <thead>
+          <tr><th>Kategorie</th><th>Beispiele</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="td-key">Motorisch</td><td>Ausdauer, Kraft, Schnelligkeit, Beweglichkeit, Technik</td></tr>
+          <tr><td class="td-key">Physiologisch</td><td>Erhöhte Belastbarkeit funktioneller Systeme: Knochen, Stoffwechsel, Immunsystem, Hormonsystem</td></tr>
+          <tr><td class="td-key">Kognitiv</td><td>Erwerb von Kenntnissen im technisch-taktischen Bereich; allgemeines methodisch-inhaltliches Basiswissen</td></tr>
+          <tr><td class="td-key">Affektiv-emotional</td><td>Willensstärke, Selbstüberwindung, Durchsetzungsvermögen</td></tr>
+          <tr><td class="td-key">Sozial</td><td>Fairness, Toleranz, Kooperation</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="sh">Hierarchie-Ebenen der Trainingsziele</h3>
+      <div class="steps">
+        <div class="step-item">
+          <div class="step-n">1</div>
+          <div class="step-body">
+            <h4>Übergeordnetes Ziel</h4>
+            <p>z.B. verbesserter Gesundheitszustand allgemein</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-n">2</div>
+          <div class="step-body">
+            <h4>Grobziel</h4>
+            <p>z.B. Verbesserung der Kraft</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-n">3</div>
+          <div class="step-body">
+            <h4>Feinziel (Zielfaktor)</h4>
+            <p>z.B. Kräftigung der Bauch- und Rückenmuskulatur</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Umsetzung: Inhalte · Mittel · Methoden</div>
+      <div class="g3" style="margin-top:8px;">
+        <div class="mini-card">
+          <h4>Trainingsinhalte</h4>
+          <ul>
+            <li>Allgemeinentwickelnde Inhalte</li>
+            <li>Spezialisierende Inhalte / Spezialübungen</li>
+            <li>Wettkampfinhalte</li>
+          </ul>
+        </div>
+        <div class="mini-card">
+          <h4>Trainingsmittel</h4>
+          <ul>
+            <li>Art der Geräte (z.B. Langhantel)</li>
+            <li>Art der Information (z.B. Videos)</li>
+            <li>Art der Organisation (z.B. Partnerübungen)</li>
+          </ul>
+        </div>
+        <div class="mini-card">
+          <h4>Trainingsmethoden</h4>
+          <ul>
+            <li>Methoden des Konditionstrainings</li>
+            <li>Methoden des koordinativ-technischen Trainings</li>
+            <li>Methoden des Taktiktrainings</li>
+          </ul>
+        </div>
+      </div>
+      <div class="merke">
+        <div class="merke-label">Beispiel Krafttraining Kniestrecker</div>
+        Trainingsziel: Maximalkraft der Kniestrecker · Trainingsmethode: Positiv-dynamisches Krafttraining ·
+        Trainingsinhalt: Kniebeugen · Trainingsmittel: Langhantel mit Gewichtscheiben
+      </div>
+    </div>
+  </section>
+
+  <hr class="div">
+
+  <!-- ══════════════════════════════════════════════════════
+       3 · BELASTUNGSKOMPONENTEN
+  ══════════════════════════════════════════════════════ -->
+  <section class="section" id="s-belastung">
+    <div class="section-head">
+      <div class="section-num">3</div>
+      <h2 class="section-title">Belastungskomponenten</h2>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Was sind Belastungskomponenten?</div>
+      <p style="font-size:14.5px; color:#b0bec5; margin-bottom:14px;">
+        Belastungskomponenten ermöglichen es, die methodische Vorgehensweise eines sportlichen Trainings zu
+        <span class="kw">präzisieren</span>. In ihrer Summe bestimmen sie in quantitativer und qualitativer Hinsicht
+        die <span class="kw">Gesamtbelastung und Spezifität</span> des Trainings.
+      </p>
+      <div class="bk-grid">
+        <div class="bk-item">
+          <h4>Reizintensität</h4>
+          <p>Stärke des einzelnen Reizes</p>
+          <div class="unit">Angabe in % der max. individuellen Leistungsfähigkeit</div>
+        </div>
+        <div class="bk-item">
+          <h4>Reizdauer</h4>
+          <p>Einwirkungsdauer eines einzelnen Reizes bzw. einer Reizserie</p>
+          <div class="unit">Angabe in Sekunden, Minuten, Stunden</div>
+        </div>
+        <div class="bk-item">
+          <h4>Reizumfang</h4>
+          <p>Gesamtvolumen / -dauer und/oder -zahl der Reize pro Trainingseinheit</p>
+          <div class="unit">Angabe in kg, min/h, km</div>
+        </div>
+        <div class="bk-item">
+          <h4>Reizdichte</h4>
+          <p>Zeitliches Verhältnis von Belastungs- und Erholungsphasen</p>
+          <div class="unit">Gemessen über die Pausenzeit zwischen Trainingsreizen</div>
+        </div>
+        <div class="bk-item">
+          <h4>Reizfrequenz</h4>
+          <p>Zahl der Trainingseinheiten pro Tag / Woche / Monat</p>
+          <div class="unit">Auch: „Trainingshäufigkeit"</div>
+        </div>
+        <div class="bk-item">
+          <h4>Reizkomplexität</h4>
+          <p>Komplexität des jeweiligen Reizes — meist durch Kombination unterschiedlicher Anforderungen</p>
+          <div class="unit">z.B. Koordination + Kraft gleichzeitig</div>
+        </div>
+      </div>
+      <div class="merke">
+        <div class="merke-label">Wichtig</div>
+        Die Belastungskomponenten beschränken sich im Wesentlichen auf die <strong>konditionellen motorischen Hauptbeanspruchungsformen</strong>
+        (Kraft, Ausdauer, Schnelligkeit, Beweglichkeit). Ihre Anwendung auf koordinative Fähigkeiten ist problematisch.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Orientierungswerte Reizdauer im Krafttraining</div>
+      <table class="styled-table">
+        <thead><tr><th>Trainingsziel</th><th>Wiederholungen</th><th>Zeit unter Spannung (TUT)</th></tr></thead>
+        <tbody>
+          <tr><td class="td-key">Maximalkraft</td><td>4–6</td><td>ca. 20 s</td></tr>
+          <tr><td class="td-key">Muskelhypertrophie</td><td>8–12</td><td>40–60 s</td></tr>
+          <tr><td class="td-key">Kraftausdauer</td><td>≥ 15</td><td>50–100 s</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <hr class="div">
+
+  <!-- ══════════════════════════════════════════════════════
+       4 · ADAPTATION & SUPERKOMPENSATION
+  ══════════════════════════════════════════════════════ -->
+  <section class="section" id="s-adaptation">
+    <div class="section-head">
+      <div class="section-num">4</div>
+      <h2 class="section-title">Adaptation & Superkompensation</h2>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Grundbegriff Adaptation</div>
+      <div class="def-box">
+        <div class="def-label">Adaptation</div>
+        <p>In der Biologie versteht man unter Adaptation die <span class="kw">funktionelle bzw. organische (morphologische) Anpassung</span>
+        des Organismus auf innere und/oder äußere Anforderungen. Die organische Form bestimmt die Funktion —
+        die Funktion entwickelt, formt und spezialisiert das Organ.</p>
+      </div>
+      <div class="def-box" style="margin-top:10px;">
+        <div class="def-label">Trainierbarkeit</div>
+        <p>Die Anpassungsfähigkeit auf einen Trainingsreiz. Sie ist eine <span class="kw">dynamische Größe</span>, abhängig von
+        endogenen (inneren) und exogenen (äußeren) Einflussfaktoren.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Mechanismen der Adaptation — 3 Modelle</div>
+      <h3 class="sh">① Signaltransduktionsmodell</h3>
+      <p style="font-size:14px; color:#b0bec5; margin-bottom:12px;">
+        Beschreibt Prozesse, über die Signalproteine Belastungssignale wahrnehmen, verstärken und weiterleiten.
+      </p>
+      <div class="steps">
+        <div class="step-item">
+          <div class="step-n">1</div>
+          <div class="step-body">
+            <h4>Wahrnehmung von Belastungsreizen</h4>
+            <p>Intrazelluläre Rezeptoren und Sensorproteine nehmen auf chemischem oder mechanischem Wege spezifische Belastungsreize wahr.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-n">2</div>
+          <div class="step-body">
+            <h4>Signaltransduktion</h4>
+            <p>Aktivierung oder Hemmung spezifischer Sensorproteine zur Analyse, Verstärkung und Weiterleitung von Informationen.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-n">3</div>
+          <div class="step-body">
+            <h4>Regulation molekularer Anpassungen</h4>
+            <p>Regulation über das An- und Ausschalten von Genen sowie die Produktion oder den Abbau von Proteinen.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="sh">② Zyklisierungsmodell</h3>
+      <p style="font-size:14px; color:#b0bec5; margin-bottom:12px;">
+        Beschreibt den zeitlichen Verlauf der Anpassung in 4 gesetzmäßig gestaffelten Stufen:
+      </p>
+      <div class="steps">
+        <div class="step-item"><div class="step-n">1</div><div class="step-body"><h4>Ökonomisierung</h4><p>Leistungssteigerung durch Ökonomisierungsmaßnahmen des Organismus</p></div></div>
+        <div class="step-item"><div class="step-n">2</div><div class="step-body"><h4>Kapazitätserweiterung</h4><p>Zunahme der Energiespeicher und Umbau der an der Leistung beteiligten Organsysteme</p></div></div>
+        <div class="step-item"><div class="step-n">3</div><div class="step-body"><h4>Funktionsoptimierung</h4><p>Funktionsoptimierung auf höherem morphologischem bzw. organischem Niveau</p></div></div>
+        <div class="step-item"><div class="step-n">4</div><div class="step-body"><h4>Autoregulation</h4><p>Autoregulation leistungsbeeinflussender Systeme</p></div></div>
+      </div>
+
+      <h3 class="sh">③ Superkompensationsmodell</h3>
+      <p style="font-size:14px; color:#b0bec5; margin-bottom:12px;">
+        Bezeichnet die <span class="kw">„überschießende Wiederherstellung"</span> der Glykogenspeicher nach sportlicher Belastung.
+        Betrifft sowohl energiereiche Phosphate (ATP, KP) als auch Glykogen.
+      </p>
+      <div class="super-steps">
+        <div class="super-step">
+          <div class="ss-num">1</div>
+          <p>Ausgangsniveau (Homöostase)</p>
+        </div>
+        <div class="super-step">
+          <div class="ss-num">2</div>
+          <p>Belastung → Abnahme der Glykogenspeicher, Reduktion der Leistungsfähigkeit</p>
+        </div>
+        <div class="super-step">
+          <div class="ss-num">3</div>
+          <p>Erholungsphase → Wiederauffüllung der Energiespeicher</p>
+        </div>
+        <div class="super-step">
+          <div class="ss-num">4</div>
+          <p>Superkompensation → Auffüllung <em>über</em> das Ausgangsniveau hinaus</p>
+        </div>
+        <div class="super-step">
+          <div class="ss-num">5</div>
+          <p>Reversibilität → Rückkehr auf Ursprungsniveau, wenn kein neuer Reiz</p>
+        </div>
+      </div>
+      <div class="merke">
+        <div class="merke-label">Schlüsselregel</div>
+        Je stärker der Trainingsreiz bzw. die Homöostasestörung (Glykogenentleerung), desto ausgeprägter ist die
+        Gegenreaktion und Superkompensation. Neuer Reiz sollte im <strong>Superkompensationsfenster</strong> (Punkt 4) gesetzt werden.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Faktoren, welche die Adaptation beeinflussen</div>
+      <div class="compare-2">
+        <div class="cmp-card">
+          <h4 style="color:var(--lb1);">Endogene Faktoren (innere)</h4>
+          <ul>
+            <li>Adaptabilität (zu ~50 % genetisch bedingt)</li>
+            <li>Alter (sensible Phasen im Kindes- und Jugendalter)</li>
+            <li>Geschlecht (z.B. geringerer Testosteronspiegel bei Frauen → weniger Muskelmasse)</li>
+            <li>Trainingszustand (Annäherung an genetisch festgelegtes Maximum)</li>
+          </ul>
+        </div>
+        <div class="cmp-card">
+          <h4 style="color:var(--green);">Exogene Faktoren (äußere)</h4>
+          <ul>
+            <li>Art der Belastung (Optimierung durch sinnvolle Steuerung der Belastungskomponenten)</li>
+            <li>Ernährung (Bereitstellung notwendiger Strukturbausteine für Muskelaufbau)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="div">
+
+  <!-- ══════════════════════════════════════════════════════
+       5 · REIZSTUFENREGEL & FUNKTIONSZUSTANDSREGEL
+  ══════════════════════════════════════════════════════ -->
+  <section class="section" id="s-reiz">
+    <div class="section-head">
+      <div class="section-num">5</div>
+      <h2 class="section-title">Reizstufenregel & Funktionszustandsregel</h2>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Reizstufenregel (nach Arndt-Schultz)</div>
+      <p style="font-size:14px; color:#b0bec5; margin-bottom:14px;">
+        Um Sensorproteine im Sinne der Adaptationsprozesse zu aktivieren, muss der einwirkende Reiz eine bestimmte
+        Schwelle an Intensität und Dauer <span class="kw">überschreiten</span>.
+      </p>
+      <table class="styled-table">
+        <thead><tr><th>Reizstärke</th><th>Auswirkung</th></tr></thead>
+        <tbody>
+          <tr><td class="td-key">Unterschwellige Reize</td><td>Keine Wirkung</td></tr>
+          <tr><td class="td-key">Schwach überschwellige Reize</td><td>Funktionserhaltend — kein Leistungszuwachs</td></tr>
+          <tr><td class="td-key" style="color:var(--green)">Stark überschwellige Reize</td><td>Optimale Anpassungserscheinungen, Verbesserung des Leistungsniveaus ✓</td></tr>
+          <tr><td class="td-key" style="color:var(--red)">Zu starke Reize</td><td>Funktionsschädigend — Verletzungsgefahr</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Funktionszustandsregel</div>
+      <div class="def-box">
+        <div class="def-label">Grundsatz</div>
+        <p>Je <span class="kw">höher der Funktions- bzw. Trainingszustand</span> eines Organs ist, desto
+        <span class="kw">größer bzw. umfassender</span> müssen die Reize zur Erhaltung bzw. Steigerung
+        des Funktionszustandes sein.</p>
+      </div>
+      <p style="font-size:14px; color:#b0bec5; margin: 12px 0 8px;">
+        Außerdem kommt es zu einer „psychologischen" Anpassung:
+        Je höher der Trainingszustand, desto mehr werden Belastungen, die vorher als „schwer" galten,
+        als „erträglich" oder sogar „leicht" eingestuft — die <span class="kw">Mobilisationsschwelle</span> steigt.
+      </p>
+
+      <h3 class="sh">Leistungsbereiche und Mobilisationsschwelle</h3>
+      <table class="styled-table">
+        <thead><tr><th>Leistungsbereich</th><th>%-Bereich</th><th>Erforderlicher Aufwand</th></tr></thead>
+        <tbody>
+          <tr><td class="td-key">Automatisierte Leistungen</td><td>bis 15 %</td><td>Geringe bis mittlere Willensanstrengung (z.B. Gehen)</td></tr>
+          <tr><td class="td-key">Physiologische Leistungsbereitschaft</td><td>15–35 %</td><td>Geringe Anstrengung (z.B. lockeres Joggen)</td></tr>
+          <tr><td class="td-key">Gewöhnliche Einsatzreserven</td><td>35–65 %</td><td>Ausgeprägte Willenskräfte (z.B. 1000 m Tempolauf)</td></tr>
+          <tr><td class="td-key" style="color:var(--red)">Autonom geschützte Reserven</td><td>85–100 %</td><td>Nur durch Affekte (Todesangst), Hypnose oder Pharmaka (Doping) erreichbar</td></tr>
+        </tbody>
+      </table>
+      <div class="merke">
+        <div class="merke-label">Merke</div>
+        Die Mobilisationsschwelle lässt sich durch Motivation und Training verschieben. Ein hoch trainierter Sportler
+        kann mit gleichem Muskelquerschnitt mehr Kraft entwickeln als eine untrainierte Person
+        → Ursache: verbesserte <strong>intramuskuläre Koordination</strong> (mehr motorische Einheiten gleichzeitig).
+      </div>
+    </div>
+  </section>
+
+  <hr class="div">
+
+  <!-- ══════════════════════════════════════════════════════
+       6 · TRAININGSPRINZIPIEN
+  ══════════════════════════════════════════════════════ -->
+  <section class="section" id="s-prinzipien">
+    <div class="section-head">
+      <div class="section-num">6</div>
+      <h2 class="section-title">Trainingsprinzipien</h2>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Überblick</div>
+      <p style="font-size:14.5px; color:#b0bec5; margin-bottom:16px;">
+        Trainingsprinzipien sind allgemeine Grundsätze, die auf praktischen Erfahrungen und sportswissenschaftlichen
+        Erkenntnissen basieren. Sie geben wertvolle Orientierungshinweise zur Optimierung des Trainingsprozesses.
+        Vier Hauptgruppen:
+      </p>
+      <div class="g2">
+        <div class="mini-card"><h4>I. Prinzipien der Belastung</h4><p>Regeln zur Gestaltung der Trainingsreize selbst</p></div>
+        <div class="mini-card"><h4>II. Prinzipien der Zyklisierung</h4><p>Regeln zur zeitlichen Strukturierung des Trainings</p></div>
+        <div class="mini-card"><h4>III. Prinzipien der Spezialisierung</h4><p>Regeln zur individuellen Anpassung des Trainings</p></div>
+        <div class="mini-card"><h4>IV. Prinzipien der Proportionalisierung</h4><p>Regeln zur ausgewogenen Verhältnismäßigkeit</p></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">I. Prinzipien der Belastung (8 Prinzipien)</div>
+
+      <div class="prinzip-card">
+        <h4>1. Prinzip des trainingswirksamen Reizes</h4>
+        <p>Um Leistungszuwachs zu erzielen, muss der Belastungsreiz eine Schwelle überschreiten. Diese Schwelle
+        hängt vom individuellen Trainingszustand ab. (→ Reizstufenregel)</p>
+      </div>
+
+      <div class="prinzip-card">
+        <h4>2. Prinzip der individualisierten Belastung</h4>
+        <p>Trainingsreize müssen der <strong>psychophysischen Belastbarkeit</strong> und den individuellen Bedürfnissen
+        der Person entsprechen. Gleicher Trainingsreiz kann für Person A Überforderung und für Person B Unterforderung bedeuten.</p>
+      </div>
+
+      <div class="prinzip-card">
+        <h4>3. Prinzip der kontinuierlichen Belastung</h4>
+        <p>Regelmäßige Trainingsfolge ist Grundvoraussetzung für Leistungsanstieg. Bei Unterbrechung (Verletzung, Urlaub, Krankheit)
+        → Leistungsabfall. <em>Merke: Schnell erworbene Zuwachsraten gehen schnell, langfristig erworbene langsam zurück.</em></p>
+      </div>
+
+      <div class="prinzip-card">
+        <h4>4. Prinzip der ansteigenden Belastung</h4>
+        <p>Trainingsreize müssen <strong>systematisch gesteigert</strong> werden, um wirksam zu bleiben. Bei gleichbleibender
+        Belastung → Erhalt, aber keine Verbesserung der Leistungsfähigkeit. Im Kinder- und Jugendbereich:
+        erst Umfang erhöhen, dann erst die Intensität steigern.</p>
+      </div>
+
+      <div class="prinzip-card">
+        <h4>5. Prinzip der richtigen Belastungsfolge</h4>
+        <p>Reihenfolge innerhalb einer Trainingseinheit:</p>
+        <ul class="clist" style="margin-top:8px;">
+          <li>① Koordination, Schnelligkeit, Schnellkraft, Maximalkraft → erfordern erholten Zustand</li>
+          <li>② Schnelligkeitsausdauer, Kraftausdauer → bauen auf unvollständigen Pausen auf</li>
+          <li>③ Ausdauer → steht am Ende der Einheit</li>
+        </ul>
+      </div>
+
+      <div class="prinzip-card">
+        <h4>6. Prinzip der variierenden Belastung</h4>
+        <p>Wenn kontinuierliche Belastungssteigerung keine weitere Verbesserung ermöglicht: Wechsel der Trainingsmethoden,
+        Variation der Trainingsinhalte, Wechsel der Art der Belastungssteigerung. Im Kindertraining auch aus pädagogischer Sicht wichtig.</p>
+      </div>
+
+      <div class="prinzip-card">
+        <h4>7. Prinzip der wechselnden Belastung</h4>
+        <p>Wechsel verschiedener motorischer Hauptbeanspruchungsformen ermöglicht mehr Umfang und Intensität:
+        Krafttraining (Eiweißstoffwechsel) · Ausdauertraining (KH- und Fettstoffwechsel) · Techniktraining (neuronales Training).
+        <em>Heterochronismus der Wiederherstellung</em>: Biologische Teilsysteme haben unterschiedliche Regenerationszeiten.</p>
+      </div>
+
+      <div class="prinzip-card">
+        <h4>8. Prinzip der optimalen Relation von Belastung und Entlastung</h4>
+        <p>Werden Belastungs- und Erholungsphasen richtig gesetzt, kommt es zur Leistungssteigerung (→ Superkompensation).
+        Zu schnell aufeinanderfolgende Belastungen → kumulierte Ermüdung → Leistungsabfall.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">II. Prinzipien der Zyklisierung</div>
+      <div class="prinzip-card">
+        <h4>Prinzip der periodisierten Belastung</h4>
+        <p>Der Sportler kann sich nicht ununterbrochen in Höchstform befinden. Deshalb wird der Trainingsprozess
+        periodisiert in Vorbereitungsperiode, Wettkampfperiode und Übergangsperiode — dies ermöglicht
+        mehrere Leistungsspitzen pro Jahr.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">III. Prinzipien der Spezialisierung</div>
+      <div class="prinzip-card">
+        <h4>Prinzip der Altersgemäßheit</h4>
+        <p>Jede Altersstufe hat spezifische Belastbarkeit und Trainierbarkeit. Trainingsbelastungen im Jugendbereich
+        richten sich nach dem <strong>biologischen, funktionalen Alter</strong> — nicht nach dem kalendarischen.
+        „Sensible Phasen" nutzen: Kindertraining variierend und allgemein, Jugendtraining Festigung statt Neuerwerb,
+        Erwachsenentraining: Umlernen schwierig.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">IV. Prinzipien der Proportionalisierung</div>
+      <div class="prinzip-card">
+        <h4>Prinzip der optimalen Relation von allgemeiner und spezieller Ausbildung</h4>
+        <p>Je besser der Trainingszustand und die sportartspezifische Leistungsfähigkeit,
+        <strong>desto höher der Anteil an speziellen Trainingsformen</strong>. Allgemeine Grundlagenarbeit
+        bleibt aber immer die Basis.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="div">
+
+  <!-- ══════════════════════════════════════════════════════
+       7 · PERIODISIERUNG & ZYKLEN
+  ══════════════════════════════════════════════════════ -->
+  <section class="section" id="s-periodisierung">
+    <div class="section-head">
+      <div class="section-num">7</div>
+      <h2 class="section-title">Periodisierung & Zyklen</h2>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Perioden des Trainingszyklus</div>
+      <p style="font-size:14px; color:#b0bec5; margin-bottom:16px;">
+        Für die Herausbildung der sportlichen Form und optimale Wettkampfvorbereitung wird der Trainingsprozess
+        in Perioden gegliedert. Ein Trainingszyklus kann ein-, zwei- oder dreimal pro Jahr stattfinden.
+      </p>
+      <div class="period-row">
+        <div class="period-card vp">
+          <h4>Vorbereitungsperiode (VP)</h4>
+          <p><strong>Ziel:</strong> Leistungsentwicklung<br><br>
+          <strong>VP I</strong> (allgemein): Verbesserung grundlegender Leistungsvoraussetzungen, sportartenunspezifisch<br><br>
+          <strong>VP II</strong> (speziell): Sportartspezifische Methoden, Umfang ↓, Intensität ↑</p>
+        </div>
+        <div class="period-card wp">
+          <h4>Wettkampfperiode (WP)</h4>
+          <p><strong>Ziel:</strong> Leistungsentfaltung, (Weiter-)Entwicklung und Stabilisierung der individuellen Höchstform<br><br>
+          Wettkämpfe steigern: Wettkampfstabilität · Wettkampfhärte · taktische Variabilität ·
+          konstruktive Verarbeitung von Sieg und Niederlage</p>
+        </div>
+        <div class="period-card up">
+          <h4>Übergangsperiode (ÜP)</h4>
+          <p><strong>Ziel:</strong> Aktive Erholung und Regeneration, kontrollierter Formverlust<br><br>
+          Intensität und Umfang sinken. „Aktive Erholung" durch Ausgleichssportarten, die ein zu starkes
+          Abfallen der Leistungsparameter verhindern.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Zeitliche Untergliederung: Zyklen</div>
+      <div class="zyklus-row">
+        <div class="zyklus-card">
+          <div class="z-name">Makrozyklus</div>
+          <div class="z-dauer">1–12 Monate</div>
+          <div class="z-hint">Beschreibung mehrwöchiger Trainingsphasen (z.B. VP, WP, ÜP)</div>
+        </div>
+        <div class="zyklus-card">
+          <div class="z-name">Mesozyklus</div>
+          <div class="z-dauer">2–6 Wochen</div>
+          <div class="z-hint">Steuerung von Belastung und Erholung; umfasst ca. 3–4 Mikrozyklen</div>
+        </div>
+        <div class="zyklus-card">
+          <div class="z-name">Mikrozyklus</div>
+          <div class="z-dauer">5–10 Tage</div>
+          <div class="z-hint">Abfolge & Variation der Methoden. Schnelligkeit/Technik/Koordination an Tagen optimaler Leistungsfähigkeit</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="div">
+
+  <!-- ══════════════════════════════════════════════════════
+       8 · LANGFRISTIGER TRAININGSPROZESS
+  ══════════════════════════════════════════════════════ -->
+  <section class="section" id="s-langfristig">
+    <div class="section-head">
+      <div class="section-num">8</div>
+      <h2 class="section-title">Langfristiger Trainingsprozess</h2>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Stufenmodell des Trainingsaufbaus</div>
+      <p style="font-size:14px; color:#b0bec5; margin-bottom:16px;">
+        Eine hohe sportliche Leistungsfähigkeit ist aufgrund der Vielzahl und Komplexität an leistungsbestimmenden
+        Faktoren nur über ein <span class="kw">systematisches, zielorientiertes und langfristiges Training</span> erreichbar.
+        Jeder Abschnitt ist vom vorherigen abhängig — progressiv in allen leistungsbeeinflussenden Faktoren.
+      </p>
+      <div class="aufbau-list">
+        <div class="aufbau-item">
+          <div class="aufbau-dot"><div class="dot"></div><div class="line"></div></div>
+          <div class="aufbau-body">
+            <h4>① Allgemeine Grundausbildung (Kindesalter)</h4>
+            <p>Koordinativ orientiertes Training. Spielerisch, macht Spaß. Ziel: umfassende allgemeine Ausbildung.</p>
+          </div>
+        </div>
+        <div class="aufbau-item">
+          <div class="aufbau-dot"><div class="dot"></div><div class="line"></div></div>
+          <div class="aufbau-body">
+            <h4>② Grundlagentraining</h4>
+            <p>Ziel: vielseitige, jetzt aber sportartorientierte Grundausbildung.</p>
+          </div>
+        </div>
+        <div class="aufbau-item">
+          <div class="aufbau-dot"><div class="dot"></div><div class="line"></div></div>
+          <div class="aufbau-body">
+            <h4>③ Aufbautraining</h4>
+            <p>Weiterführung und Ausbau der Grundlagen, stärkere Orientierung auf die gewählte Sportart,
+            zunehmende Spezifizierung der Trainingsmethoden und -inhalte.</p>
+          </div>
+        </div>
+        <div class="aufbau-item">
+          <div class="aufbau-dot"><div class="dot"></div><div class="line"></div></div>
+          <div class="aufbau-body">
+            <h4>④ Anschlusstraining</h4>
+            <p>Übergang vom Nachwuchs- zum Hochleistungstraining. Ziel: Minimierung der Differenzen zum Hochleistungstraining der Erwachsenen.</p>
+          </div>
+        </div>
+        <div class="aufbau-item">
+          <div class="aufbau-dot"><div class="dot"></div><div class="line"></div></div>
+          <div class="aufbau-body">
+            <h4>⑤ Hochleistungstraining</h4>
+            <p>Erreichen der individuellen Höchstleistung, optimale Steigerung von Umfang und Intensität,
+            weitere Spezifizierung der Trainingsmethoden, Ansteuerung von Wettkampferfolgen.</p>
+          </div>
+        </div>
+      </div>
+      <div class="merke">
+        <div class="merke-label">Besonders wichtig — Kindesalter</div>
+        Im Kindesalter ist vor allem die Entwicklung der <strong>koordinativ-technischen Fähigkeiten</strong> voranzutreiben.
+        „Was Hänschen nicht lernt, lernt Hans nimmermehr" — zumindest wesentlich schwerer und aufwendiger.
+        Das sportartspezifische Höchstleistungsalter ist je nach Sportart sehr verschieden
+        (z.B. Turnen Frauen früh, Ausdauersport spät).
+      </div>
+    </div>
+  </section>
+
+  <hr class="div">
+
+  <!-- ══════════════════════════════════════════════════════
+       9 · TRAININGSPLANUNG & STEUERUNG
+  ══════════════════════════════════════════════════════ -->
+  <section class="section" id="s-planung">
+    <div class="section-head">
+      <div class="section-num">9</div>
+      <h2 class="section-title">Trainingsplanung & Steuerung</h2>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Trainingsplanung</div>
+      <div class="def-box">
+        <div class="def-label">Definition</div>
+        <p>Ein <span class="kw">zielorientiertes, den individuellen Leistungsstand berücksichtigendes Verfahren</span>.
+        Beinhaltet eine vorausschauende, systematische Strukturierung des (langfristigen) Trainingsprozesses
+        unter Berücksichtigung des aktuellen Ist-Zustandes und der sportartspezifischen Anforderungen.</p>
+      </div>
+      <h3 class="sh">Vorgehen bei der Trainingsplanung</h3>
+      <div class="steps">
+        <div class="step-item"><div class="step-n">1</div><div class="step-body"><h4>Analyse</h4><p>Analyse der sportartspezifischen Anforderungen für eine optimale Leistungsentwicklung</p></div></div>
+        <div class="step-item"><div class="step-n">2</div><div class="step-body"><h4>Ist-Zustand</h4><p>Bestimmung des aktuellen Ist-Zustands (Tests, Beobachtungen) → Stärken und Defizite erkennen</p></div></div>
+        <div class="step-item"><div class="step-n">3</div><div class="step-body"><h4>Zielableitung</h4><p>Ableitung und Ziehen von Trainingszielen abhängig von verfügbarer Zeit und vorhandenen Mitteln</p></div></div>
+        <div class="step-item"><div class="step-n">4</div><div class="step-body"><h4>Festlegungen</h4><p>Festlegungen zu: Planungszeitraum · Trainingsziele & Schwerpunktsetzung · Teilziele · Trainingsinhalte/-mittel/-methoden · Zeitpunkte der Wettkampf- und Leistungskontrollen</p></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Trainingsplantypen (von kurz nach lang)</div>
+      <div class="plantyp-list">
+        <div class="plantyp-item"><div class="plantyp-label">Trainingseinheitenplan</div><div class="plantyp-desc">Ziele & Aufgabenstellung der einzelnen TE; Angabe der Methoden, Inhalte und Mittel für alle drei Teile</div></div>
+        <div class="plantyp-item"><div class="plantyp-label">Mikrozyklus (5–10 d)</div><div class="plantyp-desc">Abfolge & Variation der Methoden & Inhalte; Verteilung von Tagen mit erhöhter/erniedrigter Belastung</div></div>
+        <div class="plantyp-item"><div class="plantyp-label">Mesozyklus (2–6 Wo)</div><div class="plantyp-desc">Steuerung von Belastung und Erholung, inhaltliche Schwerpunktsetzung; umfasst ca. 3–4 Mikrozyklen</div></div>
+        <div class="plantyp-item"><div class="plantyp-label">Makrozyklus (1–12 Mo)</div><div class="plantyp-desc">Beschreibung mehrwöchiger Trainingsphasen; konkrete Ausarbeitung (VP, WP, ÜP)</div></div>
+        <div class="plantyp-item"><div class="plantyp-label">Jahresplan</div><div class="plantyp-desc">Trainings-, Wettkampf- & Leistungsdiagnostikplanung im Jahresverlauf</div></div>
+        <div class="plantyp-item"><div class="plantyp-label">Mehrjahresplan</div><div class="plantyp-desc">Gestaltung des langfristigen Trainingsaufbaus über mehrere Jahre</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Trainingssteuerung</div>
+      <div class="def-box">
+        <div class="def-label">Definition</div>
+        <p>Die gezielte Abstimmung aller Maßnahmen der Trainingsplanung, der Trainings- und Wettkampfdurchführung,
+        der Wettkampf- und Trainingskontrolle sowie der -auswertung hinsichtlich der
+        <span class="kw">Optimierung der sportlichen Leistungsfähigkeit</span>.</p>
+      </div>
+      <div class="merke">
+        <div class="merke-label">Wichtigste Voraussetzung</div>
+        Konsequente <strong>Dokumentation</strong> von Leistung, Training und Wettkampf — ohne Daten keine Steuerung.
+      </div>
+    </div>
+  </section>
+
+  <hr class="div">
+
+  <!-- ══════════════════════════════════════════════════════
+       10 · LEISTUNGSDIAGNOSTIK
+  ══════════════════════════════════════════════════════ -->
+  <section class="section" id="s-diagnostik">
+    <div class="section-head">
+      <div class="section-num">10</div>
+      <h2 class="section-title">Leistungsdiagnostik</h2>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Arten der Diagnostik</div>
+      <div class="g2" style="margin-top:8px;">
+        <div class="mini-card">
+          <h4>Leistungsdiagnostik</h4>
+          <p>Reproduzierbare und wissenschaftlich geprüfte Bestimmung von <em>direkten und indirekten Leistungsparametern</em>.
+          Grundlage für Planung und Steuerung.</p>
+        </div>
+        <div class="mini-card">
+          <h4>Trainingsdiagnostik</h4>
+          <p>Primär die Überprüfung der <em>Effektivität und Adäquatheit</em> der Trainingseinheiten.</p>
+        </div>
+        <div class="mini-card">
+          <h4>Wettkampfdiagnostik</h4>
+          <p>Identifikation von <em>leistungslimitierenden Aspekten</em> im komplexen Kontext der Leistungserbringung während des Wettkampfgeschehens.</p>
+        </div>
+        <div class="mini-card">
+          <h4>Sportmotorische Tests</h4>
+          <p>z.B. Shuttle-Run-Test (Ausdauer), Sprints (Schnelligkeit), 1-RM (Kraft), Janda-Test (Beweglichkeit)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Gütekriterien von Tests</div>
+      <h3 class="sh">Hauptgütekriterien</h3>
+      <div class="guete-grid">
+        <div class="guete-item">
+          <h4>Validität</h4>
+          <p>Misst der Test tatsächlich das, was er messen soll? (Inhaltliche Gültigkeit)</p>
+        </div>
+        <div class="guete-item">
+          <h4>Reliabilität</h4>
+          <p>Liefert der Test bei Wiederholung unter gleichen Bedingungen dasselbe Ergebnis? (Zuverlässigkeit)</p>
+        </div>
+        <div class="guete-item">
+          <h4>Objektivität</h4>
+          <p>Ist das Testergebnis unabhängig von der Person, die den Test durchführt?</p>
+        </div>
+      </div>
+      <h3 class="sh">Nebengütekriterien</h3>
+      <p style="font-size:14px; color:#b0bec5;">Ökonomie · Machbarkeit · Vergleichbarkeit mit Normwerten</p>
+    </div>
+  </section>
+
+  <hr class="div">
+
+  <!-- ══════════════════════════════════════════════════════
+       11 · AUFBAU EINER TRAININGSEINHEIT
+  ══════════════════════════════════════════════════════ -->
+  <section class="section" id="s-te">
+    <div class="section-head">
+      <div class="section-num">11</div>
+      <h2 class="section-title">Aufbau einer Trainingseinheit</h2>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Struktur</div>
+      <p style="font-size:14px; color:#b0bec5; margin-bottom:16px;">
+        Die Trainingseinheit (TE) stellt die <span class="kw">kleinste Einheit</span> innerhalb des Trainingsprozesses dar.
+        Sie dient der gezielten Schulung von allgemeinen und sportartspezifischen Leistungsfaktoren.
+      </p>
+      <div class="te-visual">
+        <div class="te-part vor">
+          <h4>Vorbereitender Teil</h4>
+          <div class="time">15–20</div>
+          <div class="time-label">Minuten</div>
+          <div class="intensity">Belastung: ansteigend</div>
+          <p>Physische, pädagogische & psychologische Vorbereitung (→ Aufwärmen)</p>
+        </div>
+        <div class="te-part haupt">
+          <h4>Hauptteil</h4>
+          <div class="time">45–60</div>
+          <div class="time-label">Minuten</div>
+          <div class="intensity">Belastung: hoch</div>
+          <p>Entwicklung spezifischer Leistungsfaktoren; konditionell, koordinativ, technisch-taktisch</p>
+        </div>
+        <div class="te-part abschl">
+          <h4>Abschließender Teil</h4>
+          <div class="time">15–20</div>
+          <div class="time-label">Minuten</div>
+          <div class="intensity">Belastung: abklingend</div>
+          <p>Organisatorischer, pädagogischer, psychologischer & physischer Abschluss (→ Abwärmen)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Teile im Detail</div>
+      <div class="g2" style="margin-top:8px;">
+        <div class="mini-card">
+          <h4>Vorbereitender Teil — Maßnahmen</h4>
+          <ul>
+            <li>Physische Vorbereitung auf die folgende Beanspruchung (Aufwärmen)</li>
+            <li>Pädagogische Rahmenbedingungen schaffen (Begrüßung, Zielangaben)</li>
+            <li>Psychologische Rahmenbedingungen schaffen (Konzentration, Trainingsbereitschaft)</li>
+          </ul>
+        </div>
+        <div class="mini-card">
+          <h4>Abschließender Teil — Maßnahmen</h4>
+          <ul>
+            <li>Einleitung der Wiederherstellungsprozesse (Abwärmen)</li>
+            <li>Geräte abbauen, Nachbesprechen, Erfolge hervorheben</li>
+            <li>Freudbetonten Abschluss finden</li>
+            <li>Positive Einstellung für die nächste TE schaffen</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mini-card" style="margin-top:12px;">
+        <h4>Nachbereitung und Auswertung (Trainer)</h4>
+        <p>Kontrolle von: Trainingsfortschritt · aktuellem Leistungsstand · Wirksamkeit der vorangegangenen TE ·
+        Adäquatheit der ausgewählten Trainingsinhalte, -methoden und -mittel · Belastungsgestaltung →
+        Systematische Überprüfung und Anpassung der Trainingsplanung.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="div">
+
+  <!-- ══════════════════════════════════════════════════════
+       12 · AUFWÄRMEN
+  ══════════════════════════════════════════════════════ -->
+  <section class="section" id="s-aufwaermen">
+    <div class="section-head">
+      <div class="section-num">12</div>
+      <h2 class="section-title">Aufwärmen</h2>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Definition</div>
+      <div class="def-box">
+        <div class="def-label">Aufwärmen</div>
+        <p>Unter Aufwärmen werden alle <span class="kw">Maßnahmen und Tätigkeiten</span> verstanden, die den Organismus
+        auf die nachfolgende sportliche Belastung vorbereiten. Sie steigern die Leistungsfähigkeit und
+        Belastungsverträglichkeit und mindern das Verletzungsrisiko.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Anatomisch-physiologische Grundlagen</div>
+      <p style="font-size:14px; color:#b0bec5; margin-bottom:14px;">
+        Für optimale Leistungsfähigkeit müssen die Organ- und Funktionssysteme vom <em>Ruhezustand</em>
+        in den <em>Leistungszustand</em> überführt werden:
+      </p>
+      <table class="styled-table">
+        <thead><tr><th>System</th><th>Ziel & Effekte</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="td-key">Herz-Kreislauf-System</td>
+            <td>Steigerung der Durchblutung → ausreichende Versorgung mit O₂ und Nährstoffen; Erhöhung der Herz- und Atemtätigkeit; Gefäßweitstellung in der Arbeitsmuskulatur</td>
+          </tr>
+          <tr>
+            <td class="td-key">Körpertemperatur</td>
+            <td>Erhöhung der Körper- und Muskeltemperatur (Körperkerntemperatur von ~37 °C kann um ca. 1,5 °C steigen) → alle Stoffwechselprozesse und die Erregungsleitung werden beschleunigt</td>
+          </tr>
+          <tr>
+            <td class="td-key">ZNS & Psyche</td>
+            <td>Aktivierung des ZNS durch Anheben des Blutzuckerspiegels und Ausschüttung von Stresshormonen → Steigerung von Wachheit, Aufmerksamkeit, Motivation; verbesserte Sinneswahrnehmung → koordinative Leistungsfähigkeit ↑</td>
+          </tr>
+          <tr>
+            <td class="td-key">Muskulatur</td>
+            <td>Abnahme der elastischen und viskösen Widerstände; effektivere Arbeitsweise; Erhöhung der Kontraktionsgeschwindigkeit; geringere Verletzungsanfälligkeit</td>
+          </tr>
+          <tr>
+            <td class="td-key">Gelenke</td>
+            <td>Produktion der Synovialflüssigkeit („Gelenkschmiere") wird erhöht → bessere Absorption von Druck- und Scherkräften</td>
+          </tr>
+          <tr>
+            <td class="td-key">Bänder & Sehnen</td>
+            <td>Werden elastischer und dehnfähiger → geringere Anfälligkeit für Sehnen- und Bandverletzungen</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Arten des Aufwärmens</div>
+      <div class="compare-2">
+        <div class="cmp-card">
+          <h4 style="color:var(--lb1);">Allgemeines Aufwärmen</h4>
+          <ul>
+            <li>Einsatz großer Muskelgruppen (z.B. Einlaufen mit Dehnungs- und Lockerungsübungen)</li>
+            <li>Beginn mit niedriger Intensität</li>
+            <li>Allmähliche Steigerung der Intensität</li>
+          </ul>
+          <div style="margin-top:10px; font-size:12.5px; color:var(--muted);">Vorrangige Ziele: Aktivierung des Herz-Kreislauf-Systems · Erhöhung der Körperkerntemperatur · psychische Einstimmung</div>
+        </div>
+        <div class="cmp-card">
+          <h4 style="color:var(--green);">Spezielles Aufwärmen</h4>
+          <ul>
+            <li>= sportartspezifisches Aufwärmen</li>
+            <li>Spezielle Dehnungs- und Kräftigungsübungen für spezifische Gelenke und Muskelgruppen</li>
+            <li>Technikübungen (z.B. Einturnen, Einspielen)</li>
+            <li>Auffrischung taktischer Elemente</li>
+          </ul>
+          <div style="margin-top:10px; font-size:12.5px; color:var(--muted);">Vorrangige Ziele: Einarbeitung in die Zielsportart · Temperaturerhöhung der sportartrelevanten Muskulatur · Verletzungsprophylaxe</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Wichtige Grundsätze</div>
+      <ul class="clist">
+        <li><strong>Dauer:</strong> ca. 15–30 min (Training) bzw. 20–40 min (Wettkampf); 5–10 min vor Wettkampfbeginn abgeschlossen</li>
+        <li>Umfang und Intensität richten sich nach dem individuellen Trainingszustand</li>
+        <li>Aufwärmen darf <strong>nicht zur Ermüdung führen</strong> → Leistung im Hauptteil würde sinken, Verletzungsgefahr steigt</li>
+        <li>Auf die Bedürfnisse der jeweiligen Sportart ausrichten (Ausdauer vs. Schnellkraft)</li>
+        <li>Langes statisches Stretching <strong>vor schnellkraftbetonten Sportarten</strong> (Sprint, Sprung) vermeiden</li>
+        <li>Bei kalten Temperaturen: entsprechende Kleidung als Unterstützung</li>
+        <li><strong>Morgens</strong>: Aufwärmen allmählicher steigern und länger durchführen</li>
+        <li><strong>Je älter</strong> der Sportler, desto behutsamer und länger das Aufwärmen</li>
+      </ul>
+    </div>
+  </section>
+
+  <hr class="div">
+
+  <!-- ══════════════════════════════════════════════════════
+       13 · ABWÄRMEN
+  ══════════════════════════════════════════════════════ -->
+  <section class="section" id="s-abwaermen">
+    <div class="section-head">
+      <div class="section-num">13</div>
+      <h2 class="section-title">Abwärmen (Cool-down)</h2>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Definition</div>
+      <div class="def-box">
+        <div class="def-label">Abwärmen / Cool-down</div>
+        <p>Unter Abwärmen versteht man alle Maßnahmen zur <span class="kw">beschleunigten Wiederherstellung</span>,
+        die im direkten Anschluss an die Belastung stattfinden. Ziel: schnelle Rückführung des Sportlers in
+        einen Ruhe- und Entspannungszustand.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Anatomisch-physiologische Grundlagen</div>
+      <p style="font-size:14px; color:#b0bec5; margin-bottom:14px;">
+        Im Mittelpunkt steht die <span class="kw">Normalisierung</span> folgender Systeme:
+      </p>
+      <table class="styled-table">
+        <thead><tr><th>System</th><th>Normalisierung</th></tr></thead>
+        <tbody>
+          <tr><td class="td-key">Herz-Kreislauftätigkeit</td><td>Absenkung der Herz- und Atemfrequenz</td></tr>
+          <tr><td class="td-key">Säure-Basen-Gleichgewicht</td><td>Abtransport des Laktats (Milchsäure)</td></tr>
+          <tr><td class="td-key">Neuromuskuläres System</td><td>Senkung des belastungsbedingten Muskeltonus</td></tr>
+          <tr><td class="td-key">Zentralnervensystem</td><td>Dämpfung bzw. Abbau der zentralnervösen Erregung</td></tr>
+          <tr><td class="td-key">Temperaturregulation</td><td>Absenkung der erhöhten Körpertemperatur</td></tr>
+          <tr><td class="td-key">Energiespeicher</td><td>Regenerierung der energiereichen Phosphate (ATP, KP)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Arten des Abwärmens</div>
+      <div class="compare-2">
+        <div class="cmp-card">
+          <h4 style="color:var(--lb1);">Aktives Abwärmen</h4>
+          <ul>
+            <li>Lockeres Auslaufen / Ausschwimmen / Ausrudern</li>
+            <li>Entspanntes Radfahren</li>
+            <li>Dehnungs- und Entspannungsübungen</li>
+            <li>Lockerungsgymnastik</li>
+          </ul>
+          <div style="margin-top:10px; font-size:12.5px; color:var(--muted);">
+            Vorrangiges Ziel: Eliminierung von muskulären und zentralnervösen Ermüdungsstoffen;
+            schnellere Umstellung des Nervensystems (Leistungshormone Adrenalin/Noradrenalin werden schneller abgebaut)
+          </div>
+        </div>
+        <div class="cmp-card">
+          <h4 style="color:var(--green);">Passives Abwärmen</h4>
+          <ul>
+            <li>Massage</li>
+            <li>Wärme- und Kälteanwendungen</li>
+            <li>Entspannende Musik</li>
+            <li>Meditation / Autogenes Training</li>
+            <li>Schlaf</li>
+          </ul>
+          <div style="margin-top:10px; font-size:12.5px; color:var(--muted);">
+            Ergänzung und Unterstützung der aktiven Maßnahmen
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Wichtige Grundsätze</div>
+      <ul class="clist">
+        <li>Aktive Cool-down-Maßnahmen v.a. bei <strong>starker Milchsäureanhäufung</strong> (z.B. nach 400-m-Lauf)</li>
+        <li>Maximale <strong>Laktateliminierungsgeschwindigkeit</strong> bei Herzfrequenz von ca. 120–140 Schläge/min (aerobe Schwelle)</li>
+        <li>Maßnahme sollte in <strong>enger zeitlicher Bindung</strong> nach der Belastung erfolgen</li>
+        <li>Leistungssportler: aktives Abwärmen max. <strong>45 Minuten</strong>; in der Schule: ca. 5–10 Minuten</li>
+        <li>Nach <strong>psychischen Belastungen</strong> (z.B. Motorsport): aktives Abwärmen wie lockeres Laufen</li>
+        <li>Nach <strong>erschöpfenden Belastungen</strong>: zunächst nur passive Maßnahmen</li>
+      </ul>
+    </div>
+  </section>
+
+  <hr class="div">
+
+  <!-- ══════════════════════════════════════════════════════
+       14 · ERMÜDUNG & ÜBERTRAINING
+  ══════════════════════════════════════════════════════ -->
+  <section class="section" id="s-ermuedung">
+    <div class="section-head">
+      <div class="section-num">14</div>
+      <h2 class="section-title">Ermüdung & Übertraining</h2>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Ermüdung — Grundlagen</div>
+      <div class="def-box">
+        <div class="def-label">Definition Ermüdung</div>
+        <p>Eine <span class="kw">vorübergehende (reversible) Herabsetzung der physischen und psychischen Leistungsfähigkeit</span>.
+        Im Gegensatz zur Erschöpfung ermöglicht die Ermüdung eine Fortsetzung der Belastung, allerdings verbunden mit Leistungseinbußen.</p>
+      </div>
+      <div class="merke">
+        <div class="merke-label">Wichtige Grundgedanken</div>
+        Ermüdung ist grundsätzlich ein <strong>körpereigener Schutzmechanismus</strong>.
+        Ermüdung und Erholung sind wichtige Voraussetzungen für <strong>Anpassungsprozesse und Leistungssteigerung</strong>.
+        Ermüdung tritt meist als <em>subjektive Empfindung</em> auf, noch bevor die tatsächlichen Kapazitätsgrenzen erreicht sind.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Periphere vs. Zentrale Ermüdung</div>
+      <div class="compare-2">
+        <div class="cmp-card periph">
+          <h4>Periphere Ermüdung (muskulär)</h4>
+          <p style="font-size:12px; color:var(--muted); margin-bottom:8px;">Sicht- und spürbare Einschränkungen:</p>
+          <ul>
+            <li>Abnahme der maximalen Kraftentwicklung</li>
+            <li>Reduzierte Kontraktionsgeschwindigkeit</li>
+            <li>Veränderungen in der Ansteuerung motorischer Einheiten</li>
+            <li>Erschwerte Kraftdosierung</li>
+            <li>Muskelschmerzen</li>
+          </ul>
+          <p style="font-size:12px; color:var(--muted); margin: 10px 0 6px;">Auslöser:</p>
+          <ul>
+            <li>Abnahme muskulärer Energiereserven (Glykogen, KP)</li>
+            <li>Anhäufung von Stoffwechselprodukten (ADP, Laktat, H⁺-Ionen)</li>
+            <li>Elektrolytverluste/-verschiebungen (Na, K, Mg)</li>
+            <li>Veränderungen in der Transmitterfreisetzung (Acetylcholin)</li>
+          </ul>
+        </div>
+        <div class="cmp-card zentral">
+          <h4>Zentrale Ermüdung (ZNS)</h4>
+          <p style="font-size:12px; color:var(--muted); margin-bottom:8px;">Sicht- und spürbare Einschränkungen:</p>
+          <ul>
+            <li>Abnahme der koordinativen Leistungsfähigkeit</li>
+            <li>Leistungseinbußen der Wahrnehmungsfähigkeit (Sehen, Hören)</li>
+            <li>Reduktion von Aufmerksamkeit und Konzentration</li>
+            <li>Verlängerte Reaktionszeiten</li>
+            <li>Nachlassende Motivation</li>
+          </ul>
+          <p style="font-size:12px; color:var(--muted); margin: 10px 0 6px;">Auslöser:</p>
+          <ul>
+            <li>Längerdauernde komplexe, überfordernde Reizsituationen (z.B. hohe Konzentrationsleistungen)</li>
+            <li>Längerdauernde monotone, unterfordernde Reizsituationen</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Übertraining</div>
+      <div class="def-box">
+        <div class="def-label">Definition Übertraining</div>
+        <p>Die <span class="kw">allgemeine chronische Überbeanspruchung</span> wird als Übertraining bezeichnet.
+        Sie führt zu einem Leistungsabfall, der trotz Erholungsmaßnahmen über
+        <span class="kw">Wochen bis sogar Monate</span> anhalten kann.</p>
+      </div>
+      <h3 class="sh">Auslösefaktoren</h3>
+      <ul class="clist">
+        <li>Zu schnelle Steigerung von Trainingsintensität und -volumen</li>
+        <li>Zu starker Fokus auf Technikschulung schwieriger Bewegungsabläufe</li>
+        <li>Zu viele, zu belastende Wettkämpfe</li>
+        <li>Berufliche und private Stressfaktoren, Schlafmangel, Fehlernährung</li>
+      </ul>
+
+      <h3 class="sh">Zwei Formen des Übertrainings</h3>
+      <div class="compare-2" style="margin-top:10px;">
+        <div class="cmp-card symp">
+          <h4>Sympathikotones Übertraining</h4>
+          <p style="font-size:12px; color:var(--muted); margin-bottom:8px;">Dominiert: Sympathikus = „Leistungsnerv"</p>
+          <ul>
+            <li>Überwiegen der Erregungsprozesse</li>
+            <li>Innere Unruhe</li>
+            <li>Verstärkte Antriebsfunktionen</li>
+          </ul>
+          <p style="margin-top:10px; font-size:13px; color:var(--green);">→ Innerhalb von <strong>1–2 Wochen</strong> vollständig behebbar</p>
+        </div>
+        <div class="cmp-card parasymp">
+          <h4>Parasympathikotones (vagotones) Übertraining</h4>
+          <p style="font-size:12px; color:var(--muted); margin-bottom:8px;">Dominiert: Vegus = „Erholungsnerv"</p>
+          <ul>
+            <li>Hemmungsfunktionen überwiegen</li>
+            <li>Abgeschlagenheit</li>
+            <li>Körperliche Schwäche</li>
+            <li>Antriebslosigkeit</li>
+          </ul>
+          <p style="margin-top:10px; font-size:13px; color:var(--red);">→ Benötigt <strong>Wochen bis Monate</strong> zur Erholung</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="div">
+
+  <!-- ══════════════════════════════════════════════════════
+       15 · ERHOLUNG & REGENERATION
+  ══════════════════════════════════════════════════════ -->
+  <section class="section" id="s-erholung">
+    <div class="section-head">
+      <div class="section-num">15</div>
+      <h2 class="section-title">Erholung & Regeneration</h2>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Grundbegriffe</div>
+      <div class="g2" style="margin-top:8px;">
+        <div class="mini-card">
+          <h4>Regeneration / Wiederherstellung</h4>
+          <p>Bezeichnet den <em>Prozess</em> — die aktiven biologischen Vorgänge der Wiederherstellung. (= Synonyme)</p>
+        </div>
+        <div class="mini-card">
+          <h4>Erholung</h4>
+          <p>Bezeichnet den <em>Zustand</em> der Wiedererlangung des ursprünglichen oder sogar gesteigerten Leistungs- und Funktionszustands nach körperlicher Belastung.</p>
+        </div>
+      </div>
+      <div class="merke" style="margin-top:12px;">
+        <div class="merke-label">Heterochronismus der Wiederherstellung</div>
+        Die verschiedenen biologischen Teilsysteme haben <strong>unterschiedliche Regenerationszeiten</strong>.
+        Dies ist entscheidend für die Trainings- und Wettkampfplanung (z.B. Split-Training, Triathlonkombination).
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Konsequenzen für den Trainingsalltag</div>
+      <ul class="clist">
+        <li><strong>Wechsel der Belastungsanforderungen</strong>: Ziel ist die Beanspruchung möglichst erholter Funktionssysteme</li>
+        <li>Krafttraining: Split-Training (nur eine Körperpartie pro TE → „leg day") — tägliches Training möglich</li>
+        <li>Triathlon: Kombination von Schwimm-, Rad- und Lauftraining möglich</li>
+        <li>Schnelligkeit und Technik: nur bei vollständiger/fast vollständiger Wiederherstellung trainieren</li>
+        <li>Grundlagenausdauer: auch bei unvollständiger Erholung trainierbar</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Maßnahmen zur beschleunigten Wiederherstellung</div>
+      <div class="g2" style="margin-top:8px;">
+        <div class="mini-card">
+          <h4>Aktive Maßnahmen (aktive Erholung)</h4>
+          <ul>
+            <li>Auslaufen, Dehnen, Lockerungsgymnastik</li>
+            <li>Gesteigerte Durchblutung der beanspruchten Muskulatur</li>
+            <li>Förderung der Entspannung</li>
+          </ul>
+        </div>
+        <div class="mini-card">
+          <h4>Passive Maßnahmen</h4>
+          <ul>
+            <li>Sauna, Warmwasserbäder</li>
+            <li>Massage</li>
+            <li>Kälteanwendungen</li>
+            <li>Entspannungsmusik, Ruhe</li>
+          </ul>
+        </div>
+        <div class="mini-card">
+          <h4>Ernährung</h4>
+          <ul>
+            <li>Rasche Wiederauffüllung der Energiespeicher (Glykogen)</li>
+            <li>Ersatz der Wasser- und Elektrolytverluste</li>
+            <li>Ausreichende Eiweißzufuhr (Aufbau von Strukturbausteinen)</li>
+          </ul>
+        </div>
+        <div class="mini-card">
+          <h4>Schlaf</h4>
+          <ul>
+            <li>Ausschüttung eines anabolen Wachstumshormons im Schlaf</li>
+            <li>Unzureichender Schlaf → Kraftlosigkeit, Tonusverlust, Konzentrationsschwäche, Reizbarkeit</li>
+            <li>Schlafentzug beeinträchtigt alle motorischen Leistungsfaktoren: Schnelligkeit, Kraft, Beweglichkeit, Koordination</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:48px; padding: 20px 24px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; text-align:center;">
+      <p style="font-size:13px; color:var(--muted);">
+        Lernbereich 1.1 abgeschlossen · Stand: Batch 1 (PPT-Folien Trainingslehre) ·
+        Weitere Lernbereiche folgen nach den nächsten Batches
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ══ QUIZ ══ -->
+  <section class="section" id="s-quiz" style="scroll-margin-top:28px;">
+    <div class="section-head">
+      <div class="section-num" style="background:var(--gold);color:#0d1117;">🎯</div>
+      <h2 class="section-title">Wissenscheck</h2>
+    </div>
+    <div style="background:linear-gradient(135deg,#161c2d 0%,#1c2340 100%);border:1px solid var(--border);border-radius:16px;padding:32px;margin-top:8px;">
+      <div style="text-align:center;margin-bottom:28px;">
+        <h2 style="font-family:'Fraunces',serif;font-size:28px;color:#fff;margin-bottom:8px;">Lernbereich 1.1 — Abfrage</h2>
+        <p style="color:var(--muted);font-size:14px;">15 Fragen · Multiple Choice · Direkte Auflösung</p>
+      </div>
+      <div id="quiz-container">
+        <div style="background:rgba(255,255,255,0.08);border-radius:99px;height:6px;margin-bottom:24px;overflow:hidden;"><div style="height:100%;background:var(--lb1);border-radius:99px;transition:width .4s ease;" id="quiz-progress"></div></div>
+        <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:20px;"><span id="quiz-counter">Frage 1 von 15</span><span id="quiz-score">Punkte: 0</span></div>
+        <div style="font-size:17px;font-weight:600;color:#fff;line-height:1.45;margin-bottom:20px;" id="quiz-question"></div>
+        <div style="display:grid;gap:10px;" id="quiz-options"></div>
+        <div id="quiz-feedback" style="margin-top:14px;padding:12px 16px;border-radius:10px;font-size:14px;display:none;"></div>
+        <button id="quiz-next" onclick="nextQuestion()" disabled style="margin-top:20px;background:var(--lb1);color:#0d1117;border:none;border-radius:10px;padding:12px 28px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;">Nächste Frage →</button>
+      </div>
+      <div id="quiz-result" style="text-align:center;padding:20px;display:none;"></div>
+    </div>
+  </section>
+
+<style>
+.qopt{background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:10px;padding:13px 18px;font-size:14px;color:var(--text);cursor:pointer;transition:all .15s;text-align:left;width:100%;font-family:'Outfit',sans-serif;}
+.qopt:hover{background:var(--lb1-dim);border-color:var(--lb1-border);}
+.qopt.correct{background:rgba(82,183,136,0.15);border-color:rgba(82,183,136,0.5);color:#52b788;}
+.qopt.wrong{background:rgba(224,85,85,0.12);border-color:rgba(224,85,85,0.4);color:#e07070;}
+.qopt.show-correct{background:rgba(82,183,136,0.08);border-color:rgba(82,183,136,0.3);color:var(--green);}
+.qopt:disabled{cursor:default;}
+</style>
+
+<script>
+const questions11=[
+  {q:"Was beschreibt die Superkompensation?",a:2,opts:["Den Abbau von Glykogenspeichern nach Belastung","Den Zeitraum der vollständigen Erschöpfung nach Training","Die überschießende Wiederherstellung der Energiespeicher über das Ausgangsniveau hinaus","Den optimalen Belastungszeitraum vor dem Wettkampf"],exp:"Superkompensation = 'überschießende Wiederherstellung' der Energiespeicher (Glykogen, ATP, KP) über das Ausgangsniveau hinaus. Neuer Reiz sollte im Superkompensationsfenster gesetzt werden."},
+  {q:"Welche Reizstärke führt zu optimalen Anpassungserscheinungen?",a:1,opts:["Unterschwellige Reize","Stark überschwellige Reize","Schwach überschwellige Reize","Zu starke Reize"],exp:"Stark überschwellige Reize führen zu optimalen Anpassungserscheinungen und Verbesserung des Leistungsniveaus. Schwach überschwellig = nur funktionserhaltend. Zu stark = schädigend."},
+  {q:"Was charakterisiert das parasympathikotone Übertraining?",a:3,opts:["Innere Unruhe und erhöhter Antrieb","Erhöhte Herzfrequenz und Blutdruck im Ruhezustand","Schnelle Heilung innerhalb von 1-2 Wochen","Abgeschlagenheit, Antriebslosigkeit, Schwäche — Erholung dauert Wochen bis Monate"],exp:"Parasympathikotones (vagotones) Übertraining: Dominanz des 'Erholungsnervs' (Vegus) — Hemmungsfunktionen, Abgeschlagenheit, körperliche Schwäche, Antriebslosigkeit. Benötigt Wochen bis Monate. Gegenteil: sympathikotones Übertraining (1-2 Wochen)."},
+  {q:"In welcher Reihenfolge sollten Trainingsinhalte innerhalb einer Trainingseinheit angeordnet werden?",a:0,opts:["Koordination/Schnelligkeit → Kraftausdauer → Ausdauer","Ausdauer → Koordination → Schnellkraft","Ausdauer → Kraft → Schnelligkeit","Kraftausdauer → Schnelligkeit → Koordination"],exp:"Prinzip der richtigen Belastungsfolge: (1) Koordination, Schnelligkeit, Schnell-/Maximalkraft (erfordern erholten Zustand), (2) Kraft-/Schnelligkeitsausdauer, (3) Ausdauer am Ende."},
+  {q:"Wie lange dauert ein Mesozyklus?",a:2,opts:["5–10 Tage","1–12 Monate","2–6 Wochen","6–12 Monate"],exp:"Mesozyklus: 2–6 Wochen, umfasst ca. 3–4 Mikrozyklen. Mikrozyklus: 5–10 Tage. Makrozyklus: 1–12 Monate."},
+  {q:"Welche Periode des Trainingszyklus dient der aktiven Erholung und dem kontrollierten Formverlust?",a:3,opts:["Vorbereitungsperiode (VP I)","Wettkampfperiode","Vorbereitungsperiode (VP II)","Übergangsperiode"],exp:"Die Übergangsperiode dient der aktiven Erholung und Regeneration sowie dem kontrollierten Formverlust. Ausgleichssportarten verhindern zu starkes Abfallen der Leistungsparameter."},
+  {q:"Bei welcher Herzfrequenz wird die maximale Laktateliminierung beim Abwärmen erreicht?",a:1,opts:["80–100 Schläge/min","120–140 Schläge/min","150–170 Schläge/min","60–80 Schläge/min"],exp:"Die maximale Laktateliminierungsgeschwindigkeit wird bei einer Herzfrequenz von ca. 120–140 Schlägen/Minute (≈ aerobe Schwelle) erreicht — entspricht lockerem Auslaufen."},
+  {q:"Was ist der Unterschied zwischen Ermüdung und Erschöpfung?",a:0,opts:["Ermüdung erlaubt Fortsetzung der Belastung mit Leistungseinbußen; Erschöpfung macht weitere Belastung unmöglich","Erschöpfung ist reversibel, Ermüdung ist irreversibel","Ermüdung betrifft nur die Muskulatur, Erschöpfung das ZNS","Es gibt keinen Unterschied — es sind Synonyme"],exp:"Ermüdung = vorübergehende, reversible Herabsetzung der Leistungsfähigkeit; erlaubt Fortsetzung der Belastung mit Einbußen. Erschöpfung = absolute Leistungsgrenze, Fortsetzung unmöglich."},
+  {q:"Was beschreibt die Funktionszustandsregel?",a:2,opts:["Je niedriger der Trainingszustand, desto stärker muss der Reiz sein","Gleiche Reize führen immer zu gleichen Anpassungen","Je höher der Trainingszustand, desto größer müssen die Reize sein, um weitere Anpassungen zu erzielen","Die Mobilisationsschwelle sinkt mit steigendem Trainingszustand"],exp:"Funktionszustandsregel: Je höher der Funktions-/Trainingszustand, desto größer müssen Reize zur Erhaltung/Steigerung sein. Zudem steigt die Mobilisationsschwelle — früher 'schwere' Belastungen werden als 'erträglich' empfunden."},
+  {q:"Was ist das Ziel der Vorbereitungsperiode VP I?",a:1,opts:["Stabilisierung der sportlichen Höchstform","Verbesserung grundlegender, sportartenunspezifischer Leistungsvoraussetzungen","Wettkampfspezifische Vorbereitung mit hoher Intensität","Aktive Erholung und Regeneration"],exp:"VP I (allgemeine Vorbereitungsperiode): Verbesserung grundlegender und allgemeiner Leistungsvoraussetzungen — sportartenunspezifisch, hoher Umfang. VP II dann sportartspezifisch, Intensität steigt."},
+  {q:"Was sind die 3 Hauptgütekriterien eines sportmotorischen Tests?",a:3,opts:["Ökonomie, Machbarkeit, Vergleichbarkeit","Umfang, Intensität, Dichte","Komplexität, Häufigkeit, Dauer","Validität, Reliabilität, Objektivität"],exp:"Hauptgütekriterien: Validität (misst er was er soll?), Reliabilität (reproduzierbare Ergebnisse?), Objektivität (unabhängig vom Testleiter?). Nebengütekriterien: Ökonomie, Machbarkeit, Vergleichbarkeit."},
+  {q:"Welches Prinzip besagt, dass bei kaltem Wetter oder morgens länger aufgewärmt werden sollte?",a:2,opts:["Prinzip der individualisierten Belastung","Prinzip der kontinuierlichen Belastung","Das Prinzip ergibt sich aus den Grundsätzen zum Aufwärmen","Prinzip der variierenden Belastung"],exp:"Dies ist ein Grundsatz des Aufwärmens: Morgens sollte das Aufwärmen allmählicher und länger durchgeführt werden. Je älter der Sportler, desto behutsamer und länger."},
+  {q:"Welche Reize lösen laut Signaltransduktionsmodell die Adaptation aus?",a:0,opts:["Chemische oder mechanische Belastungsreize, die von Sensorproteinen wahrgenommen werden","Nur hormonelle Signale aus dem Blut","Ausschließlich neuronale Impulse des ZNS","Nur thermische Reize durch Körpertemperatur"],exp:"Signaltransduktionsmodell (Schritt 1): Intrazelluläre Rezeptoren und Sensorproteine nehmen auf chemischem oder mechanischem Wege spezifische Belastungsreize wahr. Dann: Signalverstärkung → Regulation von Genexpression und Proteinsynthese."},
+  {q:"Was unterscheidet aktives von passivem Abwärmen?",a:1,opts:["Aktives Abwärmen ist schneller; passives ist effektiver","Aktives Abwärmen (Auslaufen, Dehnen) beschleunigt Laktateliminierung; passives (Massage, Sauna) ergänzt und unterstützt","Passives Abwärmen wird immer zuerst durchgeführt","Es gibt keinen wesentlichen Unterschied"],exp:"Aktives Abwärmen (lockeres Auslaufen, Gymnasitk): fördert aktiv die Laktateliminierung und Umstellung des Nervensystems. Passives Abwärmen (Massage, Sauna, Entspannung): ergänzt und unterstützt. Nach erschöpfenden Belastungen erst nur passiv."},
+  {q:"Was besagt das Prinzip der ansteigenden Belastung?",a:2,opts:["Trainingsinhalte müssen innerhalb einer Einheit von leicht zu schwer angeordnet werden","Der Sportler soll täglich die Intensität erhöhen","Trainingsreize müssen systematisch gesteigert werden, da bei gleichbleibender Belastung keine weitere Leistungsverbesserung möglich ist","Nur die Häufigkeit, nicht die Intensität darf gesteigert werden"],exp:"Prinzip der ansteigenden Belastung: Bei gleichbleibender Trainingsbelastung → Erhalt, aber keine Verbesserung der Leistungsfähigkeit. Im Kinder-/Jugendbereich: erst Umfang erhöhen, dann erst Intensität."}
+];
+
+let cur11=0,sc11=0,ans11=false;
+function loadQ11(){
+  const q=questions11[cur11];
+  document.getElementById('quiz-question').textContent=q.q;
+  document.getElementById('quiz-counter').textContent=`Frage ${cur11+1} von ${questions11.length}`;
+  document.getElementById('quiz-score').textContent=`Punkte: ${sc11}`;
+  document.getElementById('quiz-progress').style.width=`${(cur11/questions11.length)*100}%`;
+  const opts=document.getElementById('quiz-options');
+  opts.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const btn=document.createElement('button');
+    btn.className='qopt';btn.textContent=o;btn.onclick=()=>sel11(i);opts.appendChild(btn);
+  });
+  document.getElementById('quiz-feedback').style.display='none';
+  document.getElementById('quiz-next').disabled=true;
+  ans11=false;
+}
+function sel11(idx){
+  if(ans11)return;ans11=true;
+  const q=questions11[cur11];
+  const btns=document.querySelectorAll('.qopt');
+  btns.forEach(b=>b.disabled=true);
+  const fb=document.getElementById('quiz-feedback');
+  if(idx===q.a){btns[idx].classList.add('correct');sc11++;document.getElementById('quiz-score').textContent=`Punkte: ${sc11}`;fb.style.cssText='display:block;background:rgba(82,183,136,0.1);border:1px solid rgba(82,183,136,0.3);color:var(--green);';fb.innerHTML='✓ Richtig! '+q.exp;}
+  else{btns[idx].classList.add('wrong');btns[q.a].classList.add('show-correct');fb.style.cssText='display:block;background:rgba(224,85,85,0.08);border:1px solid rgba(224,85,85,0.25);color:#e07070;';fb.innerHTML='✗ Leider falsch. '+q.exp;}
+  const nb=document.getElementById('quiz-next');nb.disabled=false;nb.textContent=cur11===questions11.length-1?'Ergebnis anzeigen':'Nächste Frage →';
+}
+function nextQuestion(){
+  cur11++;
+  if(cur11>=questions11.length){
+    document.getElementById('quiz-container').style.display='none';
+    const pct=Math.round((sc11/questions11.length)*100);
+    let msg=pct>=90?'🏆 Ausgezeichnet! Abitur-ready!':pct>=70?'👍 Gut gemacht!':pct>=50?'📚 Nochmal drübergehen!':'💪 Nochmal — du schaffst das!';
+    const r=document.getElementById('quiz-result');r.style.display='block';
+    r.innerHTML=`<div style="font-family:'Fraunces',serif;font-size:64px;font-weight:700;color:var(--lb1);">${pct}%</div><div style="font-size:14px;color:var(--muted);margin-bottom:20px;">${sc11} von ${questions11.length} richtig</div><div style="font-size:16px;color:#fff;margin-bottom:24px;">${msg}</div><button onclick="restart11()" style="background:transparent;border:1px solid var(--lb1);color:var(--lb1);border-radius:10px;padding:11px 24px;font-size:14px;font-weight:600;cursor:pointer;font-family:'Outfit',sans-serif;">🔄 Nochmal</button>`;
+    return;
+  }
+  loadQ11();
+}
+function restart11(){cur11=0;sc11=0;ans11=false;document.getElementById('quiz-result').style.display='none';document.getElementById('quiz-container').style.display='block';loadQ11();}
+loadQ11();
+</script>
+
+</main>
+
+<script>
+  // Highlight active nav link on scroll
+  const sections = document.querySelectorAll('.section');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + id) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+  }, { threshold: 0.3, rootMargin: '-80px 0px -60% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+
+  // Smooth click
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      const href = link.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
