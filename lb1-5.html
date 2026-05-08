@@ -6,18 +6,1038 @@
 <title>Sport Abitur — 1.5 Ausdauertraining</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0d1117;--surface:#161c2d;--card:#1c2340;--border:#243050;--text:#e2e8f0;--muted:#7a8599;--gold:#f5c842;--lb1:#4d9de0;--lb1-dim:rgba(77,157,224,.12);--lb1-border:rgba(77,157,224,.28);--green:#52b788;--orange:#e07b4d;--purple:#9b72cf;--red:#e05555}*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--text);font-family:'Outfit',system-ui,sans-serif;font-size:15px;line-height:1.75;display:flex;min-height:100vh}.sidebar{width:272px;min-width:272px;background:var(--surface);border-right:1px solid var(--border);position:sticky;top:0;height:100vh;overflow-y:auto;display:flex;flex-direction:column}.sidebar::-webkit-scrollbar{width:4px}.sidebar::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}.sidebar-brand{padding:22px 22px 18px;border-bottom:1px solid var(--border)}.sidebar-brand .name{font-family:'Fraunces',serif;font-size:18px;color:var(--gold);line-height:1.2}.sidebar-brand .sub{font-size:11.5px;color:var(--muted);margin-top:3px}.nav-group-label{font-size:9.5px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:var(--muted);padding:16px 22px 5px}.nav-link{display:block;padding:6px 22px;font-size:13px;color:var(--muted);text-decoration:none;border-left:2px solid transparent;transition:all .13s;cursor:pointer}.nav-link:hover{color:var(--text);background:var(--lb1-dim)}.nav-link.active{color:var(--lb1);border-left-color:var(--lb1);background:var(--lb1-dim)}.nav-link.sub{padding-left:34px;font-size:12px}.main{flex:1;padding:44px 52px 100px;max-width:920px;min-width:0}.back-link{display:inline-flex;align-items:center;gap:8px;color:var(--lb1);text-decoration:none;font-size:13px;margin-bottom:24px}.back-link:hover{color:#fff}.page-header{margin-bottom:48px}.lb-badge{display:inline-block;background:var(--lb1-dim);color:var(--lb1);border:1px solid var(--lb1-border);border-radius:20px;font-size:11.5px;font-weight:600;letter-spacing:.4px;padding:3px 14px;margin-bottom:12px}.page-title{font-family:'Fraunces',serif;font-size:42px;font-weight:700;line-height:1.12;color:#fff;margin-bottom:12px}.page-desc{color:var(--muted);font-size:15px;max-width:650px;line-height:1.6}.section{margin-bottom:40px;scroll-margin-top:28px}.section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px}.section-num{width:32px;height:32px;background:var(--lb1);color:#0d1117;font-weight:700;font-size:13px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}.section-title{font-family:'Fraunces',serif;font-size:26px;font-weight:600;color:#fff}.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px 26px;margin-bottom:14px}.card-label{font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--lb1);margin-bottom:14px}.def-box{background:rgba(245,200,66,.07);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:14px 20px;margin:14px 0}.def-box .def-label{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:6px}.def-box p{font-size:14.5px;color:var(--text)}.merke{background:rgba(82,183,136,.08);border:1px solid rgba(82,183,136,.25);border-radius:10px;padding:12px 18px;margin:14px 0;font-size:14px}.merke .merke-label{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--green);margin-bottom:5px}ul.clist{list-style:none;padding:0}ul.clist li{padding:5px 0 5px 20px;position:relative;font-size:14.5px;border-bottom:1px solid rgba(255,255,255,.04)}ul.clist li:last-child{border-bottom:none}ul.clist li::before{content:"→";position:absolute;left:0;color:var(--lb1);font-size:12px;top:6px}.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:12px 0}.mini-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px}.mini-card h4{font-size:13px;font-weight:600;color:var(--lb1);margin-bottom:7px}.mini-card p,.mini-card ul li{font-size:13px;color:#b0bec5;line-height:1.55}.mini-card ul{list-style:none;padding:0}.mini-card ul li{padding:2px 0 2px 14px;position:relative}.mini-card ul li::before{content:"·";position:absolute;left:0;color:var(--lb1);font-size:18px;line-height:1;top:2px}.styled-table{width:100%;border-collapse:collapse;font-size:13.5px;margin:14px 0}.styled-table th{background:var(--surface);padding:9px 16px;text-align:left;font-size:11px;letter-spacing:.7px;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border)}.styled-table td{padding:9px 16px;border-bottom:1px solid rgba(255,255,255,.04);color:var(--text);vertical-align:top}.styled-table tr:last-child td{border-bottom:none}.styled-table .td-key{color:var(--lb1);font-weight:600;white-space:nowrap}.steps{margin:12px 0}.step-item{display:flex;gap:14px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.05);align-items:flex-start}.step-item:last-child{border-bottom:none}.step-n{width:26px;height:26px;min-width:26px;background:var(--lb1);color:#0d1117;font-weight:700;font-size:12px;border-radius:50%;display:flex;align-items:center;justify-content:center}.step-body h4{font-size:14px;font-weight:600;color:#fff;margin-bottom:2px}.step-body p{font-size:13.5px;color:#b0bec5}.compare-2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}.cmp-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px}.cmp-card h4{font-size:13px;font-weight:700;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--border);color:var(--lb1)}.cmp-card ul{list-style:none;padding:0}.cmp-card ul li{font-size:13px;padding:3px 0 3px 14px;position:relative;color:#b0bec5}.cmp-card ul li::before{content:"•";position:absolute;left:0;color:var(--lb1)}hr.div{border:none;border-top:1px solid var(--border);margin:32px 0}.kw{color:var(--gold);font-weight:600}.kw-blue{color:var(--lb1);font-weight:600}h3.sh{font-size:17px;font-weight:600;color:#fff;margin:20px 0 10px}.formula-box{background:rgba(77,157,224,.08);border:1px solid var(--lb1-border);border-radius:10px;padding:14px 18px;margin:14px 0}.formula-box .formula{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#fff;font-size:15px;margin-bottom:6px}.formula-box p{color:#b0bec5;font-size:13.5px}.method-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}.method-card{background:var(--surface);border-radius:12px;padding:16px;border-top:3px solid var(--lb1)}.method-card h4{font-size:13px;font-weight:700;color:var(--lb1);margin-bottom:6px}.method-card p{font-size:12.5px;color:#b0bec5;line-height:1.5}.figure{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:14px;margin:16px 0}.figure img{width:100%;display:block;border-radius:10px}.figure .caption{font-size:12px;color:var(--muted);margin-top:9px;line-height:1.45}.quiz-card{background:rgba(245,200,66,.06);border:1px solid rgba(245,200,66,.2);border-radius:12px;padding:18px 20px;margin-bottom:12px}.quiz-card h4{font-size:14px;color:var(--gold);margin-bottom:8px}.quiz-card p{font-size:13.5px;color:#b0bec5}.answer{margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.08);font-size:13.2px;color:#d6dee8}.tag-row{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}.tag{font-size:11px;color:var(--muted);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:6px;padding:2px 8px}@media(max-width:860px){.sidebar{display:none}.main{padding:24px 20px}.g2,.g3,.compare-2,.method-row{grid-template-columns:1fr}.page-title{font-size:30px}.styled-table{font-size:12px}}
+/* ── DESIGN TOKENS ─────────────────────────────────────────────── */
+:root {
+  --bg:          #0d1117;
+  --surface:     #161c2d;
+  --card:        #1c2340;
+  --border:      #243050;
+  --text:        #e2e8f0;
+  --muted:       #7a8599;
+  --gold:        #f5c842;
+  --lb1:         #4d9de0;
+  --lb1-dim:     rgba(77,157,224,0.12);
+  --lb1-border:  rgba(77,157,224,0.28);
+  --green:       #52b788;
+  --orange:      #e07b4d;
+  --purple:      #9b72cf;
+  --red:         #e05555;
+  --shadow-sm:   0 2px 12px rgba(0,0,0,0.25);
+  --shadow-md:   0 4px 24px rgba(0,0,0,0.35);
+  --t:           0.2s ease;
+  --r-sm:        8px;
+  --r-md:        12px;
+  --r-lg:        16px;
+}
+
+/* ── RESET ─────────────────────────────────────────────────────── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+/* ── READING PROGRESS BAR ──────────────────────────────────────── */
+#progress-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--lb1), #7ec8e3);
+  z-index: 9999;
+  border-radius: 0 2px 2px 0;
+  transition: width 0.1s linear;
+}
+
+/* ── BASE ──────────────────────────────────────────────────────── */
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.75;
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ── SIDEBAR ───────────────────────────────────────────────────── */
+.sidebar {
+  width: 272px;
+  min-width: 272px;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar::-webkit-scrollbar { width: 4px; }
+.sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+.sidebar-brand {
+  padding: 22px 22px 18px;
+  border-bottom: 1px solid var(--border);
+}
+.sidebar-brand .name {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  color: var(--gold);
+  line-height: 1.2;
+}
+.sidebar-brand .sub { font-size: 11.5px; color: var(--muted); margin-top: 3px; }
+
+.nav-group-label {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 16px 22px 5px;
+}
+
+.nav-link {
+  display: block;
+  padding: 6px 22px;
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  transition: all var(--t);
+  cursor: pointer;
+}
+.nav-link:hover { color: var(--text); background: var(--lb1-dim); }
+.nav-link.active {
+  color: var(--lb1);
+  border-left-color: var(--lb1);
+  background: var(--lb1-dim);
+  font-weight: 500;
+}
+.nav-link.sub { padding-left: 34px; font-size: 12px; }
+
+/* ── MAIN ──────────────────────────────────────────────────────── */
+.main {
+  flex: 1;
+  padding: 48px 56px 120px;
+  max-width: 940px;
+  min-width: 0;
+}
+
+/* ── BACK LINK ─────────────────────────────────────────────────── */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 13px;
+  margin-bottom: 28px;
+  padding: 6px 14px 6px 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  transition: all var(--t);
+}
+.back-link:hover {
+  color: var(--lb1);
+  border-color: var(--lb1-border);
+  background: var(--lb1-dim);
+}
+
+/* ── PAGE HEADER ───────────────────────────────────────────────── */
+.page-header { margin-bottom: 52px; }
+
+.lb-badge {
+  display: inline-block;
+  background: var(--lb1-dim);
+  color: var(--lb1);
+  border: 1px solid var(--lb1-border);
+  border-radius: 20px;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  padding: 4px 14px;
+  margin-bottom: 14px;
+}
+
+.page-title {
+  font-family: 'Fraunces', serif;
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #fff;
+  margin-bottom: 14px;
+  letter-spacing: -0.5px;
+}
+
+.page-desc {
+  color: var(--muted);
+  font-size: 15px;
+  max-width: 650px;
+  line-height: 1.65;
+}
+
+/* ── SECTION ───────────────────────────────────────────────────── */
+.section {
+  margin-bottom: 48px;
+  scroll-margin-top: 32px;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.section.visible { opacity: 1; transform: translateY(0); }
+
+.section-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.section-num {
+  width: 34px; height: 34px;
+  background: var(--lb1);
+  color: #0d1117;
+  font-weight: 700;
+  font-size: 13px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 4px var(--lb1-dim);
+}
+
+.section-title {
+  font-family: 'Fraunces', serif;
+  font-size: 26px;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* ── CARD ──────────────────────────────────────────────────────── */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 24px 28px;
+  margin-bottom: 14px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--t), border-color var(--t);
+}
+.card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: rgba(255,255,255,0.1);
+}
+
+.card-label {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--lb1);
+  margin-bottom: 16px;
+}
+
+/* ── DEFINITION BOX ────────────────────────────────────────────── */
+.def-box {
+  background: linear-gradient(135deg, rgba(245,200,66,0.07), rgba(245,200,66,0.03));
+  border-left: 3px solid var(--gold);
+  border-radius: 0 var(--r-md) var(--r-md) 0;
+  padding: 16px 22px;
+  margin: 16px 0;
+}
+.def-box .def-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.def-box p { font-size: 14.5px; color: var(--text); }
+
+/* ── MERKE BOX ─────────────────────────────────────────────────── */
+.merke {
+  background: linear-gradient(135deg, rgba(82,183,136,0.08), rgba(82,183,136,0.03));
+  border-left: 3px solid var(--green);
+  border-radius: 0 var(--r-md) var(--r-md) 0;
+  padding: 14px 20px;
+  margin: 14px 0;
+  font-size: 14px;
+}
+.merke .merke-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 6px;
+}
+
+/* ── LISTS ─────────────────────────────────────────────────────── */
+ul.clist { list-style: none; padding: 0; }
+ul.clist li {
+  padding: 6px 0 6px 22px;
+  position: relative;
+  font-size: 14.5px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+ul.clist li:last-child { border-bottom: none; }
+ul.clist li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--lb1);
+  font-size: 12px;
+  top: 7px;
+}
+
+/* ── GRIDS ─────────────────────────────────────────────────────── */
+.g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 14px 0; }
+.g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin: 14px 0; }
+
+.mini-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 16px 18px;
+  transition: border-color var(--t), box-shadow var(--t);
+}
+.mini-card:hover {
+  border-color: var(--lb1-border);
+  box-shadow: 0 0 0 1px var(--lb1-border);
+}
+.mini-card h4 { font-size: 13px; font-weight: 600; color: var(--lb1); margin-bottom: 9px; }
+.mini-card p,
+.mini-card ul li { font-size: 13px; color: #b0bec5; line-height: 1.6; }
+.mini-card ul { list-style: none; padding: 0; }
+.mini-card ul li { padding: 3px 0 3px 16px; position: relative; }
+.mini-card ul li::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  color: var(--lb1);
+  font-size: 18px;
+  line-height: 1;
+  top: 2px;
+}
+
+/* ── TABLE ─────────────────────────────────────────────────────── */
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  margin: 16px 0;
+  border-radius: var(--r-md);
+  overflow: hidden;
+}
+.styled-table th {
+  background: rgba(255,255,255,0.05);
+  padding: 10px 16px;
+  text-align: left;
+  font-size: 11px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 1px solid var(--border);
+}
+.styled-table td {
+  padding: 10px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  color: var(--text);
+  vertical-align: top;
+  transition: background var(--t);
+}
+.styled-table tr:last-child td { border-bottom: none; }
+.styled-table tr:hover td { background: rgba(77,157,224,0.04); }
+.styled-table .td-key {
+  color: var(--lb1);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ── STEPS ─────────────────────────────────────────────────────── */
+.steps { margin: 14px 0; }
+.step-item {
+  display: flex;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  align-items: flex-start;
+}
+.step-item:last-child { border-bottom: none; }
+.step-n {
+  width: 28px; height: 28px;
+  min-width: 28px;
+  background: var(--lb1);
+  color: #0d1117;
+  font-weight: 700;
+  font-size: 12px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 4px var(--lb1-dim);
+}
+.step-body h4 { font-size: 14px; font-weight: 600; color: #fff; margin-bottom: 3px; }
+.step-body p { font-size: 13.5px; color: #b0bec5; }
+
+/* ── COMPARE CARDS ─────────────────────────────────────────────── */
+.compare-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0; }
+.cmp-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 18px;
+  transition: border-color var(--t);
+}
+.cmp-card:hover { border-color: var(--lb1-border); }
+.cmp-card h4 {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid var(--border);
+  color: var(--lb1);
+}
+.cmp-card ul { list-style: none; padding: 0; }
+.cmp-card ul li {
+  font-size: 13px;
+  padding: 4px 0 4px 16px;
+  position: relative;
+  color: #b0bec5;
+  line-height: 1.5;
+}
+.cmp-card ul li::before { content: "•"; position: absolute; left: 0; color: var(--lb1); }
+
+/* ── DIVIDER ───────────────────────────────────────────────────── */
+hr.div {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+  margin: 40px 0;
+}
+
+/* ── INLINE ────────────────────────────────────────────────────── */
+.kw     { color: var(--gold); font-weight: 600; }
+.kw-blue { color: var(--lb1); font-weight: 600; }
+h3.sh   { font-size: 17px; font-weight: 600; color: #fff; margin: 22px 0 12px; }
+
+/* ── FORMULA BOX ───────────────────────────────────────────────── */
+.formula-box {
+  background: var(--lb1-dim);
+  border: 1px solid var(--lb1-border);
+  border-radius: var(--r-md);
+  padding: 16px 20px;
+  margin: 16px 0;
+}
+.formula-box .formula {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: #fff;
+  font-size: 15px;
+  margin-bottom: 8px;
+  letter-spacing: 0.3px;
+}
+.formula-box p { color: #b0bec5; font-size: 13.5px; }
+
+/* ── METHOD CARDS ──────────────────────────────────────────────── */
+.method-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin: 16px 0; }
+.method-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--lb1);
+  border-radius: var(--r-md);
+  padding: 18px;
+  transition: transform var(--t), box-shadow var(--t);
+}
+.method-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.method-card h4 { font-size: 13px; font-weight: 700; color: var(--lb1); margin-bottom: 8px; }
+.method-card p  { font-size: 12.5px; color: #b0bec5; line-height: 1.6; }
+
+/* ── QUIZ CARDS ────────────────────────────────────────────────── */
+.quiz-card {
+  background: rgba(245,200,66,0.05);
+  border: 1px solid rgba(245,200,66,0.18);
+  border-radius: var(--r-md);
+  padding: 20px 22px;
+  margin-bottom: 14px;
+  transition: border-color var(--t);
+}
+.quiz-card:hover { border-color: rgba(245,200,66,0.32); }
+.quiz-card h4 { font-size: 14.5px; color: #fff; margin-bottom: 6px; font-weight: 600; }
+.quiz-card > p { font-size: 13.5px; color: var(--muted); margin-bottom: 14px; }
+
+.answer {
+  display: none;
+  margin-top: 12px;
+  padding: 14px 18px;
+  border-radius: var(--r-sm);
+  font-size: 13.5px;
+  color: #d6dee8;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  animation: fadeDown 0.22s ease;
+}
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.reveal-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--gold);
+  background: rgba(245,200,66,0.08);
+  border: 1px solid rgba(245,200,66,0.25);
+  border-radius: 99px;
+  cursor: pointer;
+  transition: all var(--t);
+  font-family: 'Outfit', sans-serif;
+  margin-bottom: 2px;
+}
+.reveal-btn:hover {
+  background: rgba(245,200,66,0.15);
+  border-color: rgba(245,200,66,0.45);
+}
+.reveal-btn.open { color: var(--muted); background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.1); }
+
+/* ── TAGS ──────────────────────────────────────────────────────── */
+.tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0; }
+.tag {
+  font-size: 11px;
+  color: var(--muted);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  padding: 3px 10px;
+  transition: all var(--t);
+}
+.tag:hover { color: var(--lb1); border-color: var(--lb1-border); background: var(--lb1-dim); }
+
+/* ── END NAV ───────────────────────────────────────────────────── */
+.end-nav {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+.end-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  background: var(--lb1-dim);
+  border: 1px solid var(--lb1-border);
+  border-radius: var(--r-md);
+  color: var(--lb1);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all var(--t);
+}
+.end-link:hover { background: rgba(77,157,224,0.2); transform: translateX(-3px); }
+
+/* ── RESPONSIVE ────────────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .sidebar { display: none; }
+  .main { padding: 28px 20px 80px; }
+  .g2, .g3, .compare-2, .method-row { grid-template-columns: 1fr; }
+  .page-title { font-size: 32px; }
+  .styled-table { font-size: 12px; }
+}
 </style>
 </head>
 <body>
-<nav class="sidebar"><div class="sidebar-brand"><div class="name">Sport Abitur</div><div class="sub">Gymnasium Bayern · Sporttheorie 12/13</div></div><div class="nav-group-label">Lernbereich 1</div><a class="nav-link active" href="#lb1-top">Trainingslehre</a><div class="nav-group-label">1.5 Ausdauertraining</div><a class="nav-link sub" href="#s-begriff">Begriff & Bedeutung</a><a class="nav-link sub" href="#s-arten">Arten der Ausdauer</a><a class="nav-link sub" href="#s-grundlagen">Grundlagen & Anpassung</a><a class="nav-link sub" href="#s-methoden">Trainingsmethoden</a><a class="nav-link sub" href="#s-weitere">Weitere Methoden</a><a class="nav-link sub" href="#s-mittel">Trainingsmittel & Risiken</a><a class="nav-link sub" href="#s-planung">Planung & Steuerung</a><a class="nav-link sub" href="#s-tests">Testverfahren</a><div class="nav-group-label">Abfrage</div><a class="nav-link sub" href="#s-quiz">🎯 Wissenscheck</a></nav>
-<main class="main" id="lb1-top"><a class="back-link" href="index.html">← Zurück zur Übersicht</a><div class="page-header"><div class="lb-badge">Lernbereich 1 · 1.5</div><h1 class="page-title">Ausdauertraining</h1><p class="page-desc">Grundlegende Aspekte der Ausdauer · Arten der Ausdauer · anatomisch-physiologische Grundlagen · Trainingsmethoden · Trainingssteuerung · Testverfahren · Risiken und Prophylaxe.</p><div class="tag-row"><span class="tag">Ausdauerarten</span><span class="tag">Dauermethode</span><span class="tag">Intervallmethode</span><span class="tag">Wiederholungsmethode</span><span class="tag">Shuttle-Run</span><span class="tag">Karvonen</span></div></div>
-<section class="section" id="s-begriff"><div class="section-head"><div class="section-num">1</div><h2 class="section-title">Begriff und Bedeutung der Ausdauer</h2></div><div class="card"><div class="card-label">Definition</div><div class="def-box"><div class="def-label">Ausdauer</div><p>Ausdauer bezeichnet die <span class="kw">psychophysische Ermüdungswiderstandsfähigkeit</span> des Sportlers bzw. der Sportlerin. Sie umfasst die Fähigkeit, körperliche Beanspruchungen möglichst lange und möglichst ohne koordinative Einbußen aufrechtzuerhalten.</p></div><div class="compare-2"><div class="cmp-card"><h4>Psychische Ausdauer</h4><ul><li>einem Abbruchreiz möglichst lange widerstehen</li><li>Willenskraft, Aufmerksamkeit und Selbststeuerung</li><li>relevant bei hoher Ermüdung und Wettkampfdruck</li></ul></div><div class="cmp-card"><h4>Physische Ausdauer</h4><ul><li>periphere oder zentrale Ermüdung verzögern</li><li>schnelle Erholungsfähigkeit des Organismus</li><li>Grundlage hoher Trainings- und Wettkampfbelastungen</li></ul></div></div><div class="merke"><div class="merke-label">Merke</div>Ausdauer ist nicht nur „lange durchhalten“, sondern die Kombination aus Ermüdungswiderstand, koordinativer Stabilität und schneller Regeneration.</div></div><div class="card"><div class="card-label">Bedeutung für Leistung und Gesundheit</div><div class="g2"><div class="mini-card"><h4>Sportliche Leistungsfähigkeit</h4><ul><li>höchstmögliche Geschwindigkeit auf Strecke halten</li><li>hohe Intensitäten länger aushalten</li><li>schnelle Erholung in niedrigintensiven Spielphasen</li><li>Vorbeugung zentraler Ermüdung</li><li>größere Trainingsvolumina möglich</li></ul></div><div class="mini-card"><h4>Gesundheit</h4><ul><li>Vorbeugung degenerativer Herz-Kreislauf-Erkrankungen</li><li>reduzierte Infektanfälligkeit</li><li>stabilere psychische Befindlichkeit</li><li>erhöhte Stressresistenz</li><li>längere Konzentration mit weniger Fehlern</li></ul></div></div></div></section><hr class="div">
-<section class="section" id="s-arten"><div class="section-head"><div class="section-num">2</div><h2 class="section-title">Arten der Ausdauer</h2></div><div class="card"><div class="card-label">Unterteilung nach Betrachtungsweise</div><table class="styled-table"><thead><tr><th>Aspekt</th><th>Ausdauerarten</th><th>Kernaussage</th></tr></thead><tbody><tr><td class="td-key">Energiebereitstellung</td><td>aerob, aerob-anaerob, anaerob-aerob, anaerob</td><td>Einordnung nach Laktatwerten und Anteil aerober bzw. anaerober ATP-Bereitstellung.</td></tr><tr><td class="td-key">Muskulaturanteil</td><td>allgemein / lokal</td><td>Allgemeine Ausdauer: mehr als 15 % der Gesamtmuskulatur; lokale Ausdauer: weniger als 15 %.</td></tr><tr><td class="td-key">Muskelarbeitsweise</td><td>dynamisch / statisch</td><td>Dynamisch: Wechsel von Spannung und Entspannung; statisch: Durchblutung wird durch Muskelspannung eingeschränkt.</td></tr><tr><td class="td-key">Sportartspezifität</td><td>allgemein / speziell</td><td>Allgemeine Ausdauer als Basis; spezielle Ausdauer an Anforderungen der Sportart angepasst.</td></tr><tr><td class="td-key">Zeitdauer</td><td>Kurz-, Mittel-, Langzeitausdauer</td><td>Einordnung nach Belastungsdauer, z. B. Kurzzeit bis ca. 2 min, Mittelzeit bis ca. 8 min, Langzeit über 8 min.</td></tr><tr><td class="td-key">Hauptbeanspruchung</td><td>Kraft-, Schnellkraft-, Schnelligkeitsausdauer</td><td>Mischformen mit anderen konditionellen Fähigkeiten.</td></tr></tbody></table><div class="merke"><div class="merke-label">Praxis</div>In Sportarten treten Ausdauerformen fast nie isoliert auf, sondern als Mischformen. Basketball enthält z. B. allgemeine, spezielle, dynamische, aerobe und anaerobe Anteile.</div></div></section><hr class="div">
-<section class="section" id="s-grundlagen"><div class="section-head"><div class="section-num">3</div><h2 class="section-title">Anatomisch-physiologische Grundlagen und Anpassung</h2></div><div class="card"><div class="card-label">Aerobe Ausdauer</div><p>Die <span class="kw">maximale Sauerstoffaufnahme</span> gilt als Brutto-Kriterium der aeroben Ausdauer. Entscheidend ist aber auch, wie lange ein hoher Prozentsatz der VO₂max aufrechterhalten werden kann.</p><div class="g2"><div class="mini-card"><h4>Wichtige Faktoren</h4><ul><li>Faserverteilung</li><li>Energiespeicher</li><li>Mitochondrien und Enzymkapazität</li><li>Myoglobin</li><li>Herz-Kreislauf-System</li><li>Atmung und hormonelle Regulation</li></ul></div><div class="mini-card"><h4>Anpassungen</h4><ul><li>Herzhypertrophie und Dilatation</li><li>Ökonomisierung der Herzarbeit</li><li>Kapillarisierung und bessere Blutumverteilung</li><li>höheres Blutvolumen und bessere Fließeigenschaften</li><li>verbesserte Sauerstoffverwertung</li></ul></div></div></div><div class="card"><div class="card-label">Anaerobe und psychische Ausdauer</div><div class="compare-2"><div class="cmp-card"><h4>Anaerobe Ausdauer</h4><ul><li>hohe und höchste ATP-Flussraten möglichst lange aufrechterhalten</li><li>wichtig: Pufferkapazität, Übersäuerungsresistenz, Energiespeicher</li><li>starke Rolle der Glykogenspeicher und Laktattoleranz</li></ul></div><div class="cmp-card"><h4>Psychische Ausdauer</h4><ul><li>entscheidend für Fortsetzung körperlicher Beanspruchung</li><li>Willenskraft, Stresstoleranz, Aufmerksamkeitsregulation</li><li>Zusammenhang mit mobilisierbaren Einsatzreserven</li></ul></div></div></div><div class="card"><div class="card-label">Einflussfaktoren und Zielsetzungen</div><table class="styled-table"><tbody><tr><td class="td-key">Einflussfaktoren</td><td>Bewegungsökonomie, Art der Bewegungsform, Ernährung</td></tr><tr><td class="td-key">Motorische Grobziele</td><td>z. B. 10-km-Zeit verbessern, 3 km in 12 min laufen, 20 km am Stück laufen</td></tr><tr><td class="td-key">Physiologische Grobziele</td><td>aerobe/anaerobe Fitness, Fettstoffwechsel, Herz-Kreislauf-Parameter</td></tr><tr><td class="td-key">Affektiv-emotional</td><td>Tempohärte, Willenskraft, Stressabbau</td></tr><tr><td class="td-key">Kognitiv</td><td>Wissen zu Ernährung, Flüssigkeit, Equipment, Trainingsprotokollen und Verhalten</td></tr></tbody></table></div></section><hr class="div">
-<section class="section" id="s-methoden"><div class="section-head"><div class="section-num">4</div><h2 class="section-title">Grundlegende Trainingsmethoden</h2></div><div class="card"><div class="card-label">Dauermethode · Intervallmethode · Wiederholungsmethode</div><div class="method-row"><div class="method-card"><h4>Dauermethode</h4><p>Längere Belastungen, die nicht durch Pausen unterbrochen werden. Kontinuierliche Belastung mit geringer bis mittlerer Intensität und langer Dauer.</p></div><div class="method-card"><h4>Intervallmethode</h4><p>Intensive intermittierende Belastungen mit aktiver und lohnender Pause. Die Erholung ist unvollständig.</p></div><div class="method-card"><h4>Wiederholungsmethode</h4><p>Wiederholtes Absolvieren einer Strecke nach vollständiger Pause mit maximal möglicher Geschwindigkeit.</p></div></div><table class="styled-table"><thead><tr><th>Methode</th><th>Belastung</th><th>Pause</th><th>Wirkung</th></tr></thead><tbody><tr><td class="td-key">Extensive Dauermethode</td><td>aerobe Schwelle / 2–4 mmol/l Laktat / ca. 120–140 HF</td><td>keine</td><td>Fettstoffwechsel, Grundlagenausdauer</td></tr><tr><td class="td-key">Intensive Dauermethode</td><td>anaerobe Schwelle / ca. 4 mmol/l / ca. 175 HF</td><td>keine</td><td>Zuckerstoffwechsel, Tempohärte; nur mit ausreichender Erholung</td></tr><tr><td class="td-key">Variable Dauermethode</td><td>planmäßige Intensitätswechsel</td><td>keine</td><td>Stoffwechselanpassungen, hohe Umfänge, Fahrtspiel als Sonderform</td></tr><tr><td class="td-key">Extensive Intervallmethode</td><td>60–80 % der maximalen Herzfrequenz</td><td>lohnend / aktiv</td><td>HKL-Parameter, Grundlagenausdauer, Umschaltvermögen Zucker-/Fettstoffwechsel</td></tr><tr><td class="td-key">Intensive Intervallmethode</td><td>80–90 % der maximalen Herzfrequenz</td><td>lohnend / aktiv</td><td>wettkampfspezifische Ausdauer, anaerober Stoffwechsel; nur 2–3x/Woche</td></tr><tr><td class="td-key">Wiederholungsmethode</td><td>maximal mögliche Geschwindigkeit</td><td>vollständig</td><td>wettkampfspezifische Ausdauer, Regulationsmechanismen, Koordination</td></tr></tbody></table><div class="merke"><div class="merke-label">Lohnende Pause</div>Die Pause endet typischerweise bei etwa 120–140 Schlägen/min. Vollständige Erholung würde deutlich länger dauern und verändert den Trainingsreiz.</div></div><div class="card"><div class="card-label">Abi-Frage: 3000-m-Lauf</div><p>Die extensive Dauermethode allein reicht für einen erfolgreichen 3000-m-Wettkampf nicht aus, weil sie vorwiegend den Fettstoffwechsel und die Grundlagenausdauer trainiert. Im 3000-m-Lauf dominieren höhere Intensitäten, bei denen der Zuckerstoffwechsel, Tempohärte und volitive Eigenschaften stärker gefordert sind. Dafür braucht man intensive Dauermethode, Intervallmethode oder wettkampfnähere Belastungsformen.</p></div></section><hr class="div">
-<section class="section" id="s-weitere"><div class="section-head"><div class="section-num">5</div><h2 class="section-title">Weitere Trainingsmethoden und Inhalte</h2></div><div class="card"><div class="g3"><div class="mini-card"><h4>Höhentraining</h4><p>Schaffen einer Sauerstoffmangelsituation. Anpassung u. a. durch erhöhte Produktion roter Blutkörperchen und relativen Hämatokritanstieg. Varianten: live high, train high; Kombinationen wie live/sleep high – train low.</p></div><div class="mini-card"><h4>Wettkampfmethode</h4><p>Wettkämpfe werden gezielt als Trainingsinhalte genutzt. Besonders im Leistungssport zur Gewöhnung an Wettkampfsituationen, Wettkampfhärte, Taktik und Gegneranalyse.</p></div><div class="mini-card"><h4>Kleinfeldspiele</h4><p>Besonders in Spielsportarten. Trainieren wettkampfspezifische Ausdauer spielerisch und verbinden Ausdauer mit Technik, Taktik, Kraft und Schnelligkeit.</p></div></div></div></section><hr class="div">
-<section class="section" id="s-mittel"><div class="section-head"><div class="section-num">6</div><h2 class="section-title">Trainingsmittel, Verletzungsprophylaxe und Risiken</h2></div><div class="card"><div class="card-label">Trainingsmittel</div><ul class="clist"><li>gerätemäßige Mittel stehen wegen hoher Trainingsumfänge besonders im Vordergrund</li><li>richtiges Sportequipment: Laufschuhe, Schwimmbrille, Radlerhose, Sonnenschutz</li><li>ernährungsmäßige Begleitung: Gels, Riegel, Getränke vor, während und nach Belastungen</li><li>technische Geräte: Fitnesstracker, Pulsuhr, Wattmessung zur Dokumentation</li><li>Großgeräte wie Laufband, Ruder- oder Fahrradergometer ermöglichen wetterunabhängiges Training</li></ul></div><div class="card"><div class="card-label">Risiken und Gefahren</div><table class="styled-table"><tbody><tr><td class="td-key">Verletzungsrisiken</td><td>Bodenunebenheiten und Hindernisse können z. B. Überdehnung oder Riss im oberen Sprunggelenk auslösen.</td></tr><tr><td class="td-key">Überlastungsschäden</td><td>Akute oder chronische Überlastung, z. B. Ermüdungsbruch im Mittelfuß; langfristig Arthrosegefahr bei Fehlstellungen.</td></tr><tr><td class="td-key">Infekte</td><td>Akute Infekte sind eine Kontraindikation für Ausdauertraining, auch bei moderaten Belastungen.</td></tr><tr><td class="td-key">Hitzebedingungen</td><td>Gefahr von Herz-Kreislauf-Überlastung; Prophylaxe durch Trinken, Schatten, Kühlen und Vermeidung extremer Hitze.</td></tr><tr><td class="td-key">ältere Neubeginner</td><td>Zu Beginn medizinischer Gesundheits-Check mit Belastungs-EKG wichtig.</td></tr></tbody></table></div></section><hr class="div">
-<section class="section" id="s-planung"><div class="section-head"><div class="section-num">7</div><h2 class="section-title">Trainingsplanung und Trainingssteuerung</h2></div><div class="card"><div class="card-label">Allgemeine Vorgehensweise</div><div class="steps"><div class="step-item"><div class="step-n">1</div><div class="step-body"><h4>Grundlagenausdauer entwickeln</h4><p>Sie steht bei der Entwicklung der Ausdauer im Vordergrund.</p></div></div><div class="step-item"><div class="step-n">2</div><div class="step-body"><h4>Voraussetzungen beachten</h4><p>Physische und technische Voraussetzungen prüfen; bei Bedarf gelenkschonende Sportarten wie Walking, Radfahren oder Schwimmen wählen.</p></div></div><div class="step-item"><div class="step-n">3</div><div class="step-body"><h4>Krafttraining ergänzen</h4><p>Paralleles Krafttraining schafft muskuläre Grundlagen und reduziert Überlastungsrisiken.</p></div></div><div class="step-item"><div class="step-n">4</div><div class="step-body"><h4>Belastendere Formen später einsetzen</h4><p>Joggen und intensivere Formen erst im Verlauf, wenn Technik und Belastbarkeit passen.</p></div></div></div><p>Die Planung erfolgt häufig in <span class="kw">Mesozyklen von 3–6 Wochen</span>. Die Methodenauswahl hängt vom Leistungsniveau ab. Auch im Leistungssport werden etwa 60–80 % der Trainingsumfänge nach der extensiven Dauermethode absolviert.</p></div><div class="card"><div class="card-label">Trainingsbereiche</div><table class="styled-table"><tbody><tr><td class="td-key">REKOM</td><td>Regenerations- und Kompensationstraining</td></tr><tr><td class="td-key">GA 1</td><td>Grundlagenausdauertraining 1</td></tr><tr><td class="td-key">GA 1–2</td><td>Übergangsbereich zwischen GA 1 und GA 2</td></tr><tr><td class="td-key">GA 2</td><td>Grundlagenausdauertraining 2</td></tr><tr><td class="td-key">WSA</td><td>wettkampfspezifisches Ausdauertraining</td></tr></tbody></table><div class="formula-box"><div class="formula">Trainingspuls = Ruhepuls + (HFmax − Ruhepuls) · Intensitätsfaktor</div><p>Karvonen-Formel: individuelle Belastungssteuerung über die Herzfrequenzreserve. Ergänzend kann die subjektive Belastung über die Borg-Skala eingeschätzt werden.</p></div></div></section><hr class="div">
-<section class="section" id="s-tests"><div class="section-head"><div class="section-num">8</div><h2 class="section-title">Einfache Testverfahren im Ausdauertraining</h2></div><div class="card"><table class="styled-table"><thead><tr><th>Test</th><th>Ziel</th><th>Durchführung</th></tr></thead><tbody><tr><td class="td-key">Cooper-Test / 6-min-Test</td><td>aerobe Ausdauerleistungsfähigkeit</td><td>Gemessen wird die Strecke, die in 12 min bzw. 6 min zurückgelegt wird.</td></tr><tr><td class="td-key">Conconi-Test</td><td>Bestimmung der anaeroben Schwelle</td><td>Steigerungslauf mit Tempoerhöhung alle 200 m bis zum Abbruch.</td></tr><tr><td class="td-key">20-m-Shuttle-Run-Test</td><td>Ausdauerfähigkeit</td><td>Pendellauf als Stufentest über 20 m mit akustischen Signalen und Geschwindigkeitssteigerung.</td></tr><tr><td class="td-key">Fahrrad-Ausdauer-Test</td><td>aerobe Ausdauer bei HF 170</td><td>Fahrradergometer-Stufentest mit Wattsteigerung alle 2 min.</td></tr><tr><td class="td-key">30-s-Wingate-Test</td><td>anaerobe Kapazität</td><td>Maximale Trittfrequenz über 30 s auf niedriger Stufe.</td></tr></tbody></table><div class="merke"><div class="merke-label">Shuttle-Run</div>Für Spielsportarten ist der Shuttle-Run besonders passend, weil er Richtungswechsel und steigende Belastung verbindet.</div></div></section><hr class="div">
-<section class="section" id="s-quiz"><div class="section-head"><div class="section-num">9</div><h2 class="section-title">Wissenscheck</h2></div><div class="quiz-card"><h4>1. Definiere Ausdauer und unterscheide psychische und physische Ausdauer.</h4><p>Erkläre beide Teilaspekte mit je einem sportlichen Beispiel.</p><div class="answer"><strong>Musterlösung:</strong> Ausdauer ist psychophysische Ermüdungswiderstandsfähigkeit. Psychisch: Abbruchreiz widerstehen. Physisch: Ermüdung verzögern und schnell regenerieren.</div></div><div class="quiz-card"><h4>2. Ordne Basketball in die Ausdauerarten ein.</h4><p>Beziehe dich auf Energiebereitstellung, Sportartspezifität, Muskelarbeitsweise und Belastungsdauer.</p><div class="answer"><strong>Musterlösung:</strong> Basketball ist vor allem spezielle, dynamische Ausdauer mit aeroben und anaeroben Anteilen; wegen wiederholter Sprints und Spielpausen dominieren Mischformen.</div></div><div class="quiz-card"><h4>3. Vergleiche Dauermethode, Intervallmethode und Wiederholungsmethode.</h4><p>Gehe auf Belastungsstruktur, Pausen und Trainingswirkung ein.</p><div class="answer"><strong>Musterlösung:</strong> Dauermethode: lange Belastung ohne Pause; Intervall: intensive Belastungen mit lohnender aktiver Pause; Wiederholung: sehr intensive Belastung mit vollständiger Pause.</div></div><div class="quiz-card"><h4>4. Begründe, warum extensive Dauermethode allein für einen 3000-m-Wettkampf nicht reicht.</h4><p>Nutze Stoffwechsel, Intensität und volitive Eigenschaften.</p><div class="answer"><strong>Musterlösung:</strong> Sie trainiert vor allem Fettstoffwechsel und Grundlage. 3000 m erfordern höhere Intensitäten, Zuckerstoffwechsel, Tempohärte und Willenskraft.</div></div><div class="quiz-card"><h4>5. Nenne Risiken im Ausdauertraining und passende Prophylaxe.</h4><p>Beziehe dich auf mindestens drei Risikobereiche.</p><div class="answer"><strong>Musterlösung:</strong> Verletzungen durch Bodenunebenheiten → Schuhwerk/Gelände; Überlastung → Progression; Infekte → Trainingspause; Hitze → Trinken/Schatten/Kühlen.</div></div></section></main></body></html>
+
+<div id="progress-bar"></div>
+
+<nav class="sidebar">
+  <div class="sidebar-brand">
+    <div class="name">Sport Abitur</div>
+    <div class="sub">Gymnasium Bayern · Sporttheorie 12/13</div>
+  </div>
+  <div class="nav-group-label">Lernbereich 1</div>
+  <a class="nav-link" href="index.html">← Übersicht</a>
+  <div class="nav-group-label">1.5 Ausdauertraining</div>
+  <a class="nav-link sub" href="#s-begriff">Begriff &amp; Bedeutung</a>
+  <a class="nav-link sub" href="#s-arten">Arten der Ausdauer</a>
+  <a class="nav-link sub" href="#s-grundlagen">Grundlagen &amp; Anpassung</a>
+  <a class="nav-link sub" href="#s-methoden">Trainingsmethoden</a>
+  <a class="nav-link sub" href="#s-weitere">Weitere Methoden</a>
+  <a class="nav-link sub" href="#s-mittel">Trainingsmittel &amp; Risiken</a>
+  <a class="nav-link sub" href="#s-planung">Planung &amp; Steuerung</a>
+  <a class="nav-link sub" href="#s-tests">Testverfahren</a>
+  <div class="nav-group-label">Abfrage</div>
+  <a class="nav-link sub" href="#s-quiz">🎯 Wissenscheck</a>
+</nav>
+
+<main class="main" id="lb1-top">
+  <a class="back-link" href="index.html">← Zurück zur Übersicht</a>
+
+  <div class="page-header">
+    <div class="lb-badge">Lernbereich 1 · 1.5</div>
+    <h1 class="page-title">Ausdauertraining</h1>
+    <p class="page-desc">Grundlegende Aspekte der Ausdauer · Arten der Ausdauer · anatomisch-physiologische Grundlagen · Trainingsmethoden · Trainingssteuerung · Testverfahren · Risiken und Prophylaxe.</p>
+    <div class="tag-row">
+      <span class="tag">Ausdauerarten</span>
+      <span class="tag">Dauermethode</span>
+      <span class="tag">Intervallmethode</span>
+      <span class="tag">Wiederholungsmethode</span>
+      <span class="tag">Shuttle-Run</span>
+      <span class="tag">Karvonen</span>
+    </div>
+  </div>
+
+  <!-- 1 ──────────────────────────────────────────────────────── -->
+  <section class="section" id="s-begriff">
+    <div class="section-head">
+      <div class="section-num">1</div>
+      <h2 class="section-title">Begriff und Bedeutung der Ausdauer</h2>
+    </div>
+    <div class="card">
+      <div class="card-label">Definition</div>
+      <div class="def-box">
+        <div class="def-label">Ausdauer</div>
+        <p>Ausdauer bezeichnet die <span class="kw">psychophysische Ermüdungswiderstandsfähigkeit</span> des Sportlers bzw. der Sportlerin. Sie umfasst die Fähigkeit, körperliche Beanspruchungen möglichst lange und möglichst ohne koordinative Einbußen aufrechtzuerhalten.</p>
+      </div>
+      <div class="compare-2">
+        <div class="cmp-card">
+          <h4>Psychische Ausdauer</h4>
+          <ul>
+            <li>einem Abbruchreiz möglichst lange widerstehen</li>
+            <li>Willenskraft, Aufmerksamkeit und Selbststeuerung</li>
+            <li>relevant bei hoher Ermüdung und Wettkampfdruck</li>
+          </ul>
+        </div>
+        <div class="cmp-card">
+          <h4>Physische Ausdauer</h4>
+          <ul>
+            <li>periphere oder zentrale Ermüdung verzögern</li>
+            <li>schnelle Erholungsfähigkeit des Organismus</li>
+            <li>Grundlage hoher Trainings- und Wettkampfbelastungen</li>
+          </ul>
+        </div>
+      </div>
+      <div class="merke">
+        <div class="merke-label">Merke</div>
+        Ausdauer ist nicht nur „lange durchhalten", sondern die Kombination aus Ermüdungswiderstand, koordinativer Stabilität und schneller Regeneration.
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-label">Bedeutung für Leistung und Gesundheit</div>
+      <div class="g2">
+        <div class="mini-card">
+          <h4>Sportliche Leistungsfähigkeit</h4>
+          <ul>
+            <li>höchstmögliche Geschwindigkeit auf Strecke halten</li>
+            <li>hohe Intensitäten länger aushalten</li>
+            <li>schnelle Erholung in niedrigintensiven Spielphasen</li>
+            <li>Vorbeugung zentraler Ermüdung</li>
+            <li>größere Trainingsvolumina möglich</li>
+          </ul>
+        </div>
+        <div class="mini-card">
+          <h4>Gesundheit</h4>
+          <ul>
+            <li>Vorbeugung degenerativer Herz-Kreislauf-Erkrankungen</li>
+            <li>reduzierte Infektanfälligkeit</li>
+            <li>stabilere psychische Befindlichkeit</li>
+            <li>erhöhte Stressresistenz</li>
+            <li>längere Konzentration mit weniger Fehlern</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="div">
+
+  <!-- 2 ──────────────────────────────────────────────────────── -->
+  <section class="section" id="s-arten">
+    <div class="section-head">
+      <div class="section-num">2</div>
+      <h2 class="section-title">Arten der Ausdauer</h2>
+    </div>
+    <div class="card">
+      <div class="card-label">Unterteilung nach Betrachtungsweise</div>
+      <table class="styled-table">
+        <thead>
+          <tr><th>Aspekt</th><th>Ausdauerarten</th><th>Kernaussage</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="td-key">Energiebereitstellung</td><td>aerob, aerob-anaerob, anaerob-aerob, anaerob</td><td>Einordnung nach Laktatwerten und Anteil aerober bzw. anaerober ATP-Bereitstellung.</td></tr>
+          <tr><td class="td-key">Muskulaturanteil</td><td>allgemein / lokal</td><td>Allgemeine Ausdauer: mehr als 15 % der Gesamtmuskulatur; lokale Ausdauer: weniger als 15 %.</td></tr>
+          <tr><td class="td-key">Muskelarbeitsweise</td><td>dynamisch / statisch</td><td>Dynamisch: Wechsel von Spannung und Entspannung; statisch: Durchblutung wird durch Muskelspannung eingeschränkt.</td></tr>
+          <tr><td class="td-key">Sportartspezifität</td><td>allgemein / speziell</td><td>Allgemeine Ausdauer als Basis; spezielle Ausdauer an Anforderungen der Sportart angepasst.</td></tr>
+          <tr><td class="td-key">Zeitdauer</td><td>Kurz-, Mittel-, Langzeitausdauer</td><td>Einordnung nach Belastungsdauer, z. B. Kurzzeit bis ca. 2 min, Mittelzeit bis ca. 8 min, Langzeit über 8 min.</td></tr>
+          <tr><td class="td-key">Hauptbeanspruchung</td><td>Kraft-, Schnellkraft-, Schnelligkeitsausdauer</td><td>Mischformen mit anderen konditionellen Fähigkeiten.</td></tr>
+        </tbody>
+      </table>
+      <div class="merke">
+        <div class="merke-label">Praxis</div>
+        In Sportarten treten Ausdauerformen fast nie isoliert auf, sondern als Mischformen. Basketball enthält z. B. allgemeine, spezielle, dynamische, aerobe und anaerobe Anteile.
+      </div>
+    </div>
+  </section>
+
+  <hr class="div">
+
+  <!-- 3 ──────────────────────────────────────────────────────── -->
+  <section class="section" id="s-grundlagen">
+    <div class="section-head">
+      <div class="section-num">3</div>
+      <h2 class="section-title">Anatomisch-physiologische Grundlagen und Anpassung</h2>
+    </div>
+    <div class="card">
+      <div class="card-label">Aerobe Ausdauer</div>
+      <p>Die <span class="kw">maximale Sauerstoffaufnahme</span> gilt als Brutto-Kriterium der aeroben Ausdauer. Entscheidend ist aber auch, wie lange ein hoher Prozentsatz der VO₂max aufrechterhalten werden kann.</p>
+      <div class="g2">
+        <div class="mini-card">
+          <h4>Wichtige Faktoren</h4>
+          <ul>
+            <li>Faserverteilung</li>
+            <li>Energiespeicher</li>
+            <li>Mitochondrien und Enzymkapazität</li>
+            <li>Myoglobin</li>
+            <li>Herz-Kreislauf-System</li>
+            <li>Atmung und hormonelle Regulation</li>
+          </ul>
+        </div>
+        <div class="mini-card">
+          <h4>Anpassungen</h4>
+          <ul>
+            <li>Herzhypertrophie und Dilatation</li>
+            <li>Ökonomisierung der Herzarbeit</li>
+            <li>Kapillarisierung und bessere Blutumverteilung</li>
+            <li>höheres Blutvolumen und bessere Fließeigenschaften</li>
+            <li>verbesserte Sauerstoffverwertung</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-label">Anaerobe und psychische Ausdauer</div>
+      <div class="compare-2">
+        <div class="cmp-card">
+          <h4>Anaerobe Ausdauer</h4>
+          <ul>
+            <li>hohe und höchste ATP-Flussraten möglichst lange aufrechterhalten</li>
+            <li>wichtig: Pufferkapazität, Übersäuerungsresistenz, Energiespeicher</li>
+            <li>starke Rolle der Glykogenspeicher und Laktattoleranz</li>
+          </ul>
+        </div>
+        <div class="cmp-card">
+          <h4>Psychische Ausdauer</h4>
+          <ul>
+            <li>entscheidend für Fortsetzung körperlicher Beanspruchung</li>
+            <li>Willenskraft, Stresstoleranz, Aufmerksamkeitsregulation</li>
+            <li>Zusammenhang mit mobilisierbaren Einsatzreserven</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-label">Einflussfaktoren und Zielsetzungen</div>
+      <table class="styled-table">
+        <tbody>
+          <tr><td class="td-key">Einflussfaktoren</td><td>Bewegungsökonomie, Art der Bewegungsform, Ernährung</td></tr>
+          <tr><td class="td-key">Motorische Grobziele</td><td>z. B. 10-km-Zeit verbessern, 3 km in 12 min laufen, 20 km am Stück laufen</td></tr>
+          <tr><td class="td-key">Physiologische Grobziele</td><td>aerobe/anaerobe Fitness, Fettstoffwechsel, Herz-Kreislauf-Parameter</td></tr>
+          <tr><td class="td-key">Affektiv-emotional</td><td>Tempohärte, Willenskraft, Stressabbau</td></tr>
+          <tr><td class="td-key">Kognitiv</td><td>Wissen zu Ernährung, Flüssigkeit, Equipment, Trainingsprotokollen und Verhalten</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <hr class="div">
+
+  <!-- 4 ──────────────────────────────────────────────────────── -->
+  <section class="section" id="s-methoden">
+    <div class="section-head">
+      <div class="section-num">4</div>
+      <h2 class="section-title">Grundlegende Trainingsmethoden</h2>
+    </div>
+    <div class="card">
+      <div class="card-label">Dauermethode · Intervallmethode · Wiederholungsmethode</div>
+      <div class="method-row">
+        <div class="method-card">
+          <h4>Dauermethode</h4>
+          <p>Längere Belastungen, die nicht durch Pausen unterbrochen werden. Kontinuierliche Belastung mit geringer bis mittlerer Intensität und langer Dauer.</p>
+        </div>
+        <div class="method-card">
+          <h4>Intervallmethode</h4>
+          <p>Intensive intermittierende Belastungen mit aktiver und lohnender Pause. Die Erholung ist unvollständig.</p>
+        </div>
+        <div class="method-card">
+          <h4>Wiederholungsmethode</h4>
+          <p>Wiederholtes Absolvieren einer Strecke nach vollständiger Pause mit maximal möglicher Geschwindigkeit.</p>
+        </div>
+      </div>
+      <table class="styled-table">
+        <thead>
+          <tr><th>Methode</th><th>Belastung</th><th>Pause</th><th>Wirkung</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="td-key">Extensive Dauermethode</td><td>aerobe Schwelle / 2–4 mmol/l Laktat / ca. 120–140 HF</td><td>keine</td><td>Fettstoffwechsel, Grundlagenausdauer</td></tr>
+          <tr><td class="td-key">Intensive Dauermethode</td><td>anaerobe Schwelle / ca. 4 mmol/l / ca. 175 HF</td><td>keine</td><td>Zuckerstoffwechsel, Tempohärte; nur mit ausreichender Erholung</td></tr>
+          <tr><td class="td-key">Variable Dauermethode</td><td>planmäßige Intensitätswechsel</td><td>keine</td><td>Stoffwechselanpassungen, hohe Umfänge, Fahrtspiel als Sonderform</td></tr>
+          <tr><td class="td-key">Extensive Intervallmethode</td><td>60–80 % der maximalen Herzfrequenz</td><td>lohnend / aktiv</td><td>HKL-Parameter, Grundlagenausdauer, Umschaltvermögen Zucker-/Fettstoffwechsel</td></tr>
+          <tr><td class="td-key">Intensive Intervallmethode</td><td>80–90 % der maximalen Herzfrequenz</td><td>lohnend / aktiv</td><td>wettkampfspezifische Ausdauer, anaerober Stoffwechsel; nur 2–3x/Woche</td></tr>
+          <tr><td class="td-key">Wiederholungsmethode</td><td>maximal mögliche Geschwindigkeit</td><td>vollständig</td><td>wettkampfspezifische Ausdauer, Regulationsmechanismen, Koordination</td></tr>
+        </tbody>
+      </table>
+      <div class="merke">
+        <div class="merke-label">Lohnende Pause</div>
+        Die Pause endet typischerweise bei etwa 120–140 Schlägen/min. Vollständige Erholung würde deutlich länger dauern und verändert den Trainingsreiz.
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-label">Abi-Frage: 3000-m-Lauf</div>
+      <p>Die extensive Dauermethode allein reicht für einen erfolgreichen 3000-m-Wettkampf nicht aus, weil sie vorwiegend den Fettstoffwechsel und die Grundlagenausdauer trainiert. Im 3000-m-Lauf dominieren höhere Intensitäten, bei denen der Zuckerstoffwechsel, Tempohärte und volitive Eigenschaften stärker gefordert sind. Dafür braucht man intensive Dauermethode, Intervallmethode oder wettkampfnähere Belastungsformen.</p>
+    </div>
+  </section>
+
+  <hr class="div">
+
+  <!-- 5 ──────────────────────────────────────────────────────── -->
+  <section class="section" id="s-weitere">
+    <div class="section-head">
+      <div class="section-num">5</div>
+      <h2 class="section-title">Weitere Trainingsmethoden und Inhalte</h2>
+    </div>
+    <div class="card">
+      <div class="g3">
+        <div class="mini-card">
+          <h4>Höhentraining</h4>
+          <p>Schaffen einer Sauerstoffmangelsituation. Anpassung u. a. durch erhöhte Produktion roter Blutkörperchen und relativen Hämatokritanstieg. Varianten: live high, train high; Kombinationen wie live/sleep high – train low.</p>
+        </div>
+        <div class="mini-card">
+          <h4>Wettkampfmethode</h4>
+          <p>Wettkämpfe werden gezielt als Trainingsinhalte genutzt. Besonders im Leistungssport zur Gewöhnung an Wettkampfsituationen, Wettkampfhärte, Taktik und Gegneranalyse.</p>
+        </div>
+        <div class="mini-card">
+          <h4>Kleinfeldspiele</h4>
+          <p>Besonders in Spielsportarten. Trainieren wettkampfspezifische Ausdauer spielerisch und verbinden Ausdauer mit Technik, Taktik, Kraft und Schnelligkeit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="div">
+
+  <!-- 6 ──────────────────────────────────────────────────────── -->
+  <section class="section" id="s-mittel">
+    <div class="section-head">
+      <div class="section-num">6</div>
+      <h2 class="section-title">Trainingsmittel, Verletzungsprophylaxe und Risiken</h2>
+    </div>
+    <div class="card">
+      <div class="card-label">Trainingsmittel</div>
+      <ul class="clist">
+        <li>gerätemäßige Mittel stehen wegen hoher Trainingsumfänge besonders im Vordergrund</li>
+        <li>richtiges Sportequipment: Laufschuhe, Schwimmbrille, Radlerhose, Sonnenschutz</li>
+        <li>ernährungsmäßige Begleitung: Gels, Riegel, Getränke vor, während und nach Belastungen</li>
+        <li>technische Geräte: Fitnesstracker, Pulsuhr, Wattmessung zur Dokumentation</li>
+        <li>Großgeräte wie Laufband, Ruder- oder Fahrradergometer ermöglichen wetterunabhängiges Training</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-label">Risiken und Gefahren</div>
+      <table class="styled-table">
+        <tbody>
+          <tr><td class="td-key">Verletzungsrisiken</td><td>Bodenunebenheiten und Hindernisse können z. B. Überdehnung oder Riss im oberen Sprunggelenk auslösen.</td></tr>
+          <tr><td class="td-key">Überlastungsschäden</td><td>Akute oder chronische Überlastung, z. B. Ermüdungsbruch im Mittelfuß; langfristig Arthrosegefahr bei Fehlstellungen.</td></tr>
+          <tr><td class="td-key">Infekte</td><td>Akute Infekte sind eine Kontraindikation für Ausdauertraining, auch bei moderaten Belastungen.</td></tr>
+          <tr><td class="td-key">Hitzebedingungen</td><td>Gefahr von Herz-Kreislauf-Überlastung; Prophylaxe durch Trinken, Schatten, Kühlen und Vermeidung extremer Hitze.</td></tr>
+          <tr><td class="td-key">ältere Neubeginner</td><td>Zu Beginn medizinischer Gesundheits-Check mit Belastungs-EKG wichtig.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <hr class="div">
+
+  <!-- 7 ──────────────────────────────────────────────────────── -->
+  <section class="section" id="s-planung">
+    <div class="section-head">
+      <div class="section-num">7</div>
+      <h2 class="section-title">Trainingsplanung und Trainingssteuerung</h2>
+    </div>
+    <div class="card">
+      <div class="card-label">Allgemeine Vorgehensweise</div>
+      <div class="steps">
+        <div class="step-item">
+          <div class="step-n">1</div>
+          <div class="step-body">
+            <h4>Grundlagenausdauer entwickeln</h4>
+            <p>Sie steht bei der Entwicklung der Ausdauer im Vordergrund.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-n">2</div>
+          <div class="step-body">
+            <h4>Voraussetzungen beachten</h4>
+            <p>Physische und technische Voraussetzungen prüfen; bei Bedarf gelenkschonende Sportarten wie Walking, Radfahren oder Schwimmen wählen.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-n">3</div>
+          <div class="step-body">
+            <h4>Krafttraining ergänzen</h4>
+            <p>Paralleles Krafttraining schafft muskuläre Grundlagen und reduziert Überlastungsrisiken.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-n">4</div>
+          <div class="step-body">
+            <h4>Belastendere Formen später einsetzen</h4>
+            <p>Joggen und intensivere Formen erst im Verlauf, wenn Technik und Belastbarkeit passen.</p>
+          </div>
+        </div>
+      </div>
+      <p>Die Planung erfolgt häufig in <span class="kw">Mesozyklen von 3–6 Wochen</span>. Die Methodenauswahl hängt vom Leistungsniveau ab. Auch im Leistungssport werden etwa 60–80 % der Trainingsumfänge nach der extensiven Dauermethode absolviert.</p>
+    </div>
+    <div class="card">
+      <div class="card-label">Trainingsbereiche</div>
+      <table class="styled-table">
+        <tbody>
+          <tr><td class="td-key">REKOM</td><td>Regenerations- und Kompensationstraining</td></tr>
+          <tr><td class="td-key">GA 1</td><td>Grundlagenausdauertraining 1</td></tr>
+          <tr><td class="td-key">GA 1–2</td><td>Übergangsbereich zwischen GA 1 und GA 2</td></tr>
+          <tr><td class="td-key">GA 2</td><td>Grundlagenausdauertraining 2</td></tr>
+          <tr><td class="td-key">WSA</td><td>wettkampfspezifisches Ausdauertraining</td></tr>
+        </tbody>
+      </table>
+      <div class="formula-box">
+        <div class="formula">Trainingspuls = Ruhepuls + (HFmax − Ruhepuls) · Intensitätsfaktor</div>
+        <p>Karvonen-Formel: individuelle Belastungssteuerung über die Herzfrequenzreserve. Ergänzend kann die subjektive Belastung über die Borg-Skala eingeschätzt werden.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="div">
+
+  <!-- 8 ──────────────────────────────────────────────────────── -->
+  <section class="section" id="s-tests">
+    <div class="section-head">
+      <div class="section-num">8</div>
+      <h2 class="section-title">Einfache Testverfahren im Ausdauertraining</h2>
+    </div>
+    <div class="card">
+      <table class="styled-table">
+        <thead>
+          <tr><th>Test</th><th>Ziel</th><th>Durchführung</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="td-key">Cooper-Test / 6-min-Test</td><td>aerobe Ausdauerleistungsfähigkeit</td><td>Gemessen wird die Strecke, die in 12 min bzw. 6 min zurückgelegt wird.</td></tr>
+          <tr><td class="td-key">Conconi-Test</td><td>Bestimmung der anaeroben Schwelle</td><td>Steigerungslauf mit Tempoerhöhung alle 200 m bis zum Abbruch.</td></tr>
+          <tr><td class="td-key">20-m-Shuttle-Run-Test</td><td>Ausdauerfähigkeit</td><td>Pendellauf als Stufentest über 20 m mit akustischen Signalen und Geschwindigkeitssteigerung.</td></tr>
+          <tr><td class="td-key">Fahrrad-Ausdauer-Test</td><td>aerobe Ausdauer bei HF 170</td><td>Fahrradergometer-Stufentest mit Wattsteigerung alle 2 min.</td></tr>
+          <tr><td class="td-key">30-s-Wingate-Test</td><td>anaerobe Kapazität</td><td>Maximale Trittfrequenz über 30 s auf niedriger Stufe.</td></tr>
+        </tbody>
+      </table>
+      <div class="merke">
+        <div class="merke-label">Shuttle-Run</div>
+        Für Spielsportarten ist der Shuttle-Run besonders passend, weil er Richtungswechsel und steigende Belastung verbindet.
+      </div>
+    </div>
+  </section>
+
+  <hr class="div">
+
+  <!-- 9 · QUIZ ────────────────────────────────────────────────── -->
+  <section class="section" id="s-quiz">
+    <div class="section-head">
+      <div class="section-num">9</div>
+      <h2 class="section-title">Wissenscheck</h2>
+    </div>
+
+    <div class="quiz-card">
+      <h4>1. Definiere Ausdauer und unterscheide psychische und physische Ausdauer.</h4>
+      <p>Erkläre beide Teilaspekte mit je einem sportlichen Beispiel.</p>
+      <div class="answer"><strong>Musterlösung:</strong> Ausdauer ist psychophysische Ermüdungswiderstandsfähigkeit. Psychisch: Abbruchreiz widerstehen. Physisch: Ermüdung verzögern und schnell regenerieren.</div>
+    </div>
+
+    <div class="quiz-card">
+      <h4>2. Ordne Basketball in die Ausdauerarten ein.</h4>
+      <p>Beziehe dich auf Energiebereitstellung, Sportartspezifität, Muskelarbeitsweise und Belastungsdauer.</p>
+      <div class="answer"><strong>Musterlösung:</strong> Basketball ist vor allem spezielle, dynamische Ausdauer mit aeroben und anaeroben Anteilen; wegen wiederholter Sprints und Spielpausen dominieren Mischformen.</div>
+    </div>
+
+    <div class="quiz-card">
+      <h4>3. Vergleiche Dauermethode, Intervallmethode und Wiederholungsmethode.</h4>
+      <p>Gehe auf Belastungsstruktur, Pausen und Trainingswirkung ein.</p>
+      <div class="answer"><strong>Musterlösung:</strong> Dauermethode: lange Belastung ohne Pause; Intervall: intensive Belastungen mit lohnender aktiver Pause; Wiederholung: sehr intensive Belastung mit vollständiger Pause.</div>
+    </div>
+
+    <div class="quiz-card">
+      <h4>4. Begründe, warum extensive Dauermethode allein für einen 3000-m-Wettkampf nicht reicht.</h4>
+      <p>Nutze Stoffwechsel, Intensität und volitive Eigenschaften.</p>
+      <div class="answer"><strong>Musterlösung:</strong> Sie trainiert vor allem Fettstoffwechsel und Grundlage. 3000 m erfordern höhere Intensitäten, Zuckerstoffwechsel, Tempohärte und Willenskraft.</div>
+    </div>
+
+    <div class="quiz-card">
+      <h4>5. Nenne Risiken im Ausdauertraining und passende Prophylaxe.</h4>
+      <p>Beziehe dich auf mindestens drei Risikobereiche.</p>
+      <div class="answer"><strong>Musterlösung:</strong> Verletzungen durch Bodenunebenheiten → Schuhwerk/Gelände; Überlastung → Progression; Infekte → Trainingspause; Hitze → Trinken/Schatten/Kühlen.</div>
+    </div>
+  </section>
+
+  <div class="end-nav">
+    <a class="end-link" href="index.html">← Zurück zur Übersicht</a>
+  </div>
+</main>
+
+<script>
+// Reading progress bar
+const bar = document.getElementById('progress-bar');
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const pct = h.scrollHeight - h.clientHeight;
+  bar.style.width = (pct > 0 ? (window.scrollY / pct) * 100 : 0) + '%';
+}, { passive: true });
+
+// Scrollspy: highlight sidebar link for visible section
+const sections = Array.from(document.querySelectorAll('.section[id]'));
+const navLinks = Array.from(document.querySelectorAll('.nav-link.sub'));
+const spy = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const id = e.target.id;
+      navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + id));
+    }
+  });
+}, { rootMargin: '-15% 0px -72% 0px', threshold: 0 });
+sections.forEach(s => spy.observe(s));
+
+// Section reveal on scroll
+const reveal = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); reveal.unobserve(e.target); }
+  });
+}, { threshold: 0.06 });
+sections.forEach(s => reveal.observe(s));
+
+// Quiz: hide answers, add toggle button
+document.querySelectorAll('.quiz-card').forEach(card => {
+  const ans = card.querySelector('.answer');
+  if (!ans) return;
+  const btn = document.createElement('button');
+  btn.className = 'reveal-btn';
+  btn.textContent = '▶ Antwort anzeigen';
+  btn.addEventListener('click', () => {
+    const open = ans.style.display === 'block';
+    ans.style.display = open ? 'none' : 'block';
+    btn.textContent = open ? '▶ Antwort anzeigen' : '▼ Antwort verbergen';
+    btn.classList.toggle('open', !open);
+  });
+  card.insertBefore(btn, ans);
+});
+</script>
+</body>
+</html>
