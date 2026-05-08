@@ -19,9 +19,6 @@
   --lb1-dim:     rgba(77,157,224,0.12);
   --lb1-border:  rgba(77,157,224,0.28);
   --green:       #52b788;
-  --orange:      #e07b4d;
-  --purple:      #9b72cf;
-  --red:         #e05555;
   --shadow-sm:   0 2px 12px rgba(0,0,0,0.25);
   --shadow-md:   0 4px 24px rgba(0,0,0,0.35);
   --t:           0.2s ease;
@@ -57,6 +54,60 @@ body {
   min-height: 100vh;
 }
 
+/* ── MOBILE HEADER ─────────────────────────────────────────────── */
+.mobile-header {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 54px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px;
+  z-index: 1000;
+}
+.mobile-brand {
+  font-family: 'Fraunces', serif;
+  font-size: 17px;
+  color: var(--gold);
+}
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  padding: 8px 10px;
+  cursor: pointer;
+  transition: border-color var(--t), background var(--t);
+}
+.hamburger:hover { background: var(--lb1-dim); border-color: var(--lb1-border); }
+.hamburger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+/* ── OVERLAY ───────────────────────────────────────────────────── */
+#overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: 998;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+#overlay.active { display: block; }
+
 /* ── SIDEBAR ───────────────────────────────────────────────────── */
 .sidebar {
   width: 272px;
@@ -69,6 +120,7 @@ body {
   overflow-y: auto;
   display: flex;
   flex-direction: column;
+  z-index: 999;
 }
 .sidebar::-webkit-scrollbar { width: 4px; }
 .sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
@@ -84,6 +136,23 @@ body {
   line-height: 1.2;
 }
 .sidebar-brand .sub { font-size: 11.5px; color: var(--muted); margin-top: 3px; }
+
+.sidebar-close {
+  display: none;
+  position: absolute;
+  top: 14px; right: 14px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 30px; height: 30px;
+  color: var(--muted);
+  font-size: 16px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--t);
+}
+.sidebar-close:hover { color: var(--text); background: rgba(255,255,255,0.1); }
 
 .nav-group-label {
   font-size: 9.5px;
@@ -136,11 +205,7 @@ body {
   border-radius: 99px;
   transition: all var(--t);
 }
-.back-link:hover {
-  color: var(--lb1);
-  border-color: var(--lb1-border);
-  background: var(--lb1-dim);
-}
+.back-link:hover { color: var(--lb1); border-color: var(--lb1-border); background: var(--lb1-dim); }
 
 /* ── PAGE HEADER ───────────────────────────────────────────────── */
 .page-header { margin-bottom: 52px; }
@@ -185,12 +250,7 @@ body {
 }
 .section.visible { opacity: 1; transform: translateY(0); }
 
-.section-head {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 22px;
-}
+.section-head { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
 
 .section-num {
   width: 34px; height: 34px;
@@ -206,12 +266,7 @@ body {
   box-shadow: 0 0 0 4px var(--lb1-dim);
 }
 
-.section-title {
-  font-family: 'Fraunces', serif;
-  font-size: 26px;
-  font-weight: 600;
-  color: #fff;
-}
+.section-title { font-family: 'Fraunces', serif; font-size: 26px; font-weight: 600; color: #fff; }
 
 /* ── CARD ──────────────────────────────────────────────────────── */
 .card {
@@ -223,10 +278,7 @@ body {
   box-shadow: var(--shadow-sm);
   transition: box-shadow var(--t), border-color var(--t);
 }
-.card:hover {
-  box-shadow: var(--shadow-md);
-  border-color: rgba(255,255,255,0.1);
-}
+.card:hover { box-shadow: var(--shadow-md); border-color: rgba(255,255,255,0.1); }
 
 .card-label {
   font-size: 10.5px;
@@ -302,24 +354,12 @@ ul.clist li::before {
   padding: 16px 18px;
   transition: border-color var(--t), box-shadow var(--t);
 }
-.mini-card:hover {
-  border-color: var(--lb1-border);
-  box-shadow: 0 0 0 1px var(--lb1-border);
-}
+.mini-card:hover { border-color: var(--lb1-border); box-shadow: 0 0 0 1px var(--lb1-border); }
 .mini-card h4 { font-size: 13px; font-weight: 600; color: var(--lb1); margin-bottom: 9px; }
-.mini-card p,
-.mini-card ul li { font-size: 13px; color: #b0bec5; line-height: 1.6; }
+.mini-card p, .mini-card ul li { font-size: 13px; color: #b0bec5; line-height: 1.6; }
 .mini-card ul { list-style: none; padding: 0; }
 .mini-card ul li { padding: 3px 0 3px 16px; position: relative; }
-.mini-card ul li::before {
-  content: "·";
-  position: absolute;
-  left: 0;
-  color: var(--lb1);
-  font-size: 18px;
-  line-height: 1;
-  top: 2px;
-}
+.mini-card ul li::before { content: "·"; position: absolute; left: 0; color: var(--lb1); font-size: 18px; line-height: 1; top: 2px; }
 
 /* ── TABLE ─────────────────────────────────────────────────────── */
 .styled-table {
@@ -349,11 +389,7 @@ ul.clist li::before {
 }
 .styled-table tr:last-child td { border-bottom: none; }
 .styled-table tr:hover td { background: rgba(77,157,224,0.04); }
-.styled-table .td-key {
-  color: var(--lb1);
-  font-weight: 600;
-  white-space: nowrap;
-}
+.styled-table .td-key { color: var(--lb1); font-weight: 600; white-space: nowrap; }
 
 /* ── STEPS ─────────────────────────────────────────────────────── */
 .steps { margin: 14px 0; }
@@ -379,7 +415,7 @@ ul.clist li::before {
   box-shadow: 0 0 0 4px var(--lb1-dim);
 }
 .step-body h4 { font-size: 14px; font-weight: 600; color: #fff; margin-bottom: 3px; }
-.step-body p { font-size: 13.5px; color: #b0bec5; }
+.step-body p  { font-size: 13.5px; color: #b0bec5; }
 
 /* ── COMPARE CARDS ─────────────────────────────────────────────── */
 .compare-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0; }
@@ -400,13 +436,7 @@ ul.clist li::before {
   color: var(--lb1);
 }
 .cmp-card ul { list-style: none; padding: 0; }
-.cmp-card ul li {
-  font-size: 13px;
-  padding: 4px 0 4px 16px;
-  position: relative;
-  color: #b0bec5;
-  line-height: 1.5;
-}
+.cmp-card ul li { font-size: 13px; padding: 4px 0 4px 16px; position: relative; color: #b0bec5; line-height: 1.5; }
 .cmp-card ul li::before { content: "•"; position: absolute; left: 0; color: var(--lb1); }
 
 /* ── DIVIDER ───────────────────────────────────────────────────── */
@@ -418,9 +448,9 @@ hr.div {
 }
 
 /* ── INLINE ────────────────────────────────────────────────────── */
-.kw     { color: var(--gold); font-weight: 600; }
+.kw      { color: var(--gold); font-weight: 600; }
 .kw-blue { color: var(--lb1); font-weight: 600; }
-h3.sh   { font-size: 17px; font-weight: 600; color: #fff; margin: 22px 0 12px; }
+h3.sh    { font-size: 17px; font-weight: 600; color: #fff; margin: 22px 0 12px; }
 
 /* ── FORMULA BOX ───────────────────────────────────────────────── */
 .formula-box {
@@ -498,11 +528,8 @@ h3.sh   { font-size: 17px; font-weight: 600; color: #fff; margin: 22px 0 12px; }
   font-family: 'Outfit', sans-serif;
   margin-bottom: 2px;
 }
-.reveal-btn:hover {
-  background: rgba(245,200,66,0.15);
-  border-color: rgba(245,200,66,0.45);
-}
-.reveal-btn.open { color: var(--muted); background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.1); }
+.reveal-btn:hover { background: rgba(245,200,66,0.15); border-color: rgba(245,200,66,0.45); }
+.reveal-btn.open  { color: var(--muted); background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.1); }
 
 /* ── TAGS ──────────────────────────────────────────────────────── */
 .tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0; }
@@ -543,11 +570,34 @@ h3.sh   { font-size: 17px; font-weight: 600; color: #fff; margin: 22px 0 12px; }
 
 /* ── RESPONSIVE ────────────────────────────────────────────────── */
 @media (max-width: 860px) {
-  .sidebar { display: none; }
-  .main { padding: 28px 20px 80px; }
+  .mobile-header { display: flex; }
+  .sidebar-close { display: flex; }
+
+  /* Sidebar becomes a fixed drawer */
+  .sidebar {
+    position: fixed;
+    top: 0; left: 0;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.28s ease;
+    box-shadow: none;
+  }
+  .sidebar.open {
+    transform: translateX(0);
+    box-shadow: 12px 0 40px rgba(0,0,0,0.6);
+  }
+
+  .main {
+    padding: 80px 18px 80px;
+  }
+
   .g2, .g3, .compare-2, .method-row { grid-template-columns: 1fr; }
   .page-title { font-size: 32px; }
   .styled-table { font-size: 12px; }
+
+  /* Prevent horizontal scroll on narrow tables */
+  .card { padding: 18px; overflow-x: auto; }
 }
 </style>
 </head>
@@ -555,7 +605,19 @@ h3.sh   { font-size: 17px; font-weight: 600; color: #fff; margin: 22px 0 12px; }
 
 <div id="progress-bar"></div>
 
-<nav class="sidebar">
+<!-- Mobile top bar -->
+<header class="mobile-header">
+  <span class="mobile-brand">Sport Abitur</span>
+  <button class="hamburger" id="hamburger" aria-label="Navigation öffnen">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- Backdrop -->
+<div id="overlay"></div>
+
+<nav class="sidebar" id="sidebar">
+  <button class="sidebar-close" id="sidebar-close" aria-label="Navigation schließen">✕</button>
   <div class="sidebar-brand">
     <div class="name">Sport Abitur</div>
     <div class="sub">Gymnasium Bayern · Sporttheorie 12/13</div>
@@ -956,31 +1018,26 @@ h3.sh   { font-size: 17px; font-weight: 600; color: #fff; margin: 22px 0 12px; }
       <div class="section-num">9</div>
       <h2 class="section-title">Wissenscheck</h2>
     </div>
-
     <div class="quiz-card">
       <h4>1. Definiere Ausdauer und unterscheide psychische und physische Ausdauer.</h4>
       <p>Erkläre beide Teilaspekte mit je einem sportlichen Beispiel.</p>
       <div class="answer"><strong>Musterlösung:</strong> Ausdauer ist psychophysische Ermüdungswiderstandsfähigkeit. Psychisch: Abbruchreiz widerstehen. Physisch: Ermüdung verzögern und schnell regenerieren.</div>
     </div>
-
     <div class="quiz-card">
       <h4>2. Ordne Basketball in die Ausdauerarten ein.</h4>
       <p>Beziehe dich auf Energiebereitstellung, Sportartspezifität, Muskelarbeitsweise und Belastungsdauer.</p>
       <div class="answer"><strong>Musterlösung:</strong> Basketball ist vor allem spezielle, dynamische Ausdauer mit aeroben und anaeroben Anteilen; wegen wiederholter Sprints und Spielpausen dominieren Mischformen.</div>
     </div>
-
     <div class="quiz-card">
       <h4>3. Vergleiche Dauermethode, Intervallmethode und Wiederholungsmethode.</h4>
       <p>Gehe auf Belastungsstruktur, Pausen und Trainingswirkung ein.</p>
       <div class="answer"><strong>Musterlösung:</strong> Dauermethode: lange Belastung ohne Pause; Intervall: intensive Belastungen mit lohnender aktiver Pause; Wiederholung: sehr intensive Belastung mit vollständiger Pause.</div>
     </div>
-
     <div class="quiz-card">
       <h4>4. Begründe, warum extensive Dauermethode allein für einen 3000-m-Wettkampf nicht reicht.</h4>
       <p>Nutze Stoffwechsel, Intensität und volitive Eigenschaften.</p>
       <div class="answer"><strong>Musterlösung:</strong> Sie trainiert vor allem Fettstoffwechsel und Grundlage. 3000 m erfordern höhere Intensitäten, Zuckerstoffwechsel, Tempohärte und Willenskraft.</div>
     </div>
-
     <div class="quiz-card">
       <h4>5. Nenne Risiken im Ausdauertraining und passende Prophylaxe.</h4>
       <p>Beziehe dich auf mindestens drei Risikobereiche.</p>
@@ -1002,9 +1059,37 @@ window.addEventListener('scroll', () => {
   bar.style.width = (pct > 0 ? (window.scrollY / pct) * 100 : 0) + '%';
 }, { passive: true });
 
-// Scrollspy: highlight sidebar link for visible section
+// Mobile drawer
+const hamburger   = document.getElementById('hamburger');
+const sidebar     = document.getElementById('sidebar');
+const overlay     = document.getElementById('overlay');
+const closeBtn    = document.getElementById('sidebar-close');
+
+function openDrawer() {
+  sidebar.classList.add('open');
+  overlay.classList.add('active');
+  hamburger.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeDrawer() {
+  sidebar.classList.remove('open');
+  overlay.classList.remove('active');
+  hamburger.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+hamburger.addEventListener('click', () => sidebar.classList.contains('open') ? closeDrawer() : openDrawer());
+overlay.addEventListener('click', closeDrawer);
+closeBtn.addEventListener('click', closeDrawer);
+
+// Close drawer on nav-link tap (mobile)
+sidebar.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', () => { if (window.innerWidth <= 860) closeDrawer(); });
+});
+
+// Scrollspy
 const sections = Array.from(document.querySelectorAll('.section[id]'));
-const navLinks = Array.from(document.querySelectorAll('.nav-link.sub'));
+const navLinks  = Array.from(document.querySelectorAll('.nav-link.sub'));
 const spy = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) {
@@ -1023,7 +1108,7 @@ const reveal = new IntersectionObserver(entries => {
 }, { threshold: 0.06 });
 sections.forEach(s => reveal.observe(s));
 
-// Quiz: hide answers, add toggle button
+// Quiz toggle
 document.querySelectorAll('.quiz-card').forEach(card => {
   const ans = card.querySelector('.answer');
   if (!ans) return;
