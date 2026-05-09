@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Geo 12-1.1 — Atmosphärische Prozesse</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d1117;--surface:#151c2b;--card:#1b2440;--card2:#202a4a;--border:#283454;--text:#e8eef7;--muted:#8b98ad;--gold:#f5c842;--green:#52b788;--blue:#4d9de0;--orange:#e07b4d;--red:#e05555;--purple:#9b72cf;--cyan:#66d9ef}*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--text);font-family:Outfit,system-ui,sans-serif;line-height:1.72;font-size:15.5px}.layout{display:flex;min-height:100vh}.sidebar{width:294px;min-width:294px;height:100vh;position:sticky;top:0;background:var(--surface);border-right:1px solid var(--border);overflow-y:auto}.sb-head{padding:22px;border-bottom:1px solid var(--border)}.back{color:var(--muted);font-size:12.5px;text-decoration:none}.back:hover{color:var(--green)}.sb-title{font-family:Fraunces,serif;color:#fff;font-size:22px;margin-top:14px}.sb-sub{color:var(--muted);font-size:12px;margin-top:3px}.navgrp{padding:16px 22px 5px;color:var(--green);font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase}.nav a{display:block;padding:6px 22px;color:var(--muted);font-size:12.5px;text-decoration:none;border-left:2px solid transparent}.nav a:hover{color:#fff;background:rgba(82,183,136,.08)}.main{flex:1;max-width:1060px;padding:48px 54px 120px}.hero{margin-bottom:42px}.badge{display:inline-block;color:var(--green);background:rgba(82,183,136,.12);border:1px solid rgba(82,183,136,.32);border-radius:999px;padding:5px 14px;font-size:12px;font-weight:800;margin-bottom:18px}h1{font-family:Fraunces,serif;font-size:48px;line-height:1.08;color:#fff;margin-bottom:14px}.lead{color:var(--muted);font-size:17px;max-width:760px}.focusbox{margin-top:20px;background:rgba(245,200,66,.08);border:1px solid rgba(245,200,66,.24);border-left:4px solid var(--gold);border-radius:14px;padding:16px 18px;max-width:820px}.focusbox b{color:var(--gold)}.section{margin:44px 0;scroll-margin-top:24px}.section-head{display:flex;gap:13px;align-items:center;margin-bottom:20px}.num{width:36px;height:36px;border-radius:10px;background:var(--green);color:#08100d;display:grid;place-items:center;font-weight:900;flex-shrink:0}h2{font-family:Fraunces,serif;color:#fff;font-size:30px;line-height:1.18}h3{color:#fff;font-size:19px;margin:22px 0 10px}.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px 26px;margin:14px 0}.card.alt{background:linear-gradient(180deg,#1c2543,#151d31)}.label{font-size:10.5px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--green);margin-bottom:12px}.merke{background:rgba(82,183,136,.08);border:1px solid rgba(82,183,136,.25);border-radius:12px;padding:13px 16px;margin:16px 0}.merke strong{color:var(--green)}.warn{background:rgba(224,85,85,.08);border:1px solid rgba(224,85,85,.24);border-radius:12px;padding:13px 16px;margin:16px 0}.warn strong{color:#ff8585}.formula{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:rgba(77,157,224,.09);border:1px solid rgba(77,157,224,.25);border-radius:12px;padding:12px 14px;margin:12px 0;color:#fff}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:14px 0}.mini{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px}.mini h4{font-size:15px;color:var(--green);margin-bottom:8px}.mini p,.mini li{font-size:13.5px;color:#b7c1d0;line-height:1.55}ul{padding-left:20px}li{margin:5px 0}.step{display:flex;gap:14px;align-items:flex-start;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06)}.step:last-child{border-bottom:0}.stepn{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--green);color:#08100d;font-weight:900;flex-shrink:0}.step h4{color:#fff;font-size:15px;margin-bottom:2px}.step p{color:#b6c0ce;font-size:14px}.figure{background:#101622;border:1px solid var(--border);border-radius:16px;overflow:hidden;margin:20px 0}.figure img{display:block;width:100%;max-height:720px;object-fit:contain;background:#fff}.figure.small img{max-height:520px}.cap{border-top:1px solid var(--border);padding:11px 15px;color:var(--muted);font-size:12px;text-align:center}.cap a{color:var(--green);text-decoration:none}.kw{color:var(--gold);font-weight:700}.checklist{display:grid;gap:8px;margin-top:12px}.check{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:10px 13px;color:#cbd5e1;font-size:14px}.check:before{content:"✓ ";color:var(--green);font-weight:900}.compare{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}.comp{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px}.comp h4{color:#fff;font-size:15px;margin-bottom:6px}.comp .tag{display:inline-block;margin-bottom:8px;border-radius:999px;padding:2px 9px;font-size:11px;font-weight:800}.tag-g{background:rgba(82,183,136,.12);color:var(--green)}.tag-b{background:rgba(77,157,224,.12);color:var(--blue)}.tag-o{background:rgba(224,123,77,.12);color:var(--orange)}.tag-p{background:rgba(155,114,207,.12);color:var(--purple)}.exam{background:linear-gradient(135deg,rgba(82,183,136,.13),rgba(77,157,224,.08));border:1px solid rgba(82,183,136,.28);border-radius:16px;padding:22px;margin:18px 0}.exam h3{margin-top:0}.question{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px;margin:10px 0}.question b{color:#fff}.quiz{background:linear-gradient(180deg,#1b2440,#141b2d);border:1px solid var(--border);border-radius:18px;padding:26px;margin-top:32px}.q{margin:18px 0;padding:16px;background:rgba(255,255,255,.04);border-radius:12px;border:1px solid rgba(255,255,255,.07)}.q summary{cursor:pointer;color:#fff;font-weight:700}.q p{color:#b9c4d2;margin-top:10px}.footer-note{font-size:12px;color:var(--muted);border-top:1px solid var(--border);margin-top:46px;padding-top:18px}
+.gloss-button{display:inline-flex;align-items:center;gap:8px;margin-top:18px;background:rgba(245,200,66,.12);border:1px solid rgba(245,200,66,.35);color:var(--gold);font-weight:800;text-decoration:none;border-radius:999px;padding:9px 15px;font-size:13px}
+.gloss-button:hover{background:rgba(245,200,66,.2);color:#fff}
+
+.term{color:var(--gold);font-weight:800;text-decoration:none;border-bottom:1px dotted rgba(245,200,66,.65);cursor:pointer}
+.term:hover{color:#fff;background:rgba(245,200,66,.13);border-radius:4px}
+.glossary{background:linear-gradient(180deg,#1b2440,#141b2d);border:1px solid var(--border);border-radius:20px;padding:28px;margin-top:42px}
+.glossary-intro{color:var(--muted);max-width:760px;margin-bottom:20px}
+.gloss-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.gloss-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:15px 16px;scroll-margin-top:26px}
+.gloss-item h3{font-size:16px;margin:0 0 7px;color:var(--gold)}
+.gloss-item p{font-size:13.5px;color:#c6d0de;line-height:1.55}
+.gloss-item .connect{font-size:12.5px;color:var(--green);margin-top:8px}
+.toplink{display:inline-block;margin-top:9px;font-size:11.5px;color:var(--muted);text-decoration:none}
+.toplink:hover{color:var(--green)}
+@media(max-width:900px){.gloss-grid{grid-template-columns:1fr}}
+
+.deep{background:linear-gradient(180deg,rgba(82,183,136,.08),rgba(77,157,224,.05));border:1px solid rgba(82,183,136,.22);border-radius:16px;padding:19px 21px;margin:18px 0}
+.deep h3{margin-top:0}
+.chainlist{display:grid;gap:9px;margin:14px 0}
+.chainitem{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:11px 13px;font-size:14px;color:#cbd5e1}
+.chainitem b{color:#fff}
+.keytable{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}
+.keybox{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px}
+.keybox h4{font-size:14px;color:var(--green);margin-bottom:7px}
+.keybox p{font-size:13.5px;color:#b8c3d1;line-height:1.55}
+
+.fig-explain{background:rgba(82,183,136,.07);border:1px solid rgba(82,183,136,.22);border-radius:14px;padding:15px 17px;margin:14px 0 22px}
+.fig-explain h4{font-size:14px;color:var(--green);margin-bottom:8px}
+.fig-explain ul{padding-left:20px}
+.fig-explain li{font-size:14px;color:#c7d1df;line-height:1.55;margin:5px 0}
+.fig-explain .chain{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#fff;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:9px 11px;margin-top:10px;font-size:13px}
+@media(max-width:900px){.layout{display:block}.sidebar{display:none}.main{padding:28px 20px 70px}h1{font-size:35px}.grid2,.grid3,.compare{grid-template-columns:1fr}}
+
+/* Fachbegriffe / Glossar */
+.term{color:var(--gold);font-weight:800;text-decoration:none;border-bottom:1px dotted rgba(245,200,66,.65);cursor:pointer}
+.term:hover{color:#fff;background:rgba(245,200,66,.13);border-radius:4px}
+.gloss-button{display:inline-flex;align-items:center;gap:8px;margin-top:18px;background:rgba(245,200,66,.12);border:1px solid rgba(245,200,66,.35);color:var(--gold);font-weight:800;text-decoration:none;border-radius:999px;padding:9px 15px;font-size:13px}
+.gloss-button:hover{background:rgba(245,200,66,.2);color:#fff}
+.glossary{background:linear-gradient(180deg,#1b2440,#141b2d);border:1px solid var(--border);border-radius:20px;padding:28px;margin-top:50px;scroll-margin-top:28px}
+.glossary-intro{color:var(--muted);max-width:780px;margin-bottom:20px}
+.gloss-index{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 24px}
+.gloss-index a{font-size:12px;text-decoration:none;color:var(--gold);background:rgba(245,200,66,.08);border:1px solid rgba(245,200,66,.18);border-radius:999px;padding:4px 10px}
+.gloss-index a:hover{background:rgba(245,200,66,.18);color:#fff}
+.gloss-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.gloss-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:15px 16px;scroll-margin-top:30px}
+.gloss-item h3{font-size:16px;margin:0 0 7px;color:var(--gold)}
+.gloss-item p{font-size:13.5px;color:#c6d0de;line-height:1.55}
+.gloss-item .connect{font-size:12.5px;color:var(--green);margin-top:8px}
+.toplink{display:inline-block;margin-top:9px;font-size:11.5px;color:var(--muted);text-decoration:none}
+.toplink:hover{color:var(--green)}
+@media(max-width:900px){.gloss-grid{grid-template-columns:1fr}}
+
+</style>
+</head>
+<body>
+<div class="layout"><aside class="sidebar"><div class="sb-head"><a class="back" href="geographie.html">← Zur Geo-Übersicht</a><div class="sb-title">Geo 12-1.1</div><div class="sb-sub">Atmosphäre · Druck · Wind · Klima-/Vegetationszonen</div></div><div class="nav">
+    <div class="navgrp">Grundlagen</div>
+    <a href="#fokus">Start & Fokus</a>
+    <a href="#kernmodell">Kernmodell</a>
+    <a href="#wetter-klima">Wetter · Witterung · Klima</a>
+    <a href="#atmosphaere">Aufbau der Atmosphäre</a>
+    <a href="#strahlung">Strahlungsbilanz</a>
+    <a href="#energie">Energietransport</a>
+    <a href="#beleuchtung">Beleuchtungszonen</a>
+    <div class="navgrp">Wind & Zirkulation</div>
+    <a href="#druck">Luftdruck & Wind</a>
+    <a href="#coriolis">Corioliseffekt</a>
+    <a href="#lokal">Lokale Windsysteme</a>
+    <a href="#global">Planetarische Zirkulation</a>
+    <a href="#passat">ITC & Passat</a>
+    <a href="#itc-wanderung">ITC-Wanderung</a>
+    <a href="#monsun">Monsun</a>
+    <div class="navgrp">Zonen & Prüfung</div>
+    <a href="#klimaelemente">Klimaelemente & Faktoren</a>
+    <a href="#klimazonen">Klima-/Vegetationszonen</a>
+    <a href="#diagramme">Diagramme auswerten</a>
+    <a href="#gesamtzusammenhang">Gesamtzusammenhang</a>
+    <a href="#muendlich">Mündliche Antworten</a>
+    <a href="#quiz">Wissenscheck</a>
+    <a href="#glossar">Fachbegriffe-Glossar</a>
+  </div>
+</aside>
+<main class="main"><header class="hero" id="fokus"><div class="badge">Schwerpunktthema Kolloquium · 12-1.1</div><h1>Atmosphärische Prozesse und die Entstehung von Klima- und Vegetationszonen</h1><p class="lead">Diese Seite ist nicht nur zum Auswendiglernen gedacht. Ziel ist, dass du die Prozesskette wirklich verstehst: Strahlung → Temperatur → Luftdruck → Wind → Zirkulation → Niederschlag → Klima → Vegetation.</p><div class="focusbox"><b>Kern für deine mündliche Prüfung:</b> Du musst erklären können, warum die Erde nicht überall gleich warm und feucht ist, wie daraus Druck- und Windsysteme entstehen und warum sich daraus typische Klima- und Vegetationszonen ergeben.</div></header>
+<section class="section"><div class="section-head"><div class="num">0</div><h2>Was du wirklich können musst</h2></div><div class="card"><div class="label">Prüfungskompass</div><p>Dein Material markiert für 12-1.1 vor allem: Aufbau der Atmosphäre, <a class="term" href="#gloss-strahlungsbilanz">Strahlungsbilanz</a>, Treibhauseffekt, Energietransport, <a class="term" href="#gloss-corioliseffekt">Corioliseffekt</a>, Druckgebiete, planetarische Zirkulation, <a class="term" href="#gloss-itc">ITC</a> sowie Klima- und Vegetationszonen. Genau diese Begriffe sind die tragenden Säulen der Seite.</p><div class="checklist"><div class="check">Wetter, Witterung und Klima sauber unterscheiden.</div><div class="check">Aufbau der Atmosphäre erklären und die <a class="term" href="#gloss-troposphaere">Troposphäre</a> als Wetterschicht einordnen.</div><div class="check"><a class="term" href="#gloss-strahlungsbilanz">Strahlungsbilanz</a>, <a class="term" href="#gloss-albedo">Albedo</a>, <a class="term" href="#gloss-absorption">Absorption</a>, <a class="term" href="#gloss-reflexion">Reflexion</a> und natürlichen Treibhauseffekt erklären.</div><div class="check"><a class="term" href="#gloss-zenitstand">Zenitstand</a>, Beleuchtungszonen und Jahreszeiten logisch herleiten.</div><div class="check">Wind als Druckausgleich von Hoch zu Tief erklären.</div><div class="check"><a class="term" href="#gloss-corioliseffekt">Corioliseffekt</a>: Nordhalbkugel rechts, Südhalbkugel links.</div><div class="check">Thermische und dynamische Druckgebiete unterscheiden.</div><div class="check">Land-See-Wind und <a class="term" href="#gloss-foehn">Föhn</a> als lokale Windsysteme erklären.</div><div class="check">Hadley-, Ferrel- und Polarzelle mit Druckgürteln verbinden.</div><div class="check"><a class="term" href="#gloss-itc">ITC</a>, <a class="term" href="#gloss-passate">Passate</a>, <a class="term" href="#gloss-antipassat">Antipassat</a>e und <a class="term" href="#gloss-passatinversion">Passatinversion</a> erklären.</div><div class="check">Klima- und Vegetationszonen aus Temperatur und Niederschlag ableiten.</div></div></div></section>
+<section class="section" id="wetter-klima"><div class="section-head"><div class="num">1</div><h2>Wetter, Witterung und Klima</h2></div><div class="grid3"><div class="mini"><h4>Wetter</h4><p>Zustand der Atmosphäre an einem bestimmten Ort zu einem bestimmten Zeitpunkt. Es ist messbar: Temperatur, Niederschlag, Luftdruck, Wind, <a class="term" href="#gloss-relative-luftfeuchtigkeit">Luftfeuchtigkeit</a>.</p></div><div class="mini"><h4>Witterung</h4><p>Typischer Wettercharakter über mehrere Tage bis Wochen. Beispiel: zwei Wochen feucht-kühle Westwetterlage.</p></div><div class="mini"><h4>Klima</h4><p>Statistische Zusammenfassung des Wetters über einen langen Zeitraum, meist mindestens 30 Jahre. Klima ist also ein Durchschnittsmuster.</p></div></div><div class="merke"><strong>Merksatz:</strong> Wetter ist jetzt. Witterung ist mehrere Tage bis Wochen. Klima ist die langfristige Regel.</div></section>
+<section class="section" id="atmosphaere"><div class="section-head"><div class="num">2</div><h2>Aufbau der Atmosphäre</h2></div><div class="card"><div class="label">Warum das wichtig ist</div><p>Die Atmosphäre ist die Gashülle der Erde. Für 12-1.1 ist vor allem die <span class="kw"><a class="term" href="#gloss-troposphaere">Troposphäre</a></span> wichtig, weil sich dort Wetter, Wolkenbildung, Niederschlag und der größte Teil des Luftmassenaustauschs abspielen. Darüber liegt die Stratosphäre mit der <a class="term" href="#gloss-ozonschicht">Ozonschicht</a>, die energiereiche UV-Strahlung absorbiert.</p><div class="figure small"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Erdatmosphaere%20aufbau%20schichten.svg" alt="Aufbau der Erdatmosphäre"><div class="cap">Aufbau der Erdatmosphäre mit Sphären und Pausen. Quelle: Wikimedia Commons, Datei „Erdatmosphaere aufbau schichten.svg“.</div></div>
+<div class="fig-explain"><h4>So liest du die Abbildung</h4><ul><li>Die Schichten zeigen, dass die Atmosphäre nicht überall gleich funktioniert: Wetter entsteht fast vollständig in der <a class="term" href="#gloss-troposphaere">Troposphäre</a>.</li><li>Die <a class="term" href="#gloss-tropopause">Tropopause</a> ist eine wichtige Grenze, weil sie aufsteigende Luftmassen bremst. Das ist später beim <a class="term" href="#gloss-passate">Passatkreislauf</a> wichtig.</li><li>In der Stratosphäre liegt die <a class="term" href="#gloss-ozonschicht">Ozonschicht</a>. Sie absorbiert UV-Strahlung und beeinflusst deshalb den Temperaturverlauf.</li><li>Für das Kolloquium reicht nicht nur das Benennen der Schichten: Du musst erklären, warum gerade die Troposphäre für Klima, Wolken und Niederschlag entscheidend ist.</li></ul><div class="chain">Atmosphäre → Troposphäre → Wetter/Wolken/Niederschlag → <a class="term" href="#gloss-klimaelemente">Klimaelemente</a></div></div><div class="grid2"><div class="mini"><h4>Troposphäre</h4><p>Unterste Schicht. Hier befinden sich Wettergeschehen, Wolken, Niederschläge und der größte Teil des Wasserdampfs. Temperatur nimmt im Normalfall mit der Höhe ab.</p></div><div class="mini"><h4>Stratosphäre</h4><p>Enthält die <a class="term" href="#gloss-ozonschicht">Ozonschicht</a>. Dort wird UV-Strahlung absorbiert; deshalb kann die Temperatur mit zunehmender Höhe wieder steigen.</p></div></div><div class="warn"><strong>Typischer Fehler:</strong> Nicht einfach sagen: „Je höher, desto kälter.“ Das stimmt nur allgemein in der Troposphäre. In der Stratosphäre verändert die Ozonabsorption den Temperaturverlauf.</div></div></section>
+<section class="section" id="strahlung"><div class="section-head"><div class="num">3</div><h2>Strahlungsbilanz und Treibhauseffekt</h2></div><div class="card"><p>Die Sonne liefert kurzwellige Strahlung. Ein Teil wird durch Wolken, Aerosole und helle Oberflächen reflektiert. Ein anderer Teil wird von Atmosphäre und Erdoberfläche absorbiert. Die erwärmte Erdoberfläche gibt langwellige Wärmestrahlung ab. <a class="term" href="#gloss-treibhausgase">Treibhausgase</a> absorbieren einen Teil dieser Wärmestrahlung und senden sie teilweise als Gegenstrahlung zurück.</p><div class="figure"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Diagram%20showing%20the%20Earth%27s%20energy%20budget%2C%20which%20includes%20the%20greenhouse%20effect%20%28NASA%29.png" alt="Strahlungsbilanz der Erde"><div class="cap">Energie- und Strahlungsbilanz der Erde mit Treibhauseffekt. Quelle: NASA / Wikimedia Commons.</div></div>
+<div class="fig-explain"><h4>Zusammenhang der Strahlungsbilanz</h4><ul><li>Kurzwellige Sonnenstrahlung gelangt in das System Erde-Atmosphäre.</li><li>Ein Teil wird reflektiert. Das nennt man <a class="term" href="#gloss-albedo">Albedo</a>. Helle Flächen reflektieren stärker, dunkle Flächen absorbieren stärker.</li><li>Absorbierte Strahlung erwärmt Boden, Wasser und Luft. Dadurch entstehen Temperaturunterschiede.</li><li>Die Erde sendet langwellige Wärmestrahlung aus. <a class="term" href="#gloss-treibhausgase">Treibhausgase</a> halten einen Teil davon zurück.</li><li>Diese ungleiche Erwärmung ist die Grundlage für Luftdruckunterschiede und damit für Wind und globale Zirkulation.</li></ul><div class="chain">Sonneneinstrahlung → <a class="term" href="#gloss-absorption">Absorption</a>/<a class="term" href="#gloss-reflexion">Reflexion</a> → Temperaturunterschiede → Druckunterschiede → Wind</div></div><div class="step"><div class="stepn">1</div><div><h4>Kurzwellige Sonnenstrahlung kommt an.</h4><p>Sie erreicht die Atmosphäre und Erdoberfläche.</p></div></div><div class="step"><div class="stepn">2</div><div><h4><a class="term" href="#gloss-reflexion">Reflexion</a> und <a class="term" href="#gloss-albedo">Albedo</a> wirken kühlend.</h4><p>Helle Oberflächen reflektieren viel. Dunkle Oberflächen absorbieren mehr.</p></div></div><div class="step"><div class="stepn">3</div><div><h4><a class="term" href="#gloss-absorption">Absorption</a> erwärmt Oberfläche und Atmosphäre.</h4><p>Aufgenommene Strahlung wird in Wärme umgewandelt.</p></div></div><div class="step"><div class="stepn">4</div><div><h4>Langwellige Ausstrahlung entsteht.</h4><p>Die Erde gibt Wärme ab. <a class="term" href="#gloss-treibhausgase">Treibhausgase</a> halten einen Teil im System.</p></div></div><div class="merke"><strong>Für die mündliche Prüfung:</strong> Die Strahlungsbilanz ist die Basis für Temperaturunterschiede. Temperaturunterschiede erzeugen Druckunterschiede. Druckunterschiede erzeugen Wind.</div></div></section>
+<section class="section" id="beleuchtung"><div class="section-head"><div class="num">4</div><h2>Beleuchtungszonen, <a class="term" href="#gloss-zenitstand">Zenitstand</a> und Jahreszeiten</h2></div><div class="card"><p>Die Erde ist um etwa 23,5° geneigt. Dadurch verschiebt sich der <a class="term" href="#gloss-zenitstand">Zenitstand</a> der Sonne im Jahresverlauf zwischen nördlichem und südlichem <a class="term" href="#gloss-wendekreise">Wendekreis</a>. Diese Verschiebung ist der Schlüssel für Tropen, Mittelbreiten, Polarzonen, Jahreszeiten und die Wanderung der ITC.</p><div class="figure small"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Orbital%20relations%20of%20the%20Solstice%2C%20Equinox%20%26%20Intervening%20Seasons.svg" alt="Jahreszeiten und Schiefe der Ekliptik"><div class="cap">Solstitien, Äquinoktien und Jahreszeiten durch Erdumlauf und Achsneigung. Quelle: Wikimedia Commons.</div></div>
+<div class="fig-explain"><h4>Warum diese Grafik zentral ist</h4><ul><li>Die Erdachse ist geneigt. Deshalb steht die Sonne im Jahreslauf nicht immer über derselben Breite im Zenit.</li><li>Der Zenitstand wandert zwischen 23,5° N und 23,5° S. Genau daraus ergeben sich <a class="term" href="#gloss-wendekreise">Wendekreise</a> und Tropen.</li><li>Wenn die Nordhalbkugel stärker zur Sonne geneigt ist, ist dort Sommer; gleichzeitig ist auf der Südhalbkugel Winter.</li><li>Diese jährliche Verlagerung verschiebt auch die Zone stärkster Erwärmung und damit die ITC.</li></ul><div class="chain">Achsneigung → wandernder Zenitstand → Jahreszeiten → Verlagerung der ITC</div></div><div class="compare"><div class="comp"><span class="tag tag-g">Tropen</span><h4>bis 23,5° N/S</h4><p>Hohe Einstrahlung, geringe Jahreszeiten, oft <a class="term" href="#gloss-tageszeitenklima">Tageszeitenklima</a>. Hier wandert der Zenitstand.</p></div><div class="comp"><span class="tag tag-b">Mittelbreiten</span><h4>zwischen <a class="term" href="#gloss-wendekreise">Wendekreis</a> und Polarkreis</h4><p><a class="term" href="#gloss-jahreszeitenklima">Jahreszeitenklima</a>. Temperaturunterschiede im Jahresgang sind wichtiger als im Tagesgang.</p></div><div class="comp"><span class="tag tag-o">Polarzonen</span><h4>ab 66,5° N/S</h4><p>Polartag und Polarnacht. Niedrige Sonnenstände, geringe Einstrahlung, starke Saisonalität.</p></div></div><div class="merke"><strong>Merksatz:</strong> Tropen = <a class="term" href="#gloss-tageszeitenklima">Tageszeitenklima</a>. Mittelbreiten und Polarzonen = <a class="term" href="#gloss-jahreszeitenklima">Jahreszeitenklima</a>, in der Polarzone extrem.</div></div></section>
+<section class="section" id="druck"><div class="section-head"><div class="num">5</div><h2>Luftdruck und Windentstehung</h2></div><div class="card"><p>Wind entsteht durch Luftdruckunterschiede. Luft bewegt sich grundsätzlich vom <span class="kw"><a class="term" href="#gloss-hochdruckgebiet">Hochdruckgebiet</a></span> zum <span class="kw"><a class="term" href="#gloss-tiefdruckgebiet">Tiefdruckgebiet</a></span>. Die treibende Kraft ist die <a class="term" href="#gloss-gradientkraft">Gradientkraft</a>. Durch Erdrotation wird diese Bewegung zusätzlich abgelenkt.</p><div class="formula">Grundregel: Wind = Ausgleichsströmung von H → T</div><div class="grid2"><div class="mini"><h4><a class="term" href="#gloss-tiefdruckgebiet">Tiefdruckgebiet</a></h4><p>Warme Luft dehnt sich aus, wird leichter und steigt auf. Am Boden fehlen Luftteilchen. Es entsteht Bodentiefdruck.</p></div><div class="mini"><h4><a class="term" href="#gloss-hochdruckgebiet">Hochdruckgebiet</a></h4><p>Kalte oder absinkende Luft erhöht die Luftmasse am Boden. Es entsteht Bodenhochdruck.</p></div></div><h3>Thermisch vs. dynamisch</h3><div class="grid2"><div class="mini"><h4>Thermische Druckgebiete</h4><p>Entstehen direkt durch Temperaturunterschiede. Beispiel: Äquator wird stark erwärmt → Luft steigt auf → Bodentief.</p></div><div class="mini"><h4>Dynamische Druckgebiete</h4><p>Entstehen durch großräumige Luftbewegungen und Konvergenz/Divergenz in der Höhe. Sie sind nicht nur direkte Folge lokaler Erwärmung.</p></div></div></div></section>
+<section class="section" id="coriolis"><div class="section-head"><div class="num">6</div><h2>Corioliseffekt</h2></div><div class="card"><p>Der Corioliseffekt entsteht durch die Erdrotation. Bewegte Luftmassen werden dadurch nicht geradlinig vom Hoch zum Tief geführt, sondern abgelenkt.</p><div class="figure small"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Coriolis%20effect.svg" alt="Corioliseffekt"><div class="cap">Schematische Darstellung des Corioliseffekts. Quelle: Wikimedia Commons, Datei „Coriolis effect.svg“.</div></div>
+<div class="fig-explain"><h4>Was du aus der Grafik verstehen musst</h4><ul><li>Luftmassen würden ohne Erdrotation direkt vom <a class="term" href="#gloss-hochdruckgebiet">Hochdruckgebiet</a> zum <a class="term" href="#gloss-tiefdruckgebiet">Tiefdruckgebiet</a> strömen.</li><li>Durch die Erdrotation wird die Bewegung scheinbar abgelenkt.</li><li>Auf der Nordhalbkugel erfolgt die Ablenkung nach rechts, auf der Südhalbkugel nach links.</li><li>Der Corioliseffekt erklärt, warum Passate, Westwinde und polare Ostwinde nicht einfach geradlinig nach Norden oder Süden wehen.</li></ul><div class="chain">Druckausgleich H → T + Erdrotation → Ablenkung → planetarische Windsysteme</div></div><div class="grid2"><div class="mini"><h4>Nordhalbkugel</h4><p>Ablenkung nach rechts in Bewegungsrichtung.</p></div><div class="mini"><h4>Südhalbkugel</h4><p>Ablenkung nach links in Bewegungsrichtung.</p></div></div><div class="merke"><strong>Kolloquiumsformulierung:</strong> Die Luft strömt wegen des Druckgefälles von Hoch zu Tief, wird aber durch die Erdrotation abgelenkt. Dadurch entstehen nicht einfach Nord-Süd-Winde, sondern Passate, Westwinde und polare Ostwinde.</div></div></section>
+<section class="section" id="lokal"><div class="section-head"><div class="num">7</div><h2>Lokale Windsysteme: Land-See-Wind und <a class="term" href="#gloss-foehn">Föhn</a></h2></div><div class="card"><h3>Land-See-Windsystem</h3><p>Land erwärmt sich tagsüber schneller als Wasser. Über dem Land steigt warme Luft auf, am Boden entsteht ein Tief. Über dem kühleren Wasser herrscht relativ höherer Druck. Am Boden strömt Luft vom Meer zum Land: Seewind. Nachts kehrt sich das System um, weil Land schneller auskühlt.</p><div class="figure small"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sea%20Land%20Breeze.svg" alt="Land-See-Windsystem"><div class="cap">See- und Landbrise als thermisches lokales Windsystem. Quelle: Wikimedia Commons.</div></div>
+<div class="fig-explain"><h4>Land-See-Wind als Mini-Modell der Atmosphäre</h4><ul><li>Tagsüber erwärmt sich Land schneller als Wasser. Über Land steigt warme Luft auf: Bodentief.</li><li>Über dem kühleren Wasser herrscht relativ höherer Druck. Am Boden strömt Luft vom Meer zum Land.</li><li>In der Höhe erfolgt der Rückstrom vom Land zum Meer.</li><li>Nachts kehrt sich das System um, weil Land schneller auskühlt als Wasser.</li><li>Das Prinzip ist kleinräumig, aber didaktisch wichtig: Erwärmungsunterschiede erzeugen Druckunterschiede, Druckunterschiede erzeugen Wind.</li></ul><div class="chain">Land erwärmt sich schneller → Bodentief über Land → Seewind vom Meer zum Land</div></div><h3><a class="term" href="#gloss-foehn">Föhn</a></h3><p>Beim Föhn wird feuchte Luft an einem Gebirge zum Aufsteigen gezwungen. Auf der <a class="term" href="#gloss-luv">Luvseite</a> kühlt sie ab, kondensiert und regnet aus. Auf der <a class="term" href="#gloss-lee">Leeseite</a> sinkt die trockenere Luft ab und erwärmt sich <a class="term" href="#gloss-adiabatisch">trockenadiabatisch</a> stärker. Dadurch entsteht ein warmer, trockener Fallwind.</p><div class="figure small"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Figure%204-28.%20Diagram%20showing%20conditions%20necessary%20for%20the%20formation%20of%20a%20foehn%2C%20or%20chinook%2C%20wind%20%28illustration%20by%20Rudolph%20E.%20Fink%2C%201953%29.jpg" alt="Föhnwind"><div class="cap">Bedingungen für Föhn bzw. Chinook. Quelle: Wikimedia Commons.</div></div>
+<div class="fig-explain"><h4>Föhn: Prozesskette für die mündliche Prüfung</h4><ul><li>Feuchte Luft trifft auf ein Gebirge und wird zum Aufsteigen gezwungen.</li><li>Beim Aufsteigen kühlt sie ab. Wird der <a class="term" href="#gloss-taupunkt">Taupunkt</a> erreicht, kondensiert Wasserdampf: Wolken und Steigungsregen entstehen.</li><li>Durch den Niederschlag verliert die Luft Feuchtigkeit.</li><li>Auf der <a class="term" href="#gloss-lee">Leeseite</a> sinkt die nun trockenere Luft ab und erwärmt sich <a class="term" href="#gloss-adiabatisch">trockenadiabatisch</a> stärker.</li><li>Unten kommt sie warm und trocken an: Föhn.</li></ul><div class="chain">feuchte Luft → Aufstieg am <a class="term" href="#gloss-luv">Luv</a> → Abkühlung/<a class="term" href="#gloss-kondensation">Kondensation</a>/Regen → trockenes Absinken im <a class="term" href="#gloss-lee">Lee</a> → warmer Föhn</div></div></div></section>
+<section class="section" id="global"><div class="section-head"><div class="num">8</div><h2>Planetarische Zirkulation</h2></div><div class="card"><p>Die globale atmosphärische Zirkulation ist der großräumige Ausgleich zwischen Energieüberschuss in den Tropen und Energiedefizit in den Polarregionen. Wegen Erdrotation und Corioliseffekt entsteht kein einfacher Kreislauf vom Äquator zum Pol, sondern ein System aus Zellen und Windgürteln.</p><div class="figure"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Earth%20Global%20Circulation%20-%20de.svg" alt="Globale Zirkulation der Erdatmosphäre"><div class="cap">Globale Zirkulation mit <a class="term" href="#gloss-hadley-zelle">Hadley-Zelle</a>, <a class="term" href="#gloss-ferrel-zelle">Ferrel-Zelle</a> und Polarzelle. Quelle: Wikimedia Commons, deutsche Version.</div></div>
+<div class="fig-explain"><h4>Die globale Zirkulation als Gesamtsystem</h4><ul><li>Am Äquator gibt es wegen hoher Einstrahlung aufsteigende Luft und Bodentiefdruck.</li><li>Um 30° N/S sinkt Luft ab. Dadurch entstehen <a class="term" href="#gloss-subtropenhoch">subtropische Hochdruckgebiete</a>.</li><li>Zwischen 30° und 60° liegt die <a class="term" href="#gloss-ferrel-zelle">Ferrel-Zelle</a> mit der <a class="term" href="#gloss-westwindzone">Westwindzone</a>.</li><li>An den Polen sinkt kalte Luft ab und bildet Polarhochdruck.</li><li>Die Zellen sind also eine Antwort auf das Grundproblem der Erde: Energieüberschuss in den Tropen und Energiedefizit an den Polen.</li></ul><div class="chain">Tropen warm → Luft steigt → Ausgleich Richtung Pole → Coriolis → Zellen und Windgürtel</div></div><div class="compare"><div class="comp"><span class="tag tag-g"><a class="term" href="#gloss-hadley-zelle">Hadley-Zelle</a></span><h4>0°–30°</h4><p>Warme Luft steigt an der ITC auf, strömt in der Höhe polwärts, sinkt um 30° ab und bildet <a class="term" href="#gloss-subtropenhoch">subtropische Hochdruckgebiete</a>.</p></div><div class="comp"><span class="tag tag-b"><a class="term" href="#gloss-ferrel-zelle">Ferrel-Zelle</a></span><h4>30°–60°</h4><p>Indirekte Zelle der Mittelbreiten. Hier dominiert die <a class="term" href="#gloss-westwindzone">Westwindzone</a> und die <a class="term" href="#gloss-frontalzone">planetarische Frontalzone</a>.</p></div><div class="comp"><span class="tag tag-p"><a class="term" href="#gloss-polar-zelle">Polar-Zelle</a></span><h4>60°–90°</h4><p>Kalte Luft sinkt an den Polen ab, bildet Polarhochdruck und strömt bodennah Richtung subpolare Tiefdruckzone.</p></div></div><div class="merke"><strong>Verstehen statt auswendig:</strong> Druckgürtel entstehen aus Aufsteigen und Absinken von Luftmassen. Windgürtel entstehen aus Druckausgleich plus Corioliseffekt.</div></div></section>
+<section class="section" id="passat"><div class="section-head"><div class="num">9</div><h2>ITC und Passatkreislauf</h2></div><div class="card"><p>Die ITC ist die innertropische Konvergenzzone. Dort treffen die Passate zusammen. Durch starke Erwärmung steigt Luft auf, kühlt ab, kondensiert und erzeugt häufig kräftige Niederschläge. Deshalb ist die ITC mit Wolkenbildung und Zenitalregen verbunden.</p><div class="figure"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Atmospheric%20circulation-de.svg" alt="Atmosphärische Zirkulation und Passate"><div class="cap">Atmosphärische Zirkulation mit Passaten, Westwinden und polaren Ostwinden. Quelle: Wikimedia Commons.</div></div>
+<div class="fig-explain"><h4>Passatkreislauf in der Abbildung</h4><ul><li>Die Passate wehen bodennah von den subtropischen Hochdruckgebieten zur ITC.</li><li>In der ITC konvergieren die Passate. Die Luft steigt auf und erzeugt häufig Zenitalregen.</li><li>In der Höhe strömt die Luft als <a class="term" href="#gloss-antipassat">Antipassat</a> wieder Richtung Subtropen.</li><li>Dort sinkt sie ab, erwärmt sich und trocknet aus. Deshalb liegen viele Wüsten in der Nähe der Wendekreise.</li><li>Die Grafik verbindet also direkt Passate, ITC, Niederschlag in den Tropen und Trockenräume der Subtropen.</li></ul><div class="chain"><a class="term" href="#gloss-subtropenhoch">Subtropenhoch</a> → Passate → ITC → Aufsteigen/Regen → <a class="term" href="#gloss-antipassat">Antipassat</a> → Absinken/Wüsten</div></div><div class="step"><div class="stepn">1</div><div><h4>Starke Erwärmung im Zenitbereich</h4><p>Die Luft wird warm, dehnt sich aus und steigt auf. Am Boden entsteht die äquatoriale Tiefdruckrinne.</p></div></div><div class="step"><div class="stepn">2</div><div><h4>Konvergenz am Boden</h4><p>Passate strömen von den subtropischen Hochdruckgürteln zur ITC.</p></div></div><div class="step"><div class="stepn">3</div><div><h4>Aufsteigen, Abkühlung, Kondensation</h4><p>Aufsteigende Luft kühlt ab. Wasserdampf kondensiert. Wolken und Niederschläge entstehen.</p></div></div><div class="step"><div class="stepn">4</div><div><h4>Antipassat in der Höhe</h4><p>In der Höhe strömt Luft polwärts. An der <a class="term" href="#gloss-tropopause">Tropopause</a> wird sie seitlich abgelenkt.</p></div></div><div class="step"><div class="stepn">5</div><div><h4>Absinken um 30°</h4><p>Die Luft sinkt ab und erwärmt sich <a class="term" href="#gloss-adiabatisch">adiabatisch</a>. Dadurch entstehen <a class="term" href="#gloss-subtropenhoch">subtropische Hochdruckgebiete</a> und trockene Absinkräume.</p></div></div><div class="merke"><strong>Prüfungsformulierung:</strong> Die Passatzirkulation verbindet Strahlungsmaximum, thermisches Bodentief, Konvergenz, Zenitalregen, Antipassat, subtropischen Hochdruckgürtel und trockene Absinkräume.</div></div></section>
+<section class="section" id="<a class="term" href="#gloss-klimaelemente">klimaelemente</a>"><div class="section-head"><div class="num">10</div><h2>Klimaelemente und <a class="term" href="#gloss-klimafaktoren">Klimafaktoren</a></h2></div><div class="card"><p>Klimaelemente sind messbare Eigenschaften des Klimas. <a class="term" href="#gloss-klimafaktoren">Klimafaktoren</a> erklären, warum diese Elemente an Orten unterschiedlich ausgeprägt sind.</p><div class="grid2"><div class="mini"><h4>Klimaelemente</h4><ul><li>Temperatur</li><li>Niederschlag</li><li>Luftdruck</li><li>Wind</li><li><a class="term" href="#gloss-relative-luftfeuchtigkeit">Luftfeuchtigkeit</a></li><li>Bewölkung / Sonnenscheindauer</li></ul></div><div class="mini"><h4><a class="term" href="#gloss-klimafaktoren">Klimafaktoren</a></h4><ul><li>geographische Breite</li><li>Höhenlage</li><li><a class="term" href="#gloss-kontinentalitaet">Kontinentalität</a> / <a class="term" href="#gloss-maritimität">Maritimität</a></li><li>Relief / Exposition</li><li>Meeresströmungen</li><li>Bodenbedeckung und Albedo</li></ul></div></div><div class="merke"><strong>Für Vegetationszonen:</strong> Am wichtigsten sind Temperatur und Niederschlag. Sie bestimmen, ob Wald, Savanne, Steppe, Wüste, Tundra oder Eiswüste entstehen kann.</div></div></section>
+<section class="section" id="klimazonen"><div class="section-head"><div class="num">11</div><h2>Klima- und Vegetationszonen</h2></div><div class="card"><p>Klima- und Vegetationszonen entstehen nicht zufällig. Sie folgen aus Beleuchtung, Temperatur, Niederschlag, Luftdruckgürteln, Windsystemen und der Lage zu Meer oder Kontinent. Vegetation ist dabei eine sichtbare Reaktion auf klimatische Bedingungen.</p><div class="figure"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/K%C3%B6ppen-Geiger%20Climate%20Classification%20Map%20%281980%E2%80%932016%29%20no%20borders.png" alt="Köppen-Geiger Klimaklassifikation Weltkarte"><div class="cap">Köppen-Geiger-Klimaklassifikation der Erde. Quelle: Wikimedia Commons.</div></div>
+<div class="fig-explain"><h4>Wie du die Klimakarte nutzt</h4><ul><li>Die Karte zeigt, dass Klimazonen nicht perfekte parallele Streifen sind. Breitenlage ist wichtig, aber nicht der einzige Faktor.</li><li>Meeresnähe, <a class="term" href="#gloss-kontinentalitaet">Kontinentalität</a>, Relief, Höhenlage und Meeresströmungen verändern die Verteilung.</li><li>Trockengebiete häufen sich in den Subtropen, weil dort Luft absinkt und Wolkenbildung gehemmt wird.</li><li>Tropisch-feuchte Gebiete liegen häufig im Bereich der ITC, weil dort Luft aufsteigt und Niederschläge entstehen.</li><li>In der Prüfung kannst du die Karte nutzen, um zu zeigen: Klimazonen entstehen aus globalen Prozessen, werden aber regional überprägt.</li></ul><div class="chain">Breitenlage + Zirkulation + Relief/Meer/<a class="term" href="#gloss-kontinentalitaet">Kontinentalität</a> → konkrete Klimazone</div></div><div class="figure"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/World%20vegetation%20zones.png" alt="Vegetationszonen der Erde"><div class="cap">Weltweite Vegetationszonen. Quelle: Wikimedia Commons.</div></div>
+<div class="fig-explain"><h4>Zusammenhang Klima → Vegetation</h4><ul><li>Vegetation ist die sichtbare Folge klimatischer Bedingungen.</li><li>Wo es ganzjährig warm und feucht ist, kann tropischer Regenwald entstehen.</li><li>Wo es warm ist, aber eine Trockenzeit gibt, entstehen Savannen.</li><li>Bei starker Trockenheit entstehen Wüsten oder Halbwüsten.</li><li>In den Mittelbreiten ermöglichen gemäßigte Temperaturen und ausreichend Niederschlag Laub- und Mischwälder.</li><li>In subpolaren und polaren Räumen begrenzen Kälte, kurze <a class="term" href="#gloss-vegetationsperiode">Vegetationsperiode</a> und Permafrost das Pflanzenwachstum.</li></ul><div class="chain">Temperatur + Niederschlag + <a class="term" href="#gloss-vegetationsperiode">Vegetationsperiode</a> → mögliche Pflanzenformation</div></div><div class="compare"><div class="comp"><span class="tag tag-g">Tropen</span><h4>Regenwald / Savanne</h4><p>Ganzjährig warm. Vegetation hängt stark von Niederschlagsmenge und Trockenzeit ab.</p></div><div class="comp"><span class="tag tag-o">Subtropen</span><h4>Wüste / Hartlaubvegetation</h4><p>Hohe Einstrahlung, häufig Trockenheit. An Küsten kann Winterregenklima entstehen.</p></div><div class="comp"><span class="tag tag-b">Mittelbreiten</span><h4>Laubwald / Steppe</h4><p><a class="term" href="#gloss-jahreszeitenklima">Jahreszeitenklima</a>. Vegetation hängt stark von Kontinentalität und Niederschlag ab.</p></div><div class="comp"><span class="tag tag-p">Subpolar</span><h4>Taiga / Tundra</h4><p>Kurze <a class="term" href="#gloss-vegetationsperiode">Vegetationsperiode</a>, lange kalte Winter. Baumgrenze ist entscheidend.</p></div><div class="comp"><span class="tag tag-p">Polar</span><h4>Eiswüste</h4><p>Sehr kalt, kaum Vegetation, geringe biologische Produktivität.</p></div><div class="comp"><span class="tag tag-g">Merksystem</span><h4>T + N → Vegetation</h4><p>Temperatur und Niederschlag sind die Grundachsen für fast jede Vegetationszuordnung.</p></div></div></div></section>
+<section class="section" id="diagramme"><div class="section-head"><div class="num">12</div><h2>Klimadiagramme und <a class="term" href="#gloss-thermoisoplethendiagramm">Thermoisoplethendiagramm</a>e auswerten</h2></div><div class="card"><p>In deinem Material tauchen Klimadiagramme und <a class="term" href="#gloss-thermoisoplethendiagramm">Thermoisoplethendiagramme</a> mehrfach auf. In der mündlichen Prüfung musst du nicht nur ablesen, sondern begründet zuordnen.</p><h3>Klimadiagramm</h3><div class="checklist"><div class="check">Jahresmitteltemperatur betrachten.</div><div class="check">Temperaturamplitude bestimmen: warmster Monat minus kältester Monat.</div><div class="check">Jahresniederschlag und Niederschlagsverteilung analysieren.</div><div class="check"><a class="term" href="#gloss-arid-humid">Arid</a>/<a class="term" href="#gloss-arid-humid">humid</a> prüfen: Trockenzeiten erkennen.</div><div class="check">Klimazone begründet zuordnen.</div></div><h3><a class="term" href="#gloss-thermoisoplethendiagramm">Thermoisoplethendiagramm</a></h3><div class="grid2"><div class="mini"><h4>Vertikale Linien</h4><p>Jahreszeitenklima. Temperatur ändert sich vor allem im Jahresverlauf.</p></div><div class="mini"><h4>Horizontale Linien</h4><p><a class="term" href="#gloss-tageszeitenklima">Tageszeitenklima</a>. Temperatur ändert sich stärker im Tagesverlauf als im Jahresverlauf.</p></div></div><div class="merke"><strong>Klausur-/Kolloquiumsanker:</strong> Tropen erkennt man oft am Tageszeitenklima; Mittelbreiten und Polarzone am Jahreszeitenklima.</div></div></section>
+<section class="section" id="muendlich"><div class="section-head"><div class="num">13</div><h2>Mündliche Prüfungsantworten</h2></div><div class="exam"><h3>Antwortschema 1: „Erklären Sie die Entstehung der Passatzirkulation.“</h3><p>Am Äquator bzw. im Bereich der ITC ist die Sonneneinstrahlung besonders stark. Die Luft erwärmt sich, dehnt sich aus und steigt auf. Dadurch entsteht am Boden ein thermisches Tiefdruckgebiet. Beim Aufsteigen kühlt die Luft ab, Wasserdampf kondensiert und es entstehen Wolken sowie häufige Niederschläge. In der Höhe strömt die Luft nach Norden und Süden, wird an der <a class="term" href="#gloss-tropopause">Tropopause</a> abgelenkt und bildet Antipassate. Um etwa 30° Breite sinkt die Luft wieder ab, erwärmt sich <a class="term" href="#gloss-adiabatisch">adiabatisch</a> und bildet subtropische Hochdruckgebiete. Vom Hochdruckgürtel strömt bodennahe Luft zurück zur ITC. Durch den Corioliseffekt werden diese Winde abgelenkt: auf der Nordhalbkugel entstehen Nordostpassate, auf der Südhalbkugel Südostpassate.</p></div><div class="exam"><h3>Antwortschema 2: „Wie entstehen Klima- und Vegetationszonen?“</h3><p>Klima- und Vegetationszonen entstehen durch die ungleiche Verteilung der Sonneneinstrahlung auf der Erde. In den Tropen ist der Einfallswinkel hoch, deshalb sind die Temperaturen ganzjährig hoch. Zu den Polen nimmt der Einfallswinkel ab, wodurch weniger Energie pro Fläche ankommt. Zusätzlich beeinflussen Druckgürtel, Windsysteme, Niederschlagsverteilung, Höhenlage, Meeresnähe und Kontinentalität das Klima. Die Vegetation reagiert auf Temperatur und Niederschlag: ganzjährig feucht-warme Räume ermöglichen tropischen Regenwald, wechselfeuchte Tropen Savannen, trockene Subtropen Wüsten, gemäßigte feuchte Räume Laub- und Mischwald, subpolare Räume Taiga oder Tundra.</p></div><div class="exam"><h3>Antwortschema 3: „Unterscheiden Sie thermische und dynamische Druckgebiete.“</h3><p>Thermische Druckgebiete entstehen unmittelbar durch Temperaturunterschiede. Wird Luft stark erwärmt, dehnt sie sich aus, steigt auf und es entsteht am Boden ein Tief. Wird Luft stark abgekühlt, sinkt sie ab und es entsteht am Boden ein Hoch. Dynamische Druckgebiete entstehen dagegen durch großräumige Luftbewegungen, Konvergenz oder Divergenz, besonders im Zusammenhang mit Höhenwinden und der planetarischen Zirkulation. Entscheidend ist also: thermisch bedeutet temperaturbedingt, dynamisch bedeutet bewegungsbedingt.</p></div></section>
+<section class="section" id="quiz"><div class="section-head"><div class="num">14</div><h2>Wissenscheck</h2></div><div class="quiz"><details class="q"><summary>1. Warum entsteht am Äquator ein Tiefdruckgebiet?</summary><p>Durch starke Sonneneinstrahlung erwärmt sich die Luft, dehnt sich aus, wird leichter und steigt auf. Am Boden fehlen Luftmassen: Es entsteht ein Bodentief.</p></details><details class="q"><summary>2. Warum sind subtropische Wüsten häufig um 30° N/S?</summary><p>Dort sinkt Luft aus der Hadley-Zirkulation ab. Beim Absinken erwärmt sie sich adiabatisch, die <a class="term" href="#gloss-relative-luftfeuchtigkeit">relative Luftfeuchtigkeit</a> sinkt, Wolkenbildung wird gehemmt. Es entstehen trockene Hochdruckräume.</p></details><details class="q"><summary>3. Was ist die ITC?</summary><p>Die Innertropische Konvergenzzone ist eine Tiefdruckrinne im Bereich stärkster Erwärmung. Dort konvergieren Passate, Luft steigt auf, es bilden sich Wolken und häufige Niederschläge.</p></details><details class="q"><summary>4. Was macht der Corioliseffekt?</summary><p>Er lenkt bewegte Luftmassen durch die Erdrotation ab: auf der Nordhalbkugel nach rechts, auf der Südhalbkugel nach links.</p></details><details class="q"><summary>5. Wie erkennst du Tageszeitenklima im Thermoisoplethendiagramm?</summary><p>An eher horizontal verlaufenden Isoplethen: Die Temperaturunterschiede zwischen Tag und Nacht sind wichtiger als die Unterschiede zwischen den Monaten.</p></details><details class="q"><summary>6. Was ist der Unterschied zwischen Klimaelementen und Klimafaktoren?</summary><p>Klimaelemente sind messbare Größen wie Temperatur und Niederschlag. Klimafaktoren erklären diese Werte, z. B. Breitenlage, Höhenlage, Meeresnähe oder Relief.</p></details><details class="q"><summary>7. Warum kann auf der Leeseite eines Gebirges Föhn entstehen?</summary><p>Die Luft hat auf der <a class="term" href="#gloss-luv">Luvseite</a> Feuchtigkeit verloren. Beim Absinken auf der Leeseite erwärmt sie sich trockenadiabatisch und kommt warm und trocken an.</p></details></div></section>
+  <section class="section glossary" id="glossar">
+    <div class="section-head"><div class="num">G</div><h2>Fachbegriffe-Glossar</h2></div>
+    <p class="glossary-intro">Hier stehen die wichtigsten Fachbegriffe von 12-1.1. Die gelben Begriffe im Text springen direkt zu ihrer Erklärung. Du kannst das Glossar auch als eigenes Lernkapitel am Ende der Seite verwenden.</p>
+    <div class="gloss-index"><a href="#gloss-absorption">Absorption</a><a href="#gloss-advektion">Advektion</a><a href="#gloss-adiabatisch">Adiabatisch</a><a href="#gloss-albedo">Albedo</a><a href="#gloss-antipassat">Antipassat</a><a href="#gloss-arid-humid">Arid / humid</a><a href="#gloss-corioliseffekt">Corioliseffekt</a><a href="#gloss-ferrel-zelle">Ferrel-Zelle</a><a href="#gloss-foehn">Föhn</a><a href="#gloss-frontalzone">Planetarische Frontalzone</a><a href="#gloss-gradientkraft">Gradientkraft</a><a href="#gloss-hadley-zelle">Hadley-Zelle</a><a href="#gloss-hochdruckgebiet">Hochdruckgebiet</a><a href="#gloss-isobaren">Isobaren</a><a href="#gloss-itc">ITC / ITCZ</a><a href="#gloss-jahreszeitenklima">Jahreszeitenklima</a><a href="#gloss-jetstream">Jetstream</a><a href="#gloss-klimaelemente">Klimaelemente</a><a href="#gloss-klimafaktoren">Klimafaktoren</a><a href="#gloss-kondensation">Kondensation</a><a href="#gloss-kontinentalitaet">Kontinentalität</a><a href="#gloss-konvektion">Konvektion</a><a href="#gloss-lee">Lee</a><a href="#gloss-luv">Luv</a><a href="#gloss-maritimität">Maritimität</a><a href="#gloss-monsun">Monsun</a><a href="#gloss-ozonschicht">Ozonschicht</a><a href="#gloss-passate">Passate</a><a href="#gloss-passatinversion">Passatinversion</a><a href="#gloss-polar-zelle">Polar-Zelle</a><a href="#gloss-reflexion">Reflexion</a><a href="#gloss-relative-luftfeuchtigkeit">Relative Luftfeuchtigkeit</a><a href="#gloss-strahlungsbilanz">Strahlungsbilanz</a><a href="#gloss-subtropenhoch">Subtropischer Hochdruckgürtel</a><a href="#gloss-tageszeitenklima">Tageszeitenklima</a><a href="#gloss-taupunkt">Taupunkt</a><a href="#gloss-tiefdruckgebiet">Tiefdruckgebiet</a><a href="#gloss-treibhausgase">Treibhausgase</a><a href="#gloss-troposphaere">Troposphäre</a><a href="#gloss-tropopause">Tropopause</a><a href="#gloss-vegetationsperiode">Vegetationsperiode</a><a href="#gloss-wendekreise">Wendekreise</a><a href="#gloss-westwindzone">Westwindzone</a><a href="#gloss-zenitstand">Zenitstand</a><a href="#gloss-thermoisoplethendiagramm">Thermoisoplethendiagramm</a></div>
+    <div class="gloss-grid">
+      <div class="gloss-item" id="gloss-absorption">
+        <h3>Absorption</h3>
+        <p>Aufnahme von Strahlung durch Atmosphäre, Wasser, Boden oder Vegetation. Die aufgenommene Strahlung wird häufig in Wärme umgewandelt.</p>
+        <div class="connect">Zusammenhang: Absorption ist die Verbindung zwischen Sonneneinstrahlung und Erwärmung.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-advektion">
+        <h3>Advektion</h3>
+        <p>Horizontaler Transport von Luftmassen, Wärme oder Feuchtigkeit durch Wind.</p>
+        <div class="connect">Zusammenhang: Advektion erklärt, warum Wetter- und Luftmassen räumlich verlagert werden.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-adiabatisch">
+        <h3>Adiabatisch</h3>
+        <p>Temperaturänderung eines Luftpakets ohne Wärmeaustausch mit der Umgebung. Aufsteigende Luft kühlt ab, absinkende Luft erwärmt sich.</p>
+        <div class="connect">Zusammenhang: Wichtig für Föhn, Wolkenbildung, ITC und Wüstenbildung.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-albedo">
+        <h3>Albedo</h3>
+        <p>Rückstrahlvermögen einer Oberfläche. Helle Flächen wie Schnee reflektieren viel, dunkle Flächen wie Wald oder Meer absorbieren mehr.</p>
+        <div class="connect">Zusammenhang: Albedo beeinflusst die Strahlungsbilanz und damit die Temperatur.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-antipassat">
+        <h3>Antipassat</h3>
+        <p>Höhenwind der Hadley-Zelle, der von der ITC in Richtung Subtropen strömt.</p>
+        <div class="connect">Zusammenhang: Er schließt den Passatkreislauf in der Höhe.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-arid-humid">
+        <h3>Arid / humid</h3>
+        <p>Arid bedeutet trocken: Verdunstung ist größer als Niederschlag. Humid bedeutet feucht: Niederschlag ist größer als Verdunstung.</p>
+        <div class="connect">Zusammenhang: Diese Begriffe sind zentral für Klimadiagramme und Vegetationszonen.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-corioliseffekt">
+        <h3>Corioliseffekt</h3>
+        <p>Ablenkung bewegter Luftmassen durch die Erdrotation: Nordhalbkugel nach rechts, Südhalbkugel nach links.</p>
+        <div class="connect">Zusammenhang: Er erklärt Passate, Westwinde und polare Ostwinde.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-ferrel-zelle">
+        <h3>Ferrel-Zelle</h3>
+        <p>Zirkulationszelle der Mittelbreiten zwischen etwa 30° und 60° Breite.</p>
+        <div class="connect">Zusammenhang: Sie steht im Zusammenhang mit Westwindzone und planetarischer Frontalzone.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-foehn">
+        <h3>Föhn</h3>
+        <p>Warmer, trockener Fallwind auf der Leeseite eines Gebirges nach Aufstieg, Niederschlag und anschließendem Absinken der Luft.</p>
+        <div class="connect">Zusammenhang: Klassisches Beispiel für adiabatische Prozesse.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-frontalzone">
+        <h3>Planetarische Frontalzone</h3>
+        <p>Übergangszone der Mittelbreiten, in der warme subtropische und kalte polare Luftmassen aufeinandertreffen.</p>
+        <div class="connect">Zusammenhang: Wichtig für Westwindzone, Tiefdruckgebiete und wechselhaftes Wetter in Europa.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-gradientkraft">
+        <h3>Gradientkraft</h3>
+        <p>Kraft, die Luft vom hohen zum niedrigen Luftdruck antreibt.</p>
+        <div class="connect">Zusammenhang: Ohne Gradientkraft gäbe es keinen Wind als Druckausgleich.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-hadley-zelle">
+        <h3>Hadley-Zelle</h3>
+        <p>Tropische Zirkulationszelle zwischen Äquator/ITC und etwa 30° Breite.</p>
+        <div class="connect">Zusammenhang: Sie erklärt Passate, subtropische Hochdruckgebiete und viele Wüstenräume.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-hochdruckgebiet">
+        <h3>Hochdruckgebiet</h3>
+        <p>Gebiet mit relativ hohem Luftdruck. Luft sinkt häufig ab, erwärmt sich und Wolkenbildung wird gehemmt.</p>
+        <div class="connect">Zusammenhang: Hochdruck steht oft für trockenere und stabilere Verhältnisse.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-isobaren">
+        <h3>Isobaren</h3>
+        <p>Linien gleichen Luftdrucks auf Wetterkarten.</p>
+        <div class="connect">Zusammenhang: Je enger die Isobaren, desto stärker das Druckgefälle und meist desto stärker der Wind.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-itc">
+        <h3>ITC / ITCZ</h3>
+        <p>Innertropische Konvergenzzone: Tiefdruckrinne im Bereich stärkster Erwärmung, in der Passate zusammenströmen und Luft aufsteigt.</p>
+        <div class="connect">Zusammenhang: Zentral für Zenitalregen, Passatkreislauf und Tropenklima.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-jahreszeitenklima">
+        <h3>Jahreszeitenklima</h3>
+        <p>Klima, bei dem Temperaturunterschiede im Jahresverlauf stärker prägen als Tag-Nacht-Unterschiede.</p>
+        <div class="connect">Zusammenhang: Typisch für Mittelbreiten und Polarregionen.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-jetstream">
+        <h3>Jetstream</h3>
+        <p>Starkes schmales Windband in großer Höhe, besonders im Bereich starker Temperaturgegensätze.</p>
+        <div class="connect">Zusammenhang: Beeinflusst Wetterlagen und Verlagerung von Hochs und Tiefs.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-klimaelemente">
+        <h3>Klimaelemente</h3>
+        <p>Messbare Größen des Klimas: Temperatur, Niederschlag, Luftdruck, Wind, Luftfeuchtigkeit, Bewölkung.</p>
+        <div class="connect">Zusammenhang: Sie werden in Diagrammen und Karten dargestellt.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-klimafaktoren">
+        <h3>Klimafaktoren</h3>
+        <p>Einflussgrößen, die Klimaelemente erklären: Breitenlage, Höhenlage, Meeresnähe, Relief, Bodenbedeckung, Meeresströmungen.</p>
+        <div class="connect">Zusammenhang: Sie erklären, warum Orte in gleicher Breite unterschiedliches Klima haben können.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-kondensation">
+        <h3>Kondensation</h3>
+        <p>Übergang von Wasserdampf zu flüssigem Wasser, wenn Luft abkühlt und gesättigt ist.</p>
+        <div class="connect">Zusammenhang: Voraussetzung für Wolkenbildung und Niederschlag.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-kontinentalitaet">
+        <h3>Kontinentalität</h3>
+        <p>Einfluss großer Landmassen: heiße Sommer, kalte Winter, größere Temperaturamplitude und oft geringere Niederschläge.</p>
+        <div class="connect">Zusammenhang: Gegensatz zur Maritimität.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-konvektion">
+        <h3>Konvektion</h3>
+        <p>Vertikale Luftbewegung durch Erwärmung. Warme Luft steigt auf, kalte Luft sinkt ab.</p>
+        <div class="connect">Zusammenhang: Grundprozess für Tiefdruck, Wolkenbildung und Gewitter.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-lee">
+        <h3>Lee</h3>
+        <p>Windabgewandte Seite eines Gebirges.</p>
+        <div class="connect">Zusammenhang: Im Lee sinkt Luft ab und erwärmt sich; dort kann Föhn entstehen.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-luv">
+        <h3>Luv</h3>
+        <p>Windzugewandte Seite eines Gebirges.</p>
+        <div class="connect">Zusammenhang: Im Luv steigt Luft auf, kühlt ab und bringt häufig Steigungsregen.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-maritimität">
+        <h3>Maritimität</h3>
+        <p>Einfluss des Meeres: ausgeglichene Temperaturen, mildere Winter, kühlere Sommer und häufig mehr Feuchtigkeit.</p>
+        <div class="connect">Zusammenhang: Gegensatz zur Kontinentalität.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-monsun">
+        <h3>Monsun</h3>
+        <p>Jahreszeitlich wechselndes Windsystem, verursacht durch Temperatur- und Druckgegensätze zwischen Kontinent und Ozean.</p>
+        <div class="connect">Zusammenhang: Verknüpft ITC-Wanderung, thermische Druckgebiete und Niederschlagszeiten.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-ozonschicht">
+        <h3>Ozonschicht</h3>
+        <p>Bereich in der Stratosphäre mit erhöhter Ozonkonzentration, der einen großen Teil der UV-Strahlung absorbiert.</p>
+        <div class="connect">Zusammenhang: Schützt Leben auf der Erde und beeinflusst den Temperaturverlauf in der Stratosphäre.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-passate">
+        <h3>Passate</h3>
+        <p>Beständige Winde, die bodennah von den subtropischen Hochdruckgebieten zur ITC wehen.</p>
+        <div class="connect">Zusammenhang: Nordostpassat auf der Nordhalbkugel, Südostpassat auf der Südhalbkugel.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-passatinversion">
+        <h3>Passatinversion</h3>
+        <p>Sperrschicht im Passatbereich, bei der wärmere Luft über kühlerer Luft liegt und weiteres Aufsteigen hemmt.</p>
+        <div class="connect">Zusammenhang: Wichtig für stabile trockene Bedingungen in Passatregionen.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-polar-zelle">
+        <h3>Polar-Zelle</h3>
+        <p>Zirkulationszelle zwischen etwa 60° Breite und den Polen.</p>
+        <div class="connect">Zusammenhang: Kalte Luft sinkt an den Polen ab und strömt bodennah Richtung subpolare Breiten.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-reflexion">
+        <h3>Reflexion</h3>
+        <p>Zurückwerfen von Strahlung, ohne dass sie aufgenommen wird.</p>
+        <div class="connect">Zusammenhang: Reflexion reduziert die Erwärmung der Erdoberfläche.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-relative-luftfeuchtigkeit">
+        <h3>Relative Luftfeuchtigkeit</h3>
+        <p>Verhältnis zwischen tatsächlich enthaltenem Wasserdampf und maximal möglicher Wasserdampfmenge bei einer bestimmten Temperatur.</p>
+        <div class="connect">Zusammenhang: Warme Luft kann mehr Wasserdampf aufnehmen als kalte Luft.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-strahlungsbilanz">
+        <h3>Strahlungsbilanz</h3>
+        <p>Verhältnis von einfallender kurzwelliger Sonnenstrahlung zu reflektierter Strahlung und abgegebener langwelliger Wärmestrahlung.</p>
+        <div class="connect">Zusammenhang: Grundlage für Temperaturunterschiede auf der Erde.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-subtropenhoch">
+        <h3>Subtropischer Hochdruckgürtel</h3>
+        <p>Hochdruckzone um etwa 30° N/S, wo Luft aus der Hadley-Zelle absinkt und sich erwärmt.</p>
+        <div class="connect">Zusammenhang: Erklärt viele subtropische Wüstenräume.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-tageszeitenklima">
+        <h3>Tageszeitenklima</h3>
+        <p>Klima, bei dem Tag-Nacht-Unterschiede größer sind als jahreszeitliche Unterschiede.</p>
+        <div class="connect">Zusammenhang: Typisch für äquatornahe Tropen.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-taupunkt">
+        <h3>Taupunkt</h3>
+        <p>Temperatur, bei der Luft mit Wasserdampf gesättigt ist und Kondensation beginnt.</p>
+        <div class="connect">Zusammenhang: Wichtig für Wolkenbildung, Nebel und Niederschlag.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-tiefdruckgebiet">
+        <h3>Tiefdruckgebiet</h3>
+        <p>Gebiet mit relativ niedrigem Luftdruck. Luft strömt zusammen und steigt häufig auf.</p>
+        <div class="connect">Zusammenhang: Tiefdruck begünstigt Wolkenbildung und Niederschlag.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-treibhausgase">
+        <h3>Treibhausgase</h3>
+        <p>Gase wie Wasserdampf, CO₂, Methan und Lachgas, die langwellige Wärmestrahlung absorbieren und teilweise zurückstrahlen.</p>
+        <div class="connect">Zusammenhang: Sie ermöglichen den natürlichen Treibhauseffekt.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-troposphaere">
+        <h3>Troposphäre</h3>
+        <p>Unterste Schicht der Atmosphäre. In ihr findet fast das gesamte Wettergeschehen statt.</p>
+        <div class="connect">Zusammenhang: Zentral für Wind, Wolken, Niederschlag und Klima.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-tropopause">
+        <h3>Tropopause</h3>
+        <p>Grenzschicht zwischen Troposphäre und Stratosphäre.</p>
+        <div class="connect">Zusammenhang: Sie bremst aufsteigende Luftmassen und ist wichtig für globale Zirkulation.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-vegetationsperiode">
+        <h3>Vegetationsperiode</h3>
+        <p>Zeitraum im Jahr, in dem Pflanzen aufgrund ausreichender Wärme und Feuchtigkeit wachsen können.</p>
+        <div class="connect">Zusammenhang: Bestimmt stark, welche Vegetationszone möglich ist.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-wendekreise">
+        <h3>Wendekreise</h3>
+        <p>Breitenkreise bei etwa 23,5° N und 23,5° S. Zwischen ihnen kann die Sonne im Zenit stehen.</p>
+        <div class="connect">Zusammenhang: Sie begrenzen die Tropen astronomisch.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-westwindzone">
+        <h3>Westwindzone</h3>
+        <p>Windgürtel der Mittelbreiten, in dem Winde überwiegend aus westlicher Richtung wehen.</p>
+        <div class="connect">Zusammenhang: Für Europa sehr wetterwirksam.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-zenitstand">
+        <h3>Zenitstand</h3>
+        <p>Position der Sonne senkrecht über einem Ort. Der Zenitstand wandert im Jahreslauf zwischen den Wendekreisen.</p>
+        <div class="connect">Zusammenhang: Bestimmt die Verlagerung der ITC mit.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+      <div class="gloss-item" id="gloss-thermoisoplethendiagramm">
+        <h3>Thermoisoplethendiagramm</h3>
+        <p>Diagramm, das Temperatur nach Tageszeit und Jahreszeit darstellt. Linien gleicher Temperatur heißen Isoplethen.</p>
+        <div class="connect">Zusammenhang: Hilft bei der Unterscheidung von Tageszeiten- und Jahreszeitenklima.</div>
+        <a class="toplink" href="#glossar">↑ zurück zum Glossar-Index</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer-note">Lokale Lernseite für private Nutzung. Inhaltlich gefiltert auf 12-1.1: atmosphärische Prozesse, Druck- und Windsysteme, Klima- und Vegetationszonen. Ozeanische Prozesse, ENSO, Golfstrom, Humboldtstrom, Klimawandel allgemein und Polarregionen werden später in 12-1.2 bzw. 12-1.3 behandelt.</div></main></div></body></html>
