@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Geo 12-1.1.2 — Thermische und dynamische Druckgebiete</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d1117;--surface:#151c2b;--card:#1b2440;--card2:#202a4a;--border:#283454;--text:#e8eef7;--muted:#8b98ad;--gold:#f5c842;--sky:#66d9ef;--blue:#4d9de0;--green:#52b788;--orange:#e07b4d;--red:#e05555;--purple:#9b72cf}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--text);font-family:Outfit,system-ui,sans-serif;line-height:1.72;font-size:15.5px}.layout{display:flex;min-height:100vh}.sidebar{width:326px;min-width:326px;height:100vh;position:sticky;top:0;background:var(--surface);border-right:1px solid var(--border);overflow-y:auto}.sb-head{padding:22px;border-bottom:1px solid var(--border)}.back{color:var(--muted);font-size:12.5px;text-decoration:none}.back:hover{color:var(--sky)}.sb-title{font-family:Fraunces,serif;color:#fff;font-size:22px;margin-top:14px}.sb-sub{color:var(--muted);font-size:12px;margin-top:3px}.navgrp{padding:16px 22px 5px;color:var(--sky);font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase}.nav a{display:block;padding:6px 22px;color:var(--muted);font-size:12.5px;text-decoration:none;border-left:2px solid transparent}.nav a:hover{color:#fff;background:rgba(102,217,239,.08)}.main{flex:1;max-width:1140px;padding:48px 54px 120px}.badge{display:inline-block;color:var(--sky);background:rgba(102,217,239,.12);border:1px solid rgba(102,217,239,.32);border-radius:999px;padding:5px 14px;font-size:12px;font-weight:800;margin-bottom:18px}h1{font-family:Fraunces,serif;font-size:48px;line-height:1.08;color:#fff;margin-bottom:14px}.lead{color:var(--muted);font-size:17px;max-width:860px}.focusbox{margin-top:20px;background:rgba(245,200,66,.08);border:1px solid rgba(245,200,66,.24);border-left:4px solid var(--gold);border-radius:14px;padding:16px 18px;max-width:920px}.focusbox b{color:var(--gold)}.gloss-button{display:inline-flex;margin-top:18px;background:rgba(245,200,66,.12);border:1px solid rgba(245,200,66,.35);color:var(--gold);font-weight:800;text-decoration:none;border-radius:999px;padding:9px 15px;font-size:13px}.section{margin:46px 0;scroll-margin-top:26px}.section-head{display:flex;gap:13px;align-items:center;margin-bottom:20px}.num{width:39px;height:39px;border-radius:10px;background:var(--sky);color:#061015;display:grid;place-items:center;font-weight:900;flex-shrink:0}h2{font-family:Fraunces,serif;color:#fff;font-size:31px;line-height:1.18}h3{color:#fff;font-size:19px;margin:22px 0 10px}.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px 26px;margin:14px 0}.card.alt{background:linear-gradient(180deg,#1c2543,#151d31)}.label{font-size:10.5px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--sky);margin-bottom:12px}.term{color:var(--gold);font-weight:800;text-decoration:none;border-bottom:1px dotted rgba(245,200,66,.65)}.term:hover{color:#fff;background:rgba(245,200,66,.13);border-radius:4px}.merke{background:rgba(82,183,136,.08);border:1px solid rgba(82,183,136,.25);border-radius:12px;padding:13px 16px;margin:16px 0}.merke strong{color:var(--green)}.warn{background:rgba(224,85,85,.08);border:1px solid rgba(224,85,85,.24);border-radius:12px;padding:13px 16px;margin:16px 0}.warn strong{color:#ff8585}.formula{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:rgba(77,157,224,.09);border:1px solid rgba(77,157,224,.25);border-radius:12px;padding:12px 14px;margin:12px 0;color:#fff}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:14px 0}.mini{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px}.mini h4{font-size:15px;color:var(--sky);margin-bottom:8px}.mini p,.mini li{font-size:13.5px;color:#b7c1d0;line-height:1.55}ul{padding-left:20px}li{margin:5px 0}.figure{background:#101622;border:1px solid var(--border);border-radius:16px;overflow:hidden;margin:20px 0}.figure img{display:block;width:100%;max-height:850px;object-fit:contain;background:#fff}.figure.small img{max-height:580px}.cap{border-top:1px solid var(--border);padding:11px 15px;color:var(--muted);font-size:12px;text-align:center}.fig-explain{background:rgba(102,217,239,.07);border:1px solid rgba(102,217,239,.22);border-radius:14px;padding:15px 17px;margin:14px 0 22px}.fig-explain h4{font-size:14px;color:var(--sky);margin-bottom:8px}.fig-explain li{font-size:14px;color:#c7d1df;line-height:1.55}.fig-explain .chain{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#fff;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:9px 11px;margin-top:10px;font-size:13px}.deep{background:linear-gradient(180deg,rgba(102,217,239,.08),rgba(77,157,224,.05));border:1px solid rgba(102,217,239,.22);border-radius:16px;padding:19px 21px;margin:18px 0}.deep h3{margin-top:0}.chainlist{display:grid;gap:9px;margin:14px 0}.chainitem{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:11px 13px;font-size:14px;color:#cbd5e1}.chainitem b{color:#fff}.compare{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}.comp{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px}.comp h4{color:#fff;font-size:15px;margin-bottom:6px}.tag{display:inline-block;margin-bottom:8px;border-radius:999px;padding:2px 9px;font-size:11px;font-weight:800}.tag-b{background:rgba(77,157,224,.12);color:var(--blue)}.tag-g{background:rgba(82,183,136,.12);color:var(--green)}.tag-o{background:rgba(224,123,77,.12);color:var(--orange)}.tag-r{background:rgba(224,85,85,.12);color:#ff8585}.exam{background:linear-gradient(135deg,rgba(102,217,239,.13),rgba(77,157,224,.08));border:1px solid rgba(102,217,239,.28);border-radius:16px;padding:22px;margin:18px 0}.exam h3{margin-top:0}.quiz{background:linear-gradient(180deg,#1b2440,#141b2d);border:1px solid var(--border);border-radius:18px;padding:26px;margin-top:32px}.q{margin:18px 0;padding:16px;background:rgba(255,255,255,.04);border-radius:12px;border:1px solid rgba(255,255,255,.07)}.q summary{cursor:pointer;color:#fff;font-weight:700}.q p{color:#b9c4d2;margin-top:10px}.glossary{background:linear-gradient(180deg,#1b2440,#141b2d);border:1px solid var(--border);border-radius:20px;padding:28px;margin-top:50px;scroll-margin-top:28px}.glossary-intro{color:var(--muted);max-width:780px;margin-bottom:20px}.gloss-index{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 24px}.gloss-index a{font-size:12px;text-decoration:none;color:var(--gold);background:rgba(245,200,66,.08);border:1px solid rgba(245,200,66,.18);border-radius:999px;padding:4px 10px}.gloss-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.gloss-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:15px 16px;scroll-margin-top:30px}.gloss-item h3{font-size:16px;margin:0 0 7px;color:var(--gold)}.gloss-item p{font-size:13.5px;color:#c6d0de;line-height:1.55}.gloss-item .connect{font-size:12.5px;color:var(--green);margin-top:8px}.toplink{display:inline-block;margin-top:9px;font-size:11.5px;color:var(--muted);text-decoration:none}.footer-note{font-size:12px;color:var(--muted);border-top:1px solid var(--border);margin-top:46px;padding-top:18px}@media(max-width:900px){.layout{display:block}.sidebar{display:none}.main{padding:28px 20px 70px}h1{font-size:35px}.grid2,.grid3,.compare,.gloss-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar">
+ <div class="sb-head"><a class="back" href="geographie.html">← Zur Geo-Übersicht</a><div class="sb-title">12-1.1.2</div><div class="sb-sub">Thermische & dynamische Druckgebiete</div></div>
+ <div class="nav">
+  <div class="navgrp">Grundlagen</div>
+  <a href="#fokus">Start & Ziel</a>
+  <a href="#gesamtmodell">Grundlogik</a>
+  <a href="#luftdruck">Luftdruck wiederholen</a>
+  <a href="#hoch-tief">Hoch und Tief</a>
+  <a href="#thermisch">Thermische Druckgebiete</a>
+  <a href="#hitzetief">Hitzetief</a>
+  <a href="#kaeltehoch">Kältehoch</a>
+  <a href="#dynamisch">Dynamische Druckgebiete</a>
+  <a href="#hoehe">Konvergenz/Divergenz</a>
+  <a href="#subtropisch">Subtropischer Hochdruckgürtel</a>
+  <a href="#zyklone">Dynamische Tiefs</a>
+  <a href="#vergleich">Vergleich</a>
+  <div class="navgrp">Prüfung</div>
+  <a href="#verknuepfung">Verknüpfungen</a>
+  <a href="#muendlich">Mündliche Antworten</a>
+  <a href="#quiz">Wissenscheck</a>
+  <a href="#glossar">Glossar</a>
+ </div>
+</aside>
+
+<main class="main">
+<header id="fokus">
+ <div class="badge">12-1.1 · Unterseite 2</div>
+ <h1>Thermische und dynamische Druckgebiete</h1>
+ <p class="lead">Diese Seite vertieft die Grundlage für Winde, ITC, Passate und die planetarische Zirkulation. Entscheidend ist: Druckgebiete entstehen nicht immer auf dieselbe Weise. Man muss thermische und dynamische Ursachen sauber trennen.</p>
+ <div class="focusbox"><b>Ziel:</b> Du sollst erklären können, wann ein Druckgebiet durch Temperaturunterschiede entsteht und wann durch großräumige Luftbewegungen in der Atmosphäre. Genau diese Unterscheidung brauchst du für ITC, subtropische Hochs, Passate, Westwindzone und dynamische Tiefdruckgebiete.</div>
+ <a class="gloss-button" href="#glossar">📘 Fachbegriffe-Glossar öffnen</a>
+</header>
+
+<section class="section" id="gesamtmodell">
+ <div class="section-head"><div class="num">0</div><h2>Grundlogik: Zwei Wege zum Druckgebiet</h2></div>
+ <div class="card alt">
+  <p>Ein Druckgebiet ist ein Bereich, in dem der Luftdruck im Vergleich zur Umgebung höher oder niedriger ist. Die Ursache kann entweder direkt in der Temperatur liegen oder in der Bewegung der Luftmassen.</p>
+  <div class="compare">
+   <div class="comp"><span class="tag tag-o">thermisch</span><h4>Temperatur als Ursache</h4><p>Erwärmung oder Abkühlung verändert Dichte und Vertikalbewegung der Luft.</p></div>
+   <div class="comp"><span class="tag tag-b">dynamisch</span><h4>Bewegung als Ursache</h4><p>Konvergenz, Divergenz, Höhenströmung und Absinken/Aufsteigen erzeugen Druckänderungen.</p></div>
+   <div class="comp"><span class="tag tag-g">wichtig</span><h4>oft kombiniert</h4><p>In der Realität wirken thermische und dynamische Prozesse oft zusammen.</p></div>
+  </div>
+  <div class="formula">thermisch: Temperatur → Dichte → Aufsteigen/Absinken → Druck</div>
+  <div class="formula">dynamisch: Luftbewegung → Konvergenz/Divergenz → Massenänderung → Druck</div>
+ </div>
+</section>
+
+<section class="section" id="luftdruck">
+ <div class="section-head"><div class="num">1</div><h2>Luftdruck kurz wiederholt</h2></div>
+ <div class="card">
+  <p>Luftdruck entsteht durch das Gewicht der Luftsäule über einer Fläche. Wenn sich über einem Gebiet am Boden mehr Luftmasse sammelt, steigt der Luftdruck. Wenn Luftmasse entfernt wird oder Luft aufsteigt, sinkt der Luftdruck.</p>
+  <div class="grid2">
+   <div class="mini"><h4>Mehr Luftmasse am Boden</h4><p>Absinkende oder zusammenströmende Luft erhöht den Bodendruck. Daraus entsteht ein Hochdruckgebiet.</p></div>
+   <div class="mini"><h4>Weniger Luftmasse am Boden</h4><p>Aufsteigende oder auseinandergezogene Luft senkt den Bodendruck. Daraus entsteht ein Tiefdruckgebiet.</p></div>
+  </div>
+  <div class="deep">
+   <h3>Der wichtige Zusatz</h3>
+   <p>Du darfst nicht nur fragen: „Ist die Luft warm oder kalt?“ Du musst auch fragen: „Was passiert in der Höhe?“ Denn ein Druckgebiet am Boden hängt immer damit zusammen, ob Luft in der Vertikale aufsteigt, absinkt, zusammenströmt oder auseinanderströmt.</p>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="hoch-tief">
+ <div class="section-head"><div class="num">2</div><h2>Hochdruck und Tiefdruck: Wetterwirkung</h2></div>
+ <div class="card">
+  <p>Ein <a class="term" href="#gloss-hoch">Hochdruckgebiet</a> ist meistens mit absinkender Luft verbunden. Ein <a class="term" href="#gloss-tief">Tiefdruckgebiet</a> ist meistens mit aufsteigender Luft verbunden. Daraus ergeben sich typische Wetterwirkungen.</p>
+  <div class="grid2">
+   <div class="mini"><h4>Hochdruckgebiet</h4><ul><li>Luft sinkt ab.</li><li>Beim Absinken erwärmt sich Luft trockenadiabatisch.</li><li>Relative Feuchte sinkt.</li><li>Wolken lösen sich eher auf.</li><li>Wetter ist häufig trocken und stabil.</li></ul></div>
+   <div class="mini"><h4>Tiefdruckgebiet</h4><ul><li>Luft steigt auf.</li><li>Beim Aufsteigen kühlt Luft ab.</li><li>Relative Feuchte steigt.</li><li>Kondensation und Wolkenbildung werden begünstigt.</li><li>Niederschlag ist wahrscheinlicher.</li></ul></div>
+  </div>
+  <div class="formula">Tief: Aufsteigen → Abkühlung → Kondensation → Wolken/Niederschlag</div>
+  <div class="formula">Hoch: Absinken → Erwärmung → Wolkenauflösung → trocken/stabil</div>
+ </div>
+</section>
+
+<section class="section" id="thermisch">
+ <div class="section-head"><div class="num">3</div><h2>Thermische Druckgebiete: Temperatur erzeugt Druck</h2></div>
+ <div class="card">
+  <p><a class="term" href="#gloss-thermisch">Thermische Druckgebiete</a> entstehen durch temperaturabhängige Dichteänderungen der Luft. Warme Luft dehnt sich aus, wird weniger dicht und steigt auf. Kalte Luft ist dichter und sinkt ab.</p>
+  <div class="figure small">
+   <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Convection%20cells.svg" alt="Konvektionszellen durch Erwärmung von unten">
+   <div class="cap">Konvektionszellen: Warme, weniger dichte Luft steigt auf; abgekühlte, dichtere Luft sinkt ab. Quelle: Wikimedia Commons.</div>
+  </div>
+  <div class="fig-explain"><h4>Warum die Grafik passt</h4><ul><li>Sie zeigt den Kern thermischer Druckentstehung: Erwärmung von unten setzt Luft in Bewegung.</li><li>Warme Luft steigt auf, weil ihre Dichte geringer wird.</li><li>Oben kühlt die Luft ab und sinkt an anderer Stelle wieder ab.</li><li>Diese Grundlogik steckt in Land-See-Winden, Hitzetiefs, Kältehochs und der ITC.</li></ul><div class="chain">Erwärmung von unten → geringere Dichte → Aufsteigen → Bodentief</div></div>
+  <div class="warn"><strong>Wichtig:</strong> Thermische Druckgebilde reichen oft nur relativ flach in die Atmosphäre hinein. Sie sind stärker an die bodennahe Temperaturverteilung gebunden.</div>
+ </div>
+</section>
+
+<section class="section" id="hitzetief">
+ <div class="section-head"><div class="num">4</div><h2>Thermisches Tief: Hitzetief</h2></div>
+ <div class="card">
+  <p>Ein <a class="term" href="#gloss-hitzetief">Hitzetief</a> entsteht, wenn sich eine Fläche stark erwärmt. Die bodennahe Luft wird warm, dehnt sich aus, wird leichter und steigt auf. Am Boden entsteht dadurch ein Luftmassendefizit und somit niedriger Luftdruck.</p>
+  <div class="figure">
+   <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Diagrama%20de%20formacion%20de%20la%20brisa-breeze.svg" alt="Land-See-Wind als Beispiel thermischer Druckgebiete">
+   <div class="cap">Land-See-Wind: Tagsüber erwärmt sich Land stärker, Luft steigt auf, am Boden entsteht ein thermisches Tief. Quelle: Wikimedia Commons.</div>
+  </div>
+  <div class="fig-explain"><h4>So erklärst du Land-See-Wind als Hitzetief-Beispiel</h4><ul><li>Land erwärmt sich tagsüber schneller als Wasser.</li><li>Über dem Land wird die bodennahe Luft wärmer und steigt auf.</li><li>Am Boden entsteht über dem Land ein thermisches Tief.</li><li>Über dem kühleren Meer sinkt Luft eher ab; dort liegt relativ höherer Druck.</li><li>Am Boden strömt Luft vom Meer zum Land: Seewind.</li></ul><div class="chain">Land erwärmt sich stärker → Warmluft steigt → Bodentief über Land → Wind vom Meer zum Land</div></div>
+  <div class="deep">
+   <h3>Großräumiges Beispiel: Äquatoriales Tief / ITC</h3>
+   <p>In Äquatornähe ist die Sonneneinstrahlung im Jahresmittel sehr stark. Dadurch wird die bodennahe Luft intensiv erwärmt, steigt auf und erzeugt eine Tiefdruckrinne. Diese Tiefdruckrinne ist die Grundlage der Innertropischen Konvergenzzone.</p>
+   <div class="formula">starke Erwärmung am Äquator → Aufsteigen → Bodentief → Konvergenz der Passate</div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="kaeltehoch">
+ <div class="section-head"><div class="num">5</div><h2>Thermisches Hoch: Kältehoch</h2></div>
+ <div class="card">
+  <p>Ein <a class="term" href="#gloss-kaeltehoch">Kältehoch</a> entsteht, wenn sich Luft stark abkühlt. Kalte Luft ist dichter, schwerer und sinkt ab. Am Boden sammelt sich Luftmasse, der Luftdruck steigt.</p>
+  <div class="grid2">
+   <div class="mini"><h4>Typische Räume</h4><p>Kältehochs entstehen besonders über stark ausgekühlten Kontinenten oder Eisflächen, etwa über Sibirien, Grönland oder der Antarktis.</p></div>
+   <div class="mini"><h4>Wetterwirkung</h4><p>Absinkende Luft erwärmt sich trockenadiabatisch und wird relativ trockener. Dadurch ist das Wetter oft stabil, kalt und niederschlagsarm.</p></div>
+  </div>
+  <div class="deep">
+   <h3>Warum Kältehoch nicht einfach „kaltes Wetter“ heißt</h3>
+   <p>Das Hoch entsteht durch kalte, dichte Luft am Boden. Gleichzeitig kann absinkende Luft Wolkenbildung hemmen. Deshalb sind Kältehochs häufig mit klarer, trockener und sehr kalter Witterung verbunden.</p>
+   <div class="formula">starke Abkühlung → hohe Dichte → Absinken → Luftmassenansammlung am Boden → Hochdruck</div>
+  </div>
+  <div class="merke"><strong>Verbindung zu Polarzone:</strong> Polare Kältehochs zeigen, wie Strahlungsbilanz, Albedo, Temperatur und Druck zusammenhängen.</div>
+ </div>
+</section>
+
+<section class="section" id="dynamisch">
+ <div class="section-head"><div class="num">6</div><h2>Dynamische Druckgebiete: Bewegung erzeugt Druck</h2></div>
+ <div class="card">
+  <p><a class="term" href="#gloss-dynamisch">Dynamische Druckgebiete</a> entstehen nicht primär durch lokale Erwärmung oder Abkühlung am Boden, sondern durch großräumige Luftbewegungen in der mittleren und oberen Troposphäre. Entscheidend sind Konvergenz, Divergenz und Absinken oder Aufsteigen ganzer Luftmassen.</p>
+  <div class="figure">
+   <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Earth%20Global%20Circulation%20-%20de.svg" alt="Globale Zirkulation der Atmosphäre mit Hadley Ferrel Polarzelle">
+   <div class="cap">Globale Zirkulation: Hadley-, Ferrel- und Polarzelle mit Aufstiegs- und Absinkzonen. Quelle: Wikimedia Commons.</div>
+  </div>
+  <div class="fig-explain"><h4>Warum diese Grafik für dynamische Druckgebiete wichtig ist</h4><ul><li>Am Äquator steigt Luft thermisch stark auf.</li><li>In der Höhe strömt Luft polwärts.</li><li>In den Subtropen sinkt Luft großräumig ab.</li><li>Dieses Absinken erzeugt am Boden den subtropischen Hochdruckgürtel.</li><li>Das Hoch ist also nicht einfach durch lokale Bodenkälte erklärbar, sondern durch die Dynamik der Hadley-Zelle.</li></ul><div class="chain">Hadley-Zelle → Lufttransport in der Höhe → Absinken bei ca. 30° → dynamischer Hochdruckgürtel</div></div>
+  <div class="warn"><strong>Prüfungsfehler vermeiden:</strong> Subtropische Hochdruckgebiete sind nicht Kältehochs. Sie entstehen trotz warmer Breiten durch absinkende Luftmassen der Hadley-Zirkulation.</div>
+ </div>
+</section>
+
+<section class="section" id="hoehe">
+ <div class="section-head"><div class="num">7</div><h2>Konvergenz und Divergenz: Der Schlüssel zu dynamischen Druckgebieten</h2></div>
+ <div class="card">
+  <p>Bei dynamischen Druckgebieten musst du dreidimensional denken: Was passiert am Boden und was passiert in der Höhe? Besonders wichtig sind <a class="term" href="#gloss-konvergenz">Konvergenz</a> und <a class="term" href="#gloss-divergenz">Divergenz</a>.</p>
+  <div class="grid2">
+   <div class="mini"><h4>Konvergenz</h4><p>Luft strömt zusammen. Wenn Luft am Boden zusammenströmt, muss sie aufsteigen. Das begünstigt Tiefdruck, Wolken und Niederschlag.</p></div>
+   <div class="mini"><h4>Divergenz</h4><p>Luft strömt auseinander. Wenn Luft am Boden auseinanderströmt, muss aus der Höhe Luft nachsinken. Das begünstigt Hochdruck und Wolkenauflösung.</p></div>
+  </div>
+  <div class="deep">
+   <h3>Oben und unten zusammen denken</h3>
+   <div class="chainlist">
+    <div class="chainitem"><b>Bodenkonvergenz + Höhendivergenz:</b> Luft steigt auf, am Boden kann ein Tief entstehen oder verstärkt werden.</div>
+    <div class="chainitem"><b>Höhenkonvergenz + Bodendivergenz:</b> Luft sinkt ab, am Boden kann ein Hoch entstehen oder verstärkt werden.</div>
+   </div>
+   <div class="formula">Tief: am Boden Luftzufluss + in der Höhe Luftabfluss</div>
+   <div class="formula">Hoch: in der Höhe Luftzufluss + am Boden Luftabfluss</div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="subtropisch">
+ <div class="section-head"><div class="num">8</div><h2>Dynamisches Hoch: subtropischer Hochdruckgürtel</h2></div>
+ <div class="card">
+  <p>Der subtropische Hochdruckgürtel liegt ungefähr bei 20–40° Breite. Er entsteht durch absinkende Luft aus der Hadley-Zelle. Beim Absinken erwärmt sich die Luft trockenadiabatisch, die relative Luftfeuchte sinkt, und Wolkenbildung wird gehemmt.</p>
+  <div class="deep">
+   <h3>Entstehung Schritt für Schritt</h3>
+   <div class="chainlist">
+    <div class="chainitem"><b>1. Äquator:</b> Intensive Erwärmung lässt Luft aufsteigen.</div>
+    <div class="chainitem"><b>2. Höhe:</b> Luft strömt in der oberen Troposphäre polwärts.</div>
+    <div class="chainitem"><b>3. Subtropen:</b> Luft kühlt, wird dichter und sinkt großräumig ab.</div>
+    <div class="chainitem"><b>4. Boden:</b> Absinkende Luft erhöht den Luftdruck.</div>
+    <div class="chainitem"><b>5. Wetter:</b> Absinkende Luft erwärmt sich, Wolken lösen sich auf, Trockenheit entsteht.</div>
+   </div>
+   <div class="formula">Hadley-Zelle → Absinken in den Subtropen → Hochdruck → trockenes Klima</div>
+  </div>
+  <div class="merke"><strong>Warum viele Wüsten dort liegen:</strong> Absinkende Luft im subtropischen Hochdruckgürtel hemmt Konvektion und Niederschlag. Deshalb liegen viele große Wendekreiswüsten in diesen Breiten.</div>
+ </div>
+</section>
+
+<section class="section" id="zyklone">
+ <div class="section-head"><div class="num">9</div><h2>Dynamisches Tief: außertropische Zyklone und Polarfront</h2></div>
+ <div class="card">
+  <p>Dynamische Tiefdruckgebiete sind besonders wichtig für das Wetter der Mittelbreiten. Sie entstehen häufig an der Polarfront, wo kalte polare Luft und wärmere subtropische Luft aufeinandertreffen. Diese Tiefs sind mit Fronten, Wolkenbändern, Niederschlag und Wind verbunden.</p>
+  <div class="figure">
+   <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Synoptic%20system.svg" alt="Typisches Tiefdrucksystem der Nordhalbkugel mit Fronten">
+   <div class="cap">Typisches Tiefdrucksystem der Nordhalbkugel mit Warmfront, Kaltfront und zyklonaler Rotation. Quelle: Wikimedia Commons.</div>
+  </div>
+  <div class="fig-explain"><h4>So erklärst du die Grafik</h4><ul><li>Im Zentrum liegt ein Tiefdruckgebiet.</li><li>Auf der Nordhalbkugel strömt Luft gegen den Uhrzeigersinn in das Tief ein.</li><li>Warme Luft wird entlang der Warmfront aufgleiten.</li><li>An der Kaltfront wird warme Luft stärker angehoben.</li><li>Durch Hebung kühlt Luft ab, Wasserdampf kondensiert und Niederschlag entsteht.</li><li>Solche dynamischen Tiefs sind typisch für die Westwindzone der Mittelbreiten.</li></ul><div class="chain">Polarfront → Luftmassengegensatz → Tiefentwicklung → Fronten → Hebung → Wolken/Niederschlag</div></div>
+  <div class="deep">
+   <h3>Warum das dynamisch ist</h3>
+   <p>Die Entstehung hängt stark mit großräumiger Strömung, Temperaturgegensätzen, Corioliskraft, Jetstream und Hebungsprozessen zusammen. Es ist nicht einfach ein lokales Hitzetief durch Bodenerwärmung.</p>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="vergleich">
+ <div class="section-head"><div class="num">10</div><h2>Thermisch vs. dynamisch: Vergleich für das Abi</h2></div>
+ <div class="card alt">
+  <div class="compare">
+   <div class="comp"><span class="tag tag-o">Thermisches Tief</span><h4>Hitzetief</h4><p>Starke Bodenerwärmung → Luft steigt auf → Bodendruck sinkt. Beispiel: äquatoriale Tiefdruckrinne, Land tagsüber.</p></div>
+   <div class="comp"><span class="tag tag-b">Dynamisches Hoch</span><h4>Subtropenhoch</h4><p>Absinkende Luft aus der Hadley-Zelle → Bodendruck steigt → trockenes Wetter. Beispiel: Azorenhoch/Subtropen.</p></div>
+   <div class="comp"><span class="tag tag-r">Dynamisches Tief</span><h4>Polarfronttief</h4><p>Luftmassengegensätze und Höhenströmung → Tiefentwicklung mit Fronten. Beispiel: Islandtief/Mittelbreiten.</p></div>
+  </div>
+  <div class="deep">
+   <h3>Die wichtigste Unterscheidung</h3>
+   <p>Thermisch heißt: Temperaturunterschiede sind die Hauptursache. Dynamisch heißt: großräumige Luftbewegungen und Strömungsverhältnisse sind die Hauptursache. Beide Prozesse beeinflussen sich aber häufig.</p>
+   <div class="formula">thermisch = Temperatur treibt Luftbewegung · dynamisch = Luftbewegung erzeugt Druckverteilung</div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="verknuepfung">
+ <div class="section-head"><div class="num">11</div><h2>Verknüpfungen zu deinem Schwerpunktthema</h2></div>
+ <div class="card">
+  <p>Thermische und dynamische Druckgebiete sind kein isoliertes Thema. Sie sind die Erklärung für viele deiner gelben Schwerpunktbegriffe.</p>
+  <div class="grid2">
+   <div class="mini"><h4>ITC</h4><p>Die ITC ist eine Tiefdruckrinne, weil starke Erwärmung in Äquatornähe Luft aufsteigen lässt und am Boden Luft zusammenströmt.</p><div class="formula">Erwärmung → Aufsteigen → Tiefdruck → Konvergenz</div></div>
+   <div class="mini"><h4>Passate</h4><p>Passate entstehen als Ausgleichsströmung vom subtropischen Hochdruckgürtel zur äquatorialen Tiefdruckrinne.</p><div class="formula">Subtropenhoch → Druckgradient → ITC → Passatwind</div></div>
+   <div class="mini"><h4>Hadley-Zelle</h4><p>Sie verbindet thermisches Aufsteigen am Äquator mit dynamischem Absinken in den Subtropen.</p><div class="formula">Äquator-Tief + Subtropen-Hoch = Hadley-Zelle</div></div>
+   <div class="mini"><h4>Wüsten und Vegetation</h4><p>Subtropische Hochdruckgebiete führen durch absinkende trockene Luft zu niederschlagsarmen Räumen.</p><div class="formula">Absinken → Erwärmung → geringe relative Feuchte → Trockenheit</div></div>
+  </div>
+  <div class="deep">
+   <h3>Verbindung zu roten Themen</h3>
+   <p>Bei El Niño verändert sich die Druck- und Windverteilung über dem tropischen Pazifik. Bei ozeanischen Strömungen treiben Druckunterschiede und Winde die Oberflächenströmungen. In der Polarzone entstehen Kältehochs durch starke Auskühlung und hohe Albedo.</p>
+   <div class="formula">Druckgebiete → Winde → Ozeanströmungen / ITC-Verlagerung / El Niño-Folgen</div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="muendlich">
+ <div class="section-head"><div class="num">12</div><h2>Mündliche Prüfungsantworten</h2></div>
+ <div class="exam"><h3>1. „Unterscheiden Sie thermische und dynamische Druckgebiete.“</h3><p>Thermische Druckgebiete entstehen durch Temperaturunterschiede. Wird Luft am Boden stark erwärmt, dehnt sie sich aus, wird leichter und steigt auf; am Boden entsteht ein Hitzetief. Wird Luft stark abgekühlt, wird sie dichter, sinkt ab und erzeugt am Boden ein Kältehoch. Dynamische Druckgebiete entstehen dagegen durch großräumige Luftbewegungen in der Atmosphäre, etwa durch Konvergenz, Divergenz und Absinken oder Aufsteigen. Ein Beispiel ist der subtropische Hochdruckgürtel, der durch absinkende Luft der Hadley-Zelle entsteht.</p></div>
+ <div class="exam"><h3>2. „Erklären Sie die Entstehung des subtropischen Hochdruckgürtels.“</h3><p>Am Äquator wird die Luft stark erwärmt und steigt auf. In der Höhe strömt diese Luft polwärts. In den Subtropen kühlt sie ab, wird dichter und sinkt großräumig ab. Durch dieses Absinken sammelt sich am Boden Luftmasse, wodurch Hochdruck entsteht. Beim Absinken erwärmt sich die Luft trockenadiabatisch, die relative Luftfeuchte sinkt, und Wolkenbildung wird gehemmt. Deshalb sind die subtropischen Hochdruckgebiete eng mit Trockenräumen und Wendekreiswüsten verbunden.</p></div>
+ <div class="exam"><h3>3. „Erklären Sie den Zusammenhang zwischen ITC und Druckgebieten.“</h3><p>Die ITC ist eine äquatornahe Tiefdruckrinne. Sie entsteht vor allem durch starke Sonneneinstrahlung und Erwärmung in den Tropen. Warme Luft steigt auf, wodurch am Boden niedriger Luftdruck entsteht. Aus den subtropischen Hochdruckgebieten strömt Luft bodennah zur ITC. Diese Luft wird durch die Corioliskraft zu Passaten abgelenkt. Die ITC ist daher der Bereich, in dem die Passate konvergieren und Luft stark aufsteigt.</p></div>
+ <div class="exam"><h3>4. „Warum führen Hochdruckgebiete häufig zu trockenem Wetter?“</h3><p>In Hochdruckgebieten sinkt Luft ab. Beim Absinken gerät sie in höheren Luftdruck, wird komprimiert und erwärmt sich trockenadiabatisch. Dadurch sinkt die relative Luftfeuchte, und Wolken lösen sich eher auf. Niederschlag wird gehemmt. Deshalb sind Hochdruckgebiete häufig mit stabilem, trockenem Wetter verbunden. Besonders im subtropischen Hochdruckgürtel führt dieser Prozess zu großräumiger Trockenheit.</p></div>
+</section>
+
+<section class="section" id="quiz">
+ <div class="section-head"><div class="num">13</div><h2>Wissenscheck</h2></div>
+ <div class="quiz">
+  <details class="q"><summary>1. Was ist die Hauptursache thermischer Druckgebiete?</summary><p>Temperaturunterschiede. Erwärmung führt zu Aufsteigen und Tiefdruck; Abkühlung zu Absinken und Hochdruck.</p></details>
+  <details class="q"><summary>2. Warum ist ein subtropisches Hoch kein Kältehoch?</summary><p>Es entsteht nicht durch kalte Bodenluft, sondern durch großräumig absinkende Luft aus der Hadley-Zelle.</p></details>
+  <details class="q"><summary>3. Was bedeutet Konvergenz?</summary><p>Luft strömt zusammen. Bei Bodenkonvergenz wird Aufsteigen begünstigt.</p></details>
+  <details class="q"><summary>4. Was bedeutet Divergenz?</summary><p>Luft strömt auseinander. Bei Bodendivergenz sinkt Luft aus der Höhe nach.</p></details>
+  <details class="q"><summary>5. Warum sind Tiefdruckgebiete oft niederschlagsreich?</summary><p>Luft steigt auf, kühlt ab, Wasserdampf kondensiert, Wolken und Niederschlag entstehen.</p></details>
+  <details class="q"><summary>6. Welche Druckgebiete sind für Passate wichtig?</summary><p>Der subtropische Hochdruckgürtel und die äquatoriale Tiefdruckrinne/ITC.</p></details>
+ </div>
+</section>
+
+<section class="section glossary" id="glossar">
+ <div class="section-head"><div class="num">G</div><h2>Fachbegriffe-Glossar</h2></div>
+ <p class="glossary-intro">Die wichtigsten Begriffe dieser Unterseite.</p>
+ <div class="gloss-index">
+  <a href="#gloss-hoch">Hochdruckgebiet</a><a href="#gloss-tief">Tiefdruckgebiet</a><a href="#gloss-thermisch">thermisch</a><a href="#gloss-dynamisch">dynamisch</a><a href="#gloss-hitzetief">Hitzetief</a><a href="#gloss-kaeltehoch">Kältehoch</a><a href="#gloss-konvergenz">Konvergenz</a><a href="#gloss-divergenz">Divergenz</a><a href="#gloss-subtropenhoch">subtropischer Hochdruckgürtel</a><a href="#gloss-zyklone">Zyklone</a><a href="#gloss-front">Front</a>
+ </div>
+ <div class="gloss-grid">
+  <div class="gloss-item" id="gloss-hoch"><h3>Hochdruckgebiet</h3><p>Gebiet relativ hohen Luftdrucks. Häufig mit absinkender Luft, Erwärmung und Wolkenauflösung verbunden.</p><div class="connect">Zusammenhang: Luft strömt am Boden aus dem Hoch heraus.</div></div>
+  <div class="gloss-item" id="gloss-tief"><h3>Tiefdruckgebiet</h3><p>Gebiet relativ niedrigen Luftdrucks. Häufig mit aufsteigender Luft, Abkühlung, Wolken und Niederschlag verbunden.</p><div class="connect">Zusammenhang: Luft strömt am Boden in das Tief hinein.</div></div>
+  <div class="gloss-item" id="gloss-thermisch"><h3>thermisch</h3><p>Durch Temperaturunterschiede verursacht.</p><div class="connect">Zusammenhang: Erwärmung/Auskühlung verändert Luftdichte.</div></div>
+  <div class="gloss-item" id="gloss-dynamisch"><h3>dynamisch</h3><p>Durch großräumige Luftbewegungen und Strömungsverhältnisse verursacht.</p><div class="connect">Zusammenhang: wichtig für Subtropenhoch und Polarfronttiefs.</div></div>
+  <div class="gloss-item" id="gloss-hitzetief"><h3>Hitzetief</h3><p>Thermisches Tief durch starke Erwärmung bodennaher Luft.</p><div class="connect">Zusammenhang: Beispiel äquatoriale Tiefdruckrinne.</div></div>
+  <div class="gloss-item" id="gloss-kaeltehoch"><h3>Kältehoch</h3><p>Thermisches Hoch durch starke Abkühlung und Absinken dichter Luft.</p><div class="connect">Zusammenhang: Beispiel polare oder kontinentale Winterhochs.</div></div>
+  <div class="gloss-item" id="gloss-konvergenz"><h3>Konvergenz</h3><p>Zusammenströmen von Luft.</p><div class="connect">Zusammenhang: Bodenkonvergenz begünstigt Aufsteigen.</div></div>
+  <div class="gloss-item" id="gloss-divergenz"><h3>Divergenz</h3><p>Auseinanderströmen von Luft.</p><div class="connect">Zusammenhang: Bodendivergenz ist typisch für Hochdruckgebiete.</div></div>
+  <div class="gloss-item" id="gloss-subtropenhoch"><h3>Subtropischer Hochdruckgürtel</h3><p>Hochdruckgürtel um ca. 20–40° Breite, verursacht durch absinkende Luft der Hadley-Zelle.</p><div class="connect">Zusammenhang: Ursache vieler Wendekreiswüsten.</div></div>
+  <div class="gloss-item" id="gloss-zyklone"><h3>Zyklone</h3><p>Dynamisches Tiefdruckgebiet, in den Mittelbreiten oft mit Fronten verbunden.</p><div class="connect">Zusammenhang: prägt Wetter der Westwindzone.</div></div>
+  <div class="gloss-item" id="gloss-front"><h3>Front</h3><p>Grenzfläche zwischen Luftmassen unterschiedlicher Temperatur und Feuchte.</p><div class="connect">Zusammenhang: Fronten begünstigen Hebung, Wolken und Niederschlag.</div></div>
+ </div>
+</section>
+
+<div class="footer-note">Lokale Lernseite für private Nutzung. Unterseite 2 des Geo-Schwerpunktthemas 12-1.1: thermische und dynamische Druckgebiete. Es wurden nur externe Grafiken aus dem Internet eingebunden.</div>
+</main>
+</div>
+</body>
+</html>

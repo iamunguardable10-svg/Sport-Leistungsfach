@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Geo 12-1.1.5 — ITC und Passatkreislauf</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d1117;--surface:#151c2b;--card:#1b2440;--card2:#202a4a;--border:#283454;--text:#e8eef7;--muted:#8b98ad;--gold:#f5c842;--sky:#66d9ef;--blue:#4d9de0;--green:#52b788;--orange:#e07b4d;--red:#e05555;--purple:#9b72cf}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--text);font-family:Outfit,system-ui,sans-serif;line-height:1.72;font-size:15.5px}.layout{display:flex;min-height:100vh}.sidebar{width:332px;min-width:332px;height:100vh;position:sticky;top:0;background:var(--surface);border-right:1px solid var(--border);overflow-y:auto}.sb-head{padding:22px;border-bottom:1px solid var(--border)}.back{color:var(--muted);font-size:12.5px;text-decoration:none}.back:hover{color:var(--sky)}.sb-title{font-family:Fraunces,serif;color:#fff;font-size:22px;margin-top:14px}.sb-sub{color:var(--muted);font-size:12px;margin-top:3px}.navgrp{padding:16px 22px 5px;color:var(--sky);font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase}.nav a{display:block;padding:6px 22px;color:var(--muted);font-size:12.5px;text-decoration:none;border-left:2px solid transparent}.nav a:hover{color:#fff;background:rgba(102,217,239,.08)}.main{flex:1;max-width:1140px;padding:48px 54px 120px}.badge{display:inline-block;color:var(--sky);background:rgba(102,217,239,.12);border:1px solid rgba(102,217,239,.32);border-radius:999px;padding:5px 14px;font-size:12px;font-weight:800;margin-bottom:18px}h1{font-family:Fraunces,serif;font-size:48px;line-height:1.08;color:#fff;margin-bottom:14px}.lead{color:var(--muted);font-size:17px;max-width:860px}.focusbox{margin-top:20px;background:rgba(245,200,66,.08);border:1px solid rgba(245,200,66,.24);border-left:4px solid var(--gold);border-radius:14px;padding:16px 18px;max-width:920px}.focusbox b{color:var(--gold)}.gloss-button{display:inline-flex;margin-top:18px;background:rgba(245,200,66,.12);border:1px solid rgba(245,200,66,.35);color:var(--gold);font-weight:800;text-decoration:none;border-radius:999px;padding:9px 15px;font-size:13px}.section{margin:46px 0;scroll-margin-top:26px}.section-head{display:flex;gap:13px;align-items:center;margin-bottom:20px}.num{width:39px;height:39px;border-radius:10px;background:var(--sky);color:#061015;display:grid;place-items:center;font-weight:900;flex-shrink:0}h2{font-family:Fraunces,serif;color:#fff;font-size:31px;line-height:1.18}h3{color:#fff;font-size:19px;margin:22px 0 10px}.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px 26px;margin:14px 0}.card.alt{background:linear-gradient(180deg,#1c2543,#151d31)}.term{color:var(--gold);font-weight:800;text-decoration:none;border-bottom:1px dotted rgba(245,200,66,.65)}.term:hover{color:#fff;background:rgba(245,200,66,.13);border-radius:4px}.merke{background:rgba(82,183,136,.08);border:1px solid rgba(82,183,136,.25);border-radius:12px;padding:13px 16px;margin:16px 0}.merke strong{color:var(--green)}.warn{background:rgba(224,85,85,.08);border:1px solid rgba(224,85,85,.24);border-radius:12px;padding:13px 16px;margin:16px 0}.warn strong{color:#ff8585}.formula{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:rgba(77,157,224,.09);border:1px solid rgba(77,157,224,.25);border-radius:12px;padding:12px 14px;margin:12px 0;color:#fff}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:14px 0}.mini{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px}.mini h4{font-size:15px;color:var(--sky);margin-bottom:8px}.mini p,.mini li{font-size:13.5px;color:#b7c1d0;line-height:1.55}ul{padding-left:20px}li{margin:5px 0}.figure{background:#101622;border:1px solid var(--border);border-radius:16px;overflow:hidden;margin:20px 0}.figure img{display:block;width:100%;max-height:850px;object-fit:contain;background:#fff}.figure.small img{max-height:580px}.cap{border-top:1px solid var(--border);padding:11px 15px;color:var(--muted);font-size:12px;text-align:center}.fig-explain{background:rgba(102,217,239,.07);border:1px solid rgba(102,217,239,.22);border-radius:14px;padding:15px 17px;margin:14px 0 22px}.fig-explain h4{font-size:14px;color:var(--sky);margin-bottom:8px}.fig-explain li{font-size:14px;color:#c7d1df;line-height:1.55}.fig-explain .chain{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#fff;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:9px 11px;margin-top:10px;font-size:13px}.deep{background:linear-gradient(180deg,rgba(102,217,239,.08),rgba(77,157,224,.05));border:1px solid rgba(102,217,239,.22);border-radius:16px;padding:19px 21px;margin:18px 0}.deep h3{margin-top:0}.chainlist{display:grid;gap:9px;margin:14px 0}.chainitem{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:11px 13px;font-size:14px;color:#cbd5e1}.chainitem b{color:#fff}.compare{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}.comp{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px}.comp h4{color:#fff;font-size:15px;margin-bottom:6px}.tag{display:inline-block;margin-bottom:8px;border-radius:999px;padding:2px 9px;font-size:11px;font-weight:800}.tag-b{background:rgba(77,157,224,.12);color:var(--blue)}.tag-g{background:rgba(82,183,136,.12);color:var(--green)}.tag-o{background:rgba(224,123,77,.12);color:var(--orange)}.tag-r{background:rgba(224,85,85,.12);color:#ff8585}.exam{background:linear-gradient(135deg,rgba(102,217,239,.13),rgba(77,157,224,.08));border:1px solid rgba(102,217,239,.28);border-radius:16px;padding:22px;margin:18px 0}.exam h3{margin-top:0}.quiz{background:linear-gradient(180deg,#1b2440,#141b2d);border:1px solid var(--border);border-radius:18px;padding:26px;margin-top:32px}.q{margin:18px 0;padding:16px;background:rgba(255,255,255,.04);border-radius:12px;border:1px solid rgba(255,255,255,.07)}.q summary{cursor:pointer;color:#fff;font-weight:700}.q p{color:#b9c4d2;margin-top:10px}.glossary{background:linear-gradient(180deg,#1b2440,#141b2d);border:1px solid var(--border);border-radius:20px;padding:28px;margin-top:50px;scroll-margin-top:28px}.glossary-intro{color:var(--muted);max-width:780px;margin-bottom:20px}.gloss-index{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 24px}.gloss-index a{font-size:12px;text-decoration:none;color:var(--gold);background:rgba(245,200,66,.08);border:1px solid rgba(245,200,66,.18);border-radius:999px;padding:4px 10px}.gloss-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.gloss-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:15px 16px;scroll-margin-top:30px}.gloss-item h3{font-size:16px;margin:0 0 7px;color:var(--gold)}.gloss-item p{font-size:13.5px;color:#c6d0de;line-height:1.55}.gloss-item .connect{font-size:12.5px;color:var(--green);margin-top:8px}.footer-note{font-size:12px;color:var(--muted);border-top:1px solid var(--border);margin-top:46px;padding-top:18px}@media(max-width:900px){.layout{display:block}.sidebar{display:none}.main{padding:28px 20px 70px}h1{font-size:35px}.grid2,.grid3,.compare,.gloss-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar">
+ <div class="sb-head"><a class="back" href="geographie.html">← Zur Geo-Übersicht</a><div class="sb-title">12-1.1.5</div><div class="sb-sub">ITC · Passate · Passatkreislauf</div></div>
+ <div class="nav">
+  <div class="navgrp">Grundlagen</div>
+  <a href="#fokus">Start & Ziel</a>
+  <a href="#einordnung">Einordnung</a>
+  <a href="#itc-definition">Was ist die ITC?</a>
+  <a href="#satellit">ITC im Satellitenbild</a>
+  <a href="#passate">Passate</a>
+  <a href="#passatkreislauf">Passatkreislauf</a>
+  <a href="#passatinversion">Passatinversion</a>
+  <a href="#jahresgang">Jahreszeitliche Verlagerung</a>
+  <a href="#regenzeiten">Regenzeiten</a>
+  <a href="#monsun">Monsun als Vertiefung</a>
+  <a href="#walker">Walker-Zirkulation</a>
+  <a href="#elnino">El Niño-Verbindung</a>
+  <a href="#methodik">Material auswerten</a>
+  <div class="navgrp">Prüfung</div>
+  <a href="#verknuepfung">Verknüpfungen</a>
+  <a href="#muendlich">Mündliche Antworten</a>
+  <a href="#quiz">Wissenscheck</a>
+  <a href="#glossar">Glossar</a>
+ </div>
+</aside>
+
+<main class="main">
+<header id="fokus">
+ <div class="badge">12-1.1 · Unterseite 5</div>
+ <h1>ITC und Passatkreislauf</h1>
+ <p class="lead">Die ITC und der Passatkreislauf sind der Kern der tropischen atmosphärischen Zirkulation. Hier verbinden sich starke Sonneneinstrahlung, Tiefdruck, Konvergenz, Passate, tropische Niederschläge, Regenzeiten, Monsun und El Niño.</p>
+ <div class="focusbox"><b>Ziel:</b> Du sollst die ITC nicht nur als „Zone am Äquator“ beschreiben, sondern ihre Entstehung, jahreszeitliche Verlagerung, Niederschlagswirkung und Verbindung zu Passaten, Ozeanströmungen und El Niño erklären können.</div>
+ <a class="gloss-button" href="#glossar">📘 Fachbegriffe-Glossar öffnen</a>
+</header>
+
+<section class="section" id="einordnung">
+ <div class="section-head"><div class="num">0</div><h2>Einordnung: Warum ITC und Passate so wichtig sind</h2></div>
+ <div class="card alt">
+  <p>Die ITC ist die Zone, in der bodennahe tropische Luftmassen zusammenströmen und aufsteigen. Sie ist Teil der Hadley-Zirkulation und steuert in vielen Tropenräumen den Wechsel zwischen Regenzeit und Trockenzeit.</p>
+  <div class="chainlist">
+   <div class="chainitem"><b>Strahlung:</b> In den inneren Tropen ist die Sonneneinstrahlung stark.</div>
+   <div class="chainitem"><b>Erwärmung:</b> Warme, feuchte Luft steigt auf.</div>
+   <div class="chainitem"><b>Druck:</b> Am Boden entsteht eine Tiefdruckrinne.</div>
+   <div class="chainitem"><b>Konvergenz:</b> Nordost- und Südostpassat strömen zur Tiefdruckrinne.</div>
+   <div class="chainitem"><b>Niederschlag:</b> Aufsteigende Luft kühlt ab, Wasserdampf kondensiert, Gewitter und Starkniederschläge entstehen.</div>
+   <div class="chainitem"><b>Jahresgang:</b> Die ITC wandert mit dem Zenitstand der Sonne nach Norden und Süden.</div>
+  </div>
+  <div class="formula">Sonnenstand → Erwärmungsmaximum → Tiefdruckrinne → Passatkonvergenz → Aufsteigen → Tropenregen</div>
+ </div>
+</section>
+
+<section class="section" id="itc-definition">
+ <div class="section-head"><div class="num">1</div><h2>Was ist die ITC?</h2></div>
+ <div class="card">
+  <p>Die <a class="term" href="#gloss-itc">Innertropische Konvergenzzone</a> ist ein äquatornaher Bereich niedrigen Luftdrucks, in dem die Passate der Nord- und Südhalbkugel zusammenströmen. Die ITC liegt nicht immer exakt auf dem geographischen Äquator, sondern folgt dem thermischen Äquator bzw. dem Bereich stärkster Erwärmung.</p>
+  <div class="grid3">
+   <div class="mini"><h4>Konvergenz</h4><p>Passatwinde aus beiden Halbkugeln strömen bodennah zusammen.</p></div>
+   <div class="mini"><h4>Aufsteigen</h4><p>Warme, feuchte Luft steigt kräftig auf und bildet mächtige Konvektionswolken.</p></div>
+   <div class="mini"><h4>Niederschlag</h4><p>Abkühlung, Kondensation und Gewitter führen zu hohen Niederschlagsmengen.</p></div>
+  </div>
+  <div class="deep">
+   <h3>Warum „thermischer Äquator“ wichtig ist</h3>
+   <p>Der geographische Äquator ist fest. Der thermische Äquator ist die Zone maximaler Erwärmung und verschiebt sich jahreszeitlich. Die ITC orientiert sich stärker am thermischen Äquator als am festen Breitengrad 0°.</p>
+   <div class="formula">Zenitstand + Land-Meer-Verteilung → thermischer Äquator → Lage der ITC</div>
+  </div>
+  <div class="warn"><strong>Nicht zu simpel:</strong> Die ITC ist kein dünner Strich, sondern eine mehrere hundert Kilometer breite Zone mit Konvergenz, Wolken und Gewittern.</div>
+ </div>
+</section>
+
+<section class="section" id="satellit">
+ <div class="section-head"><div class="num">2</div><h2>Die ITC im Satellitenbild</h2></div>
+ <div class="card">
+  <p>Auf Satellitenbildern erkennt man die ITC oft als langes Wolken- und Gewitterband in Äquatornähe. Diese Wolken entstehen durch starke Konvektion: Feuchte Luft steigt auf, kühlt ab und bildet mächtige Cumulonimbuswolken.</p>
+  <div class="figure">
+   <img src="https://commons.wikimedia.org/wiki/Special:FilePath/IntertropicalConvergenceZone-EO.jpg" alt="Intertropical Convergence Zone Satellitenbild">
+   <div class="cap">Satellitenbild der ITC: helles Wolkenband nahe dem Äquator. Quelle: NASA Earth Observatory / Wikimedia Commons.</div>
+  </div>
+  <div class="fig-explain"><h4>So wertest du das Satellitenbild aus</h4><ul><li>Das helle Wolkenband zeigt die Zone starker Konvektion.</li><li>Konvektion entsteht, weil warme, feuchte Luft aufsteigt.</li><li>Die aufsteigende Luft ist Folge starker Erwärmung und bodennaher Konvergenz der Passate.</li><li>Die ITC ist nicht völlig gerade, sondern wird durch Kontinente, Ozeane, Temperaturverteilung und Jahreszeit verformt.</li><li>Die hohe Wolkendichte zeigt, warum die ITC eine zentrale Regenzone der Tropen ist.</li></ul><div class="chain">Passatkonvergenz + warme Meeresoberfläche → feuchte Luft steigt auf → Wolkenband/Gewitterzone</div></div>
+ </div>
+</section>
+
+<section class="section" id="passate">
+ <div class="section-head"><div class="num">3</div><h2>Passate: Die bodennahe Rückströmung zur ITC</h2></div>
+ <div class="card">
+  <p><a class="term" href="#gloss-passat">Passate</a> sind relativ beständige tropische Winde. Sie strömen aus den subtropischen Hochdruckgebieten zur äquatorialen Tiefdruckrinne und werden durch die Corioliskraft abgelenkt.</p>
+  <div class="figure">
+   <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Map%20prevailing%20winds%20on%20earth.png" alt="Vorherrschende Winde der Erde mit Passaten und Westwinden">
+   <div class="cap">Vorherrschende Windgürtel der Erde mit Passaten, Westwinden und polaren Ostwinden. Quelle: Wikimedia Commons.</div>
+  </div>
+  <div class="fig-explain"><h4>So erklärst du Passate mit der Karte</h4><ul><li>Die Passate liegen zwischen den subtropischen Hochdruckgebieten und der ITC.</li><li>Auf der Nordhalbkugel wird die Strömung nach rechts abgelenkt: Nordostpassat.</li><li>Auf der Südhalbkugel wird die Strömung nach links abgelenkt: Südostpassat.</li><li>Die Passate transportieren feuchte Meeresluft in Richtung ITC.</li><li>Sie treiben außerdem tropische Oberflächenströmungen der Ozeane an.</li></ul><div class="chain">Subtropenhoch → Druckgradient zur ITC → Coriolisablenkung → NO-/SO-Passat</div></div>
+  <div class="grid2">
+   <div class="mini"><h4>Nordostpassat</h4><p>Weht auf der Nordhalbkugel aus nordöstlicher Richtung zur ITC.</p></div>
+   <div class="mini"><h4>Südostpassat</h4><p>Weht auf der Südhalbkugel aus südöstlicher Richtung zur ITC.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="passatkreislauf">
+ <div class="section-head"><div class="num">4</div><h2>Der Passatkreislauf: Hadley-Zelle im Detail</h2></div>
+ <div class="card">
+  <p>Der <a class="term" href="#gloss-passatkreislauf">Passatkreislauf</a> ist im Grunde die tropische Hadley-Zirkulation: bodennahe Passate strömen zur ITC, Luft steigt auf, strömt in der Höhe zurück in die Subtropen, sinkt dort ab und schließt den Kreislauf.</p>
+  <div class="figure">
+   <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Earth%20Global%20Circulation%20-%20de.svg" alt="Hadley-Zelle, Passate und subtropischer Hochdruckgürtel">
+   <div class="cap">Hadley-Zelle als Grundlage des Passatkreislaufs: Aufsteigen an der ITC, Absinken in den Subtropen, bodennahe Passate. Quelle: Wikimedia Commons.</div>
+  </div>
+  <div class="fig-explain"><h4>Passatkreislauf Schritt für Schritt</h4><ul><li>In der ITC steigt warme, feuchte Luft auf.</li><li>Beim Aufsteigen kühlt Luft ab; Kondensation und Niederschlag entstehen.</li><li>In der Höhe strömt Luft polwärts Richtung Subtropen.</li><li>Dort sinkt Luft ab und bildet den subtropischen Hochdruckgürtel.</li><li>Beim Absinken erwärmt sich die Luft trockenadiabatisch; Wolkenbildung wird gehemmt.</li><li>Am Boden strömt Luft zurück zur ITC und wird durch Coriolis zu Passaten.</li></ul><div class="chain">ITC-Aufstieg → Höhenströmung → Subtropen-Absinken → Bodenrückströmung → Passate</div></div>
+  <div class="merke"><strong>Prüfungsformel:</strong> Die ITC ist der aufsteigende Ast der Hadley-Zelle, die Subtropenhochs sind der absinkende Ast, und die Passate sind die bodennahe Rückströmung.</div>
+ </div>
+</section>
+
+<section class="section" id="passatinversion">
+ <div class="section-head"><div class="num">5</div><h2>Passatinversion: Warum Passatgebiete oft trocken sind</h2></div>
+ <div class="card">
+  <p>Die <a class="term" href="#gloss-passatinversion">Passatinversion</a> ist eine Temperaturumkehr in der Passatluft. Sie entsteht durch absinkende, sich erwärmende Luft im Bereich der subtropischen Hochdruckgebiete. Diese warme Luft liegt über der bodennahen, relativ kühleren Passatluft und stabilisiert die Atmosphäre.</p>
+  <div class="deep">
+   <h3>Entstehung Schritt für Schritt</h3>
+   <div class="chainlist">
+    <div class="chainitem"><b>1. Subtropenhoch:</b> Luft sinkt aus der Höhe ab.</div>
+    <div class="chainitem"><b>2. Absinkende Luft:</b> Beim Absinken wird sie komprimiert und erwärmt sich trockenadiabatisch.</div>
+    <div class="chainitem"><b>3. Inversion:</b> Warme Luft liegt über kühlerer bodennaher Luft.</div>
+    <div class="chainitem"><b>4. Sperrschicht:</b> Vertikale Konvektion wird gehemmt.</div>
+    <div class="chainitem"><b>5. Folge:</b> Wolken bleiben flach, Niederschlag ist selten.</div>
+   </div>
+   <div class="formula">Absinken im Subtropenhoch → Erwärmung → Inversion → Konvektionshemmung → Trockenheit</div>
+  </div>
+  <div class="grid2">
+   <div class="mini"><h4>Typisch über Ozeanen</h4><p>Flache Passatwolken können entstehen, aber sie wachsen wegen der Inversion oft nicht hoch genug für starke Niederschläge.</p></div>
+   <div class="mini"><h4>Wichtig für Wüsten</h4><p>Passatinversion und subtropischer Hochdruck stabilisieren die Luft und fördern Trockenräume, besonders an Westseiten von Kontinenten.</p></div>
+  </div>
+  <div class="warn"><strong>Abi-Zusatzwissen:</strong> Die Passatinversion erklärt, warum in manchen Passatgebieten trotz Meeresnähe wenig Regen fällt.</div>
+ </div>
+</section>
+
+<section class="section" id="jahresgang">
+ <div class="section-head"><div class="num">6</div><h2>Jahreszeitliche Verlagerung der ITC</h2></div>
+ <div class="card">
+  <p>Die ITC wandert im Jahresverlauf mit dem Sonnenstand. Im Nordsommer verlagert sie sich nach Norden, im Südsommer nach Süden. Über Kontinenten ist die Verlagerung meist stärker als über Ozeanen, weil Landflächen sich stärker und schneller erwärmen.</p>
+  <div class="figure">
+   <img src="https://commons.wikimedia.org/wiki/Special:FilePath/ITCZ%20january-july.png" alt="Lage der ITC im Januar und Juli">
+   <div class="cap">Lage der ITC im Januar und Juli: Blau = Januar, Rot = Juli. Quelle: Wikimedia Commons.</div>
+  </div>
+  <div class="fig-explain"><h4>So erklärst du die Karte</h4><ul><li>Im Januar liegt die ITC weiter südlich, weil auf der Südhalbkugel Sommer ist.</li><li>Im Juli liegt die ITC weiter nördlich, weil auf der Nordhalbkugel Sommer ist.</li><li>Über Kontinenten ist die Auslenkung stärker, weil Land sich intensiver erwärmt.</li><li>Über Ozeanen bleibt die ITC oft näher am Äquator, weil Wasser thermisch träger ist.</li><li>Die Verlagerung erklärt Regen- und Trockenzeiten der wechselfeuchten Tropen.</li></ul><div class="chain">Zenitstand wandert → Erwärmungsmaximum wandert → ITC wandert → Niederschlagsgürtel wandert</div></div>
+  <div class="merke"><strong>Wichtig:</strong> Die ITC folgt nicht exakt dem Zenitstand, sondern dem thermischen Äquator. Land-Meer-Verteilung und Ozeantemperaturen verschieben sie zusätzlich.</div>
+ </div>
+</section>
+
+<section class="section" id="regenzeiten">
+ <div class="section-head"><div class="num">7</div><h2>Regenzeiten und Trockenzeiten</h2></div>
+ <div class="card">
+  <p>In den immerfeuchten Tropen liegt die ITC häufig in der Nähe. Deshalb treten dort ganzjährig hohe Niederschläge auf. In den wechselfeuchten Tropen wandert die ITC nur zeitweise über einen Ort hinweg. Dann entstehen Regenzeit und Trockenzeit.</p>
+  <div class="grid3">
+   <div class="mini"><h4>Immerfeuchte Tropen</h4><p>Nahe am Äquator: häufige Konvektion, viel Niederschlag, geringe Jahreszeitenunterschiede.</p></div>
+   <div class="mini"><h4>Wechselfeuchte Tropen</h4><p>ITC erreicht den Ort nur saisonal. Dadurch wechseln Regenzeit und Trockenzeit.</p></div>
+   <div class="mini"><h4>Subtropische Trockengebiete</h4><p>Häufig unter Einfluss subtropischer Hochs und absinkender Luft. Niederschläge gering.</p></div>
+  </div>
+  <div class="deep">
+   <h3>Warum es in den Tropen oft keine „Sommer/Winter“-Logik wie bei uns gibt</h3>
+   <p>In vielen tropischen Regionen sind Temperaturunterschiede im Jahresverlauf geringer als Niederschlagsunterschiede. Entscheidend ist daher nicht „warm oder kalt“, sondern ob die ITC mit feuchter Konvektion über dem Raum liegt.</p>
+   <div class="formula">Tropen: Jahreszeiten oft als Regenzeit/Trockenzeit statt Sommer/Winter</div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="monsun">
+ <div class="section-head"><div class="num">8</div><h2>Monsun als Vertiefung: Extrem verlagertes ITC-/Drucksystem</h2></div>
+ <div class="card">
+  <p>Der Monsun entsteht durch jahreszeitlich wechselnde Druckverhältnisse zwischen Kontinent und Ozean. Er hängt eng mit der ITC-Verlagerung zusammen, ist aber komplexer, weil Land-Meer-Gegensätze, Relief und großräumige Zirkulation zusammenwirken.</p>
+  <div class="deep">
+   <h3>Sommermonsun</h3>
+   <p>Im Sommer erwärmt sich der Kontinent stark. Über Land entsteht ein großräumiges Hitzetief. Feuchte Luft vom Ozean strömt ein, wird gehoben und bringt starke Niederschläge. In Südasien wird die Hebung durch das Himalaya-/Tibet-System zusätzlich verstärkt.</p>
+   <div class="formula">Kontinent erwärmt sich → Hitzetief → feuchte Meeresluft strömt ein → Hebung → Monsunregen</div>
+  </div>
+  <div class="deep">
+   <h3>Wintermonsun</h3>
+   <p>Im Winter kühlt der Kontinent stark aus. Über Land entsteht hoher Luftdruck. Trockene kontinentale Luft strömt Richtung Ozean. Deshalb ist der Wintermonsun häufig deutlich trockener.</p>
+   <div class="formula">Kontinent kühlt aus → Hochdruck → trockene Luft strömt seewärts → Trockenzeit</div>
+  </div>
+  <div class="warn"><strong>Einordnung:</strong> Monsun ist nicht nur „viel Regen“, sondern ein jahreszeitlicher Windrichtungswechsel mit massiven Niederschlagsfolgen.</div>
+ </div>
+</section>
+
+<section class="section" id="walker">
+ <div class="section-head"><div class="num">9</div><h2>Walker-Zirkulation: Ost-West-Zirkulation über dem Pazifik</h2></div>
+ <div class="card">
+  <p>Die Hadley-Zelle beschreibt vor allem eine Nord-Süd-Zirkulation. Die <a class="term" href="#gloss-walker">Walker-Zirkulation</a> beschreibt dagegen eine Ost-West-Zirkulation in den Tropen, besonders über dem Pazifik. Sie ist zentral für das Verständnis von El Niño.</p>
+  <div class="figure small">
+   <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Walker-Zirkulation.png" alt="Walker-Zirkulation über dem tropischen Pazifik">
+   <div class="cap">Walker-Zirkulation im tropischen Pazifik: Passate, Warmwassertransport und Konvektion im westlichen Pazifik. Quelle: Wikimedia Commons.</div>
+  </div>
+  <div class="fig-explain"><h4>Normale Walker-Zirkulation</h4><ul><li>Passate treiben warmes Oberflächenwasser nach Westen.</li><li>Im westlichen Pazifik sammelt sich warmes Wasser.</li><li>Dort steigt warme, feuchte Luft auf; es entstehen Wolken und Niederschläge.</li><li>Im östlichen Pazifik steigt kaltes Tiefenwasser auf, besonders vor Südamerika.</li><li>In der Höhe strömt Luft zurück nach Osten.</li></ul><div class="chain">starke Passate → Warmwasser im Westpazifik → Aufsteigen/Regen dort → kalter Auftrieb im Ostpazifik</div></div>
+ </div>
+</section>
+
+<section class="section" id="elnino">
+ <div class="section-head"><div class="num">10</div><h2>El Niño-Verbindung: Wenn Passate schwächer werden</h2></div>
+ <div class="card">
+  <p>El Niño ist für dein rotes Verbindungsthema extrem wichtig. Die Brücke zu deinem Schwerpunktthema lautet: Passate und Druckverteilung verändern die Meeresoberflächentemperaturen im tropischen Pazifik. Wenn die Passate schwächer werden, verändert sich die normale Walker-Zirkulation.</p>
+  <div class="figure small">
+   <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Circulation%20El%20Nino.png" alt="El Niño-Zirkulation im tropischen Pazifik">
+   <div class="cap">El Niño: abgeschwächte Passate und veränderte Walker-Zirkulation. Quelle: NOAA-Basisgrafik / Wikimedia Commons.</div>
+  </div>
+  <div class="fig-explain"><h4>El Niño-Kette</h4><ul><li>Normalerweise treiben Passate warmes Wasser nach Westen.</li><li>Bei El Niño schwächen sich die Passate ab.</li><li>Warmes Wasser kann sich stärker nach Osten ausbreiten.</li><li>Der kalte Auftrieb vor Südamerika wird geschwächt.</li><li>Konvektion und Niederschläge verlagern sich.</li><li>Dadurch entstehen Wetteranomalien in vielen Weltregionen.</li></ul><div class="chain">Passate schwächer → Warmwasser ostwärts → Auftrieb schwächer → Niederschlagsmuster verschieben sich</div></div>
+  <div class="merke"><strong>Prüfungsstarker Zusammenhang:</strong> El Niño ist kein isoliertes Ozeanphänomen, sondern ein gekoppeltes Atmosphäre-Ozean-Phänomen.</div>
+ </div>
+</section>
+
+<section class="section" id="methodik">
+ <div class="section-head"><div class="num">11</div><h2>Methodik: ITC- und Passatmaterial auswerten</h2></div>
+ <div class="card alt">
+  <div class="chainlist">
+   <div class="chainitem"><b>1. Lage bestimmen:</b> Wo liegt die ITC? Januar oder Juli? Nord- oder Südverlagerung?</div>
+   <div class="chainitem"><b>2. Ursache erklären:</b> Zenitstand, thermischer Äquator, Land-Meer-Verteilung.</div>
+   <div class="chainitem"><b>3. Windrichtung erklären:</b> Druckgradient vom Subtropenhoch zur ITC plus Coriolis.</div>
+   <div class="chainitem"><b>4. Niederschlag ableiten:</b> Konvergenz und Aufsteigen erzeugen Wolken und Niederschlag.</div>
+   <div class="chainitem"><b>5. Raumfolgen bewerten:</b> Regenzeit, Trockenzeit, Landwirtschaft, Wasserverfügbarkeit, Dürre- oder Hochwasserrisiko.</div>
+   <div class="chainitem"><b>6. Verbindung herstellen:</b> Passate treiben Oberflächenströmungen und sind zentral für El Niño.</div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="verknuepfung">
+ <div class="section-head"><div class="num">12</div><h2>Verknüpfungen zu Schwerpunkt und roten Themen</h2></div>
+ <div class="card">
+  <div class="grid2">
+   <div class="mini"><h4>Zu atmosphärischer Zirkulation</h4><p>ITC und Passatkreislauf sind der tropische Teil der Hadley-Zelle.</p><div class="formula">Hadley-Zelle → ITC + Passate + Subtropenhoch</div></div>
+   <div class="mini"><h4>Zu Klima- und Vegetationszonen</h4><p>Die ITC steuert Niederschlag. Ihre Verlagerung erklärt Regenwald, Savannen und Trockenräume.</p><div class="formula">ITC-Lage → Niederschlagsdauer → Vegetationszone</div></div>
+   <div class="mini"><h4>Zu Humboldtstrom</h4><p>Passate treiben Oberflächenwasser ab und begünstigen Auftrieb kalten Tiefenwassers vor Südamerika.</p><div class="formula">Passate → Ekman-Transport/Auftrieb → kaltes Wasser → trockenes Küstenklima</div></div>
+   <div class="mini"><h4>Zu El Niño</h4><p>El Niño entsteht bei gestörter Kopplung von Passaten, Walker-Zirkulation und Meeresoberflächentemperaturen.</p><div class="formula">schwache Passate → Warmwasserverlagerung → veränderte Konvektion</div></div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="muendlich">
+ <div class="section-head"><div class="num">13</div><h2>Mündliche Prüfungsantworten</h2></div>
+ <div class="exam"><h3>1. „Erklären Sie die Entstehung der ITC.“</h3><p>Die ITC entsteht in der Zone starker tropischer Erwärmung. Dort wird die bodennahe Luft stark erwärmt, nimmt viel Feuchtigkeit auf und steigt auf. Am Boden entsteht eine Tiefdruckrinne. Aus den subtropischen Hochdruckgebieten strömt Luft zur ITC. Durch die Corioliskraft werden diese Ausgleichsströmungen zu Nordost- und Südostpassaten abgelenkt. In der ITC konvergieren die Passate, die Luft steigt weiter auf, kühlt ab, Wasserdampf kondensiert und es entstehen Wolken, Gewitter und starke Niederschläge.</p></div>
+ <div class="exam"><h3>2. „Erklären Sie den Passatkreislauf.“</h3><p>Der Passatkreislauf ist der bodennahe und vertikale Teil der Hadley-Zelle. In der ITC steigt warme, feuchte Luft auf und verursacht starke Niederschläge. In der Höhe strömt die Luft polwärts und sinkt in den Subtropen wieder ab. Dabei entstehen subtropische Hochdruckgebiete. Am Boden strömt Luft aus diesen Hochdruckgebieten zurück zur äquatorialen Tiefdruckrinne. Durch die Corioliskraft wird diese Rückströmung abgelenkt und bildet auf der Nordhalbkugel den Nordostpassat und auf der Südhalbkugel den Südostpassat.</p></div>
+ <div class="exam"><h3>3. „Warum gibt es in den Tropen Regen- und Trockenzeiten?“</h3><p>In vielen tropischen Regionen entstehen Regen- und Trockenzeiten durch die jahreszeitliche Verlagerung der ITC. Die ITC folgt dem Bereich stärkster Erwärmung, also dem thermischen Äquator, der mit dem Sonnenstand nach Norden und Süden wandert. Liegt die ITC über einem Gebiet, strömt feuchte Luft zusammen, steigt auf und verursacht Niederschläge. Entfernt sich die ITC, dominiert eher absinkende oder trockenere Luft, und es entsteht Trockenzeit. Dadurch sind Niederschlagsunterschiede in den Tropen oft wichtiger als Temperaturunterschiede.</p></div>
+ <div class="exam"><h3>4. „Stellen Sie den Zusammenhang zwischen Passaten und El Niño her.“</h3><p>Normalerweise treiben die Passate im tropischen Pazifik warmes Oberflächenwasser nach Westen. Im westlichen Pazifik sammelt sich warmes Wasser, dort steigt feuchte Luft auf und es kommt zu starken Niederschlägen. Vor Südamerika wird kaltes Tiefenwasser an die Oberfläche gebracht. Bei El Niño schwächen sich die Passate ab. Dadurch kann sich warmes Wasser nach Osten ausbreiten, der kalte Auftrieb wird geschwächt, und die Konvektions- und Niederschlagsgebiete verlagern sich. El Niño ist deshalb ein gekoppeltes Atmosphäre-Ozean-Phänomen.</p></div>
+</section>
+
+<section class="section" id="quiz">
+ <div class="section-head"><div class="num">14</div><h2>Wissenscheck</h2></div>
+ <div class="quiz">
+  <details class="q"><summary>1. Was bedeutet ITC?</summary><p>Innertropische Konvergenzzone: Zone, in der die Passate zusammenströmen und Luft aufsteigt.</p></details>
+  <details class="q"><summary>2. Warum regnet es in der ITC häufig?</summary><p>Feuchte, warme Luft steigt auf, kühlt ab, Wasserdampf kondensiert, Wolken und Gewitter entstehen.</p></details>
+  <details class="q"><summary>3. Warum heißen Nordost- und Südostpassat so?</summary><p>Sie werden nach ihrer Herkunftsrichtung benannt. Der Nordostpassat kommt aus Nordosten, der Südostpassat aus Südosten.</p></details>
+  <details class="q"><summary>4. Warum wandert die ITC jahreszeitlich?</summary><p>Weil sich der Bereich maximaler Erwärmung mit dem Zenitstand der Sonne verlagert.</p></details>
+  <details class="q"><summary>5. Was ist die Passatinversion?</summary><p>Eine stabile Inversionsschicht in der Passatluft, die Konvektion und starke Niederschläge hemmen kann.</p></details>
+  <details class="q"><summary>6. Warum ist El Niño eine Verbindung zu diesem Thema?</summary><p>Weil El Niño mit veränderten Passaten, Walker-Zirkulation und Meeresoberflächentemperaturen im tropischen Pazifik zusammenhängt.</p></details>
+ </div>
+</section>
+
+<section class="section glossary" id="glossar">
+ <div class="section-head"><div class="num">G</div><h2>Fachbegriffe-Glossar</h2></div>
+ <p class="glossary-intro">Die wichtigsten Begriffe dieser Unterseite.</p>
+ <div class="gloss-index">
+  <a href="#gloss-itc">ITC</a><a href="#gloss-thermischer-aequator">thermischer Äquator</a><a href="#gloss-passat">Passat</a><a href="#gloss-passatkreislauf">Passatkreislauf</a><a href="#gloss-passatinversion">Passatinversion</a><a href="#gloss-antipassat">Antipassat</a><a href="#gloss-doldrums">Doldrums</a><a href="#gloss-monsun">Monsun</a><a href="#gloss-walker">Walker-Zirkulation</a><a href="#gloss-enso">ENSO</a>
+ </div>
+ <div class="gloss-grid">
+  <div class="gloss-item" id="gloss-itc"><h3>ITC</h3><p>Innertropische Konvergenzzone; äquatornahe Tiefdruck- und Konvergenzzone der Passate.</p><div class="connect">Zusammenhang: Aufsteigen, Wolkenbildung und Tropenregen.</div></div>
+  <div class="gloss-item" id="gloss-thermischer-aequator"><h3>Thermischer Äquator</h3><p>Zone maximaler Erwärmung, die jahreszeitlich wandert.</p><div class="connect">Zusammenhang: beeinflusst die Lage der ITC.</div></div>
+  <div class="gloss-item" id="gloss-passat"><h3>Passat</h3><p>Beständiger tropischer Wind vom subtropischen Hochdruckgürtel zur ITC.</p><div class="connect">Zusammenhang: Nordostpassat und Südostpassat.</div></div>
+  <div class="gloss-item" id="gloss-passatkreislauf"><h3>Passatkreislauf</h3><p>Tropischer Kreislauf aus ITC-Aufstieg, Höhenströmung, Absinken in den Subtropen und bodennaher Passatrückströmung.</p><div class="connect">Zusammenhang: Teil der Hadley-Zelle.</div></div>
+  <div class="gloss-item" id="gloss-passatinversion"><h3>Passatinversion</h3><p>Stabile Temperaturumkehr in der Passatluft, die vertikale Konvektion hemmt.</p><div class="connect">Zusammenhang: begünstigt Trockenheit in Passatgebieten.</div></div>
+  <div class="gloss-item" id="gloss-antipassat"><h3>Antipassat</h3><p>Höhenströmung der Hadley-Zelle von der ITC Richtung Subtropen.</p><div class="connect">Zusammenhang: Gegenstück zur bodennahen Passatrückströmung.</div></div>
+  <div class="gloss-item" id="gloss-doldrums"><h3>Doldrums / Kalmen</h3><p>Windschwache Bereiche in der Nähe der ITC.</p><div class="connect">Zusammenhang: historisch für Segelschifffahrt wichtig.</div></div>
+  <div class="gloss-item" id="gloss-monsun"><h3>Monsun</h3><p>Jahreszeitlich wechselndes Windsystem, meist mit starkem Sommerregen und trockenerem Winter.</p><div class="connect">Zusammenhang: ITC-Verlagerung + Land-Meer-Gegensatz.</div></div>
+  <div class="gloss-item" id="gloss-walker"><h3>Walker-Zirkulation</h3><p>Ost-West-Zirkulation in den Tropen, besonders über dem Pazifik.</p><div class="connect">Zusammenhang: zentral für El Niño/La Niña.</div></div>
+  <div class="gloss-item" id="gloss-enso"><h3>ENSO</h3><p>El Niño-Southern Oscillation; gekoppelte Schwankung von Ozean und Atmosphäre im tropischen Pazifik.</p><div class="connect">Zusammenhang: Passate, Walker-Zirkulation und Meeresoberflächentemperaturen.</div></div>
+ </div>
+</section>
+
+<div class="footer-note">Lokale Lernseite für private Nutzung. Unterseite 5 des Geo-Schwerpunktthemas 12-1.1: ITC und Passatkreislauf. Es wurden nur externe Grafiken aus dem Internet eingebunden.</div>
+</main>
+</div>
+</body>
+</html>

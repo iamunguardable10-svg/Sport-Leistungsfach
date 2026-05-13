@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Geo 12-1.1.8 — Verknüpfungen zu roten Themen</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d1117;--surface:#151c2b;--card:#1b2440;--card2:#202a4a;--border:#283454;--text:#e8eef7;--muted:#8b98ad;--gold:#f5c842;--sky:#66d9ef;--blue:#4d9de0;--green:#52b788;--orange:#e07b4d;--red:#e05555;--purple:#9b72cf}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--text);font-family:Outfit,system-ui,sans-serif;line-height:1.72;font-size:15.5px}.layout{display:flex;min-height:100vh}.sidebar{width:344px;min-width:344px;height:100vh;position:sticky;top:0;background:var(--surface);border-right:1px solid var(--border);overflow-y:auto}.sb-head{padding:22px;border-bottom:1px solid var(--border)}.back{color:var(--muted);font-size:12.5px;text-decoration:none}.back:hover{color:var(--sky)}.sb-title{font-family:Fraunces,serif;color:#fff;font-size:22px;margin-top:14px}.sb-sub{color:var(--muted);font-size:12px;margin-top:3px}.navgrp{padding:16px 22px 5px;color:var(--sky);font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase}.nav a{display:block;padding:6px 22px;color:var(--muted);font-size:12.5px;text-decoration:none;border-left:2px solid transparent}.nav a:hover{color:#fff;background:rgba(102,217,239,.08)}.main{flex:1;max-width:1160px;padding:48px 54px 120px}.badge{display:inline-block;color:var(--sky);background:rgba(102,217,239,.12);border:1px solid rgba(102,217,239,.32);border-radius:999px;padding:5px 14px;font-size:12px;font-weight:800;margin-bottom:18px}h1{font-family:Fraunces,serif;font-size:48px;line-height:1.08;color:#fff;margin-bottom:14px}.lead{color:var(--muted);font-size:17px;max-width:880px}.focusbox{margin-top:20px;background:rgba(245,200,66,.08);border:1px solid rgba(245,200,66,.24);border-left:4px solid var(--gold);border-radius:14px;padding:16px 18px;max-width:940px}.focusbox b{color:var(--gold)}.gloss-button{display:inline-flex;margin-top:18px;background:rgba(245,200,66,.12);border:1px solid rgba(245,200,66,.35);color:var(--gold);font-weight:800;text-decoration:none;border-radius:999px;padding:9px 15px;font-size:13px}.section{margin:46px 0;scroll-margin-top:26px}.section-head{display:flex;gap:13px;align-items:center;margin-bottom:20px}.num{width:39px;height:39px;border-radius:10px;background:var(--sky);color:#061015;display:grid;place-items:center;font-weight:900;flex-shrink:0}h2{font-family:Fraunces,serif;color:#fff;font-size:31px;line-height:1.18}h3{color:#fff;font-size:19px;margin:22px 0 10px}.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px 26px;margin:14px 0}.card.alt{background:linear-gradient(180deg,#1c2543,#151d31)}.term{color:var(--gold);font-weight:800;text-decoration:none;border-bottom:1px dotted rgba(245,200,66,.65)}.term:hover{color:#fff;background:rgba(245,200,66,.13);border-radius:4px}.merke{background:rgba(82,183,136,.08);border:1px solid rgba(82,183,136,.25);border-radius:12px;padding:13px 16px;margin:16px 0}.merke strong{color:var(--green)}.warn{background:rgba(224,85,85,.08);border:1px solid rgba(224,85,85,.24);border-radius:12px;padding:13px 16px;margin:16px 0}.warn strong{color:#ff8585}.formula{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:rgba(77,157,224,.09);border:1px solid rgba(77,157,224,.25);border-radius:12px;padding:12px 14px;margin:12px 0;color:#fff}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:14px 0}.mini{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px}.mini h4{font-size:15px;color:var(--sky);margin-bottom:8px}.mini p,.mini li{font-size:13.5px;color:#b7c1d0;line-height:1.55}ul{padding-left:20px}li{margin:5px 0}.figure{background:#101622;border:1px solid var(--border);border-radius:16px;overflow:hidden;margin:20px 0}.figure img{display:block;width:100%;max-height:850px;object-fit:contain;background:#fff}.figure.small img{max-height:580px}.cap{border-top:1px solid var(--border);padding:11px 15px;color:var(--muted);font-size:12px;text-align:center}.fig-explain{background:rgba(102,217,239,.07);border:1px solid rgba(102,217,239,.22);border-radius:14px;padding:15px 17px;margin:14px 0 22px}.fig-explain h4{font-size:14px;color:var(--sky);margin-bottom:8px}.fig-explain li{font-size:14px;color:#c7d1df;line-height:1.55}.fig-explain .chain{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#fff;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:9px 11px;margin-top:10px;font-size:13px}.deep{background:linear-gradient(180deg,rgba(102,217,239,.08),rgba(77,157,224,.05));border:1px solid rgba(102,217,239,.22);border-radius:16px;padding:19px 21px;margin:18px 0}.deep h3{margin-top:0}.chainlist{display:grid;gap:9px;margin:14px 0}.chainitem{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:11px 13px;font-size:14px;color:#cbd5e1}.chainitem b{color:#fff}.compare{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}.comp{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px}.comp h4{color:#fff;font-size:15px;margin-bottom:6px}.tag{display:inline-block;margin-bottom:8px;border-radius:999px;padding:2px 9px;font-size:11px;font-weight:800}.tag-b{background:rgba(77,157,224,.12);color:var(--blue)}.tag-g{background:rgba(82,183,136,.12);color:var(--green)}.tag-o{background:rgba(224,123,77,.12);color:var(--orange)}.tag-r{background:rgba(224,85,85,.12);color:#ff8585}.exam{background:linear-gradient(135deg,rgba(102,217,239,.13),rgba(77,157,224,.08));border:1px solid rgba(102,217,239,.28);border-radius:16px;padding:22px;margin:18px 0}.exam h3{margin-top:0}.quiz{background:linear-gradient(180deg,#1b2440,#141b2d);border:1px solid var(--border);border-radius:18px;padding:26px;margin-top:32px}.q{margin:18px 0;padding:16px;background:rgba(255,255,255,.04);border-radius:12px;border:1px solid rgba(255,255,255,.07)}.q summary{cursor:pointer;color:#fff;font-weight:700}.q p{color:#b9c4d2;margin-top:10px}.glossary{background:linear-gradient(180deg,#1b2440,#141b2d);border:1px solid var(--border);border-radius:20px;padding:28px;margin-top:50px;scroll-margin-top:28px}.glossary-intro{color:var(--muted);max-width:780px;margin-bottom:20px}.gloss-index{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 24px}.gloss-index a{font-size:12px;text-decoration:none;color:var(--gold);background:rgba(245,200,66,.08);border:1px solid rgba(245,200,66,.18);border-radius:999px;padding:4px 10px}.gloss-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.gloss-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:15px 16px;scroll-margin-top:30px}.gloss-item h3{font-size:16px;margin:0 0 7px;color:var(--gold)}.gloss-item p{font-size:13.5px;color:#c6d0de;line-height:1.55}.gloss-item .connect{font-size:12.5px;color:var(--green);margin-top:8px}.footer-note{font-size:12px;color:var(--muted);border-top:1px solid var(--border);margin-top:46px;padding-top:18px}@media(max-width:900px){.layout{display:block}.sidebar{display:none}.main{padding:28px 20px 70px}h1{font-size:35px}.grid2,.grid3,.compare,.gloss-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar">
+ <div class="sb-head"><a class="back" href="geographie.html">← Zur Geo-Übersicht</a><div class="sb-title">12-1.1.8</div><div class="sb-sub">Rote Themen verknüpfen</div></div>
+ <div class="nav">
+  <div class="navgrp">Strategie</div>
+  <a href="#fokus">Start & Ziel</a>
+  <a href="#prinzip">Verknüpfungsprinzip</a>
+  <a href="#masterketten">Master-Ketten</a>
+  <a href="#ozean-atmosphaere">Atmosphäre ↔ Ozean</a>
+  <div class="navgrp">Ozeanische Prozesse</div>
+  <a href="#golfstrom">Golfstrom / Nordatlantikdrift</a>
+  <a href="#thermohalin">Thermohaline Zirkulation / AMOC</a>
+  <a href="#humboldt">Humboldtstrom</a>
+  <a href="#elnino">El Niño / ENSO</a>
+  <a href="#upwelling">Auftrieb / Upwelling</a>
+  <div class="navgrp">Polarzone & Klima</div>
+  <a href="#albedo">Albedo</a>
+  <a href="#eis-rueckkopplung">Eis-Albedo-Rückkopplung</a>
+  <a href="#permafrost">Permafrost</a>
+  <a href="#kipppunkte">Kipppunkte</a>
+  <a href="#polargeopolitik">Geopolitik Polarzone</a>
+  <div class="navgrp">Prüfung</div>
+  <a href="#matrix">Verknüpfungsmatrix</a>
+  <a href="#antwortschema">Antwortschema</a>
+  <a href="#muendlich">Mündliche Antworten</a>
+  <a href="#quiz">Wissenscheck</a>
+  <a href="#glossar">Glossar</a>
+ </div>
+</aside>
+
+<main class="main">
+<header id="fokus">
+ <div class="badge">12-1.1 · Unterseite 8</div>
+ <h1>Verknüpfungen zu den roten Themen</h1>
+ <p class="lead">Diese Seite ist deine Brückenseite: Du lernst, wie du von deinem gelben Schwerpunktthema atmosphärische Prozesse logisch zu den roten Themen aus 12-1.2 und 12-1.3 überleitest.</p>
+ <div class="focusbox"><b>Ziel:</b> In deinem Kolloquium sollst du nicht isoliert über Golfstrom, Humboldtstrom, El Niño, Albedo oder Polarzone sprechen, sondern immer zeigen: Atmosphäre, Ozean, Eis und Vegetation sind gekoppelte Systeme.</div>
+ <a class="gloss-button" href="#glossar">📘 Fachbegriffe-Glossar öffnen</a>
+</header>
+
+<section class="section" id="prinzip">
+ <div class="section-head"><div class="num">0</div><h2>Verknüpfungsprinzip: Immer vom Schwerpunkt ausgehen</h2></div>
+ <div class="card alt">
+  <p>Dein Schwerpunkt ist 12-1.1: atmosphärische Prozesse und Entstehung von Klima- und Vegetationszonen. Wenn ein rotes Thema kommt, beginnst du mit einem atmosphärischen Ausgangspunkt und leitest dann zum Ozean oder zur Polarzone weiter.</p>
+  <div class="chainlist">
+   <div class="chainitem"><b>Schritt 1:</b> Atmosphäre erklären: Strahlung, Druck, Wind, Zirkulation, ITC oder Passate.</div>
+   <div class="chainitem"><b>Schritt 2:</b> Kopplung nennen: Wind treibt Ozeanströmungen; Temperatur steuert Eis/Albedo; Zirkulation beeinflusst Niederschlag.</div>
+   <div class="chainitem"><b>Schritt 3:</b> rotes Thema erklären: Golfstrom, Humboldtstrom, El Niño, thermohaline Zirkulation, Albedo oder Polarzone.</div>
+   <div class="chainitem"><b>Schritt 4:</b> Folgen ableiten: Klima, Vegetation, Ökosysteme, Landwirtschaft, Gefahren, Nutzungskonflikte.</div>
+   <div class="chainitem"><b>Schritt 5:</b> Bewertung ergänzen: Rückkopplung, Klimawandel, Kipppunkt, Unsicherheit oder regionale Differenzierung.</div>
+  </div>
+  <div class="formula">Atmosphäre → Kopplung → rotes Thema → Klima-/Vegetationsfolge → Bewertung</div>
+ </div>
+</section>
+
+<section class="section" id="masterketten">
+ <div class="section-head"><div class="num">1</div><h2>Master-Ketten für fast jede Antwort</h2></div>
+ <div class="card">
+  <p>Diese Ketten sind deine schnellen Brücken. Du kannst sie fast wortgleich im Kolloquium verwenden.</p>
+  <div class="grid2">
+   <div class="mini"><h4>Ozeanströmungen</h4><p>Atmosphärische Druckunterschiede erzeugen Winde. Winde treiben Oberflächenströmungen an. Meeresströmungen transportieren Wärme oder Kälte und verändern Küstenklimate.</p><div class="formula">Druck → Wind → Oberflächenströmung → Temperatur/Niederschlag → Klima</div></div>
+   <div class="mini"><h4>El Niño</h4><p>Passate steuern die Warmwasserverteilung im tropischen Pazifik. Werden sie schwächer, verändern sich Walker-Zirkulation, Auftrieb und Niederschlagsmuster.</p><div class="formula">Passate ↓ → Warmwasser ostwärts → Auftrieb ↓ → Konvektion verlagert</div></div>
+   <div class="mini"><h4>Polarzone</h4><p>Strahlungsbilanz und Albedo steuern Erwärmung und Eis. Schmilzt Eis, sinkt Albedo, mehr Energie wird aufgenommen, Erwärmung verstärkt sich.</p><div class="formula">Eisschmelze → Albedo ↓ → Absorption ↑ → Erwärmung ↑</div></div>
+   <div class="mini"><h4>Kipppunkte</h4><p>Wenn Rückkopplungen stark genug werden, kann ein System einen Schwellenwert überschreiten und in einen neuen Zustand wechseln.</p><div class="formula">Erwärmung → Schwelle → Rückkopplung → Systemwechsel</div></div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="ozean-atmosphaere">
+ <div class="section-head"><div class="num">2</div><h2>Grundkopplung Atmosphäre ↔ Ozean</h2></div>
+ <div class="card">
+  <p>Atmosphäre und Ozean sind eng gekoppelt. Die Atmosphäre reagiert schnell und treibt durch Winde Oberflächenströmungen an. Der Ozean speichert große Wärmemengen und beeinflusst Lufttemperatur, Luftfeuchtigkeit, Druckverteilung und Niederschlag.</p>
+  <div class="figure">
+   <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Thermohaline%20Circulation%202.png" alt="Globale thermohaline Zirkulation">
+   <div class="cap">Globale Ozeanzirkulation als Wärmetransportsystem. Quelle: Wikimedia Commons / NASA-Visualisierung.</div>
+  </div>
+  <div class="fig-explain"><h4>So liest du die Grafik</h4><ul><li>Ozeane transportieren Wärme zwischen Tropen und hohen Breiten.</li><li>Warme Oberflächenströmungen geben Wärme an die Atmosphäre ab.</li><li>Kalte Tiefenströmungen sind Teil der großräumigen Umwälzzirkulation.</li><li>Atmosphärische Winde treiben zusätzlich Oberflächenströmungen an.</li><li>Dadurch entstehen regionale Klimaeffekte, etwa mildere oder trockenere Küstenklimate.</li></ul><div class="chain">Ozean speichert Wärme → Strömung transportiert Wärme → Atmosphäre übernimmt Wärme/Feuchte → regionales Klima verändert sich</div></div>
+  <div class="merke"><strong>Starker Satz:</strong> Klima entsteht nicht nur in der Atmosphäre, sondern durch Kopplung von Atmosphäre, Ozean, Kryosphäre, Biosphäre und Landoberfläche.</div>
+ </div>
+</section>
+
+<section class="section" id="golfstrom">
+ <div class="section-head"><div class="num">3</div><h2>Golfstrom / Nordatlantikdrift</h2></div>
+ <div class="card">
+  <p>Der <a class="term" href="#gloss-golfstrom">Golfstrom</a> und seine Fortsetzung, die Nordatlantikdrift, transportieren warmes Wasser aus dem subtropischen Atlantik nach Nordosten. Dadurch wird Wärme an die Atmosphäre abgegeben, was besonders Westeuropa und Nordwesteuropa klimatisch beeinflusst.</p>
+  <div class="figure">
+   <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Golfstrom.jpg" alt="Golfstrom im Nordatlantik">
+   <div class="cap">Golfstromsystem im Nordatlantik. Quelle: Wikimedia Commons / NASA-Datenvisualisierung.</div>
+  </div>
+  <div class="fig-explain"><h4>Verknüpfung zum Schwerpunkt</h4><ul><li>Atmosphärische Druck- und Windgürtel treiben Oberflächenströmungen mit an.</li><li>Der Golfstrom transportiert warmes Wasser Richtung Nordatlantik.</li><li>Das warme Wasser gibt Wärme und Feuchtigkeit an die Atmosphäre ab.</li><li>Westwinde transportieren maritime Luftmassen nach Europa.</li><li>Dadurch sind Winter in Westeuropa milder als in anderen Regionen gleicher Breitenlage.</li></ul><div class="chain">Ozeanischer Wärmetransport + Westwindzone → maritimer Einfluss → mildere Winter in Westeuropa</div></div>
+  <div class="deep">
+   <h3>Wichtige Differenzierung</h3>
+   <p>Nicht nur der Golfstrom allein erklärt Europas mildes Klima. Auch Westwindzone, Atlantiknähe, Luftmassentransport und Wärmespeicherung des Ozeans sind beteiligt. Stark ist also eine kombinierte Erklärung.</p>
+   <div class="formula">Golfstrom/Nordatlantikdrift + Westwinde + Atlantiknähe = maritimer Klimaeffekt</div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="thermohalin">
+ <div class="section-head"><div class="num">4</div><h2>Thermohaline Zirkulation / AMOC</h2></div>
+ <div class="card">
+  <p>Die <a class="term" href="#gloss-thermohalin">thermohaline Zirkulation</a> wird durch Temperatur- und Salzgehaltsunterschiede angetrieben. Kaltes, salzreiches Wasser ist dichter und kann absinken. Im Atlantik ist die AMOC ein wichtiger Teil dieser Umwälzzirkulation.</p>
+  <div class="figure">
+   <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Conveyor_belt.svg" alt="Thermohaline Zirkulation Förderband">
+   <div class="cap">Schematische Darstellung der thermohalinen Zirkulation als globales Förderband. Quelle: Wikimedia Commons.</div>
+  </div>
+  <div class="fig-explain"><h4>Erklärungskette</h4><ul><li>In hohen Breiten kühlt Meerwasser ab.</li><li>Durch Verdunstung und Meereisbildung kann der Salzgehalt steigen.</li><li>Kaltes, salzreiches Wasser wird dichter und sinkt ab.</li><li>Dieses Absinken treibt Tiefenströmungen an.</li><li>Oberflächen- und Tiefenströmungen verteilen Wärme global.</li><li>Schmelzwasser kann die Dichte senken und Tiefenwasserbildung schwächen.</li></ul><div class="chain">Temperatur + Salzgehalt → Dichte → Absinken → Tiefenwasserbildung → globale Umwälzzirkulation</div></div>
+  <div class="warn"><strong>Kipppunkt-Bezug:</strong> Eine starke Abschwächung der AMOC gilt als relevantes Kipprisiko, weil sie regionale Temperatur- und Niederschlagsmuster verändern könnte.</div>
+ </div>
+</section>
+
+<section class="section" id="humboldt">
+ <div class="section-head"><div class="num">5</div><h2>Humboldtstrom</h2></div>
+ <div class="card">
+  <p>Der <a class="term" href="#gloss-humboldt">Humboldtstrom</a> ist eine kalte Meeresströmung entlang der Westküste Südamerikas. Er bringt kaltes, nährstoffreiches Wasser aus höheren Breiten bzw. aus der Tiefe in Richtung Äquator und ist eng mit Passaten, Auftrieb und dem trockenen Küstenklima verbunden.</p>
+  <div class="figure">
+   <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Humboldt%20Current.jpg" alt="Humboldtstrom vor Südamerika">
+   <div class="cap">Humboldtstrom entlang der Westküste Südamerikas. Quelle: Wikimedia Commons.</div>
+  </div>
+  <div class="fig-explain"><h4>Verknüpfung zum Schwerpunkt</h4><ul><li>Passate und Küstenwinde beeinflussen Oberflächenwasserbewegung.</li><li>Oberflächenwasser wird von der Küste wegtransportiert.</li><li>Kalter, nährstoffreicher Auftrieb ersetzt das wegbewegte Wasser.</li><li>Kalte Meeresoberflächen kühlen die Luft darüber.</li><li>Kalte Luft kann weniger Wasserdampf aufnehmen und ist stabiler geschichtet.</li><li>Dadurch entstehen trockene Küstenräume wie die Atacama.</li></ul><div class="chain">Passat/Küstenwind → Auftrieb kalten Wassers → stabile kühle Luft → wenig Niederschlag → Küstenwüste</div></div>
+  <div class="merke"><strong>Stark:</strong> Der Humboldtstrom zeigt, wie Wind, Ozeanströmung, Meeresoberflächentemperatur und Wüstenklima zusammenhängen.</div>
+ </div>
+</section>
+
+<section class="section" id="elnino">
+ <div class="section-head"><div class="num">6</div><h2>El Niño / ENSO</h2></div>
+ <div class="card">
+  <p><a class="term" href="#gloss-enso">El Niño</a> ist eine warme Phase der ENSO-Schwankung im tropischen Pazifik. Entscheidend ist die Kopplung von Atmosphäre und Ozean: Passate, Luftdruck, Warmwasserverteilung, Auftrieb und Niederschlagszonen verändern sich gemeinsam.</p>
+  <div class="figure">
+   <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Circulation%20El%20Nino.png" alt="El Niño Zirkulation">
+   <div class="cap">El Niño-Zirkulation mit abgeschwächten Passaten und veränderter Warmwasserverteilung. Quelle: NOAA-Basisgrafik / Wikimedia Commons.</div>
+  </div>
+  <div class="fig-explain"><h4>El Niño sauber erklären</h4><ul><li>Normalerweise treiben Passate warmes Oberflächenwasser nach Westen.</li><li>Im Westpazifik steigt warme, feuchte Luft auf; dort kommt es zu starken Niederschlägen.</li><li>Vor Südamerika steigt kaltes Tiefenwasser auf.</li><li>Bei El Niño schwächen sich die Passate ab.</li><li>Warmes Wasser verlagert sich nach Osten.</li><li>Der kalte Auftrieb vor Südamerika wird geschwächt.</li><li>Niederschlags- und Druckmuster verschieben sich.</li></ul><div class="chain">Passate schwach → Warmwasser ostwärts → Auftrieb schwach → Niederschläge verlagert → globale Wetterfolgen</div></div>
+  <div class="deep">
+   <h3>Warum El Niño perfekt zu deinem Schwerpunkt passt</h3>
+   <p>El Niño ist keine reine Meeresströmung und auch kein reines Wetterereignis. Es ist ein gekoppeltes Atmosphäre-Ozean-Phänomen. Du kannst also immer von Passaten, Druckverteilung und Walker-Zirkulation starten.</p>
+   <div class="formula">Atmosphäre: Passate/Druck · Ozean: Warmwasser/Auftrieb · Kopplung: ENSO</div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="upwelling">
+ <div class="section-head"><div class="num">7</div><h2>Auftrieb / Upwelling</h2></div>
+ <div class="card">
+  <p><a class="term" href="#gloss-upwelling">Upwelling</a> bedeutet, dass kaltes, nährstoffreiches Tiefenwasser an die Oberfläche gelangt. Es ist besonders wichtig an Westküsten von Kontinenten in den Tropen und Subtropen.</p>
+  <div class="figure small">
+   <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Upwelling%20diagram.svg" alt="Upwelling Schema">
+   <div class="cap">Küstenauftrieb: Wind transportiert Oberflächenwasser weg, kaltes Tiefenwasser steigt auf. Quelle: Wikimedia Commons.</div>
+  </div>
+  <div class="fig-explain"><h4>Warum Upwelling klimatisch wichtig ist</h4><ul><li>Wind bewegt Oberflächenwasser von der Küste weg.</li><li>Kompensation: Tiefenwasser steigt auf.</li><li>Dieses Wasser ist kalt und nährstoffreich.</li><li>Es fördert Fischreichtum und hohe biologische Produktivität.</li><li>Gleichzeitig kühlt es die Luft darüber und stabilisiert die Atmosphäre.</li><li>Dadurch wird Wolkenbildung mit Niederschlag gehemmt, obwohl Nebel auftreten kann.</li></ul><div class="chain">Wind → Oberflächenwasser weg → Tiefenwasser hoch → kalt/nährstoffreich → Fischreichtum + Küstentrockenheit</div></div>
+ </div>
+</section>
+
+<section class="section" id="albedo">
+ <div class="section-head"><div class="num">8</div><h2>Albedo: Brücke zur Polarzone</h2></div>
+ <div class="card">
+  <p><a class="term" href="#gloss-albedo">Albedo</a> ist das Rückstrahlvermögen einer Oberfläche. Schnee und Eis reflektieren viel Sonnenstrahlung; dunkles Wasser, Wald oder Boden absorbieren mehr Energie. Damit verbindet Albedo Strahlungsbilanz, Temperatur und Polarzone.</p>
+  <div class="figure small">
+   <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Albedo%20diagram.svg" alt="Albedo verschiedener Oberflächen">
+   <div class="cap">Albedo verschiedener Oberflächen. Quelle: Wikimedia Commons.</div>
+  </div>
+  <div class="fig-explain"><h4>Albedo fachlich nutzen</h4><ul><li>Hohe Albedo bedeutet viel Reflexion und geringe Absorption.</li><li>Niedrige Albedo bedeutet wenig Reflexion und starke Absorption.</li><li>Eis und Schnee stabilisieren Kälte, weil sie viel Strahlung reflektieren.</li><li>Schmilzt Eis, wird dunkleres Wasser oder Land frei.</li><li>Dadurch sinkt die Albedo und Erwärmung verstärkt sich.</li></ul><div class="chain">Oberfläche hell/dunkel → Reflexion/Absorption → Temperatur → Klimaeffekt</div></div>
+ </div>
+</section>
+
+<section class="section" id="eis-rueckkopplung">
+ <div class="section-head"><div class="num">9</div><h2>Eis-Albedo-Rückkopplung</h2></div>
+ <div class="card">
+  <p>Die <a class="term" href="#gloss-eisalbedo">Eis-Albedo-Rückkopplung</a> ist eine positive Rückkopplung: Eine Anfangserwärmung führt zu Eisschmelze, dadurch sinkt die Albedo, dadurch wird mehr Strahlung absorbiert, wodurch weitere Erwärmung und weitere Schmelze begünstigt werden.</p>
+  <div class="figure">
+   <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ice-albedo%20feedback.svg" alt="Eis-Albedo-Rückkopplung">
+   <div class="cap">Eis-Albedo-Rückkopplung als positive Rückkopplung. Quelle: Wikimedia Commons.</div>
+  </div>
+  <div class="fig-explain"><h4>Die perfekte Erklärungskette</h4><ul><li>Temperatur steigt.</li><li>Schnee- und Eisflächen nehmen ab.</li><li>Dunklere Oberflächen werden frei.</li><li>Die Albedo sinkt.</li><li>Mehr Sonnenenergie wird absorbiert.</li><li>Die Erwärmung verstärkt sich.</li></ul><div class="chain">Erwärmung → Eis weniger → Albedo sinkt → Absorption steigt → Erwärmung verstärkt</div></div>
+  <div class="merke"><strong>Polarverstärkung:</strong> Die Arktis erwärmt sich besonders stark, weil Rückkopplungen wie Eis-Albedo, Wasserdampf und veränderte Wärmeflüsse zusammenwirken.</div>
+ </div>
+</section>
+
+<section class="section" id="permafrost">
+ <div class="section-head"><div class="num">10</div><h2>Permafrost: Kohlenstoff-Rückkopplung</h2></div>
+ <div class="card">
+  <p><a class="term" href="#gloss-permafrost">Permafrost</a> ist dauerhaft gefrorener Boden. Wenn Permafrost taut, können organische Stoffe zersetzt werden. Dabei können CO₂ und Methan freigesetzt werden. Das verstärkt den Treibhauseffekt und kann weitere Erwärmung auslösen.</p>
+  <div class="figure">
+   <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Permafrost%20extent%20Northern%20Hemisphere.jpg" alt="Permafrost-Ausdehnung Nordhalbkugel">
+   <div class="cap">Permafrost-Ausdehnung auf der Nordhalbkugel. Quelle: Wikimedia Commons.</div>
+  </div>
+  <div class="fig-explain"><h4>Verknüpfung zum Schwerpunkt</h4><ul><li>Polar- und subpolare Räume sind durch Kälte und kurze Vegetationsperioden geprägt.</li><li>Permafrost speichert große Mengen organischen Kohlenstoffs.</li><li>Erwärmung taut Böden auf.</li><li>Mikroorganismen zersetzen organisches Material.</li><li>CO₂ und Methan können freigesetzt werden.</li><li>Das verstärkt den Treibhauseffekt und wirkt als positive Rückkopplung.</li></ul><div class="chain">Erwärmung → Permafrost taut → Treibhausgase frei → Treibhauseffekt stärker → weitere Erwärmung</div></div>
+ </div>
+</section>
+
+<section class="section" id="kipppunkte">
+ <div class="section-head"><div class="num">11</div><h2>Kipppunkte als übergeordnete Verbindung</h2></div>
+ <div class="card alt">
+  <p>Kipppunkte zeigen, dass Klimawandel nicht immer linear abläuft. Systeme können Schwellen überschreiten, sich durch Rückkopplungen selbst verändern und in einen neuen Zustand übergehen.</p>
+  <div class="figure">
+   <img src="https://www.pik-potsdam.de/en/output/infodesk/tipping-elements/tipping-elements/@@images/image/large" alt="Kippelelemente im Erdsystem">
+   <div class="cap">Kippelelemente im Erdsystem. Quelle: Potsdam-Institut für Klimafolgenforschung.</div>
+  </div>
+  <div class="fig-explain"><h4>So verbindest du Kipppunkte mit roten Themen</h4><ul><li>AMOC: mögliche Abschwächung der atlantischen Umwälzzirkulation.</li><li>Grönland/Antarktis: Eisschilde können langfristig instabil werden.</li><li>Permafrost: Auftauen kann Treibhausgase freisetzen.</li><li>Amazonas: Waldverlust kann Verdunstung und Niederschlag reduzieren.</li><li>Korallenriffe: Ozeanerwärmung kann Ökosysteme destabilisieren.</li><li>Alle Beispiele zeigen Rückkopplungen zwischen Atmosphäre, Ozean, Eis und Biosphäre.</li></ul><div class="chain">Klimawandel → Schwelle → Rückkopplung → Systemwechsel → neue regionale/globalen Folgen</div></div>
+  <div class="warn"><strong>Prüfungsstark:</strong> Kipppunkte als Zusatzwissen einsetzen, aber nicht übertreiben. Sage „Risiko“, „mögliche Schwelle“, „Rückkopplung“ und „langfristige Folgen“.</div>
+ </div>
+</section>
+
+<section class="section" id="polargeopolitik">
+ <div class="section-head"><div class="num">12</div><h2>Polarzone: Klimaforschung und Geopolitik</h2></div>
+ <div class="card">
+  <p>Die Polarzone ist nicht nur klimatisch wichtig, sondern auch geopolitisch. Eisschmelze verändert Schifffahrtsrouten, Rohstoffzugang, Ökosysteme, indigene Lebensräume und Sicherheitsinteressen.</p>
+  <div class="grid2">
+   <div class="mini"><h4>Klimaforschung</h4><ul><li>Eisbohrkerne als Klimaarchive</li><li>Messung von Temperatur- und Eisänderungen</li><li>Albedo- und Rückkopplungsforschung</li><li>Beobachtung von Permafrost und Meereis</li></ul></div>
+   <div class="mini"><h4>Geopolitik</h4><ul><li>neue arktische Schifffahrtsrouten</li><li>Rohstoffinteressen</li><li>Fischerei und Ökosystemschutz</li><li>Territorialansprüche</li><li>Konflikte zwischen Nutzung und Schutz</li></ul></div>
+  </div>
+  <div class="deep">
+   <h3>Brücke zum Schwerpunkt</h3>
+   <p>Die Polarzone lässt sich direkt über Strahlungsbilanz, Albedo, Druckgebiete, Polarzelle, Vegetationsgrenzen und Kipppunkte mit 12-1.1 verbinden.</p>
+   <div class="formula">Strahlung/Albedo → Polarerwärmung → Eis/Ökosysteme → Nutzungskonflikte</div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="matrix">
+ <div class="section-head"><div class="num">13</div><h2>Verknüpfungsmatrix für die Prüfung</h2></div>
+ <div class="card">
+  <div class="grid2">
+   <div class="mini"><h4>Golfstrom</h4><p>Start: Westwindzone und ozeanischer Wärmetransport. Folge: mildes maritimes Klima in Westeuropa.</p><div class="formula">Westwinde + warme Strömung → mild/feucht</div></div>
+   <div class="mini"><h4>Humboldtstrom</h4><p>Start: Passate/Küstenwinde. Folge: kaltes Auftriebswasser, stabile Luft, trockene Küste.</p><div class="formula">Wind → Upwelling → kaltes Wasser → Trockenheit</div></div>
+   <div class="mini"><h4>El Niño</h4><p>Start: Passate und Walker-Zirkulation. Folge: Warmwasserverlagerung und Niederschlagsanomalien.</p><div class="formula">Passate schwach → ENSO-Anomalie</div></div>
+   <div class="mini"><h4>AMOC</h4><p>Start: Temperatur und Salzgehalt bestimmen Dichte. Folge: Wärmetransport und mögliche Kipppunkt-Risiken.</p><div class="formula">Dichte → Absinken → Umwälzzirkulation</div></div>
+   <div class="mini"><h4>Albedo</h4><p>Start: Strahlungsbilanz. Folge: Eisschmelze verändert Reflexion und verstärkt Erwärmung.</p><div class="formula">Albedo ↓ → Absorption ↑</div></div>
+   <div class="mini"><h4>Permafrost</h4><p>Start: Polar/subpolare Kältezone. Folge: Auftauen setzt Treibhausgase frei.</p><div class="formula">Tauen → CO₂/CH₄ → Erwärmung</div></div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="antwortschema">
+ <div class="section-head"><div class="num">14</div><h2>Antwortschema: So stellst du immer den Zusammenhang her</h2></div>
+ <div class="card alt">
+  <div class="chainlist">
+   <div class="chainitem"><b>1. Schwerpunkt nennen:</b> „Ausgehend von der atmosphärischen Zirkulation ...“</div>
+   <div class="chainitem"><b>2. Prozess erklären:</b> Druckunterschiede, Windgürtel, ITC, Passate, Westwinde oder Strahlungsbilanz.</div>
+   <div class="chainitem"><b>3. Kopplung einbauen:</b> Wind treibt Oberflächenströmungen; Ozean speichert Wärme; Eis verändert Albedo.</div>
+   <div class="chainitem"><b>4. rotes Thema erklären:</b> Golfstrom, Humboldtstrom, El Niño, AMOC, Albedo, Permafrost.</div>
+   <div class="chainitem"><b>5. Raumfolgen ableiten:</b> Temperatur, Niederschlag, Vegetation, Landwirtschaft, Ökosysteme, Nutzung.</div>
+   <div class="chainitem"><b>6. Zusatzwissen setzen:</b> Klimawandel, Rückkopplung, Kipppunkt, Unsicherheiten, regionale Unterschiede.</div>
+  </div>
+  <div class="formula">Prozess erklären → Kopplung zeigen → Raumfolge ableiten → bewerten</div>
+ </div>
+</section>
+
+<section class="section" id="muendlich">
+ <div class="section-head"><div class="num">15</div><h2>Mündliche Prüfungsantworten</h2></div>
+ <div class="exam"><h3>1. „Stellen Sie den Zusammenhang zwischen Passaten und Humboldtstrom her.“</h3><p>Die Passate sind Teil der tropischen Zirkulation und entstehen als Ausgleichsströmung zwischen subtropischem Hochdruckgürtel und ITC. Entlang der Westküste Südamerikas beeinflussen Passat- und Küstenwinde die Bewegung des Oberflächenwassers. Wird Oberflächenwasser von der Küste wegtransportiert, steigt kaltes, nährstoffreiches Tiefenwasser auf. Dieser Auftrieb ist mit dem Humboldtstrom verbunden. Das kalte Wasser kühlt die Luft darüber, stabilisiert die Schichtung und hemmt Niederschlag. Dadurch entstehen trockene Küstenräume wie die Atacama, obwohl sie nahe am Meer liegen.</p></div>
+ <div class="exam"><h3>2. „Erklären Sie El Niño ausgehend von den Passaten.“</h3><p>Normalerweise treiben die Passate warmes Oberflächenwasser im tropischen Pazifik nach Westen. Im Westpazifik sammelt sich warmes Wasser, dort steigt feuchte Luft auf und es kommt zu Niederschlägen. Im Ostpazifik vor Südamerika steigt kaltes Tiefenwasser auf. Bei El Niño schwächen sich die Passate ab. Warmes Wasser kann sich nach Osten verlagern, der kalte Auftrieb wird geschwächt und die Konvektions- und Niederschlagsgebiete verschieben sich. El Niño ist damit ein gekoppeltes Atmosphäre-Ozean-Phänomen.</p></div>
+ <div class="exam"><h3>3. „Erklären Sie die Bedeutung des Golfstroms für Europa.“</h3><p>Der Golfstrom und die Nordatlantikdrift transportieren warmes Wasser aus dem subtropischen Atlantik nach Nordosten. Dieses Wasser gibt Wärme und Feuchtigkeit an die Atmosphäre ab. Durch die Westwindzone werden maritime Luftmassen nach Europa transportiert. Dadurch ist besonders Westeuropa milder und feuchter, als es allein aufgrund der Breitenlage zu erwarten wäre. Wichtig ist, nicht nur den Golfstrom allein zu nennen, sondern das Zusammenspiel aus ozeanischem Wärmetransport, Westwinden und Atlantiknähe.</p></div>
+ <div class="exam"><h3>4. „Stellen Sie den Zusammenhang zwischen Albedo und Polarzone her.“</h3><p>Albedo beschreibt das Rückstrahlvermögen einer Oberfläche. Schnee und Eis haben eine hohe Albedo und reflektieren viel Sonnenstrahlung. Wenn sich die Polarregionen erwärmen, schmelzen Schnee und Eis, wodurch dunkleres Wasser oder Land frei wird. Diese Flächen absorbieren mehr Strahlung, die Albedo sinkt und die Erwärmung verstärkt sich. Das nennt man Eis-Albedo-Rückkopplung. Sie ist ein Grund dafür, dass Veränderungen in Polarregionen besonders klimawirksam sind.</p></div>
+ <div class="exam"><h3>5. „Was sind Kipppunkte und wie lassen sie sich mit deinem Schwerpunkt verbinden?“</h3><p>Kipppunkte sind kritische Schwellen im Erdsystem, bei deren Überschreiten ein System durch Rückkopplungen in einen neuen Zustand wechseln kann. Sie lassen sich mit meinem Schwerpunkt verbinden, weil atmosphärische Prozesse, Strahlungsbilanz, Ozeane, Eis und Vegetation gekoppelt sind. Beispiele sind die Eis-Albedo-Rückkopplung, das Auftauen von Permafrost, mögliche Veränderungen der AMOC oder die Destabilisierung des Amazonas-Regenwalds. In allen Fällen verändern Klima- und Vegetationsbedingungen nicht nur langsam, sondern können durch Rückkopplungen sprunghaft instabil werden.</p></div>
+</section>
+
+<section class="section" id="quiz">
+ <div class="section-head"><div class="num">16</div><h2>Wissenscheck</h2></div>
+ <div class="quiz">
+  <details class="q"><summary>1. Welche Grundkette verbindet Atmosphäre und Ozean?</summary><p>Druckunterschiede erzeugen Winde, Winde treiben Oberflächenströmungen, Strömungen verändern Temperatur und Feuchtigkeit, dadurch verändert sich Klima.</p></details>
+  <details class="q"><summary>2. Warum ist der Humboldtstrom klimatisch wichtig?</summary><p>Er bringt kaltes Wasser an die Oberfläche, stabilisiert die Luftschichtung und begünstigt trockene Küstenklimate.</p></details>
+  <details class="q"><summary>3. Warum ist El Niño kein reines Ozeanphänomen?</summary><p>Weil Passate, Luftdruck, Walker-Zirkulation, Warmwasserverteilung und Niederschläge gekoppelt sind.</p></details>
+  <details class="q"><summary>4. Was ist die AMOC?</summary><p>Die Atlantic Meridional Overturning Circulation, eine großräumige atlantische Umwälzzirkulation, die Wärme transportiert.</p></details>
+  <details class="q"><summary>5. Was ist die Eis-Albedo-Rückkopplung?</summary><p>Eis schmilzt, Albedo sinkt, mehr Strahlung wird absorbiert, Erwärmung verstärkt sich, noch mehr Eis schmilzt.</p></details>
+  <details class="q"><summary>6. Warum sind Kipppunkte gutes Zusatzwissen?</summary><p>Weil sie zeigen, dass gekoppelte Erdsysteme bei Schwellenüberschreitung durch Rückkopplungen in neue Zustände wechseln können.</p></details>
+ </div>
+</section>
+
+<section class="section glossary" id="glossar">
+ <div class="section-head"><div class="num">G</div><h2>Fachbegriffe-Glossar</h2></div>
+ <p class="glossary-intro">Die wichtigsten Begriffe dieser Verknüpfungsseite.</p>
+ <div class="gloss-index">
+  <a href="#gloss-golfstrom">Golfstrom</a><a href="#gloss-humboldt">Humboldtstrom</a><a href="#gloss-upwelling">Upwelling</a><a href="#gloss-enso">ENSO</a><a href="#gloss-walker">Walker-Zirkulation</a><a href="#gloss-thermohalin">thermohaline Zirkulation</a><a href="#gloss-amoc">AMOC</a><a href="#gloss-albedo">Albedo</a><a href="#gloss-eisalbedo">Eis-Albedo-Rückkopplung</a><a href="#gloss-permafrost">Permafrost</a><a href="#gloss-kipppunkt">Kipppunkt</a>
+ </div>
+ <div class="gloss-grid">
+  <div class="gloss-item" id="gloss-golfstrom"><h3>Golfstrom</h3><p>Warme Meeresströmung im Nordatlantik, Teil des westlichen Randstromsystems.</p><div class="connect">Zusammenhang: Wärmetransport und mildere Klimaeinflüsse in Westeuropa.</div></div>
+  <div class="gloss-item" id="gloss-humboldt"><h3>Humboldtstrom</h3><p>Kalte Meeresströmung entlang der Westküste Südamerikas.</p><div class="connect">Zusammenhang: Auftrieb, Fischreichtum und Küstentrockenheit.</div></div>
+  <div class="gloss-item" id="gloss-upwelling"><h3>Upwelling / Auftrieb</h3><p>Aufsteigen kalten, nährstoffreichen Tiefenwassers an die Oberfläche.</p><div class="connect">Zusammenhang: Windantrieb, Produktivität und Küstenklima.</div></div>
+  <div class="gloss-item" id="gloss-enso"><h3>ENSO / El Niño</h3><p>Gekoppelte Schwankung von Ozean und Atmosphäre im tropischen Pazifik.</p><div class="connect">Zusammenhang: Passate, Walker-Zirkulation und Niederschlagsanomalien.</div></div>
+  <div class="gloss-item" id="gloss-walker"><h3>Walker-Zirkulation</h3><p>Ost-West-Zirkulation über dem tropischen Pazifik.</p><div class="connect">Zusammenhang: zentrale Grundlage für El Niño und La Niña.</div></div>
+  <div class="gloss-item" id="gloss-thermohalin"><h3>Thermohaline Zirkulation</h3><p>Ozeanzirkulation, die durch Temperatur- und Salzgehaltsunterschiede bzw. Dichteunterschiede beeinflusst wird.</p><div class="connect">Zusammenhang: globaler Wärmetransport.</div></div>
+  <div class="gloss-item" id="gloss-amoc"><h3>AMOC</h3><p>Atlantic Meridional Overturning Circulation; großräumige atlantische Umwälzzirkulation.</p><div class="connect">Zusammenhang: Wärmetransport und mögliches Kipprisiko.</div></div>
+  <div class="gloss-item" id="gloss-albedo"><h3>Albedo</h3><p>Rückstrahlvermögen einer Oberfläche.</p><div class="connect">Zusammenhang: Eis und Schnee reflektieren viel Strahlung.</div></div>
+  <div class="gloss-item" id="gloss-eisalbedo"><h3>Eis-Albedo-Rückkopplung</h3><p>Positive Rückkopplung: Eisschmelze senkt Albedo und verstärkt Erwärmung.</p><div class="connect">Zusammenhang: Polarverstärkung.</div></div>
+  <div class="gloss-item" id="gloss-permafrost"><h3>Permafrost</h3><p>Dauerhaft gefrorener Boden über mindestens zwei Jahre.</p><div class="connect">Zusammenhang: Auftauen kann Treibhausgase freisetzen.</div></div>
+  <div class="gloss-item" id="gloss-kipppunkt"><h3>Kipppunkt</h3><p>Kritische Schwelle, ab der ein System durch Rückkopplung in einen neuen Zustand wechseln kann.</p><div class="connect">Zusammenhang: Eis, Ozean, Wald, Permafrost und Klima.</div></div>
+ </div>
+</section>
+
+<div class="footer-note">Lokale Lernseite für private Nutzung. Unterseite 8 des Geo-Schwerpunktthemas 12-1.1: Verknüpfungen zu roten Themen. Es wurden nur externe Grafiken aus dem Internet eingebunden.</div>
+</main>
+</div>
+</body>
+</html>

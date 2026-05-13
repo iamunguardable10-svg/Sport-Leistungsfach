@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Geo 12-1.1.3 — Winde und Corioliseffekt</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d1117;--surface:#151c2b;--card:#1b2440;--card2:#202a4a;--border:#283454;--text:#e8eef7;--muted:#8b98ad;--gold:#f5c842;--sky:#66d9ef;--blue:#4d9de0;--green:#52b788;--orange:#e07b4d;--red:#e05555;--purple:#9b72cf}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--text);font-family:Outfit,system-ui,sans-serif;line-height:1.72;font-size:15.5px}.layout{display:flex;min-height:100vh}.sidebar{width:326px;min-width:326px;height:100vh;position:sticky;top:0;background:var(--surface);border-right:1px solid var(--border);overflow-y:auto}.sb-head{padding:22px;border-bottom:1px solid var(--border)}.back{color:var(--muted);font-size:12.5px;text-decoration:none}.back:hover{color:var(--sky)}.sb-title{font-family:Fraunces,serif;color:#fff;font-size:22px;margin-top:14px}.sb-sub{color:var(--muted);font-size:12px;margin-top:3px}.navgrp{padding:16px 22px 5px;color:var(--sky);font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase}.nav a{display:block;padding:6px 22px;color:var(--muted);font-size:12.5px;text-decoration:none;border-left:2px solid transparent}.nav a:hover{color:#fff;background:rgba(102,217,239,.08)}.main{flex:1;max-width:1140px;padding:48px 54px 120px}.badge{display:inline-block;color:var(--sky);background:rgba(102,217,239,.12);border:1px solid rgba(102,217,239,.32);border-radius:999px;padding:5px 14px;font-size:12px;font-weight:800;margin-bottom:18px}h1{font-family:Fraunces,serif;font-size:48px;line-height:1.08;color:#fff;margin-bottom:14px}.lead{color:var(--muted);font-size:17px;max-width:860px}.focusbox{margin-top:20px;background:rgba(245,200,66,.08);border:1px solid rgba(245,200,66,.24);border-left:4px solid var(--gold);border-radius:14px;padding:16px 18px;max-width:920px}.focusbox b{color:var(--gold)}.gloss-button{display:inline-flex;margin-top:18px;background:rgba(245,200,66,.12);border:1px solid rgba(245,200,66,.35);color:var(--gold);font-weight:800;text-decoration:none;border-radius:999px;padding:9px 15px;font-size:13px}.section{margin:46px 0;scroll-margin-top:26px}.section-head{display:flex;gap:13px;align-items:center;margin-bottom:20px}.num{width:39px;height:39px;border-radius:10px;background:var(--sky);color:#061015;display:grid;place-items:center;font-weight:900;flex-shrink:0}h2{font-family:Fraunces,serif;color:#fff;font-size:31px;line-height:1.18}h3{color:#fff;font-size:19px;margin:22px 0 10px}.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px 26px;margin:14px 0}.card.alt{background:linear-gradient(180deg,#1c2543,#151d31)}.label{font-size:10.5px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--sky);margin-bottom:12px}.term{color:var(--gold);font-weight:800;text-decoration:none;border-bottom:1px dotted rgba(245,200,66,.65)}.term:hover{color:#fff;background:rgba(245,200,66,.13);border-radius:4px}.merke{background:rgba(82,183,136,.08);border:1px solid rgba(82,183,136,.25);border-radius:12px;padding:13px 16px;margin:16px 0}.merke strong{color:var(--green)}.warn{background:rgba(224,85,85,.08);border:1px solid rgba(224,85,85,.24);border-radius:12px;padding:13px 16px;margin:16px 0}.warn strong{color:#ff8585}.formula{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:rgba(77,157,224,.09);border:1px solid rgba(77,157,224,.25);border-radius:12px;padding:12px 14px;margin:12px 0;color:#fff}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:14px 0}.mini{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px}.mini h4{font-size:15px;color:var(--sky);margin-bottom:8px}.mini p,.mini li{font-size:13.5px;color:#b7c1d0;line-height:1.55}ul{padding-left:20px}li{margin:5px 0}.figure{background:#101622;border:1px solid var(--border);border-radius:16px;overflow:hidden;margin:20px 0}.figure img{display:block;width:100%;max-height:850px;object-fit:contain;background:#fff}.figure.small img{max-height:580px}.cap{border-top:1px solid var(--border);padding:11px 15px;color:var(--muted);font-size:12px;text-align:center}.fig-explain{background:rgba(102,217,239,.07);border:1px solid rgba(102,217,239,.22);border-radius:14px;padding:15px 17px;margin:14px 0 22px}.fig-explain h4{font-size:14px;color:var(--sky);margin-bottom:8px}.fig-explain li{font-size:14px;color:#c7d1df;line-height:1.55}.fig-explain .chain{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#fff;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:9px 11px;margin-top:10px;font-size:13px}.deep{background:linear-gradient(180deg,rgba(102,217,239,.08),rgba(77,157,224,.05));border:1px solid rgba(102,217,239,.22);border-radius:16px;padding:19px 21px;margin:18px 0}.deep h3{margin-top:0}.chainlist{display:grid;gap:9px;margin:14px 0}.chainitem{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:11px 13px;font-size:14px;color:#cbd5e1}.chainitem b{color:#fff}.compare{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}.comp{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px}.comp h4{color:#fff;font-size:15px;margin-bottom:6px}.tag{display:inline-block;margin-bottom:8px;border-radius:999px;padding:2px 9px;font-size:11px;font-weight:800}.tag-b{background:rgba(77,157,224,.12);color:var(--blue)}.tag-g{background:rgba(82,183,136,.12);color:var(--green)}.tag-o{background:rgba(224,123,77,.12);color:var(--orange)}.tag-r{background:rgba(224,85,85,.12);color:#ff8585}.exam{background:linear-gradient(135deg,rgba(102,217,239,.13),rgba(77,157,224,.08));border:1px solid rgba(102,217,239,.28);border-radius:16px;padding:22px;margin:18px 0}.exam h3{margin-top:0}.quiz{background:linear-gradient(180deg,#1b2440,#141b2d);border:1px solid var(--border);border-radius:18px;padding:26px;margin-top:32px}.q{margin:18px 0;padding:16px;background:rgba(255,255,255,.04);border-radius:12px;border:1px solid rgba(255,255,255,.07)}.q summary{cursor:pointer;color:#fff;font-weight:700}.q p{color:#b9c4d2;margin-top:10px}.glossary{background:linear-gradient(180deg,#1b2440,#141b2d);border:1px solid var(--border);border-radius:20px;padding:28px;margin-top:50px;scroll-margin-top:28px}.glossary-intro{color:var(--muted);max-width:780px;margin-bottom:20px}.gloss-index{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 24px}.gloss-index a{font-size:12px;text-decoration:none;color:var(--gold);background:rgba(245,200,66,.08);border:1px solid rgba(245,200,66,.18);border-radius:999px;padding:4px 10px}.gloss-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.gloss-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:15px 16px;scroll-margin-top:30px}.gloss-item h3{font-size:16px;margin:0 0 7px;color:var(--gold)}.gloss-item p{font-size:13.5px;color:#c6d0de;line-height:1.55}.gloss-item .connect{font-size:12.5px;color:var(--green);margin-top:8px}.footer-note{font-size:12px;color:var(--muted);border-top:1px solid var(--border);margin-top:46px;padding-top:18px}@media(max-width:900px){.layout{display:block}.sidebar{display:none}.main{padding:28px 20px 70px}h1{font-size:35px}.grid2,.grid3,.compare,.gloss-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar">
+ <div class="sb-head"><a class="back" href="geographie.html">← Zur Geo-Übersicht</a><div class="sb-title">12-1.1.3</div><div class="sb-sub">Winde · Corioliseffekt · Kräfte</div></div>
+ <div class="nav">
+  <div class="navgrp">Grundlagen</div>
+  <a href="#fokus">Start & Ziel</a>
+  <a href="#modell">Gesamtmodell</a>
+  <a href="#winddefinition">Was ist Wind?</a>
+  <a href="#druckgradient">Druckgradientkraft</a>
+  <a href="#isobaren">Isobaren & Windstärke</a>
+  <a href="#coriolis">Corioliseffekt</a>
+  <a href="#drehrichtung">Nord/Südhalbkugel</a>
+  <a href="#geostrophisch">Geostrophischer Wind</a>
+  <a href="#reibung">Reibung & Bodenwind</a>
+  <a href="#hoch-tief-rotation">Rotation um Hoch/Tief</a>
+  <a href="#lokal">Lokale Windsysteme</a>
+  <a href="#foehn">Föhn als Sonderfall</a>
+  <a href="#verknuepfung">Verknüpfungen</a>
+  <div class="navgrp">Prüfung</div>
+  <a href="#muendlich">Mündliche Antworten</a>
+  <a href="#quiz">Wissenscheck</a>
+  <a href="#glossar">Glossar</a>
+ </div>
+</aside>
+
+<main class="main">
+<header id="fokus">
+ <div class="badge">12-1.1 · Unterseite 3</div>
+ <h1>Winde und Corioliseffekt</h1>
+ <p class="lead">Diese Seite erklärt, warum Luft überhaupt horizontal strömt, warum Wind nicht einfach geradlinig vom Hoch zum Tief weht und wie aus Druckunterschieden großräumige Windsysteme entstehen.</p>
+ <div class="focusbox"><b>Ziel:</b> Du sollst Wind nicht als „Luft bewegt sich“ erklären, sondern als Ergebnis von Druckgradientkraft, Corioliskraft und Reibung. Genau das brauchst du später für Passate, Westwinde, Monsun, ITC, El Niño und Ozeanströmungen.</div>
+ <a class="gloss-button" href="#glossar">📘 Fachbegriffe-Glossar öffnen</a>
+</header>
+
+<section class="section" id="modell">
+ <div class="section-head"><div class="num">0</div><h2>Gesamtmodell: Von Druckunterschied zu Windrichtung</h2></div>
+ <div class="card alt">
+  <p>Wind entsteht durch Druckunterschiede. Aber die tatsächliche Windrichtung ergibt sich aus mehreren Kräften. In der einfachsten Vorstellung strömt Luft vom Hoch zum Tief. Auf der rotierenden Erde wird sie durch die Corioliskraft abgelenkt. In Bodennähe bremst Reibung den Wind und verändert zusätzlich die Richtung.</p>
+  <div class="chainlist">
+   <div class="chainitem"><b>1. Ungleiche Erwärmung:</b> Temperaturunterschiede erzeugen Druckunterschiede.</div>
+   <div class="chainitem"><b>2. Druckgradientkraft:</b> Luft wird vom hohen zum niedrigen Druck beschleunigt.</div>
+   <div class="chainitem"><b>3. Corioliskraft:</b> Bewegte Luft wird durch Erdrotation abgelenkt.</div>
+   <div class="chainitem"><b>4. Reibung:</b> Bodennah wird Wind abgebremst und kann schräg zu den Isobaren in Tiefs hineinströmen.</div>
+   <div class="chainitem"><b>5. Windsystem:</b> Daraus entstehen lokale, regionale und globale Windmuster.</div>
+  </div>
+  <div class="formula">Druckgradientkraft + Corioliskraft + Reibung = reale Windrichtung und Windgeschwindigkeit</div>
+ </div>
+</section>
+
+<section class="section" id="winddefinition">
+ <div class="section-head"><div class="num">1</div><h2>Was ist Wind?</h2></div>
+ <div class="card">
+  <p><a class="term" href="#gloss-wind">Wind</a> ist horizontale Luftbewegung. Vertikale Luftbewegung nennt man eher Aufsteigen, Absinken, Konvektion oder Hebung. Wind ist also der horizontale Ausgleich von Luftdruckunterschieden.</p>
+  <div class="grid2">
+   <div class="mini"><h4>Warum Luft sich bewegt</h4><p>Luft bewegt sich, weil Druckunterschiede Kräfte erzeugen. Die Atmosphäre versucht Druckunterschiede auszugleichen.</p></div>
+   <div class="mini"><h4>Warum Wind fürs Klima zentral ist</h4><p>Wind transportiert Wärme, Feuchtigkeit, Staub, Luftmassen und Energie. Dadurch beeinflusst er Niederschlag, Meeresströmungen und Klimazonen.</p></div>
+  </div>
+  <div class="merke"><strong>Prüfungssatz:</strong> Wind ist die horizontale Luftbewegung infolge von Luftdruckunterschieden, deren Richtung durch Corioliskraft und Reibung verändert wird.</div>
+ </div>
+</section>
+
+<section class="section" id="druckgradient">
+ <div class="section-head"><div class="num">2</div><h2>Druckgradientkraft: Der direkte Windantrieb</h2></div>
+ <div class="card">
+  <p>Die <a class="term" href="#gloss-druckgradientkraft">Druckgradientkraft</a> wirkt vom hohen zum niedrigen Luftdruck. Sie ist der unmittelbare Antrieb des Windes. Ohne Erdrotation und ohne Reibung würde Luft geradlinig vom Hochdruckgebiet zum Tiefdruckgebiet strömen.</p>
+  <div class="figure small">
+   <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Geostrophic%20Wind%20Diagram.svg" alt="Druckgradientkraft und Corioliskraft beim geostrophischen Wind">
+   <div class="cap">Druckgradientkraft zeigt vom Hoch zum Tief; beim geostrophischen Wind steht ihr die Corioliskraft entgegen. Quelle: Wikimedia Commons.</div>
+  </div>
+  <div class="fig-explain"><h4>Was du an der Grafik erkennst</h4><ul><li>Die Druckgradientkraft wirkt senkrecht zu den Isobaren vom hohen zum niedrigen Druck.</li><li>Sie beschleunigt Luft zunächst in Richtung Tiefdruck.</li><li>Die Corioliskraft wirkt seitlich zur Bewegungsrichtung.</li><li>Wenn beide Kräfte im Gleichgewicht sind, weht der Wind parallel zu den Isobaren.</li></ul><div class="chain">Druckunterschied → Druckgradientkraft → Luftbewegung → Coriolisablenkung → geostrophische Balance</div></div>
+  <div class="deep">
+   <h3>Warum „Gradient“ wichtig ist</h3>
+   <p>Ein Gradient beschreibt eine Änderung pro Strecke. Ein großer Druckunterschied auf kurzer Distanz bedeutet einen starken Druckgradienten. Dann wird Luft stark beschleunigt und der Wind ist kräftig.</p>
+   <div class="formula">starker Druckgradient = großer Druckunterschied auf kurzer Strecke = stärkerer Wind</div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="isobaren">
+ <div class="section-head"><div class="num">3</div><h2>Isobaren und Windstärke</h2></div>
+ <div class="card">
+  <p><a class="term" href="#gloss-isobaren">Isobaren</a> sind Linien gleichen Luftdrucks auf Wetterkarten. Sie zeigen nicht nur Hoch- und Tiefdruckgebiete, sondern auch, wie stark der Druckgradient ist.</p>
+  <div class="figure">
+   <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Low-pressure-system-over-iceland-coriolis-force-overlay.jpg" alt="Tiefdrucksystem bei Island mit Druckgradient und Corioliskraft">
+   <div class="cap">Reales Tiefdrucksystem bei Island mit Druckfeld und Coriolis-/Druckgradientlogik. Quelle: Wikimedia Commons / NASA-Bildbasis.</div>
+  </div>
+  <div class="fig-explain"><h4>So liest du Isobaren</h4><ul><li>Enge Isobaren bedeuten: Der Luftdruck ändert sich auf kurzer Strecke stark.</li><li>Das führt zu einer starken Druckgradientkraft.</li><li>Starke Druckgradientkraft bedeutet meist stärkeren Wind.</li><li>Weite Isobaren bedeuten schwächeren Druckgradient und eher schwächeren Wind.</li><li>Um Tiefs und Hochs herum zeigen Isobaren die Form des Druckfeldes.</li></ul><div class="chain">enger Isobarenabstand → großer Druckgradient → starke Druckgradientkraft → starker Wind</div></div>
+  <div class="warn"><strong>Nicht verwechseln:</strong> Isobaren zeigen Luftdruck, nicht Temperatur. Temperaturunterschiede können Druckunterschiede verursachen, aber die Karte selbst zeigt Drucklinien.</div>
+ </div>
+</section>
+
+<section class="section" id="coriolis">
+ <div class="section-head"><div class="num">4</div><h2>Corioliseffekt: Warum Wind abgelenkt wird</h2></div>
+ <div class="card">
+  <p>Der <a class="term" href="#gloss-coriolis">Corioliseffekt</a> ist eine scheinbare Ablenkung bewegter Körper in einem rotierenden Bezugssystem. Auf der Erde betrifft er Luftmassen, Meeresströmungen und Flugbahnen. Er entsteht nicht, weil eine geheimnisvolle Kraft die Luft „zieht“, sondern weil sich die Erde während der Bewegung mitdreht.</p>
+  <div class="figure small">
+   <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Coriolis%20effect10.svg" alt="Corioliskraft bei Strömung um ein Tiefdruckgebiet">
+   <div class="cap">Corioliseffekt um ein Tiefdruckgebiet: Druckgradientkraft und Corioliskraft verändern die Windrichtung. Quelle: Wikimedia Commons.</div>
+  </div>
+  <div class="fig-explain"><h4>So erklärst du die Grafik</h4><ul><li>Die Druckgradientkraft zieht Luft in Richtung Tiefdruckzentrum.</li><li>Sobald die Luft sich bewegt, wird sie durch die Corioliskraft seitlich abgelenkt.</li><li>Auf der Nordhalbkugel erfolgt die Ablenkung nach rechts zur Bewegungsrichtung.</li><li>Dadurch strömt Luft nicht direkt ins Tief, sondern rotiert um das Tief herum.</li><li>Bodennah sorgt Reibung dafür, dass der Wind trotzdem etwas ins Tief hineinströmt.</li></ul><div class="chain">Luft bewegt sich → Erdrotation wirkt als scheinbare Ablenkung → Windbahn krümmt sich</div></div>
+  <div class="grid3">
+   <div class="mini"><h4>Am Äquator</h4><p>Der Corioliseffekt ist nahezu null.</p></div>
+   <div class="mini"><h4>Zu den Polen</h4><p>Die Corioliskraft nimmt mit der geographischen Breite zu.</p></div>
+   <div class="mini"><h4>Abhängig von Geschwindigkeit</h4><p>Je schneller die Luft bewegt wird, desto stärker wirkt die Ablenkung.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="drehrichtung">
+ <div class="section-head"><div class="num">5</div><h2>Nordhalbkugel und Südhalbkugel: Rechts oder links?</h2></div>
+ <div class="card">
+  <p>Die Richtung der Coriolisablenkung hängt von der Halbkugel ab. Entscheidend ist immer die Blickrichtung der bewegten Luftmasse.</p>
+  <div class="compare">
+   <div class="comp"><span class="tag tag-b">Nordhalbkugel</span><h4>Ablenkung nach rechts</h4><p>Bewegte Luft wird relativ zu ihrer Bewegungsrichtung nach rechts abgelenkt.</p></div>
+   <div class="comp"><span class="tag tag-g">Südhalbkugel</span><h4>Ablenkung nach links</h4><p>Bewegte Luft wird relativ zu ihrer Bewegungsrichtung nach links abgelenkt.</p></div>
+   <div class="comp"><span class="tag tag-o">Äquator</span><h4>sehr schwach</h4><p>Direkt am Äquator ist der Corioliseffekt praktisch null.</p></div>
+  </div>
+  <div class="deep">
+   <h3>Warum das für Passate entscheidend ist</h3>
+   <p>Ohne Corioliskraft würden Ausgleichsströmungen von den subtropischen Hochs direkt zur ITC wehen. Durch die Ablenkung entstehen auf der Nordhalbkugel Nordostpassate und auf der Südhalbkugel Südostpassate.</p>
+   <div class="formula">Subtropenhoch → Wind zur ITC → Coriolisablenkung → Nordost-/Südostpassat</div>
+  </div>
+  <div class="merke"><strong>Merksatz:</strong> Nordhalbkugel rechts, Südhalbkugel links — immer aus Sicht der bewegten Luft.</div>
+ </div>
+</section>
+
+<section class="section" id="geostrophisch">
+ <div class="section-head"><div class="num">6</div><h2>Geostrophischer Wind: Warum Wind in der Höhe parallel zu Isobaren weht</h2></div>
+ <div class="card">
+  <p>In größerer Höhe ist die Reibung durch die Erdoberfläche gering. Dort kann sich ein Gleichgewicht zwischen Druckgradientkraft und Corioliskraft einstellen. Der daraus entstehende Wind heißt <a class="term" href="#gloss-geostrophisch">geostrophischer Wind</a>.</p>
+  <div class="figure small">
+   <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Geostrophic%20Wind%20Diagram.svg" alt="Geostrophischer Wind und geostrophische Balance">
+   <div class="cap">Geostrophische Balance: Druckgradientkraft und Corioliskraft sind gleich stark und entgegengesetzt; der Wind weht parallel zu den Isobaren. Quelle: Wikimedia Commons.</div>
+  </div>
+  <div class="fig-explain"><h4>Schritt für Schritt</h4><ul><li>Die Druckgradientkraft beschleunigt Luft zunächst vom Hoch zum Tief.</li><li>Sobald Luft sich bewegt, wirkt die Corioliskraft seitlich.</li><li>Mit zunehmender Geschwindigkeit nimmt die Corioliskraft zu.</li><li>Irgendwann gleichen sich Druckgradientkraft und Corioliskraft aus.</li><li>Dann weht der Wind nicht mehr direkt zum Tief, sondern parallel zu den Isobaren.</li></ul><div class="chain">Druckgradientkraft startet Bewegung → Corioliskraft wächst → Kräftegleichgewicht → Wind parallel zu Isobaren</div></div>
+  <div class="warn"><strong>Grenze:</strong> Geostrophischer Wind ist ein Idealmodell. Es passt vor allem oberhalb der bodennahen Reibungsschicht und bei großräumigen Strömungen.</div>
+ </div>
+</section>
+
+<section class="section" id="reibung">
+ <div class="section-head"><div class="num">7</div><h2>Reibung: Warum Bodenwind anders weht als Höhenwind</h2></div>
+ <div class="card">
+  <p>In Bodennähe wird Wind durch Reibung an der Erdoberfläche gebremst. Dadurch wird die Corioliskraft schwächer, weil sie von der Windgeschwindigkeit abhängt. Die Druckgradientkraft bleibt aber bestehen. Deshalb kann der Wind bodennah schräg in Tiefdruckgebiete hinein und aus Hochdruckgebieten heraus wehen.</p>
+  <div class="grid2">
+   <div class="mini"><h4>Höhenwind</h4><p>Reibung gering. Druckgradientkraft und Corioliskraft können sich annähernd ausgleichen. Wind weht eher parallel zu Isobaren.</p></div>
+   <div class="mini"><h4>Bodenwind</h4><p>Reibung bremst. Corioliskraft wird schwächer. Wind schneidet Isobaren und strömt schräg vom Hoch zum Tief.</p></div>
+  </div>
+  <div class="deep">
+   <h3>Warum das wetterwirksam ist</h3>
+   <p>Weil Bodenwind in Tiefs hinein konvergiert, wird Luft dort zum Aufsteigen gezwungen. In Hochs divergiert Bodenwind, Luft sinkt nach. Deshalb hängen Tiefs mit Wolken und Niederschlag, Hochs mit stabilerem Wetter zusammen.</p>
+   <div class="formula">Reibung → Wind schräg zu Isobaren → Bodenkonvergenz im Tief → Aufsteigen → Wolken</div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="hoch-tief-rotation">
+ <div class="section-head"><div class="num">8</div><h2>Rotation um Hoch und Tief</h2></div>
+ <div class="card">
+  <p>Durch die Kombination aus Druckgradientkraft, Corioliskraft und Reibung entstehen typische Drehrichtungen um Hochs und Tiefs. Für Bayern/Europa ist vor allem die Nordhalbkugel wichtig.</p>
+  <div class="grid2">
+   <div class="mini"><h4>Nordhalbkugel</h4><ul><li>Tief: gegen den Uhrzeigersinn, bodennah spiralförmig hinein.</li><li>Hoch: im Uhrzeigersinn, bodennah spiralförmig hinaus.</li></ul></div>
+   <div class="mini"><h4>Südhalbkugel</h4><ul><li>Tief: im Uhrzeigersinn.</li><li>Hoch: gegen den Uhrzeigersinn.</li></ul></div>
+  </div>
+  <div class="figure small">
+   <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Synoptic%20system.svg" alt="Tiefdrucksystem mit Rotation und Fronten">
+   <div class="cap">Tiefdrucksystem mit zyklonaler Rotation und Fronten auf der Nordhalbkugel. Quelle: Wikimedia Commons.</div>
+  </div>
+  <div class="merke"><strong>Merksatz für Nordhalbkugel:</strong> Tief gegen den Uhrzeigersinn hinein, Hoch im Uhrzeigersinn hinaus.</div>
+ </div>
+</section>
+
+<section class="section" id="lokal">
+ <div class="section-head"><div class="num">9</div><h2>Lokale Windsysteme: Land-See-Wind und Berg-Tal-Wind</h2></div>
+ <div class="card">
+  <p>Lokale Windsysteme entstehen durch kleinräumige Temperatur- und Druckunterschiede. Sie zeigen im Kleinen dieselbe Grundlogik wie globale Winde: ungleiche Erwärmung erzeugt Druckunterschiede, daraus folgt Wind.</p>
+  <div class="figure">
+   <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Diagrama%20de%20formacion%20de%20la%20brisa-breeze.svg" alt="Land-See-Wind und See-Land-Wind">
+   <div class="cap">Land-See-Wind-System: tagsüber Seewind, nachts Landwind. Quelle: Wikimedia Commons.</div>
+  </div>
+  <div class="fig-explain"><h4>Land-See-Wind erklären</h4><ul><li>Tagsüber erwärmt sich Land schneller als Wasser.</li><li>Über Land steigt warme Luft auf, am Boden entsteht ein thermisches Tief.</li><li>Über dem kühleren Wasser liegt relativ höherer Druck.</li><li>Am Boden weht Seewind vom Meer zum Land.</li><li>Nachts kühlt Land schneller aus als Wasser.</li><li>Dann kehrt sich der Druckunterschied um: Landwind weht vom Land zum Meer.</li></ul><div class="chain">unterschiedliche Wärmekapazität → Temperaturunterschied → Druckunterschied → tagesperiodischer Windwechsel</div></div>
+  <div class="deep">
+   <h3>Berg-Tal-Wind</h3>
+   <p>Tagsüber erwärmen sich Berghänge stark. Warme Luft steigt hangaufwärts: Talwind. Nachts kühlen Hänge aus. Kalte, dichte Luft fließt hangabwärts ins Tal: Bergwind. Auch hier gilt dieselbe Grundkette aus Temperatur, Dichte, Druck und Wind.</p>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="foehn">
+ <div class="section-head"><div class="num">10</div><h2>Föhn als Sonderfall: Wind, Relief und adiabatische Prozesse</h2></div>
+ <div class="card">
+  <p>Der Föhn ist kein einfacher Ausgleichswind wie Land-See-Wind, sondern ein Gebirgswind. Luft wird an der Luvseite eines Gebirges zum Aufsteigen gezwungen, kühlt ab, kondensiert und regnet aus. Auf der Leeseite sinkt die Luft ab und erwärmt sich trockenadiabatisch. Dadurch entsteht ein warmer, trockener Fallwind.</p>
+  <div class="figure">
+   <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Foehn%20effect%20de.svg" alt="Föhneffekt Luv Lee adiabatische Erwärmung">
+   <div class="cap">Föhneffekt: Luvseite mit Hebung und Niederschlag, Leeseite mit trockenwarmer absinkender Luft. Quelle: Wikimedia Commons.</div>
+  </div>
+  <div class="fig-explain"><h4>So erklärst du Föhn fachlich</h4><ul><li>Feuchte Luft strömt gegen ein Gebirge.</li><li>An der Luvseite wird sie zum Aufsteigen gezwungen.</li><li>Beim Aufsteigen kühlt sie ab; Wasserdampf kondensiert.</li><li>Es entstehen Wolken und Niederschlag.</li><li>Auf der Leeseite sinkt trockenere Luft ab.</li><li>Beim Absinken erwärmt sie sich trockenadiabatisch stärker.</li><li>Im Lee kommt warme, trockene Luft an.</li></ul><div class="chain">Gebirge → Hebung im Luv → Abkühlung/Kondensation/Niederschlag → Absinken im Lee → Erwärmung/Trockenheit</div></div>
+  <div class="merke"><strong>Verbindung zu Bayern:</strong> Föhn ist in den Alpen ein typisches Beispiel für Reliefwirkung auf Wind, Temperatur, Wolken und Niederschlag.</div>
+ </div>
+</section>
+
+<section class="section" id="verknuepfung">
+ <div class="section-head"><div class="num">11</div><h2>Verknüpfungen zu deinem Schwerpunktthema</h2></div>
+ <div class="card alt">
+  <div class="grid2">
+   <div class="mini"><h4>Passate</h4><p>Passate sind Ausgleichsströmungen zwischen subtropischem Hochdruckgürtel und ITC, die durch Corioliskraft abgelenkt werden.</p><div class="formula">Subtropenhoch → Druckgradient → ITC → Coriolis → NO-/SO-Passat</div></div>
+   <div class="mini"><h4>ITC</h4><p>In der ITC konvergieren Passate. Die bodennahe Konvergenz führt zu Aufsteigen, Wolkenbildung und Niederschlag.</p><div class="formula">Passatkonvergenz → Aufsteigen → Tropenregen</div></div>
+   <div class="mini"><h4>El Niño</h4><p>El Niño hängt mit einer Abschwächung der Passate und veränderter Walker-Zirkulation zusammen. Ohne Windverständnis ist El Niño nicht erklärbar.</p><div class="formula">schwächere Passate → Warmwasserverlagerung → Druck-/Niederschlagsänderung</div></div>
+   <div class="mini"><h4>Ozeanströmungen</h4><p>Winde treiben Oberflächenströmungen an. Durch Corioliskraft entstehen großräumige Strömungsmuster und Ekman-Transport.</p><div class="formula">Wind → Reibung an Meeresoberfläche → Oberflächenströmung → Klimaeffekt</div></div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="muendlich">
+ <div class="section-head"><div class="num">12</div><h2>Mündliche Prüfungsantworten</h2></div>
+ <div class="exam"><h3>1. „Erklären Sie die Entstehung von Wind.“</h3><p>Wind entsteht durch Luftdruckunterschiede. Die Druckgradientkraft beschleunigt Luft vom höheren zum niedrigeren Luftdruck. Je größer der Druckunterschied auf kurzer Distanz ist, desto stärker ist der Wind. Auf der rotierenden Erde strömt Luft aber nicht geradlinig vom Hoch zum Tief, weil sie durch die Corioliskraft abgelenkt wird. In Bodennähe wirkt zusätzlich Reibung, die den Wind abbremst und seine Richtung verändert. Deshalb ergibt sich die reale Windrichtung aus dem Zusammenspiel von Druckgradientkraft, Corioliskraft und Reibung.</p></div>
+ <div class="exam"><h3>2. „Erklären Sie den Corioliseffekt.“</h3><p>Der Corioliseffekt ist eine scheinbare Ablenkung bewegter Luftmassen auf der rotierenden Erde. Auf der Nordhalbkugel werden Bewegungen nach rechts, auf der Südhalbkugel nach links abgelenkt. Am Äquator ist der Effekt nahezu null, zu den Polen nimmt er zu. Die Corioliskraft wirkt seitlich zur Bewegungsrichtung und hängt von der Geschwindigkeit der Luftmasse ab. Sie erklärt, warum großräumige Winde, Passate und Strömungen nicht direkt entlang des Druckgradienten verlaufen.</p></div>
+ <div class="exam"><h3>3. „Warum weht Wind in der Höhe parallel zu den Isobaren?“</h3><p>In größerer Höhe ist die Reibung gering. Die Druckgradientkraft beschleunigt Luft zunächst vom Hoch zum Tief. Sobald Luft sich bewegt, wirkt die Corioliskraft seitlich. Mit zunehmender Windgeschwindigkeit wird die Corioliskraft stärker, bis sie die Druckgradientkraft ausgleicht. Dann bewegt sich die Luft nicht mehr direkt zum Tief, sondern parallel zu den Isobaren. Dieser idealisierte Wind heißt geostrophischer Wind.</p></div>
+ <div class="exam"><h3>4. „Erklären Sie Land-See-Wind.“</h3><p>Tagsüber erwärmt sich Land schneller als Wasser. Die Luft über dem Land wird wärmer, dehnt sich aus, steigt auf und erzeugt am Boden ein thermisches Tief. Über dem kühleren Meer liegt relativ höherer Luftdruck. Deshalb strömt bodennah Luft vom Meer zum Land; das ist der Seewind. Nachts kühlt Land schneller aus als Wasser. Dadurch kehrt sich der Druckunterschied um, und Luft strömt vom Land zum Meer; das ist der Landwind.</p></div>
+</section>
+
+<section class="section" id="quiz">
+ <div class="section-head"><div class="num">13</div><h2>Wissenscheck</h2></div>
+ <div class="quiz">
+  <details class="q"><summary>1. Welche Kraft treibt Wind direkt an?</summary><p>Die Druckgradientkraft. Sie wirkt vom hohen zum niedrigen Luftdruck.</p></details>
+  <details class="q"><summary>2. Warum ist enger Isobarenabstand wichtig?</summary><p>Enge Isobaren bedeuten großen Druckgradienten und meist stärkeren Wind.</p></details>
+  <details class="q"><summary>3. In welche Richtung wirkt die Corioliskraft auf der Nordhalbkugel?</summary><p>Nach rechts relativ zur Bewegungsrichtung der Luft.</p></details>
+  <details class="q"><summary>4. Warum ist der Corioliseffekt am Äquator schwach?</summary><p>Weil der wirksame Anteil der Erdrotation für horizontale Ablenkung dort nahezu null ist.</p></details>
+  <details class="q"><summary>5. Warum weht Bodenwind schräg zu den Isobaren?</summary><p>Reibung bremst den Wind, schwächt die Corioliskraft und lässt die Druckgradientkraft stärker zum Tief hin wirken.</p></details>
+  <details class="q"><summary>6. Warum sind Winde für El Niño wichtig?</summary><p>Weil die Passate die Warmwasserverteilung im tropischen Pazifik steuern. Schwächen sie sich ab, kann sich warmes Wasser ostwärts verlagern.</p></details>
+ </div>
+</section>
+
+<section class="section glossary" id="glossar">
+ <div class="section-head"><div class="num">G</div><h2>Fachbegriffe-Glossar</h2></div>
+ <p class="glossary-intro">Die wichtigsten Begriffe dieser Unterseite.</p>
+ <div class="gloss-index">
+  <a href="#gloss-wind">Wind</a><a href="#gloss-druckgradientkraft">Druckgradientkraft</a><a href="#gloss-isobaren">Isobaren</a><a href="#gloss-coriolis">Corioliseffekt</a><a href="#gloss-geostrophisch">geostrophischer Wind</a><a href="#gloss-reibung">Reibung</a><a href="#gloss-bodenwind">Bodenwind</a><a href="#gloss-seewind">Seewind</a><a href="#gloss-landwind">Landwind</a><a href="#gloss-foehn">Föhn</a>
+ </div>
+ <div class="gloss-grid">
+  <div class="gloss-item" id="gloss-wind"><h3>Wind</h3><p>Horizontale Luftbewegung infolge von Luftdruckunterschieden.</p><div class="connect">Zusammenhang: transportiert Wärme und Feuchtigkeit.</div></div>
+  <div class="gloss-item" id="gloss-druckgradientkraft"><h3>Druckgradientkraft</h3><p>Kraft, die Luft vom hohen zum niedrigen Druck beschleunigt.</p><div class="connect">Zusammenhang: unmittelbarer Windantrieb.</div></div>
+  <div class="gloss-item" id="gloss-isobaren"><h3>Isobaren</h3><p>Linien gleichen Luftdrucks auf Wetterkarten.</p><div class="connect">Zusammenhang: enger Abstand bedeutet stärkeren Wind.</div></div>
+  <div class="gloss-item" id="gloss-coriolis"><h3>Corioliseffekt</h3><p>Scheinbare Ablenkung bewegter Körper in einem rotierenden Bezugssystem.</p><div class="connect">Zusammenhang: rechts auf der Nordhalbkugel, links auf der Südhalbkugel.</div></div>
+  <div class="gloss-item" id="gloss-geostrophisch"><h3>Geostrophischer Wind</h3><p>Idealwind, bei dem Druckgradientkraft und Corioliskraft im Gleichgewicht sind.</p><div class="connect">Zusammenhang: weht parallel zu Isobaren.</div></div>
+  <div class="gloss-item" id="gloss-reibung"><h3>Reibung</h3><p>Bremswirkung der Erdoberfläche auf den Wind.</p><div class="connect">Zusammenhang: verändert bodennahe Windrichtung.</div></div>
+  <div class="gloss-item" id="gloss-bodenwind"><h3>Bodenwind</h3><p>Wind in der bodennahen Reibungsschicht.</p><div class="connect">Zusammenhang: strömt schräg zu Isobaren.</div></div>
+  <div class="gloss-item" id="gloss-seewind"><h3>Seewind</h3><p>Tagsüber vom Meer zum Land gerichteter Wind durch stärkere Landerwärmung.</p><div class="connect">Zusammenhang: thermisches lokales Windsystem.</div></div>
+  <div class="gloss-item" id="gloss-landwind"><h3>Landwind</h3><p>Nachts vom Land zum Meer gerichteter Wind durch stärkere Landauskühlung.</p><div class="connect">Zusammenhang: Gegenstück zum Seewind.</div></div>
+  <div class="gloss-item" id="gloss-foehn"><h3>Föhn</h3><p>Warmer, trockener Fallwind auf der Leeseite eines Gebirges.</p><div class="connect">Zusammenhang: Relief, Hebung, Niederschlag und adiabatische Erwärmung.</div></div>
+ </div>
+</section>
+
+<div class="footer-note">Lokale Lernseite für private Nutzung. Unterseite 3 des Geo-Schwerpunktthemas 12-1.1: Winde und Corioliseffekt. Es wurden nur externe Grafiken aus dem Internet eingebunden.</div>
+</main>
+</div>
+</body>
+</html>

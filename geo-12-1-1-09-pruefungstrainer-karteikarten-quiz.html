@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Geo 12-1.1.9 — Prüfungstrainer & Karteikarten</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d1117;--surface:#151c2b;--card:#1b2440;--border:#283454;--text:#e8eef7;--muted:#8b98ad;--gold:#f5c842;--sky:#66d9ef;--blue:#4d9de0;--green:#52b788;--red:#e05555;--orange:#e07b4d}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--text);font-family:Outfit,system-ui,sans-serif;line-height:1.65;font-size:15.5px}.layout{display:flex;min-height:100vh}.sidebar{width:330px;min-width:330px;height:100vh;position:sticky;top:0;background:var(--surface);border-right:1px solid var(--border);overflow-y:auto}.sb-head{padding:22px;border-bottom:1px solid var(--border)}.back{color:var(--muted);font-size:12.5px;text-decoration:none}.back:hover{color:var(--sky)}.sb-title{font-family:Fraunces,serif;color:#fff;font-size:22px;margin-top:14px}.sb-sub{color:var(--muted);font-size:12px;margin-top:3px}.navgrp{padding:16px 22px 5px;color:var(--sky);font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase}.nav a{display:block;padding:7px 22px;color:var(--muted);font-size:12.5px;text-decoration:none;border-left:2px solid transparent}.nav a:hover{color:#fff;background:rgba(102,217,239,.08)}.main{flex:1;max-width:1180px;padding:48px 54px 120px}.badge{display:inline-block;color:var(--sky);background:rgba(102,217,239,.12);border:1px solid rgba(102,217,239,.32);border-radius:999px;padding:5px 14px;font-size:12px;font-weight:800;margin-bottom:18px}h1{font-family:Fraunces,serif;font-size:48px;line-height:1.08;color:#fff;margin-bottom:14px}.lead{color:var(--muted);font-size:17px;max-width:900px}.focusbox{margin-top:20px;background:rgba(245,200,66,.08);border:1px solid rgba(245,200,66,.24);border-left:4px solid var(--gold);border-radius:14px;padding:16px 18px;max-width:960px}.focusbox b{color:var(--gold)}.section{margin:46px 0;scroll-margin-top:26px}.section-head{display:flex;gap:13px;align-items:center;margin-bottom:20px}.num{width:39px;height:39px;border-radius:10px;background:var(--sky);color:#061015;display:grid;place-items:center;font-weight:900;flex-shrink:0}h2{font-family:Fraunces,serif;color:#fff;font-size:31px;line-height:1.18}h3{color:#fff;font-size:19px;margin:22px 0 10px}.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px 26px;margin:14px 0}.card.alt{background:linear-gradient(180deg,#1c2543,#151d31)}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:14px 0}.mini{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px}.mini h4{font-size:15px;color:var(--sky);margin-bottom:8px}.mini p,.mini li{font-size:13.5px;color:#b7c1d0;line-height:1.55}ul{padding-left:20px}li{margin:5px 0}.formula{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:rgba(77,157,224,.09);border:1px solid rgba(77,157,224,.25);border-radius:12px;padding:12px 14px;margin:12px 0;color:#fff}.warn{background:rgba(224,85,85,.08);border:1px solid rgba(224,85,85,.24);border-radius:12px;padding:13px 16px;margin:16px 0}.warn strong{color:#ff8585}.merke{background:rgba(82,183,136,.08);border:1px solid rgba(82,183,136,.25);border-radius:12px;padding:13px 16px;margin:16px 0}.merke strong{color:var(--green)}.controls{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0}button,select,input{font-family:inherit}button{border:1px solid rgba(102,217,239,.35);background:rgba(102,217,239,.10);color:#fff;border-radius:12px;padding:10px 14px;font-weight:800;cursor:pointer}button:hover{background:rgba(102,217,239,.18)}button.gold{border-color:rgba(245,200,66,.4);background:rgba(245,200,66,.12);color:var(--gold)}button.green{border-color:rgba(82,183,136,.4);background:rgba(82,183,136,.12);color:#7ee0ae}button.red{border-color:rgba(224,85,85,.42);background:rgba(224,85,85,.12);color:#ff8b8b}select,input{background:#111827;color:#fff;border:1px solid var(--border);border-radius:12px;padding:10px 12px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}.stat{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:14px}.stat b{display:block;color:#fff;font-size:24px}.stat span{color:var(--muted);font-size:12px}.flashcard{min-height:310px;background:linear-gradient(180deg,#202a4a,#151d31);border:1px solid rgba(102,217,239,.28);border-radius:22px;padding:30px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 20px 60px rgba(0,0,0,.18)}.fc-meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}.pill{font-size:11px;font-weight:800;padding:4px 10px;border-radius:999px;background:rgba(245,200,66,.12);color:var(--gold);border:1px solid rgba(245,200,66,.2)}.pill.sky{background:rgba(102,217,239,.10);color:var(--sky);border-color:rgba(102,217,239,.22)}.fc-q{font-family:Fraunces,serif;font-size:28px;line-height:1.25;color:#fff;margin:8px 0 20px}.fc-a{display:none;color:#d8e2ef;font-size:17px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px}.fc-a.show{display:block}.progressbar{height:12px;background:#111827;border:1px solid var(--border);border-radius:999px;overflow:hidden;margin:16px 0}.progressbar div{height:100%;background:linear-gradient(90deg,var(--sky),var(--green));width:0%}.mc-options{display:grid;gap:10px;margin-top:18px}.option{text-align:left;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);border-radius:13px;padding:13px 15px;color:#fff;font-weight:600}.option.correct{border-color:rgba(82,183,136,.8);background:rgba(82,183,136,.15)}.option.wrong{border-color:rgba(224,85,85,.8);background:rgba(224,85,85,.15)}.explanation{display:none;margin-top:16px;background:rgba(245,200,66,.08);border:1px solid rgba(245,200,66,.24);border-radius:13px;padding:13px 15px;color:#e8dcc0}.explanation.show{display:block}.test-area{background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:20px;margin-top:14px}.test-q{margin:18px 0;padding:16px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07)}.test-q h4{color:#fff;margin-bottom:8px}textarea{width:100%;min-height:92px;background:#111827;color:#fff;border:1px solid var(--border);border-radius:12px;padding:12px;font-family:inherit;resize:vertical}.sample{display:none;margin-top:10px;color:#cbd5e1;background:rgba(102,217,239,.07);border:1px solid rgba(102,217,239,.18);border-radius:12px;padding:12px}.sample.show{display:block}.tablelike{display:grid;gap:10px}.row{display:grid;grid-template-columns:180px 1fr;gap:12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:12px}.row b{color:var(--gold)}.footer-note{font-size:12px;color:var(--muted);border-top:1px solid var(--border);margin-top:46px;padding-top:18px}@media(max-width:900px){.layout{display:block}.sidebar{display:none}.main{padding:28px 20px 70px}h1{font-size:35px}.grid2,.grid3,.stats{grid-template-columns:1fr}.row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar">
+ <div class="sb-head"><a class="back" href="geographie.html">← Zur Geo-Übersicht</a><div class="sb-title">12-1.1.9</div><div class="sb-sub">Prüfungstrainer · Karteikarten · Quiz</div></div>
+ <div class="nav">
+  <div class="navgrp">Training</div>
+  <a href="#fokus">Start & Ziel</a>
+  <a href="#modus">Lernmodus</a>
+  <a href="#karten">Karteikarten</a>
+  <a href="#falsch">Falsche wiederholen</a>
+  <a href="#mc">Multiple Choice</a>
+  <a href="#test">Prüfungssimulation</a>
+  <a href="#operatoren">Operatoren</a>
+  <a href="#antwortstruktur">Antwortstruktur</a>
+  <a href="#checklisten">Checklisten</a>
+  <a href="#themenuebersicht">Themenübersicht</a>
+ </div>
+</aside>
+
+<main class="main">
+<header id="fokus">
+ <div class="badge">12-1.1 · Unterseite 9</div>
+ <h1>Prüfungstrainer: Karteikarten, Quiz und Kolloquium</h1>
+ <p class="lead">Diese letzte Seite ist kein normaler Lerntext, sondern dein aktiver Testbereich. Du kannst Karteikarten lernen, falsche Karten sammeln, gezielt wiederholen, Multiple-Choice-Fragen trainieren und mündliche Prüfungsantworten simulieren.</p>
+ <div class="focusbox"><b>Wichtig:</b> Diese Seite ist lokal gespeichert. Dein Fortschritt wird im Browser über LocalStorage gespeichert. Wenn du die Datei in einem anderen Browser oder auf einem anderen Gerät öffnest, kann der Fortschritt getrennt sein.</div>
+</header>
+
+<section class="section" id="modus">
+ <div class="section-head"><div class="num">0</div><h2>So nutzt du den Prüfungstrainer</h2></div>
+ <div class="card alt">
+  <div class="grid3">
+   <div class="mini"><h4>1. Karteikarten</h4><p>Antwort im Kopf formulieren, dann aufdecken. Nicht passiv lesen. Mündlich sprechen.</p></div>
+   <div class="mini"><h4>2. Markieren</h4><p>Wenn du stockst, markiere die Karte als falsch. Diese landet in der Wiederholung.</p></div>
+   <div class="mini"><h4>3. Prüfungssimulation</h4><p>Beantworte längere Fragen strukturiert. Vergleiche danach mit dem Muster.</p></div>
+  </div>
+  <div class="merke"><strong>Fokus:</strong> Ziel ist nicht „ich kenne das Wort“, sondern „ich kann den Prozess erklären und verknüpfen“.</div>
+ </div>
+</section>
+
+<section class="section" id="karten">
+ <div class="section-head"><div class="num">1</div><h2>Karteikartenmodus</h2></div>
+ <div class="card">
+  <div class="controls">
+   <select id="catSelect"><option value="ALL">Alle Themen</option></select>
+   <button onclick="shuffleCards()">Mischen</button>
+   <button onclick="nextCard()">Nächste Karte</button>
+   <button onclick="toggleAnswer()" class="gold">Antwort aufdecken</button>
+   <button onclick="markKnown()" class="green">Gewusst</button>
+   <button onclick="markWrong()" class="red">Falsch / wiederholen</button>
+   <button onclick="resetProgress()">Fortschritt resetten</button>
+  </div>
+  <div class="stats">
+   <div class="stat"><b id="statTotal">0</b><span>Karten im Stapel</span></div>
+   <div class="stat"><b id="statDone">0</b><span>bearbeitet</span></div>
+   <div class="stat"><b id="statWrong">0</b><span>falsch markiert</span></div>
+   <div class="stat"><b id="statKnown">0</b><span>gewusst</span></div>
+  </div>
+  <div class="progressbar"><div id="progressFill"></div></div>
+  <div class="flashcard">
+   <div>
+    <div class="fc-meta" id="fcMeta"></div>
+    <div class="fc-q" id="fcQuestion">Karte wird geladen ...</div>
+    <div class="fc-a" id="fcAnswer"></div>
+   </div>
+   <div class="formula" id="fcHint">Erst laut antworten, dann aufdecken.</div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="falsch">
+ <div class="section-head"><div class="num">2</div><h2>Falsche Karten gezielt wiederholen</h2></div>
+ <div class="card">
+  <p>Hier trainierst du nur die Karten, die du vorher als falsch markiert hast. Das ist der wichtigste Teil kurz vor der Prüfung.</p>
+  <div class="controls">
+   <button onclick="startWrongMode()" class="red">Nur falsche Karten starten</button>
+   <button onclick="clearWrong()">Falsch-Liste löschen</button>
+  </div>
+  <div class="warn"><strong>Direkt:</strong> Wenn eine Karte falsch war, nicht einfach abhaken. Wiederhole sie so lange, bis du sie ohne Stocken in ganzen Sätzen erklären kannst.</div>
+ </div>
+</section>
+
+<section class="section" id="mc">
+ <div class="section-head"><div class="num">3</div><h2>Multiple-Choice-Quiz</h2></div>
+ <div class="card">
+  <div class="controls">
+   <button onclick="startMC()">Quiz starten / neu starten</button>
+   <button onclick="nextMC()">Nächste Frage</button>
+  </div>
+  <div class="stats">
+   <div class="stat"><b id="mcScore">0</b><span>richtig</span></div>
+   <div class="stat"><b id="mcCount">0</b><span>beantwortet</span></div>
+   <div class="stat"><b id="mcLeft">0</b><span>übrig</span></div>
+   <div class="stat"><b id="mcQuote">0%</b><span>Quote</span></div>
+  </div>
+  <div class="test-area">
+   <h3 id="mcQuestion">Klicke auf „Quiz starten“.</h3>
+   <div class="mc-options" id="mcOptions"></div>
+   <div class="explanation" id="mcExp"></div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="test">
+ <div class="section-head"><div class="num">4</div><h2>Prüfungssimulation: mündliche Schwerpunktfragen</h2></div>
+ <div class="card alt">
+  <p>Beantworte diese Fragen mündlich oder schriftlich. Danach Musterantwort öffnen und vergleichen. Ziel: klare Ketten, Fachbegriffe, Verknüpfung zu roten Themen.</p>
+  <div class="test-area" id="examArea"></div>
+  <div class="controls">
+   <button onclick="toggleAllSamples()">Musterantworten anzeigen/verbergen</button>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="operatoren">
+ <div class="section-head"><div class="num">5</div><h2>Operatoren: Was genau wird verlangt?</h2></div>
+ <div class="card">
+  <div class="tablelike">
+   <div class="row"><b>Beschreiben</b><span>Material sachlich wiedergeben. Keine tiefe Ursachenanalyse. Beispiel: Temperatur- und Niederschlagsverlauf beschreiben.</span></div>
+   <div class="row"><b>Erklären</b><span>Ursachen und Zusammenhänge darstellen. Beispiel: Warum entsteht in der ITC Niederschlag?</span></div>
+   <div class="row"><b>Analysieren</b><span>Material systematisch auswerten und Zusammenhänge herausarbeiten. Beispiel: Klimadiagramm analysieren und Klimazone ableiten.</span></div>
+   <div class="row"><b>Vergleichen</b><span>Gemeinsamkeiten und Unterschiede nach Kriterien herausarbeiten. Beispiel: Hitzetief vs. dynamisches Tief.</span></div>
+   <div class="row"><b>Beurteilen</b><span>Auf Grundlage von Kriterien zu einem begründeten Urteil kommen. Beispiel: Chancen und Risiken arktischer Schifffahrtsrouten.</span></div>
+   <div class="row"><b>Bewerten</b><span>Beurteilung mit Wertmaßstab. Beispiel: Nutzung der Polarregion aus ökologischer, wirtschaftlicher und politischer Sicht bewerten.</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="antwortstruktur">
+ <div class="section-head"><div class="num">6</div><h2>Antwortstruktur für dein Kolloquium</h2></div>
+ <div class="card">
+  <div class="formula">Definition → Prozesskette → Beispiel → Verknüpfung → Folge/Bewertung</div>
+  <div class="grid2">
+   <div class="mini"><h4>Bei Prozessen</h4><ul><li>Ausgangsbedingung nennen</li><li>Schritt für Schritt erklären</li><li>Fachbegriffe einbauen</li><li>Folge ableiten</li><li>nicht springen</li></ul></div>
+   <div class="mini"><h4>Bei Material</h4><ul><li>Materialart nennen</li><li>Daten beschreiben</li><li>Muster erkennen</li><li>Ursachen erklären</li><li>Raumfolge ableiten</li></ul></div>
+  </div>
+  <div class="warn"><strong>Merke:</strong> Im Kolloquium nie nur Fakten nebeneinander legen. Immer Kausalketten bilden: weil → dadurch → folglich.</div>
+ </div>
+</section>
+
+<section class="section" id="checklisten">
+ <div class="section-head"><div class="num">7</div><h2>Letzte Checklisten vor der Prüfung</h2></div>
+ <div class="card alt">
+  <div class="grid3">
+   <div class="mini"><h4>Atmosphäre</h4><ul><li>Strahlungsbilanz</li><li>Albedo</li><li>Treibhauseffekt</li><li>Luftdruck</li><li>Windentstehung</li><li>Coriolis</li></ul></div>
+   <div class="mini"><h4>Zirkulation</h4><ul><li>Hadley-Zelle</li><li>Ferrel-Zelle</li><li>Polarzelle</li><li>ITC</li><li>Passate</li><li>Westwinde</li></ul></div>
+   <div class="mini"><h4>Verknüpfungen</h4><ul><li>El Niño</li><li>Humboldtstrom</li><li>Golfstrom</li><li>AMOC</li><li>Albedo</li><li>Kipppunkte</li></ul></div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="themenuebersicht">
+ <div class="section-head"><div class="num">8</div><h2>Themenübersicht: Was du können musst</h2></div>
+ <div class="card">
+  <div class="tablelike">
+   <div class="row"><b>1</b><span>Atmosphäre, Strahlung, Albedo, Treibhauseffekt, ungleiche Erwärmung, Luftdruck.</span></div>
+   <div class="row"><b>2</b><span>Thermische und dynamische Druckgebiete, Hoch/Tief, Konvergenz/Divergenz.</span></div>
+   <div class="row"><b>3</b><span>Winde, Corioliseffekt, Druckgradientkraft, Isobaren, lokale Winde, Föhn.</span></div>
+   <div class="row"><b>4</b><span>Planetarische Zirkulation, Hadley-, Ferrel-, Polarzelle, Druck- und Windgürtel.</span></div>
+   <div class="row"><b>5</b><span>ITC, Passatkreislauf, Passatinversion, Regenzeiten, Monsun, Walker-Zirkulation, El Niño.</span></div>
+   <div class="row"><b>6</b><span>Klima- und Vegetationszonen, Köppen-Geiger, Tropen, Subtropen, Mittelbreiten, Polarzone, Kipppunkte.</span></div>
+   <div class="row"><b>7</b><span>Klimadiagramme, Walter-Lieth, arid/humid, Thermoisoplethendiagramme.</span></div>
+   <div class="row"><b>8</b><span>Rote Themen verknüpfen: Golfstrom, Humboldtstrom, AMOC, El Niño, Albedo, Permafrost, Kipppunkte.</span></div>
+  </div>
+ </div>
+</section>
+
+<div class="footer-note">Lokale Lernseite für private Nutzung. Unterseite 9 des Geo-Schwerpunktthemas 12-1.1: Prüfungstrainer, Karteikarten, Quiz, Fehlerwiederholung und Kolloquiumssimulation.</div>
+</main>
+</div>
+
+<script>
+const CARDS = [{"cat": "Atmosphäre & Strahlung", "q": "Unterscheide Wetter, Witterung und Klima.", "a": "Wetter ist der aktuelle Zustand der Atmosphäre an einem Ort zu einem Zeitpunkt. Witterung ist der typische Wetterverlauf über mehrere Tage oder Wochen. Klima ist die langfristige Statistik des Wetters, meist über 30 Jahre.", "tags": ["Grundlagen"]}, {"cat": "Atmosphäre & Strahlung", "q": "Warum ist die Troposphäre für Wetter und Klima entscheidend?", "a": "In der Troposphäre befinden sich der größte Teil des Wasserdampfs, Wolken, Niederschlag, vertikale Durchmischung und die meisten Wetterprozesse. Sie wird stark von der Erdoberfläche aus erwärmt.", "tags": ["Troposphäre"]}, {"cat": "Atmosphäre & Strahlung", "q": "Erkläre den Strahlungshaushalt der Erde.", "a": "Die Erde erhält kurzwellige Sonnenstrahlung. Ein Teil wird reflektiert, ein Teil von Atmosphäre und Erdoberfläche absorbiert. Die erwärmte Erde sendet langwellige Wärmestrahlung aus. Treibhausgase absorbieren und emittieren einen Teil dieser Strahlung zurück zur Erde.", "tags": ["Strahlungsbilanz"]}, {"cat": "Atmosphäre & Strahlung", "q": "Was ist Albedo?", "a": "Albedo ist das Rückstrahlvermögen einer Oberfläche. Helle Flächen wie Schnee und Eis reflektieren viel Strahlung, dunkle Flächen wie Wasser oder Wald absorbieren mehr Energie.", "tags": ["Albedo"]}, {"cat": "Atmosphäre & Strahlung", "q": "Erkläre den natürlichen und anthropogenen Treibhauseffekt.", "a": "Der natürliche Treibhauseffekt entsteht, weil Treibhausgase langwellige Wärmestrahlung absorbieren und zurückstrahlen. Er macht Leben auf der Erde möglich. Der anthropogene Treibhauseffekt ist die menschliche Verstärkung durch zusätzliche Treibhausgase wie CO₂, Methan und Lachgas.", "tags": ["Treibhauseffekt"]}, {"cat": "Atmosphäre & Strahlung", "q": "Warum erwärmen sich Äquator und Pole unterschiedlich?", "a": "Am Äquator trifft Sonnenstrahlung steiler auf und verteilt sich auf kleinere Fläche. An den Polen trifft sie flacher auf, verteilt sich auf größere Fläche, legt einen längeren Weg durch die Atmosphäre zurück und wird durch Schnee/Eis stärker reflektiert.", "tags": ["Breitenlage"]}, {"cat": "Atmosphäre & Strahlung", "q": "Leite Wind aus Sonneneinstrahlung her.", "a": "Ungleiche Sonneneinstrahlung erzeugt Temperaturunterschiede. Warme Luft dehnt sich aus, wird weniger dicht und steigt auf; am Boden entsteht Tiefdruck. Kalte Luft sinkt ab und erzeugt Hochdruck. Luft strömt vom Hoch zum Tief: Wind.", "tags": ["Wind"]}, {"cat": "Druckgebiete", "q": "Was ist der Unterschied zwischen thermischen und dynamischen Druckgebieten?", "a": "Thermische Druckgebiete entstehen durch Temperaturunterschiede und Dichteänderungen der Luft. Dynamische Druckgebiete entstehen durch großräumige Luftbewegungen, Konvergenz, Divergenz, Aufsteigen oder Absinken.", "tags": ["Druck"]}, {"cat": "Druckgebiete", "q": "Erkläre ein Hitzetief.", "a": "Bei starker Erwärmung wird bodennahe Luft warm, dehnt sich aus, wird leichter und steigt auf. Am Boden fehlt Luftmasse, der Druck sinkt. Es entsteht ein thermisches Tief.", "tags": ["thermisch"]}, {"cat": "Druckgebiete", "q": "Erkläre ein Kältehoch.", "a": "Bei starker Abkühlung wird Luft dichter und schwerer. Sie sinkt ab und sammelt sich am Boden. Dadurch steigt der Luftdruck. Es entsteht ein thermisches Hoch.", "tags": ["thermisch"]}, {"cat": "Druckgebiete", "q": "Warum ist der subtropische Hochdruckgürtel dynamisch?", "a": "Er entsteht durch absinkende Luft der Hadley-Zelle bei etwa 30° Breite. Die Ursache ist nicht lokale Bodenkälte, sondern großräumige Zirkulation und Absinken.", "tags": ["dynamisch"]}, {"cat": "Druckgebiete", "q": "Warum führen Hochdruckgebiete oft zu trockenem Wetter?", "a": "In Hochdruckgebieten sinkt Luft ab. Beim Absinken erwärmt sie sich trockenadiabatisch, die relative Feuchte sinkt und Wolken lösen sich eher auf. Niederschlag wird gehemmt.", "tags": ["Hochdruck"]}, {"cat": "Druckgebiete", "q": "Warum führen Tiefdruckgebiete oft zu Wolken und Niederschlag?", "a": "In Tiefdruckgebieten steigt Luft auf. Beim Aufsteigen kühlt sie ab, relative Feuchte steigt, Wasserdampf kondensiert und Wolken sowie Niederschlag entstehen.", "tags": ["Tiefdruck"]}, {"cat": "Druckgebiete", "q": "Was bedeuten Konvergenz und Divergenz?", "a": "Konvergenz bedeutet Zusammenströmen von Luft, oft mit Aufsteigen verbunden. Divergenz bedeutet Auseinanderströmen von Luft, oft mit Absinken bzw. Nachsinken verbunden.", "tags": ["Konvergenz"]}, {"cat": "Winde & Coriolis", "q": "Was ist Wind?", "a": "Wind ist horizontale Luftbewegung infolge von Luftdruckunterschieden. Die reale Windrichtung ergibt sich aus Druckgradientkraft, Corioliskraft und Reibung.", "tags": ["Wind"]}, {"cat": "Winde & Coriolis", "q": "Was ist die Druckgradientkraft?", "a": "Die Druckgradientkraft beschleunigt Luft vom hohen zum niedrigen Luftdruck. Je größer der Druckunterschied auf kurzer Strecke, desto stärker der Wind.", "tags": ["Druckgradient"]}, {"cat": "Winde & Coriolis", "q": "Was zeigen enge Isobaren?", "a": "Enge Isobaren zeigen einen starken Druckgradienten. Daraus folgt eine starke Druckgradientkraft und meist stärkerer Wind.", "tags": ["Isobaren"]}, {"cat": "Winde & Coriolis", "q": "Erkläre den Corioliseffekt.", "a": "Der Corioliseffekt ist die scheinbare Ablenkung bewegter Luftmassen durch die Erdrotation. Auf der Nordhalbkugel erfolgt die Ablenkung nach rechts, auf der Südhalbkugel nach links.", "tags": ["Coriolis"]}, {"cat": "Winde & Coriolis", "q": "Warum weht Höhenwind oft parallel zu Isobaren?", "a": "In der Höhe ist Reibung gering. Druckgradientkraft und Corioliskraft können sich ausgleichen. Dann weht der geostrophische Wind parallel zu den Isobaren.", "tags": ["geostrophisch"]}, {"cat": "Winde & Coriolis", "q": "Warum strömt Bodenwind schräg zu Isobaren?", "a": "Reibung bremst den Wind, dadurch wird die Corioliskraft schwächer. Die Druckgradientkraft zieht stärker Richtung Tief, deshalb schneidet Bodenwind die Isobaren.", "tags": ["Reibung"]}, {"cat": "Winde & Coriolis", "q": "Erkläre Land-See-Wind.", "a": "Tags erwärmt sich Land schneller als Wasser. Über Land entsteht ein thermisches Tief, über dem Meer relativ höherer Druck; Seewind weht zum Land. Nachts kühlt Land schneller aus, der Wind kehrt sich um: Landwind.", "tags": ["lokale Winde"]}, {"cat": "Winde & Coriolis", "q": "Erkläre Föhn.", "a": "Feuchte Luft steigt an der Luvseite eines Gebirges auf, kühlt ab, kondensiert und regnet aus. Auf der Leeseite sinkt trockenere Luft ab und erwärmt sich trockenadiabatisch: warmer, trockener Fallwind.", "tags": ["Föhn"]}, {"cat": "Planetarische Zirkulation", "q": "Warum gibt es eine planetarische Zirkulation?", "a": "Die Tropen haben einen Energieüberschuss, hohe Breiten ein Energiedefizit. Atmosphäre und Ozeane transportieren Wärme polwärts und gleichen diese Unterschiede teilweise aus.", "tags": ["Zirkulation"]}, {"cat": "Planetarische Zirkulation", "q": "Welche drei Zellen gibt es pro Halbkugel?", "a": "Hadley-Zelle zwischen 0° und ca. 30°, Ferrel-Zelle zwischen ca. 30° und 60°, Polarzelle zwischen ca. 60° und 90°.", "tags": ["Zellen"]}, {"cat": "Planetarische Zirkulation", "q": "Erkläre die Hadley-Zelle.", "a": "Am Äquator steigt warme, feuchte Luft auf. In der Höhe strömt sie polwärts, sinkt bei etwa 30° ab und bildet subtropische Hochs. Am Boden strömt Luft zurück zur ITC und wird zu Passaten abgelenkt.", "tags": ["Hadley"]}, {"cat": "Planetarische Zirkulation", "q": "Warum entstehen Wendekreiswüsten?", "a": "In den Subtropen sinkt Luft der Hadley-Zelle ab. Sie erwärmt sich trockenadiabatisch, relative Feuchte sinkt, Wolkenbildung wird gehemmt. Dadurch entstehen trockene Bedingungen.", "tags": ["Wüste"]}, {"cat": "Planetarische Zirkulation", "q": "Was ist die Ferrel-Zelle?", "a": "Die Ferrel-Zelle liegt zwischen 30° und 60°. Sie ist eine indirekte, dynamisch geprägte Zelle der Mittelbreiten und hängt mit Westwinden, Tiefdruckgebieten und Polarfrontprozessen zusammen.", "tags": ["Ferrel"]}, {"cat": "Planetarische Zirkulation", "q": "Was ist die Polarzelle?", "a": "An den Polen sinkt kalte, dichte Luft ab und bildet Polarhochs. Bodennah strömt Luft Richtung subpolare Tiefdruckzone und wird zu polaren Ostwinden abgelenkt.", "tags": ["Polarzelle"]}, {"cat": "Planetarische Zirkulation", "q": "Was sind Jetstreams?", "a": "Jetstreams sind schmale Starkwindbänder in der oberen Troposphäre nahe der Tropopause. Sie entstehen entlang starker Temperatur- und Druckgegensätze und steuern Wetterlagen und Tiefdruckbahnen.", "tags": ["Jetstream"]}, {"cat": "ITC & Passate", "q": "Was ist die ITC?", "a": "Die Innertropische Konvergenzzone ist eine äquatornahe Tiefdruck- und Konvergenzzone, in der Nordost- und Südostpassat zusammenströmen und warme, feuchte Luft aufsteigt.", "tags": ["ITC"]}, {"cat": "ITC & Passate", "q": "Warum regnet es in der ITC stark?", "a": "Feuchte, warme Luft konvergiert und steigt auf. Beim Aufsteigen kühlt sie ab, Wasserdampf kondensiert und es entstehen mächtige Wolken, Gewitter und Starkniederschläge.", "tags": ["Tropenregen"]}, {"cat": "ITC & Passate", "q": "Erkläre Nordost- und Südostpassat.", "a": "Passate strömen von subtropischen Hochs zur ITC. Auf der Nordhalbkugel werden sie nach rechts abgelenkt und kommen als Nordostpassat. Auf der Südhalbkugel werden sie nach links abgelenkt und kommen als Südostpassat.", "tags": ["Passat"]}, {"cat": "ITC & Passate", "q": "Warum wandert die ITC jahreszeitlich?", "a": "Sie folgt dem thermischen Äquator, also dem Bereich stärkster Erwärmung. Dieser verschiebt sich mit dem Zenitstand der Sonne nach Norden und Süden.", "tags": ["Jahresgang"]}, {"cat": "ITC & Passate", "q": "Wie entstehen Regenzeit und Trockenzeit in den Tropen?", "a": "Liegt die ITC über einem Gebiet, gibt es Konvergenz, Aufsteigen und Niederschlag: Regenzeit. Entfernt sich die ITC, dominieren trockenere oder absinkende Luftmassen: Trockenzeit.", "tags": ["Regenzeit"]}, {"cat": "ITC & Passate", "q": "Was ist die Passatinversion?", "a": "Eine stabile Temperaturumkehr in der Passatluft. Absinkende, sich erwärmende Luft im Subtropenhoch liegt über kühlerer Luft und hemmt vertikale Konvektion und Niederschlag.", "tags": ["Passatinversion"]}, {"cat": "ITC & Passate", "q": "Was ist die Walker-Zirkulation?", "a": "Eine Ost-West-Zirkulation im tropischen Pazifik. Passate treiben warmes Wasser nach Westen, dort steigt feuchte Luft auf; in der Höhe strömt Luft zurück nach Osten.", "tags": ["Walker"]}, {"cat": "ITC & Passate", "q": "Erkläre El Niño über die Passate.", "a": "Bei El Niño schwächen sich die Passate ab. Warmes Wasser verlagert sich nach Osten, der kalte Auftrieb vor Südamerika wird geschwächt, und Niederschlags- sowie Druckmuster verschieben sich.", "tags": ["El Niño"]}, {"cat": "Klima & Vegetation", "q": "Wie hängen Klima- und Vegetationszonen zusammen?", "a": "Klima bestimmt Temperatur, Niederschlag, Wasserverfügbarkeit und Vegetationsperiode. Daraus ergeben sich Vegetationszonen wie Regenwald, Savanne, Wüste, Hartlaubvegetation, Laubwald, Taiga oder Tundra.", "tags": ["Vegetation"]}, {"cat": "Klima & Vegetation", "q": "Warum gibt es in den Tropen Regenwald und Savanne?", "a": "Nahe am Äquator liegt die ITC häufig oder ganzjährig: Regenwald. Weiter entfernt erreicht die ITC einen Ort nur saisonal: Regenzeit und Trockenzeit, dadurch Savannen.", "tags": ["Tropen"]}, {"cat": "Klima & Vegetation", "q": "Warum entstehen subtropische Wüsten?", "a": "Durch absinkende Luft im subtropischen Hochdruckgürtel. Diese erwärmt sich, die relative Feuchte sinkt, Wolken und Niederschläge werden gehemmt.", "tags": ["Subtropen"]}, {"cat": "Klima & Vegetation", "q": "Was ist Hartlaubvegetation?", "a": "Vegetation der winterfeuchten Subtropen mit Anpassungen an sommerliche Trockenheit: kleine, harte, ledrige Blätter, Wachsschicht, tiefe Wurzeln und Trockenruhe.", "tags": ["Mittelmeer"]}, {"cat": "Klima & Vegetation", "q": "Warum ist Tundra baumarm?", "a": "Wegen kurzer Vegetationsperiode, niedriger Temperaturen, Permafrost, begrenztem Wurzelraum und langsamen Wachstums.", "tags": ["Tundra"]}, {"cat": "Klima & Vegetation", "q": "Was ist ein Kipppunkt?", "a": "Ein Kipppunkt ist eine kritische Schwelle, ab der ein System durch Rückkopplungen in einen neuen Zustand wechseln kann, teilweise schwer oder nicht umkehrbar.", "tags": ["Kipppunkt"]}, {"cat": "Klima & Vegetation", "q": "Erkläre die Eis-Albedo-Rückkopplung.", "a": "Erwärmung lässt Eis schmelzen. Dadurch sinkt die Albedo, dunklere Flächen absorbieren mehr Strahlung, die Erwärmung verstärkt sich und noch mehr Eis schmilzt.", "tags": ["Albedo"]}, {"cat": "Klima & Vegetation", "q": "Warum ist Permafrost ein Klimarisiko?", "a": "Tauender Permafrost kann organisches Material zersetzen und CO₂ sowie Methan freisetzen. Diese Treibhausgase verstärken die Erwärmung und können weiteres Auftauen fördern.", "tags": ["Permafrost"]}, {"cat": "Klimadiagramme", "q": "Wie wertest du ein Klimadiagramm strukturiert aus?", "a": "1 Ort/Lage/Höhe, 2 Temperaturverlauf, 3 Niederschlagsverlauf, 4 aride/humide Monate, 5 Klimazone und Vegetation ableiten, 6 Ursachen über Zirkulation, ITC, Subtropenhoch, Westwindzone, Meeresströmung oder Relief erklären.", "tags": ["Methode"]}, {"cat": "Klimadiagramme", "q": "Wann ist ein Monat nach Walter-Lieth arid?", "a": "Ein Monat ist arid, wenn der Niederschlag kleiner als das Doppelte der Temperatur ist: P < 2T.", "tags": ["arid"]}, {"cat": "Klimadiagramme", "q": "Warum reicht Jahresniederschlag allein nicht?", "a": "Weil Wasserverfügbarkeit auch von Temperatur, Verdunstung und Niederschlagsverteilung abhängt. Gleicher Jahresniederschlag kann bei unterschiedlicher Saisonalität völlig verschiedene Vegetation ermöglichen.", "tags": ["Wasserbilanz"]}, {"cat": "Klimadiagramme", "q": "Wie erkennst du Mittelmeerklima im Klimadiagramm?", "a": "Heiße, trockene Sommer und milde, feuchtere Winter. Ursache: sommerlicher Einfluss des subtropischen Hochdruckgürtels und winterlicher Einfluss der Westwindzone.", "tags": ["Mittelmeer"]}, {"cat": "Klimadiagramme", "q": "Was zeigt ein Thermoisoplethendiagramm?", "a": "Es zeigt den Tages- und Jahresgang der Temperatur. Monate und Tageszeiten bilden die Achsen, Isoplethen zeigen Linien gleicher Temperatur.", "tags": ["Thermoisoplethen"]}, {"cat": "Klimadiagramme", "q": "Unterscheide Tageszeitenklima und Jahreszeitenklima.", "a": "Beim Tageszeitenklima ist die Tag-Nacht-Amplitude größer als die Jahresamplitude, typisch Tropen. Beim Jahreszeitenklima ist die Jahresamplitude größer, typisch Mittelbreiten und höhere Breiten.", "tags": ["Klima"]}, {"cat": "Rote Themen", "q": "Stelle den Zusammenhang zwischen Passaten und Humboldtstrom her.", "a": "Passate und Küstenwinde transportieren Oberflächenwasser von der Küste weg. Kaltes, nährstoffreiches Tiefenwasser steigt auf. Das kühlt die Luft, stabilisiert sie und begünstigt trockene Küstenklimate wie die Atacama.", "tags": ["Humboldt"]}, {"cat": "Rote Themen", "q": "Warum ist der Golfstrom für Westeuropa wichtig?", "a": "Golfstrom und Nordatlantikdrift transportieren warmes Wasser nach Nordosten. Westwinde bringen maritime Luftmassen nach Europa. Dadurch sind viele Regionen Westeuropas milder und feuchter als andere Räume gleicher Breite.", "tags": ["Golfstrom"]}, {"cat": "Rote Themen", "q": "Was treibt die thermohaline Zirkulation an?", "a": "Dichteunterschiede durch Temperatur und Salzgehalt. Kaltes, salzreiches Wasser ist dichter und kann absinken, wodurch Tiefenwasserbildung und Umwälzzirkulation entstehen.", "tags": ["AMOC"]}, {"cat": "Rote Themen", "q": "Warum ist die AMOC ein mögliches Kipprisiko?", "a": "Erwärmung und Schmelzwasser können Dichte und Tiefenwasserbildung im Nordatlantik verändern. Eine starke Abschwächung könnte Wärmetransport, Niederschlag und regionale Klimate beeinflussen.", "tags": ["AMOC"]}, {"cat": "Rote Themen", "q": "Wie verknüpfst du Polarzone mit deinem Schwerpunkt?", "a": "Über Strahlungsbilanz, Albedo, Polarzelle, Temperatur, Vegetationsgrenzen, Permafrost und Rückkopplungen. Eisschmelze und Albedoänderungen beeinflussen die Erwärmung stark.", "tags": ["Polarzone"]}];
+const MC = [{"q": "Welche Kette erklärt Windentstehung am besten?", "opts": ["Ungleiche Erwärmung → Druckunterschied → Wind", "Wind → Sonneneinstrahlung → Druckausgleich", "Niederschlag → Albedo → Wind", "Vegetation → Coriolis → Luftdruck"], "ans": 0, "exp": "Wind entsteht aus Luftdruckunterschieden, die häufig durch ungleiche Erwärmung verursacht werden."}, {"q": "Ein arider Monat liegt nach Walter-Lieth vor, wenn ...", "opts": ["P < 2T", "P > 2T", "T < 0 °C", "Jahresniederschlag > 1000 mm"], "ans": 0, "exp": "Im Walter-Lieth-Diagramm gilt vereinfacht: arid = P < 2T."}, {"q": "Warum entstehen viele subtropische Wüsten?", "opts": ["Absinkende Luft im subtropischen Hochdruckgürtel hemmt Wolkenbildung.", "Dort ist immer die ITC.", "Weil Passate dort immer Regen bringen.", "Weil kalte Luft am Äquator absinkt."], "ans": 0, "exp": "Absinkende Luft erwärmt sich trockenadiabatisch, relative Feuchte sinkt, Niederschlag wird gehemmt."}, {"q": "Welche Aussage zur Corioliskraft stimmt?", "opts": ["Nordhalbkugel rechts, Südhalbkugel links.", "Nordhalbkugel links, Südhalbkugel rechts.", "Sie wirkt nur am Äquator.", "Sie erzeugt Luftdruck."], "ans": 0, "exp": "Bewegte Luft wird auf der Nordhalbkugel nach rechts und auf der Südhalbkugel nach links abgelenkt."}, {"q": "Die ITC ist vor allem eine Zone von ...", "opts": ["Konvergenz, Aufsteigen und Niederschlag", "Absinken und Trockenheit", "Polarhoch und Ostwinden", "Westwinden und Fronten"], "ans": 0, "exp": "In der ITC konvergieren Passate, Luft steigt auf und es kommt zu konvektivem Niederschlag."}, {"q": "Was passiert bei El Niño typischerweise?", "opts": ["Passate schwächen sich ab, Warmwasser verlagert sich ostwärts.", "Passate verstärken sich, Humboldtstrom wird kälter.", "Die ITC verschwindet dauerhaft.", "Die Corioliskraft kehrt sich um."], "ans": 0, "exp": "El Niño hängt mit abgeschwächten Passaten, ostwärtiger Warmwasserverlagerung und veränderten Niederschlägen zusammen."}, {"q": "Was ist eine positive Rückkopplung bei Eis-Albedo?", "opts": ["Eis schmilzt → Albedo sinkt → mehr Absorption → mehr Erwärmung", "Eis schmilzt → Albedo steigt → Abkühlung", "Mehr Eis → dunklere Oberfläche → Erwärmung", "Wasser reflektiert mehr als Schnee"], "ans": 0, "exp": "Dunklere Flächen absorbieren mehr Strahlung und verstärken die Erwärmung."}, {"q": "Warum ist Permafrost klimatisch relevant?", "opts": ["Auftauen kann CO₂ und Methan freisetzen.", "Er erzeugt Passate.", "Er verhindert jede Erwärmung.", "Er ist nur für Geopolitik wichtig."], "ans": 0, "exp": "Beim Auftauen können organische Stoffe zersetzt und Treibhausgase freigesetzt werden."}, {"q": "Was zeigt ein Thermoisoplethendiagramm?", "opts": ["Tages- und Jahresgang der Temperatur", "Monatsniederschlag und Temperatur als Säulen", "Luftdrucklinien", "Ozeanströmungen"], "ans": 0, "exp": "Thermoisoplethen zeigen Temperatur nach Monat und Tageszeit."}, {"q": "Welche Verbindung zum Golfstrom ist stark?", "opts": ["Warme Strömung + Westwinde → maritimer Klimaeinfluss in Westeuropa", "ITC → Polarhoch → Golfstrom", "Humboldtstrom → Sahara", "Albedo → Passatinversion → Golfstrom"], "ans": 0, "exp": "Der Golfstrom/Nordatlantikdrift gibt Wärme ab, Westwinde transportieren maritime Luftmassen nach Europa."}, {"q": "Warum ist der Humboldtstrom mit Küstentrockenheit verbunden?", "opts": ["Kaltes Auftriebswasser stabilisiert die Luft und hemmt Niederschlag.", "Er bringt warme, feuchte Luftmassen.", "Er verstärkt die ITC direkt über der Küste.", "Er verhindert Coriolis."], "ans": 0, "exp": "Kalte Meeresoberflächen kühlen die Luft, stabilisieren sie und hemmen konvektiven Niederschlag."}, {"q": "Was ist der Kern der Hadley-Zelle?", "opts": ["Aufsteigen an der ITC, Absinken in den Subtropen, Passate als Rückströmung", "Absinken am Äquator und Aufsteigen am Pol", "Westwinde zwischen 60° und 90°", "Nur Meeresströmung im Atlantik"], "ans": 0, "exp": "Hadley-Zelle: ITC-Aufstieg, Höhenströmung, Subtropenabsinken, bodennahe Passate."}];
+const EXAM = [
+  {
+    q:"Erklären Sie ausgehend von der Strahlungsbilanz die Entstehung der planetarischen Zirkulation.",
+    a:"Die Erde wird ungleich erwärmt. In den Tropen besteht wegen des hohen Sonnenstands ein Energieüberschuss, in hohen Breiten wegen flachem Einfallswinkel, längerer atmosphärischer Wegstrecke und hoher Albedo ein Energiedefizit. Dadurch entstehen Temperatur- und Luftdruckgegensätze. Warme Luft steigt in Äquatornähe auf, kalte Luft sinkt in höheren Breiten eher ab. Wegen Erdrotation und Corioliskraft entsteht kein einfaches Ein-Zellen-System, sondern ein Drei-Zellen-Modell mit Hadley-, Ferrel- und Polarzelle. Daraus folgen Druckgürtel, Windgürtel, Niederschlagszonen und letztlich Klima- und Vegetationszonen."
+  },
+  {
+    q:"Stellen Sie den Zusammenhang zwischen ITC, Passaten und tropischen Regenzeiten dar.",
+    a:"Die ITC ist eine äquatornahe Tiefdruck- und Konvergenzzone. Dort strömen Nordost- und Südostpassat zusammen. Warme, feuchte Luft steigt auf, kühlt ab, Wasserdampf kondensiert und es entstehen Wolken, Gewitter und starke Niederschläge. Da die ITC mit dem thermischen Äquator jahreszeitlich wandert, liegt sie in wechselfeuchten Tropen nur zeitweise über einem Gebiet. Dann entsteht Regenzeit. Entfernt sich die ITC, dominieren trockenere Luftmassen oder absinkende Luft, wodurch Trockenzeit entsteht."
+  },
+  {
+    q:"Erklären Sie, warum viele Wüsten in den Subtropen liegen.",
+    a:"Viele subtropische Wüsten liegen im Bereich des subtropischen Hochdruckgürtels. Dieser entsteht durch absinkende Luft der Hadley-Zelle. Beim Absinken gerät die Luft unter höheren Druck, wird komprimiert und erwärmt sich trockenadiabatisch. Dadurch sinkt die relative Luftfeuchtigkeit und Wolkenbildung wird gehemmt. Niederschlag bleibt aus. Wüsten entstehen deshalb nicht einfach wegen Hitze, sondern vor allem wegen Wassermangel durch absinkende, stabile Luftmassen."
+  },
+  {
+    q:"Verknüpfen Sie Passate, Humboldtstrom und El Niño.",
+    a:"Passate treiben im tropischen Pazifik normalerweise warmes Oberflächenwasser nach Westen. Vor Südamerika wird dadurch Auftrieb kalten, nährstoffreichen Tiefenwassers begünstigt, was mit dem Humboldtstrom verbunden ist. Das kalte Wasser stabilisiert die Luft und fördert trockene Küstenklimate. Bei El Niño schwächen sich die Passate ab. Warmes Wasser kann sich nach Osten verlagern, der kalte Auftrieb wird geschwächt, und Niederschlags- sowie Druckmuster verschieben sich. Damit ist El Niño ein gekoppeltes Atmosphäre-Ozean-Phänomen."
+  },
+  {
+    q:"Erläutern Sie die Eis-Albedo-Rückkopplung und ihre Bedeutung für die Polarzone.",
+    a:"Albedo ist das Rückstrahlvermögen einer Oberfläche. Schnee und Eis reflektieren viel Sonnenstrahlung. Wenn sich die Polarregionen erwärmen, schmelzen Schnee und Eisflächen. Dadurch werden dunkleres Wasser oder Land frei, die mehr Sonnenenergie absorbieren. Die Albedo sinkt, die Erwärmung nimmt zu und weitere Eisschmelze wird begünstigt. Diese positive Rückkopplung trägt zur Polarverstärkung bei und kann Ökosysteme, Meereis, Permafrost und geopolitische Nutzungsmöglichkeiten verändern."
+  },
+  {
+    q:"Werten Sie ein Klimadiagramm methodisch aus.",
+    a:"Zuerst nenne ich Ort, Lage und Höhe. Dann beschreibe ich Temperatur: Jahresmittel, wärmster und kältester Monat, Temperaturamplitude. Danach beschreibe ich Niederschlag: Jahresniederschlag, Maxima, Minima und Verteilung. Anschließend bestimme ich aride und humide Monate, zum Beispiel mit P kleiner oder größer als 2T. Daraus leite ich Klimazone und Vegetationszone ab. Abschließend erkläre ich Ursachen über ITC, Passate, Subtropenhoch, Westwindzone, Meeresströmungen, Kontinentalität oder Relief."
+  }
+];
+
+let deck = [...CARDS];
+let index = 0;
+let known = JSON.parse(localStorage.getItem("geo_known")||"[]");
+let wrong = JSON.parse(localStorage.getItem("geo_wrong")||"[]");
+let seen = JSON.parse(localStorage.getItem("geo_seen")||"[]");
+let wrongMode = false;
+
+function saveState(){
+  localStorage.setItem("geo_known", JSON.stringify(known));
+  localStorage.setItem("geo_wrong", JSON.stringify(wrong));
+  localStorage.setItem("geo_seen", JSON.stringify(seen));
+}
+function initCats(){
+  const cats = [...new Set(CARDS.map(c=>c.cat))];
+  const sel = document.getElementById("catSelect");
+  cats.forEach(c=>{let o=document.createElement("option");o.value=c;o.textContent=c;sel.appendChild(o);});
+  sel.addEventListener("change",()=>{filterDeck();});
+}
+function filterDeck(){
+  const cat = document.getElementById("catSelect").value;
+  deck = cat==="ALL" ? [...CARDS] : CARDS.filter(c=>c.cat===cat);
+  index = 0; wrongMode=false; renderCard();
+}
+function shuffleCards(){
+  for(let i=deck.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[deck[i],deck[j]]=[deck[j],deck[i]];}
+  index=0; renderCard();
+}
+function renderCard(){
+  if(deck.length===0){
+    document.getElementById("fcQuestion").textContent="Keine Karten in diesem Stapel.";
+    document.getElementById("fcAnswer").textContent="";
+    updateStats(); return;
+  }
+  if(index>=deck.length) index=0;
+  const c=deck[index];
+  document.getElementById("fcMeta").innerHTML=`<span class="pill">${c.cat}</span>`+c.tags.map(t=>`<span class="pill sky">${t}</span>`).join("");
+  document.getElementById("fcQuestion").textContent=c.q;
+  const ans=document.getElementById("fcAnswer");
+  ans.textContent=c.a; ans.classList.remove("show");
+  document.getElementById("fcHint").textContent=`Karte ${index+1} von ${deck.length} · Erst laut antworten, dann aufdecken.`;
+  if(!seen.includes(c.q)) seen.push(c.q);
+  saveState(); updateStats();
+}
+function toggleAnswer(){document.getElementById("fcAnswer").classList.toggle("show");}
+function nextCard(){index=(index+1)%deck.length; renderCard();}
+function markKnown(){
+  const q=deck[index].q;
+  if(!known.includes(q)) known.push(q);
+  wrong=wrong.filter(x=>x!==q);
+  saveState(); nextCard();
+}
+function markWrong(){
+  const q=deck[index].q;
+  if(!wrong.includes(q)) wrong.push(q);
+  known=known.filter(x=>x!==q);
+  saveState(); nextCard();
+}
+function updateStats(){
+  document.getElementById("statTotal").textContent=deck.length;
+  document.getElementById("statDone").textContent=seen.length;
+  document.getElementById("statWrong").textContent=wrong.length;
+  document.getElementById("statKnown").textContent=known.length;
+  const pct = deck.length ? Math.round((known.length/CARDS.length)*100) : 0;
+  document.getElementById("progressFill").style.width=Math.min(100,pct)+"%";
+}
+function startWrongMode(){
+  deck = CARDS.filter(c=>wrong.includes(c.q));
+  index=0; wrongMode=true; renderCard();
+}
+function clearWrong(){wrong=[]; saveState(); updateStats();}
+function resetProgress(){
+  if(confirm("Fortschritt wirklich löschen?")){known=[];wrong=[];seen=[];saveState();updateStats();renderCard();}
+}
+
+let mcDeck=[], mcIndex=0, mcScore=0, mcAnswered=0;
+function startMC(){
+  mcDeck=[...MC].sort(()=>Math.random()-0.5); mcIndex=0; mcScore=0; mcAnswered=0; renderMC();
+}
+function renderMC(){
+  if(mcIndex>=mcDeck.length){document.getElementById("mcQuestion").textContent="Quiz fertig.";document.getElementById("mcOptions").innerHTML="";document.getElementById("mcExp").classList.add("show");document.getElementById("mcExp").textContent=`Endstand: ${mcScore} von ${mcAnswered} richtig.`;updateMCStats();return;}
+  const q=mcDeck[mcIndex];
+  document.getElementById("mcQuestion").textContent=q.q;
+  document.getElementById("mcExp").classList.remove("show");
+  document.getElementById("mcExp").textContent=q.exp;
+  const box=document.getElementById("mcOptions"); box.innerHTML="";
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement("button"); b.className="option"; b.textContent=o;
+    b.onclick=()=>answerMC(i,b);
+    box.appendChild(b);
+  });
+  updateMCStats();
+}
+function answerMC(i,btn){
+  const q=mcDeck[mcIndex];
+  const opts=[...document.querySelectorAll(".option")];
+  opts.forEach((b,k)=>{b.disabled=true;if(k===q.ans)b.classList.add("correct");});
+  if(i===q.ans){mcScore++;} else {btn.classList.add("wrong");}
+  mcAnswered++;
+  document.getElementById("mcExp").classList.add("show");
+  updateMCStats();
+}
+function nextMC(){mcIndex++; renderMC();}
+function updateMCStats(){
+  document.getElementById("mcScore").textContent=mcScore;
+  document.getElementById("mcCount").textContent=mcAnswered;
+  document.getElementById("mcLeft").textContent=Math.max(0, mcDeck.length-mcIndex);
+  document.getElementById("mcQuote").textContent=mcAnswered?Math.round(mcScore/mcAnswered*100)+"%":"0%";
+}
+
+function buildExam(){
+  const area=document.getElementById("examArea");
+  area.innerHTML=EXAM.map((e,i)=>`
+    <div class="test-q">
+      <h4>${i+1}. ${e.q}</h4>
+      <textarea placeholder="Deine Antwort hier schreiben oder mündlich beantworten..."></textarea>
+      <button onclick="toggleSample(${i})" class="gold">Musterantwort anzeigen</button>
+      <div class="sample" id="sample${i}">${e.a}</div>
+    </div>
+  `).join("");
+}
+function toggleSample(i){document.getElementById("sample"+i).classList.toggle("show");}
+function toggleAllSamples(){document.querySelectorAll(".sample").forEach(s=>s.classList.toggle("show"));}
+
+initCats(); shuffleCards(); startMC(); buildExam();
+</script>
+</body>
+</html>

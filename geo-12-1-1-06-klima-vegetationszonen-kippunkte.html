@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Geo 12-1.1.6 — Klima- und Vegetationszonen + Kipppunkte</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d1117;--surface:#151c2b;--card:#1b2440;--card2:#202a4a;--border:#283454;--text:#e8eef7;--muted:#8b98ad;--gold:#f5c842;--sky:#66d9ef;--blue:#4d9de0;--green:#52b788;--orange:#e07b4d;--red:#e05555;--purple:#9b72cf}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--text);font-family:Outfit,system-ui,sans-serif;line-height:1.72;font-size:15.5px}.layout{display:flex;min-height:100vh}.sidebar{width:336px;min-width:336px;height:100vh;position:sticky;top:0;background:var(--surface);border-right:1px solid var(--border);overflow-y:auto}.sb-head{padding:22px;border-bottom:1px solid var(--border)}.back{color:var(--muted);font-size:12.5px;text-decoration:none}.back:hover{color:var(--sky)}.sb-title{font-family:Fraunces,serif;color:#fff;font-size:22px;margin-top:14px}.sb-sub{color:var(--muted);font-size:12px;margin-top:3px}.navgrp{padding:16px 22px 5px;color:var(--sky);font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase}.nav a{display:block;padding:6px 22px;color:var(--muted);font-size:12.5px;text-decoration:none;border-left:2px solid transparent}.nav a:hover{color:#fff;background:rgba(102,217,239,.08)}.main{flex:1;max-width:1140px;padding:48px 54px 120px}.badge{display:inline-block;color:var(--sky);background:rgba(102,217,239,.12);border:1px solid rgba(102,217,239,.32);border-radius:999px;padding:5px 14px;font-size:12px;font-weight:800;margin-bottom:18px}h1{font-family:Fraunces,serif;font-size:48px;line-height:1.08;color:#fff;margin-bottom:14px}.lead{color:var(--muted);font-size:17px;max-width:860px}.focusbox{margin-top:20px;background:rgba(245,200,66,.08);border:1px solid rgba(245,200,66,.24);border-left:4px solid var(--gold);border-radius:14px;padding:16px 18px;max-width:920px}.focusbox b{color:var(--gold)}.gloss-button{display:inline-flex;margin-top:18px;background:rgba(245,200,66,.12);border:1px solid rgba(245,200,66,.35);color:var(--gold);font-weight:800;text-decoration:none;border-radius:999px;padding:9px 15px;font-size:13px}.section{margin:46px 0;scroll-margin-top:26px}.section-head{display:flex;gap:13px;align-items:center;margin-bottom:20px}.num{width:39px;height:39px;border-radius:10px;background:var(--sky);color:#061015;display:grid;place-items:center;font-weight:900;flex-shrink:0}h2{font-family:Fraunces,serif;color:#fff;font-size:31px;line-height:1.18}h3{color:#fff;font-size:19px;margin:22px 0 10px}.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px 26px;margin:14px 0}.card.alt{background:linear-gradient(180deg,#1c2543,#151d31)}.term{color:var(--gold);font-weight:800;text-decoration:none;border-bottom:1px dotted rgba(245,200,66,.65)}.term:hover{color:#fff;background:rgba(245,200,66,.13);border-radius:4px}.merke{background:rgba(82,183,136,.08);border:1px solid rgba(82,183,136,.25);border-radius:12px;padding:13px 16px;margin:16px 0}.merke strong{color:var(--green)}.warn{background:rgba(224,85,85,.08);border:1px solid rgba(224,85,85,.24);border-radius:12px;padding:13px 16px;margin:16px 0}.warn strong{color:#ff8585}.formula{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:rgba(77,157,224,.09);border:1px solid rgba(77,157,224,.25);border-radius:12px;padding:12px 14px;margin:12px 0;color:#fff}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:14px 0}.mini{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px}.mini h4{font-size:15px;color:var(--sky);margin-bottom:8px}.mini p,.mini li{font-size:13.5px;color:#b7c1d0;line-height:1.55}ul{padding-left:20px}li{margin:5px 0}.figure{background:#101622;border:1px solid var(--border);border-radius:16px;overflow:hidden;margin:20px 0}.figure img{display:block;width:100%;max-height:850px;object-fit:contain;background:#fff}.figure.small img{max-height:580px}.cap{border-top:1px solid var(--border);padding:11px 15px;color:var(--muted);font-size:12px;text-align:center}.fig-explain{background:rgba(102,217,239,.07);border:1px solid rgba(102,217,239,.22);border-radius:14px;padding:15px 17px;margin:14px 0 22px}.fig-explain h4{font-size:14px;color:var(--sky);margin-bottom:8px}.fig-explain li{font-size:14px;color:#c7d1df;line-height:1.55}.fig-explain .chain{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#fff;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:9px 11px;margin-top:10px;font-size:13px}.deep{background:linear-gradient(180deg,rgba(102,217,239,.08),rgba(77,157,224,.05));border:1px solid rgba(102,217,239,.22);border-radius:16px;padding:19px 21px;margin:18px 0}.deep h3{margin-top:0}.chainlist{display:grid;gap:9px;margin:14px 0}.chainitem{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:11px 13px;font-size:14px;color:#cbd5e1}.chainitem b{color:#fff}.compare{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}.comp{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px}.comp h4{color:#fff;font-size:15px;margin-bottom:6px}.tag{display:inline-block;margin-bottom:8px;border-radius:999px;padding:2px 9px;font-size:11px;font-weight:800}.tag-b{background:rgba(77,157,224,.12);color:var(--blue)}.tag-g{background:rgba(82,183,136,.12);color:var(--green)}.tag-o{background:rgba(224,123,77,.12);color:var(--orange)}.tag-r{background:rgba(224,85,85,.12);color:#ff8585}.exam{background:linear-gradient(135deg,rgba(102,217,239,.13),rgba(77,157,224,.08));border:1px solid rgba(102,217,239,.28);border-radius:16px;padding:22px;margin:18px 0}.exam h3{margin-top:0}.quiz{background:linear-gradient(180deg,#1b2440,#141b2d);border:1px solid var(--border);border-radius:18px;padding:26px;margin-top:32px}.q{margin:18px 0;padding:16px;background:rgba(255,255,255,.04);border-radius:12px;border:1px solid rgba(255,255,255,.07)}.q summary{cursor:pointer;color:#fff;font-weight:700}.q p{color:#b9c4d2;margin-top:10px}.glossary{background:linear-gradient(180deg,#1b2440,#141b2d);border:1px solid var(--border);border-radius:20px;padding:28px;margin-top:50px;scroll-margin-top:28px}.glossary-intro{color:var(--muted);max-width:780px;margin-bottom:20px}.gloss-index{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 24px}.gloss-index a{font-size:12px;text-decoration:none;color:var(--gold);background:rgba(245,200,66,.08);border:1px solid rgba(245,200,66,.18);border-radius:999px;padding:4px 10px}.gloss-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.gloss-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:15px 16px;scroll-margin-top:30px}.gloss-item h3{font-size:16px;margin:0 0 7px;color:var(--gold)}.gloss-item p{font-size:13.5px;color:#c6d0de;line-height:1.55}.gloss-item .connect{font-size:12.5px;color:var(--green);margin-top:8px}.footer-note{font-size:12px;color:var(--muted);border-top:1px solid var(--border);margin-top:46px;padding-top:18px}@media(max-width:900px){.layout{display:block}.sidebar{display:none}.main{padding:28px 20px 70px}h1{font-size:35px}.grid2,.grid3,.compare,.gloss-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar">
+ <div class="sb-head"><a class="back" href="geographie.html">← Zur Geo-Übersicht</a><div class="sb-title">12-1.1.6</div><div class="sb-sub">Klima · Vegetation · Kipppunkte</div></div>
+ <div class="nav">
+  <div class="navgrp">Klima & Vegetation</div>
+  <a href="#fokus">Start & Ziel</a>
+  <a href="#grundidee">Grundidee</a>
+  <a href="#klimazonen">Klimazonen</a>
+  <a href="#vegetation">Vegetationszonen</a>
+  <a href="#koeppen">Köppen-Geiger</a>
+  <a href="#hygrisch-thermisch">Thermisch & hygrisch</a>
+  <a href="#tropen">Tropen</a>
+  <a href="#subtropen">Subtropen</a>
+  <a href="#mittelbreiten">Mittelbreiten</a>
+  <a href="#subpolar-polar">Subpolar & polar</a>
+  <a href="#hoehenstufen">Höhenstufen</a>
+  <a href="#mensch">Menschliche Veränderung</a>
+  <div class="navgrp">Zusatzwissen</div>
+  <a href="#kippunkte">Kipppunkte</a>
+  <a href="#kippbeispiele">Wichtige Kippsysteme</a>
+  <a href="#verknuepfung">Verknüpfungen</a>
+  <a href="#muendlich">Mündliche Antworten</a>
+  <a href="#quiz">Wissenscheck</a>
+  <a href="#glossar">Glossar</a>
+ </div>
+</aside>
+
+<main class="main">
+<header id="fokus">
+ <div class="badge">12-1.1 · Unterseite 6</div>
+ <h1>Klima- und Vegetationszonen + Kipppunkte</h1>
+ <p class="lead">Diese Unterseite zeigt, wie aus Strahlung, Zirkulation, Temperatur und Niederschlag globale Klima- und Vegetationszonen entstehen. Als starkes Zusatzwissen kommen Kipppunkte dazu, weil sie erklären, wie Klimazonen und Ökosysteme bei Überschreiten kritischer Schwellen abrupt und langfristig kippen können.</p>
+ <div class="focusbox"><b>Ziel:</b> Du sollst nicht nur Karten auswendig können, sondern erklären: Warum gibt es Regenwald am Äquator, Wüsten in den Subtropen, wechselhaftes Klima in den Mittelbreiten und tundraartige Vegetation in hohen Breiten?</div>
+ <a class="gloss-button" href="#glossar">📘 Fachbegriffe-Glossar öffnen</a>
+</header>
+
+<section class="section" id="grundidee">
+ <div class="section-head"><div class="num">0</div><h2>Grundidee: Klima steuert Vegetation</h2></div>
+ <div class="card alt">
+  <p>Vegetationszonen entstehen nicht zufällig. Pflanzen brauchen Wasser, Wärme, Licht, Nährstoffe und eine ausreichend lange Vegetationsperiode. Global sind vor allem Temperatur und Niederschlag entscheidend. Diese werden wiederum durch Strahlung, Breitenlage, Zirkulation, Relief, Meeresströmungen und Kontinentalität geprägt.</p>
+  <div class="chainlist">
+   <div class="chainitem"><b>Strahlung:</b> bestimmt den groben Wärmehaushalt nach Breitenlage.</div>
+   <div class="chainitem"><b>Zirkulation:</b> steuert Aufsteigen, Absinken, Windgürtel und Niederschlagsverteilung.</div>
+   <div class="chainitem"><b>Wasserverfügbarkeit:</b> entscheidet, ob Wald, Grasland, Wüste oder Tundra entstehen kann.</div>
+   <div class="chainitem"><b>Vegetation:</b> passt sich an Wärme, Trockenheit, Frost, Saisonalität und Bodenbedingungen an.</div>
+   <div class="chainitem"><b>Mensch:</b> verändert Vegetation durch Landwirtschaft, Rodung, Urbanisierung, Bewässerung und Klimawandel.</div>
+  </div>
+  <div class="formula">Strahlung + Zirkulation + Wasser + Relief + Meeresnähe → Klima → Vegetationszone</div>
+ </div>
+</section>
+
+<section class="section" id="klimazonen">
+ <div class="section-head"><div class="num">1</div><h2>Klimazonen: räumliche Ordnung des Klimas</h2></div>
+ <div class="card">
+  <p><a class="term" href="#gloss-klimazone">Klimazonen</a> sind Großräume mit ähnlichen klimatischen Bedingungen. Sie ergeben sich vor allem aus Temperatur- und Niederschlagsmustern. Die grobe Einteilung folgt oft der Breitenlage, wird aber durch Kontinente, Ozeane, Meeresströmungen und Gebirge stark verändert.</p>
+  <div class="figure">
+   <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Climate%20zones%20en.svg" alt="Weltkarte der Klimazonen">
+   <div class="cap">Vereinfachte Weltkarte der Klimazonen. Quelle: Wikimedia Commons.</div>
+  </div>
+  <div class="fig-explain"><h4>So wertest du die Karte aus</h4><ul><li>Klimazonen verlaufen grob breitenparallel, weil die Sonneneinstrahlung mit der Breite variiert.</li><li>Die Tropen liegen um den Äquator und sind ganzjährig warm.</li><li>Subtropische Trockengebiete liegen häufig im Bereich des subtropischen Hochdruckgürtels.</li><li>Mittelbreiten zeigen stärkere Jahreszeiten und häufig wechselhafte Westwindwetterlagen.</li><li>Polarregionen sind durch geringe Temperaturen, kurze Vegetationsperioden und hohe Albedo geprägt.</li><li>Abweichungen entstehen durch Meeresströmungen, Relief und Land-Meer-Verteilung.</li></ul><div class="chain">Breitenlage → Strahlung → Temperatur · Zirkulation → Niederschlag → Klimazone</div></div>
+  <div class="warn"><strong>Wichtig:</strong> Klimazonen sind Modelle. Übergänge sind fließend, und regionale Faktoren können die zonale Ordnung stark verändern.</div>
+ </div>
+</section>
+
+<section class="section" id="vegetation">
+ <div class="section-head"><div class="num">2</div><h2>Vegetationszonen: Pflanzen als Spiegel des Klimas</h2></div>
+ <div class="card">
+  <p><a class="term" href="#gloss-vegetationszone">Vegetationszonen</a> sind Großräume mit ähnlicher natürlicher Pflanzenbedeckung. Sie spiegeln vor allem Wärme- und Wasserverfügbarkeit wider. Deshalb ähneln sie den Klimazonen, sind aber nicht exakt gleich.</p>
+  <div class="figure">
+   <img src="https://commons.wikimedia.org/wiki/Special:FilePath/World%20vegetation%20zones.png" alt="Weltkarte der Vegetationszonen">
+   <div class="cap">Weltkarte der Vegetations- und Landnutzungszonen. Quelle: Wikimedia Commons.</div>
+  </div>
+  <div class="fig-explain"><h4>So erklärst du den Zusammenhang</h4><ul><li>Tropischer Regenwald entsteht bei ganzjährig hohen Temperaturen und ganzjährig hohen Niederschlägen.</li><li>Savannen entstehen bei hohen Temperaturen, aber jahreszeitlich wechselndem Niederschlag.</li><li>Wüsten entstehen bei extremer Wasserknappheit.</li><li>Laub- und Mischwälder brauchen ausreichende Feuchte und gemäßigte Temperaturen.</li><li>Taiga entsteht in kalten, borealen Räumen mit langer Winterperiode.</li><li>Tundra entsteht, wenn die Vegetationsperiode sehr kurz ist und Permafrost Wachstum begrenzt.</li></ul><div class="chain">Temperatur + Niederschlag + Vegetationsperiode → Pflanzengesellschaft → Vegetationszone</div></div>
+  <div class="merke"><strong>Prüfungssatz:</strong> Vegetation ist eine Folge des Klimas, wirkt aber gleichzeitig auf das Klima zurück, zum Beispiel über Albedo, Verdunstung und Kohlenstoffspeicherung.</div>
+ </div>
+</section>
+
+<section class="section" id="koeppen">
+ <div class="section-head"><div class="num">3</div><h2>Köppen-Geiger: Klimaklassifikation mit Temperatur und Niederschlag</h2></div>
+ <div class="card">
+  <p>Die <a class="term" href="#gloss-koeppen">Köppen-Geiger-Klassifikation</a> ordnet Klimate nach Temperatur- und Niederschlagskriterien. Sie ist nützlich, weil sie nicht nur grobe Breitenzonen zeigt, sondern regionale Unterschiede genauer abbildet.</p>
+  <div class="figure">
+   <img src="https://commons.wikimedia.org/wiki/Special:FilePath/World%20K%C3%B6ppen%20Map.png" alt="Weltkarte der Köppen-Geiger-Klimaklassifikation">
+   <div class="cap">Weltkarte der Köppen-Geiger-Klimaklassifikation. Quelle: Wikimedia Commons.</div>
+  </div>
+  <div class="fig-explain"><h4>Warum diese Karte stark ist</h4><ul><li>Sie verbindet Temperatur- und Niederschlagskriterien.</li><li>Sie zeigt, dass Klimazonen nicht einfach perfekte Breitenstreifen sind.</li><li>Westseiten, Ostseiten, Gebirge und Kontinentalräume unterscheiden sich stark.</li><li>Wüsten und Steppen liegen nicht nur nach Breite, sondern auch nach Luftmassen, Meeresströmungen und Relief.</li><li>Für Klimadiagramme ist Köppen-Geiger hilfreich, weil man Temperatur- und Niederschlagsverlauf zuordnen kann.</li></ul><div class="chain">Temperaturdaten + Niederschlagsdaten → Klimaklasse → typische Vegetation / Nutzung</div></div>
+  <div class="grid3">
+   <div class="mini"><h4>A-Klimate</h4><p>Tropische Klimate: ganzjährig warm, Unterschiede vor allem durch Niederschlag.</p></div>
+   <div class="mini"><h4>B-Klimate</h4><p>Trockenklimate: Verdunstung ist größer als Niederschlag.</p></div>
+   <div class="mini"><h4>C/D/E-Klimate</h4><p>Gemäßigte, boreale und polare Klimate mit zunehmender Kälte und Saisonalität.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="hygrisch-thermisch">
+ <div class="section-head"><div class="num">4</div><h2>Thermische und hygrische Grenzen</h2></div>
+ <div class="card">
+  <p>Vegetation wird besonders durch zwei Faktoren begrenzt: Wärme und Wasser. Wärme entscheidet über Stoffwechsel, Photosynthese und Länge der Vegetationsperiode. Wasser entscheidet über Transpiration, Wachstum und Trockenstress.</p>
+  <div class="compare">
+   <div class="comp"><span class="tag tag-o">thermisch</span><h4>Wärmegrenze</h4><p>Zu kalt: kurze Vegetationsperiode, Frost, langsames Wachstum.</p></div>
+   <div class="comp"><span class="tag tag-b">hygrisch</span><h4>Wassergrenze</h4><p>Zu trocken: Wassermangel, hohe Verdunstung, Trockenstress.</p></div>
+   <div class="comp"><span class="tag tag-g">kombiniert</span><h4>Ökosystemgrenze</h4><p>Klima bestimmt, ob Wald, Savanne, Steppe, Wüste oder Tundra möglich ist.</p></div>
+  </div>
+  <div class="deep">
+   <h3>Beispiel: Waldgrenze</h3>
+   <p>Wald braucht genug Wärme und genug Wasser. In der Tundra ist es zu kalt und die Vegetationsperiode zu kurz. In Wüsten ist es oft warm genug, aber zu trocken. Deshalb können beide Räume baumarm sein, obwohl die Ursachen völlig verschieden sind.</p>
+   <div class="formula">Tundra: Wärmemangel · Wüste: Wassermangel · Savanne: saisonaler Wassermangel</div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="tropen">
+ <div class="section-head"><div class="num">5</div><h2>Tropen: Regenwald, Savanne und ITC-Steuerung</h2></div>
+ <div class="card">
+  <p>Die Tropen sind ganzjährig warm. Der entscheidende Unterschied ist daher meist nicht Temperatur, sondern Niederschlag. Die Lage und Verlagerung der ITC steuert, wie lang Regen- und Trockenzeiten dauern.</p>
+  <div class="grid3">
+   <div class="mini"><h4>Tropischer Regenwald</h4><p>Ganzjährig hohe Niederschläge, hohe Luftfeuchtigkeit, hohe Biodiversität, immergrüne Vegetation.</p></div>
+   <div class="mini"><h4>Feuchtsavanne</h4><p>Längere Regenzeit, kürzere Trockenzeit; hohes Gras, einzelne Bäume.</p></div>
+   <div class="mini"><h4>Trockensavanne/Dornsavanne</h4><p>Kürzere Regenzeit, längere Trockenzeit; Trockenanpassungen, Dornsträucher, spärlichere Vegetation.</p></div>
+  </div>
+  <div class="deep">
+   <h3>Entstehungskette</h3>
+   <p>Nahe dem Äquator liegt die ITC häufig oder ganzjährig über dem Raum. Dadurch steigt feuchte Luft regelmäßig auf und verursacht Niederschlag. Mit zunehmender Entfernung vom Äquator erreicht die ITC einen Ort nur noch saisonal. Die Regenzeit wird kürzer und die Trockenzeit länger.</p>
+   <div class="formula">ITC-Aufenthaltsdauer → Niederschlagsdauer → Regenwald/Savanne/Dornbusch</div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="subtropen">
+ <div class="section-head"><div class="num">6</div><h2>Subtropen: Wüsten, Hartlaubvegetation und Übergangsräume</h2></div>
+ <div class="card">
+  <p>Die Subtropen sind besonders durch den subtropischen Hochdruckgürtel geprägt. Absinkende Luft erwärmt sich, die relative Feuchte sinkt, Wolkenbildung wird gehemmt. Deshalb liegen viele große Wüsten in subtropischen Breiten.</p>
+  <div class="grid2">
+   <div class="mini"><h4>Wendekreiswüsten</h4><p>Entstehen häufig unter Einfluss subtropischer Hochdruckgebiete. Beispiele: Sahara, Arabische Wüste, australische Wüsten.</p></div>
+   <div class="mini"><h4>Westseitenklima / Mittelmeerklima</h4><p>Sommer oft trocken durch subtropischen Hochdruckeinfluss, Winter feuchter durch Westwindzone.</p></div>
+  </div>
+  <div class="deep">
+   <h3>Hartlaubvegetation</h3>
+   <p>In mediterranen Subtropen ist der Sommer trocken und heiß. Pflanzen reagieren mit kleinen, harten, ledrigen Blättern, Wachsschichten, tieferen Wurzeln und Trockenruhe. Das ist Anpassung an sommerlichen Wassermangel.</p>
+   <div class="formula">Sommerhochdruck → Trockenheit → Wasserstress → Hartlaubvegetation</div>
+  </div>
+  <div class="merke"><strong>Verbindung:</strong> Subtropische Wüsten sind nicht einfach „weil es heiß ist“, sondern weil absinkende Luft Niederschlag verhindert.</div>
+ </div>
+</section>
+
+<section class="section" id="mittelbreiten">
+ <div class="section-head"><div class="num">7</div><h2>Mittelbreiten: Westwindzone, Jahreszeiten und Wälder</h2></div>
+ <div class="card">
+  <p>Die Mittelbreiten liegen zwischen Subtropen und subpolaren Räumen. Hier sind Jahreszeiten deutlich ausgeprägt. In vielen Bereichen prägt die Westwindzone das Wetter, besonders an Westseiten der Kontinente.</p>
+  <div class="grid3">
+   <div class="mini"><h4>Ozeanisch</h4><p>Milde Winter, kühle Sommer, ganzjährig Niederschlag. Starker Meereseinfluss.</p></div>
+   <div class="mini"><h4>Kontinental</h4><p>Heiße Sommer, kalte Winter, größere Jahresamplitude. Stärkerer Landmasseneinfluss.</p></div>
+   <div class="mini"><h4>Vegetation</h4><p>Laub- und Mischwälder, Grasländer/Steppen in trockeneren kontinentalen Bereichen.</p></div>
+  </div>
+  <div class="formula">Westwindzone + Meeresnähe → mild/feucht · Kontinentalität → größere Temperaturamplitude</div>
+  <div class="deep">
+   <h3>Europa-Bezug</h3>
+   <p>Mitteleuropa liegt in den gemäßigten Mittelbreiten und wird stark durch Westwinde und Atlantikeinfluss geprägt. Deshalb ist das Wetter wechselhaft und Niederschlag kann ganzjährig auftreten.</p>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="subpolar-polar">
+ <div class="section-head"><div class="num">8</div><h2>Subpolare und polare Zone: Taiga, Tundra und Eis</h2></div>
+ <div class="card">
+  <p>In hohen Breiten begrenzen geringe Temperaturen und kurze Vegetationsperioden das Pflanzenwachstum. Zusätzlich wirken hohe Albedo, lange Winter, Permafrost und geringe Verdunstung.</p>
+  <div class="grid3">
+   <div class="mini"><h4>Taiga</h4><p>Borealer Nadelwald. Lange kalte Winter, kurze Sommer. Nadelbäume sind an Frost und kurze Vegetationszeit angepasst.</p></div>
+   <div class="mini"><h4>Tundra</h4><p>Baumlose Vegetation mit Moosen, Flechten, Gräsern und Zwergsträuchern. Permafrost und kurze Vegetationsperiode.</p></div>
+   <div class="mini"><h4>Eiswüste</h4><p>Extrem kalt, sehr geringe biologische Produktivität, kaum Vegetation.</p></div>
+  </div>
+  <div class="deep">
+   <h3>Warum Polarregionen oft trocken sind</h3>
+   <p>Kalte Luft kann wenig Wasserdampf aufnehmen. Außerdem dominieren häufig stabile Hochdruckbedingungen mit absinkender Luft. Deshalb können polare Räume trotz Eis und Schnee klimatisch sehr trocken sein.</p>
+   <div class="formula">Kälte → geringe Wasserdampfkapazität + Hochdruck → wenig Niederschlag</div>
+  </div>
+  <div class="merke"><strong>Brücke zu 12-1.3:</strong> Albedo, Meereis, Permafrost und polare Ökosysteme sind direkt mit Kipppunkten verbunden.</div>
+ </div>
+</section>
+
+<section class="section" id="hoehenstufen">
+ <div class="section-head"><div class="num">9</div><h2>Höhenstufen: Klimazonen im Gebirge</h2></div>
+ <div class="card">
+  <p>Gebirge zeigen eine Art vertikale Klimazonierung. Mit zunehmender Höhe sinkt die Temperatur, und Vegetation verändert sich ähnlich wie bei einer Wanderung vom Äquator zu den Polen.</p>
+  <div class="figure small">
+   <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Vegetation-altitude-belts.svg" alt="Höhenstufen der Vegetation">
+   <div class="cap">Höhenstufen der Vegetation im Gebirge. Quelle: Wikimedia Commons.</div>
+  </div>
+  <div class="fig-explain"><h4>Warum Höhenstufen wichtig sind</h4><ul><li>Mit der Höhe sinkt die Temperatur.</li><li>Die Vegetationsperiode wird kürzer.</li><li>Waldgrenzen entstehen, wenn Bäume nicht mehr ausreichend wachsen können.</li><li>Exposition, Niederschlag und Relief verändern die Höhenstufen regional.</li><li>Gebirge können feuchte Luvseiten und trockene Leeseiten erzeugen.</li></ul><div class="chain">Höhe ↑ → Temperatur ↓ → Vegetationsperiode kürzer → Waldgrenze / alpine Stufe</div></div>
+ </div>
+</section>
+
+<section class="section" id="mensch">
+ <div class="section-head"><div class="num">10</div><h2>Menschliche Veränderung von Klima- und Vegetationszonen</h2></div>
+ <div class="card">
+  <p>Natürliche Vegetationszonen sind heute vielerorts stark verändert. Landwirtschaft, Rodung, Plantagen, Weidewirtschaft, Stadtentwicklung, Bewässerung und Klimawandel überprägen die natürliche Vegetation.</p>
+  <div class="grid2">
+   <div class="mini"><h4>Direkte Eingriffe</h4><ul><li>Entwaldung</li><li>Ackerbau</li><li>Weidewirtschaft</li><li>Urbanisierung</li><li>Bewässerung</li><li>Bergbau und Infrastruktur</li></ul></div>
+   <div class="mini"><h4>Klimatische Wirkungen</h4><ul><li>Albedoänderung</li><li>veränderte Verdunstung</li><li>CO₂-Freisetzung</li><li>Bodenfeuchteänderung</li><li>Desertifikation</li><li>Verschiebung von Vegetationszonen</li></ul></div>
+  </div>
+  <div class="deep">
+   <h3>Beispiel Amazonas</h3>
+   <p>Der tropische Regenwald erzeugt durch Verdunstung selbst Feuchtigkeit und beeinflusst regionale Niederschläge. Rodung reduziert Verdunstung, schwächt Niederschläge und kann Trockenstress verstärken. Genau hier beginnt die Verbindung zu Kipppunkten.</p>
+   <div class="formula">Rodung → weniger Verdunstung → weniger Niederschlag → Trockenstress → Waldverlust</div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="kippunkte">
+ <div class="section-head"><div class="num">11</div><h2>Zusatzwissen: Kipppunkte im Klimasystem</h2></div>
+ <div class="card alt">
+  <p><a class="term" href="#gloss-kipppunkt">Kipppunkte</a> sind kritische Schwellen, bei deren Überschreiten ein System in einen neuen Zustand übergehen kann. Besonders gefährlich sind sie, weil sich der Prozess durch Rückkopplungen selbst verstärken kann und teilweise schwer oder gar nicht umkehrbar ist.</p>
+  <div class="figure">
+   <img src="https://www.pik-potsdam.de/en/output/infodesk/tipping-elements/tipping-elements/@@images/image/large" alt="Globale Kipppunkte im Erdsystem">
+   <div class="cap">Kippelelemente im Erdsystem mit regionaler Verteilung. Quelle: Potsdam-Institut für Klimafolgenforschung.</div>
+  </div>
+  <div class="fig-explain"><h4>So erklärst du die Kipppunkte-Grafik</h4><ul><li>Die Grafik zeigt große Teilsysteme des Erdsystems, die bei Erwärmung instabil werden können.</li><li>Dazu gehören Eisschilde, Meeresströmungen, Monsunsysteme, Permafrost, Regenwälder und Korallenriffe.</li><li>Ein Kipppunkt bedeutet nicht nur lineare Veränderung, sondern einen möglichen Systemwechsel.</li><li>Viele Kippsysteme hängen mit Klima- und Vegetationszonen zusammen: Wälder, Eisflächen, Tundra/Permafrost und Ozeanzirkulation.</li><li>Rückkopplungen können Veränderungen verstärken, zum Beispiel Eis-Albedo-Rückkopplung oder Waldverlust durch Trockenstress.</li></ul><div class="chain">Erwärmung → Schwelle überschritten → Rückkopplung → Systemwechsel → neue Klima-/Vegetationsbedingungen</div></div>
+  <div class="warn"><strong>Prüfungsstark, aber vorsichtig:</strong> Kipppunkte sind Zusatzwissen. Formuliere nicht absolut „bei exakt X Grad passiert sicher Y“, sondern sprich von Schwellen, Risiken, Rückkopplungen und möglicher Irreversibilität.</div>
+ </div>
+</section>
+
+<section class="section" id="kippbeispiele">
+ <div class="section-head"><div class="num">12</div><h2>Wichtige Kippsysteme für Geo</h2></div>
+ <div class="card">
+  <p>Für dein Kolloquium sind nicht alle Kippsysteme gleich wichtig. Am besten lernst du solche, die du direkt mit Klima- und Vegetationszonen verbinden kannst.</p>
+  <div class="grid2">
+   <div class="mini"><h4>Amazonas-Regenwald</h4><p>Erwärmung, Trockenheit und Entwaldung können den Regenwald schwächen. Weniger Wald bedeutet weniger Verdunstung und weniger regionalen Niederschlag.</p><div class="formula">Waldverlust → weniger Verdunstung → weniger Regen → mehr Waldverlust</div></div>
+   <div class="mini"><h4>Grönländischer Eisschild</h4><p>Schmelzen senkt Eisvolumen und kann über Albedo und Höhenverlust weitere Schmelze verstärken.</p><div class="formula">Eisschmelze → niedrigere Albedo/Höhe → mehr Erwärmung → mehr Schmelze</div></div>
+   <div class="mini"><h4>Permafrost</h4><p>Auftauender Permafrost kann CO₂ und Methan freisetzen. Das verstärkt den Treibhauseffekt.</p><div class="formula">Auftauen → Treibhausgase → Erwärmung → weiteres Auftauen</div></div>
+   <div class="mini"><h4>AMOC / thermohaline Zirkulation</h4><p>Süßwassereintrag und Erwärmung können die Tiefenwasserbildung schwächen und die atlantische Wärmezirkulation verändern.</p><div class="formula">Schmelzwasser → geringere Dichte → schwächere Tiefenwasserbildung → Zirkulationsänderung</div></div>
+   <div class="mini"><h4>Korallenriffe</h4><p>Marine Hitzewellen und Erwärmung führen zu Korallenbleiche. Bei dauerhafter Belastung droht großflächiger Verlust.</p><div class="formula">Ozeanerwärmung → Bleiche → Absterben → Ökosystemverlust</div></div>
+   <div class="mini"><h4>Boreale Wälder</h4><p>Wärme, Trockenheit, Brände und Schädlinge können Wälder destabilisieren und Kohlenstoff freisetzen.</p><div class="formula">Wärme/Trockenheit → Brände/Schädlinge → Waldverlust → CO₂-Freisetzung</div></div>
+  </div>
+  <div class="merke"><strong>Beste Kolloquium-Verbindung:</strong> Kipppunkte zeigen, dass Klima- und Vegetationszonen nicht nur langsam wandern, sondern bei Rückkopplungen auch sprunghaft instabil werden können.</div>
+ </div>
+</section>
+
+<section class="section" id="verknuepfung">
+ <div class="section-head"><div class="num">13</div><h2>Verknüpfungen zu Schwerpunkt und roten Themen</h2></div>
+ <div class="card alt">
+  <div class="grid2">
+   <div class="mini"><h4>Zu ITC und Passaten</h4><p>Die ITC steuert tropische Niederschläge. Ihre Lage und Aufenthaltsdauer erklären Regenwald, Savannen und Trockenräume.</p><div class="formula">ITC → Niederschlagsdauer → Vegetationszone</div></div>
+   <div class="mini"><h4>Zu Subtropenhochs</h4><p>Absinkende Luft im subtropischen Hochdruckgürtel erzeugt Trockengebiete und Wüsten.</p><div class="formula">Absinken → Wolkenhemmung → Wüste</div></div>
+   <div class="mini"><h4>Zu Albedo / Polarzone</h4><p>Eis und Schnee haben hohe Albedo. Schmelzen sie, wird mehr Energie absorbiert und Erwärmung verstärkt.</p><div class="formula">Albedo sinkt → Absorption steigt → Erwärmung steigt</div></div>
+   <div class="mini"><h4>Zu ozeanischen Prozessen</h4><p>Meeresströmungen transportieren Wärme und Feuchtigkeit und verändern dadurch regionale Klimazonen.</p><div class="formula">Ozeanströmung → Temperatur/Niederschlag → Vegetation</div></div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="muendlich">
+ <div class="section-head"><div class="num">14</div><h2>Mündliche Prüfungsantworten</h2></div>
+ <div class="exam"><h3>1. „Erklären Sie den Zusammenhang zwischen Klima- und Vegetationszonen.“</h3><p>Vegetationszonen entstehen vor allem durch Temperatur- und Niederschlagsbedingungen. Diese hängen von Strahlung, Breitenlage, atmosphärischer Zirkulation, Relief, Meeresströmungen und Kontinentalität ab. In den Tropen ist es ganzjährig warm; dort entscheidet vor allem die Niederschlagsdauer, ob Regenwald oder Savanne entsteht. In den Subtropen führen absinkende Luftmassen häufig zu Trockenheit und Wüsten. In den Mittelbreiten sind Jahreszeiten und Westwindzone wichtig. In hohen Breiten begrenzen Kälte, kurze Vegetationsperiode und Permafrost das Pflanzenwachstum.</p></div>
+ <div class="exam"><h3>2. „Warum liegen viele Wüsten in den Subtropen?“</h3><p>Viele Wüsten liegen im Bereich des subtropischen Hochdruckgürtels. Dort sinkt Luft aus der Hadley-Zelle ab. Beim Absinken wird sie komprimiert und erwärmt sich trockenadiabatisch. Dadurch sinkt die relative Luftfeuchtigkeit, Wolkenbildung wird gehemmt und Niederschlag bleibt aus. Deshalb entstehen in diesen Breiten stabile, trockene Bedingungen. Hitze allein erklärt Wüsten also nicht; entscheidend ist der Wassermangel durch absinkende Luft.</p></div>
+ <div class="exam"><h3>3. „Erklären Sie Regenwald und Savanne mit der ITC.“</h3><p>Die ITC ist eine Zone, in der Passate zusammenströmen und feuchte, warme Luft aufsteigt. Liegt die ITC ganzjährig oder sehr häufig über einem Gebiet, entstehen ganzjährig hohe Niederschläge und tropischer Regenwald. Wandert die ITC nur saisonal über einen Raum, gibt es Regenzeit und Trockenzeit. Je kürzer die Regenzeit und je länger die Trockenzeit, desto offener wird die Vegetation: von Feuchtsavanne über Trockensavanne bis zur Dornsavanne.</p></div>
+ <div class="exam"><h3>4. „Was sind Kipppunkte und warum passen sie zu Klima- und Vegetationszonen?“</h3><p>Kipppunkte sind kritische Schwellen im Erdsystem, bei deren Überschreiten ein System durch selbstverstärkende Rückkopplungen in einen neuen Zustand übergehen kann. Sie passen zu Klima- und Vegetationszonen, weil Ökosysteme wie Regenwald, boreale Wälder, Permafrost oder Korallenriffe stark von Temperatur und Wasserverfügbarkeit abhängen. Wird eine Schwelle überschritten, kann sich Vegetation nicht nur langsam verändern, sondern abrupt destabilisieren. Beispiele sind Waldverlust im Amazonas, Auftauen von Permafrost oder Eis-Albedo-Rückkopplung in Polarregionen.</p></div>
+</section>
+
+<section class="section" id="quiz">
+ <div class="section-head"><div class="num">15</div><h2>Wissenscheck</h2></div>
+ <div class="quiz">
+  <details class="q"><summary>1. Was steuert Vegetationszonen global besonders stark?</summary><p>Temperatur, Niederschlag, Länge der Vegetationsperiode, Wasserverfügbarkeit und atmosphärische Zirkulation.</p></details>
+  <details class="q"><summary>2. Warum sind Tropen nicht überall Regenwald?</summary><p>Weil nicht überall ganzjährig hohe Niederschläge auftreten. Die ITC erreicht viele Tropenräume nur saisonal.</p></details>
+  <details class="q"><summary>3. Warum entstehen Wendekreiswüsten?</summary><p>Durch absinkende Luft im subtropischen Hochdruckgürtel, die sich erwärmt und Wolkenbildung hemmt.</p></details>
+  <details class="q"><summary>4. Warum ist Tundra baumarm?</summary><p>Wegen kurzer Vegetationsperiode, Kälte, Permafrost und begrenztem Wurzelraum.</p></details>
+  <details class="q"><summary>5. Was ist ein Kipppunkt?</summary><p>Eine kritische Schwelle, ab der ein System durch Rückkopplungen in einen neuen Zustand übergehen kann.</p></details>
+  <details class="q"><summary>6. Nenne zwei Rückkopplungen.</summary><p>Eis-Albedo-Rückkopplung und Permafrost-Kohlenstoff-Rückkopplung. Auch Waldverlust-Verdunstungs-Rückkopplung ist wichtig.</p></details>
+ </div>
+</section>
+
+<section class="section glossary" id="glossar">
+ <div class="section-head"><div class="num">G</div><h2>Fachbegriffe-Glossar</h2></div>
+ <p class="glossary-intro">Die wichtigsten Begriffe dieser Unterseite.</p>
+ <div class="gloss-index">
+  <a href="#gloss-klimazone">Klimazone</a><a href="#gloss-vegetationszone">Vegetationszone</a><a href="#gloss-koeppen">Köppen-Geiger</a><a href="#gloss-hygrisch">hygrisch</a><a href="#gloss-thermisch">thermisch</a><a href="#gloss-vegetationsperiode">Vegetationsperiode</a><a href="#gloss-kontinentalitaet">Kontinentalität</a><a href="#gloss-permafrost">Permafrost</a><a href="#gloss-kipppunkt">Kipppunkt</a><a href="#gloss-rueckkopplung">Rückkopplung</a><a href="#gloss-amoc">AMOC</a>
+ </div>
+ <div class="gloss-grid">
+  <div class="gloss-item" id="gloss-klimazone"><h3>Klimazone</h3><p>Großraum mit ähnlichen klimatischen Bedingungen.</p><div class="connect">Zusammenhang: bestimmt Temperatur- und Niederschlagsmuster.</div></div>
+  <div class="gloss-item" id="gloss-vegetationszone"><h3>Vegetationszone</h3><p>Großraum mit ähnlicher natürlicher Pflanzenbedeckung.</p><div class="connect">Zusammenhang: spiegelt Wärme- und Wasserverfügbarkeit.</div></div>
+  <div class="gloss-item" id="gloss-koeppen"><h3>Köppen-Geiger-Klassifikation</h3><p>Klimaklassifikation nach Temperatur- und Niederschlagskriterien.</p><div class="connect">Zusammenhang: nützlich für Klimadiagramme und regionale Unterschiede.</div></div>
+  <div class="gloss-item" id="gloss-hygrisch"><h3>hygrisch</h3><p>Auf Wasser bzw. Feuchtigkeit bezogen.</p><div class="connect">Zusammenhang: hygrische Grenzen bestimmen Trockenstress.</div></div>
+  <div class="gloss-item" id="gloss-thermisch"><h3>thermisch</h3><p>Auf Wärme bzw. Temperatur bezogen.</p><div class="connect">Zusammenhang: thermische Grenzen bestimmen Vegetationsperiode.</div></div>
+  <div class="gloss-item" id="gloss-vegetationsperiode"><h3>Vegetationsperiode</h3><p>Zeit im Jahr, in der Pflanzen klimatisch wachsen können.</p><div class="connect">Zusammenhang: wird durch Temperatur und Wasser begrenzt.</div></div>
+  <div class="gloss-item" id="gloss-kontinentalitaet"><h3>Kontinentalität</h3><p>Einfluss großer Landmassen: größere Temperaturgegensätze zwischen Sommer und Winter.</p><div class="connect">Zusammenhang: wichtig für Mittelbreiten und Steppen.</div></div>
+  <div class="gloss-item" id="gloss-permafrost"><h3>Permafrost</h3><p>Dauerhaft gefrorener Boden über mindestens zwei Jahre.</p><div class="connect">Zusammenhang: begrenzt Wurzelraum und kann beim Auftauen Treibhausgase freisetzen.</div></div>
+  <div class="gloss-item" id="gloss-kipppunkt"><h3>Kipppunkt</h3><p>Kritische Schwelle, nach der ein System in einen neuen Zustand wechseln kann.</p><div class="connect">Zusammenhang: wichtig für Klima, Eis, Wälder, Ozeane und Ökosysteme.</div></div>
+  <div class="gloss-item" id="gloss-rueckkopplung"><h3>Rückkopplung</h3><p>Prozess, bei dem eine Veränderung weitere Veränderungen auslöst, die den Ausgangsprozess verstärken oder abschwächen.</p><div class="connect">Zusammenhang: positive Rückkopplungen können Kipppunkte antreiben.</div></div>
+  <div class="gloss-item" id="gloss-amoc"><h3>AMOC</h3><p>Atlantic Meridional Overturning Circulation; großräumige atlantische Umwälzzirkulation.</p><div class="connect">Zusammenhang: Wärmetransport im Atlantik, Verbindung zur thermohalinen Zirkulation.</div></div>
+ </div>
+</section>
+
+<div class="footer-note">Lokale Lernseite für private Nutzung. Unterseite 6 des Geo-Schwerpunktthemas 12-1.1: Klima- und Vegetationszonen mit Zusatzwissen Kipppunkte. Es wurden nur externe Grafiken aus dem Internet eingebunden.</div>
+</main>
+</div>
+</body>
+</html>
